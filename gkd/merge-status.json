@@ -1,0 +1,40 @@
+{
+  "ok": true,
+  "time": 1786509834,
+  "sources": [
+    {
+      "id": "linarm",
+      "name": "Lin-arm",
+      "download": "ok",
+      "bytes": 1306803,
+      "parse": "ok",
+      "sourceVersion": 563
+    },
+    {
+      "id": "ganlinte",
+      "name": "ganlinte",
+      "download": "ok",
+      "bytes": 609382,
+      "parse": "ok",
+      "sourceVersion": 71
+    },
+    {
+      "id": "aisouler",
+      "name": "AIsouler（历史）",
+      "download": "ok",
+      "bytes": 948560,
+      "parse": "ok",
+      "sourceVersion": 205
+    },
+    {
+      "id": "adpro",
+      "name": "Adpro（历史）",
+      "download": "ok",
+      "bytes": 718466,
+      "parse": "ok",
+      "sourceVersion": 90
+    }
+  ],
+  "apps": 1044,
+  "globalGroups": 3
+}

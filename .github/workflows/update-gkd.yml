@@ -1,0 +1,37 @@
+name: Update merged GKD subscription
+
+on:
+  push:
+    paths:
+      - 'scripts/merge_gkd.py'
+      - '.github/workflows/update-gkd.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install JSON5 parser
+        run: python -m pip install --disable-pip-version-check json5
+      - name: Merge upstream subscriptions
+        run: python scripts/merge_gkd.py
+      - name: Commit changes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add gkd/ cache/sources/
+          if git diff --cached --quiet; then
+            echo 'No changes.'
+            exit 0
+          fi
+          git commit -m 'chore: update merged GKD subscription'
+          git push

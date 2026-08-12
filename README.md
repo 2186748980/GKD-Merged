@@ -1,176 +1,159 @@
-# GKD-Merged
-
 <div align="center">
 
 # GKD-Merged
 
-**把多个 GKD 订阅整合到一起，让你只需要维护一个订阅。**
+### 一个更省心的 GKD 多源综合订阅
 
-[![GKD](https://img.shields.io/badge/GKD-订阅支持-blue)](https://github.com/gkd-kit/gkd)
-[![自动更新](https://img.shields.io/badge/自动更新-每6小时-success)](https://github.com/2186748980/GKD-Merged/actions)
-[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/2186748980/GKD-Merged/update-gkd.yml?label=Build)](https://github.com/2186748980/GKD-Merged/actions)
+**把多个社区订阅整合成一个地址，让规则获取、去重和更新交给 GitHub Actions。**
 
-**推荐用户：** 已经在使用 GKD，希望把多个社区订阅合并，又不想在 GKD 里维护一长串订阅地址的人。
+[![GKD](https://img.shields.io/badge/GKD-订阅支持-4c9aff)](https://github.com/gkd-kit/gkd)
+[![自动更新](https://img.shields.io/badge/自动更新-每6小时-2ea44f)](https://github.com/2186748980/GKD-Merged/actions)
+[![Build](https://img.shields.io/github/actions/workflow/status/2186748980/GKD-Merged/update-gkd.yml?label=Build)](https://github.com/2186748980/GKD-Merged/actions)
+[![License](https://img.shields.io/github/license/2186748980/GKD-Merged)](./LICENSE)
+
+<br>
+
+**第一次使用？** → [快速开始](./docs/getting-started.md)  
+**想了解合并原理？** → [合并机制](./docs/merge.md)  
+**遇到问题？** → [故障排查](./docs/troubleshooting.md)
 
 </div>
 
 ---
 
-## 这是什么？
+## ⚡ 先用起来
 
-[GKD](https://github.com/gkd-kit/gkd) 是一个基于 Android 无障碍服务的自动点击工具，可以按照规则自动处理开屏广告、弹窗、按钮等界面元素。
-
-而 **GKD-Merged** 并不是一个新的 GKD 客户端，也不是 GKD 官方订阅。
-
-它更像一个“订阅聚合器”：定期获取多个公开的 GKD 订阅，将其中的规则整理、去重、合并，最后生成一个可以直接添加到 GKD 的综合订阅。
-
-简单理解就是：
+如果你已经安装了 GKD，**只需要添加下面这一个订阅地址**：
 
 ```text
-                 ┌─ Lin-arm
-                 ├─ ganlinte
-多个订阅 ────────┼─ AIsouler（历史）
-                 └─ Adpro（历史）
-                        │
-                        ▼
-                 自动下载 / 解析
-                        │
-                        ▼
-                    去重 / 合并
-                        │
-                        ▼
-                 GKD-Merged 综合订阅
-                        │
-                        ▼
-                  你的 GKD App
+https://2186748980.github.io/GKD-Merged/gkd/gkd.json5
 ```
 
----
-
-## 一句话使用方法
-
-如果你已经安装了 GKD：
-
-1. 打开 GKD 的 **订阅** 页面。
-2. 添加下面的综合订阅地址。
-3. 拉取更新。
-4. 根据自己的需要启用规则。
-
-### 综合订阅
+备用地址：
 
 ```text
 https://raw.githubusercontent.com/2186748980/GKD-Merged/main/gkd/gkd.json5
 ```
 
-如果你所在网络访问 GitHub Raw 较慢，可以使用 jsDelivr 镜像：
+> 推荐优先使用 GitHub Pages 地址；如果访问不稳定，再尝试 Raw 地址。
 
-```text
-https://fastly.jsdelivr.net/gh/2186748980/GKD-Merged@main/gkd/gkd.json5
-```
+### 我是第一次使用 GKD
 
-> 如果其中一个地址访问失败，可以尝试另一个。GKD 官方订阅模板也提供了 GitHub Raw 与 jsDelivr 镜像思路。  
-> 参考：[GKD subscription-template](https://github.com/gkd-kit/subscription-template)
+👉 [从零开始的使用教程](./docs/getting-started.md)
 
 ---
 
-## 为什么要做这个？
+## 🌟 这是什么？
 
-GKD 社区里有很多优秀的规则订阅，但不同订阅的覆盖范围、维护节奏和规则风格并不完全相同。
+[GKD](https://github.com/gkd-kit/gkd) 是一个基于 Android 无障碍服务的自动点击工具，可以按照规则自动处理开屏广告、弹窗、按钮等界面元素。
 
-如果全部单独添加，就可能变成：
+**GKD-Merged 不是 GKD 客户端，也不是 GKD 官方项目。**
+
+它是一个第三方社区订阅聚合器：定期获取多个公开 GKD 订阅，进行解析、整理、去重和合并，然后生成一个可以直接交给 GKD 使用的综合订阅。
+
+简单来说：
 
 ```text
-订阅 A
-订阅 B
-订阅 C
-订阅 D
-订阅 E
-……
+       Lin-arm ─────────┐
+       ganlinte ────────┤
+       AIsouler ────────┼──→ 下载 / 缓存
+       Adpro ───────────┘          │
+                                   ▼
+                              解析 / 标准化
+                                   │
+                                   ▼
+                              合并 / 去重
+                                   │
+                                   ▼
+                         key / preKeys 处理
+                                   │
+                                   ▼
+                           GKD-Merged 订阅
+                                   │
+                                   ▼
+                                GKD App
 ```
 
-而 GKD-Merged 的目标就是把它们集中起来：
-
-> **你只需要添加一个订阅地址，剩下的事情交给 GitHub Actions 自动完成。**
+> **核心目标只有一个：让你不用维护一长串订阅地址。**
 
 ---
 
-## 当前整合来源
+## 📦 当前整合来源
 
 | 来源 | 定位 | 优先级 |
 | --- | --- | ---: |
-| [Lin-arm/GKD_subscription](https://github.com/Lin-arm/GKD_subscription) | 当前主要来源 | 100 |
-| [ganlinte/GKD-subscription](https://github.com/ganlinte/GKD-subscription) | 补充来源 | 90 |
-| [AIsouler/GKD_subscription](https://github.com/AIsouler/GKD_subscription) | 历史规则补充 | 50 |
-| [Adpro-Team/GKD_subscription](https://github.com/Adpro-Team/GKD_subscription) | 历史规则补充 | 40 |
+| [Lin-arm/GKD_subscription](https://github.com/Lin-arm/GKD_subscription) | 当前主要来源 | **100** |
+| [ganlinte/GKD-subscription](https://github.com/ganlinte/GKD-subscription) | 活跃补充来源 | **90** |
+| [AIsouler/GKD_subscription](https://github.com/AIsouler/GKD_subscription) | 历史规则补充 | **50** |
+| [Adpro-Team/GKD_subscription](https://github.com/Adpro-Team/GKD_subscription) | 历史规则补充 | **40** |
 
-### 关于已经停止维护的来源
+### 为什么还保留历史来源？
 
-AIsouler 和 Adpro 在这里主要承担“历史规则库”的角色。它们可能包含目前活跃订阅没有覆盖的规则，因此不会因为停止维护就直接全部丢弃。
+**停止维护 ≠ 所有旧规则都没有价值。**
 
-同时，**本项目不代表这些上游项目的官方立场，也不意味着上游作者认可本项目。**
+某个历史订阅可能包含活跃订阅没有覆盖的 APP 或规则。因此这里把它们放在低优先级，用来补充缺失内容，而不是与活跃来源平起平坐。
+
+本项目不代表任何上游项目的官方立场，也不意味着上游作者认可本项目。
+
+更多说明： [上游来源](./docs/sources.md)
 
 ---
 
-## 合并策略
+## 🧠 怎么合并？
 
-项目不是简单地把几个 JSON 文件拼在一起，而是进行了一定程度的整理。
+这不是简单地把几个 JSON5 文件拼在一起。
 
-### 1. 高优先级来源优先
-
-目前优先级为：
+### 合并逻辑
 
 ```text
-Lin-arm      100
-ganlinte      90
-AIsouler      50
-Adpro         40
+高优先级来源
+      │
+      ├─ 有 → 优先采用
+      │
+      └─ 没有
+           ↓
+      低优先级来源补充
 ```
 
-### 2. 尽量保留互补规则
+同时会：
 
-如果高优先级来源没有某个 APP 或规则组，低优先级来源仍然可以补充进去。
+- 合并同一 APP 的规则
+- 合并互补规则组
+- 对重复规则进行指纹去重
+- 处理不同来源之间的 `key` 冲突
+- 同步修正 `preKeys` 依赖
+- 上游临时不可访问时使用缓存
+- 所有来源都不可用时让构建失败，而不是生成空订阅
 
-### 3. 重复规则去重
-
-相同规则不会因为来自不同订阅就无限重复。
-
-### 4. 自动处理 key / preKeys
-
-不同订阅中的规则可能使用相同的 key。合并时会重新分配冲突 key，并同步处理 `preKeys` 依赖关系。
-
-### 5. 上游临时不可用时使用缓存
-
-如果某个上游暂时无法访问，但之前已经成功获取过，则使用缓存继续构建，避免一次网络故障导致整个综合订阅不可用。
-
-如果所有来源都无法获取，构建会失败，而不是生成一个看似正常的空订阅。
+👉 [查看详细合并机制](./docs/merge.md)
 
 ---
 
-## 自动更新
+## 🔄 自动更新
 
-本项目使用 GitHub Actions 定期检查上游，目前默认每 **6 小时**运行一次。
+项目使用 GitHub Actions 自动构建，默认**每 6 小时**检查一次上游。
 
 ```text
-上游订阅
+上游更新
    ↓
 定时检查
    ↓
 下载 / 缓存
    ↓
-解析
+JSON5 解析
    ↓
 合并 / 去重
    ↓
-生成 gkd.json5
-   ↓
-GKD 获取更新
+内容发生变化？
+   ├─ 否 → 保持原版本
+   └─ 是 → 生成新版本
+              ↓
+        更新综合订阅
 ```
 
-### 版本号
+### 版本号很容易看懂
 
-本项目不会单纯使用 Unix 时间戳作为版本号。
-
-采用：
+格式：
 
 ```text
 YYYYMMDDNN
@@ -182,164 +165,159 @@ YYYYMMDDNN
 2026081101
 ```
 
-表示：
+就是：
 
-> 2026 年 8 月 11 日，第 1 次实际内容更新。
+> **2026 年 8 月 11 日，第 1 次实际内容更新。**
 
-如果 GitHub Actions 运行了很多次，但订阅内容没有发生变化，**版本号不会变化**。
-
-这样可以避免 GKD 每隔几个小时都收到一次“实际上没有任何变化”的更新。
+如果 Actions 跑了 10 次，但规则内容完全没变化，版本号仍然不会变。
 
 ---
 
-## 项目文件结构
+## 📊 构建状态
+
+最近一次构建产生的状态会写入：
+
+```text
+ gkd/merge-status.json
+```
+
+其中包括：
+
+- 上游下载状态
+- 上游版本
+- 最终 APP 数量
+- 全局规则数量
+- 综合订阅版本
+- 内容哈希
+
+你可以直接查看：[merge-status.json](./gkd/merge-status.json)
+
+---
+
+## 📁 项目结构
 
 ```text
 GKD-Merged/
+│
 ├── .github/
 │   └── workflows/
-│       └── update-gkd.yml      # 自动构建工作流
+│       └── update-gkd.yml       # 自动构建
 │
 ├── cache/
-│   └── sources/                # 上游订阅缓存
+│   └── sources/                 # 上游缓存
 │
 ├── gkd/
-│   ├── gkd.json5               # 最终综合订阅
-│   ├── gkd.version.json5       # GKD 版本检查文件
-│   ├── merge-status.json       # 最近一次构建状态
-│   └── version-state.json      # 版本与内容哈希状态
+│   ├── gkd.json5                # ⭐ 最终综合订阅
+│   ├── gkd.version.json5        # GKD 更新检查
+│   ├── merge-status.json        # 构建状态
+│   └── version-state.json       # 版本状态
 │
 ├── scripts/
-│   └── merge_gkd.py            # 核心合并脚本
+│   └── merge_gkd.py             # 核心合并器
 │
-└── README.md
+├── docs/
+│   ├── getting-started.md       # 新手教程
+│   ├── sources.md               # 上游来源
+│   ├── merge.md                 # 合并机制
+│   ├── custom-rules.md          # 自定义规则
+│   └── troubleshooting.md       # 故障排查
+│
+├── CHANGELOG.md                 # 更新日志
+├── CONTRIBUTING.md              # 贡献指南
+├── LICENSE                      # 项目许可证
+└── README.md                    # 项目主页
 ```
 
 ---
 
-## 我想自己维护 / 修改怎么办？
+## 🛠️ 我想贡献规则 / 修复问题
 
-这个项目本质上是一个普通的 GitHub 仓库。
+欢迎！
 
-如果你有 Python 基础，可以从：
+如果只是发现某个 APP 的规则失效，最有价值的信息通常是：
 
-```text
-scripts/merge_gkd.py
-```
+- APP 名称 / 包名
+- APP 版本
+- GKD 版本
+- 规则组名称
+- GKD 快照
+- 事件日志
+- 清晰的复现步骤
 
-开始看。
-
-如果你只是普通 GKD 用户，**不需要修改任何代码**，直接添加综合订阅即可。
-
-如果以后想增加一个新的上游，主要需要修改合并脚本中的 `SOURCES` 配置，然后运行一次 GitHub Actions。
-
----
-
-## 自定义规则
-
-后续计划增加独立的 `custom/` 层，用来存放本项目自己的规则。
-
-这样可以把：
-
-```text
-上游社区规则
-```
-
-与：
-
-```text
-本项目自己的修复 / 自定义规则
-```
-
-分开管理。
-
-例如以后针对某个 APP 新版本进行了适配，不需要修改上游规则，也不会因为上游更新而丢失。
+👉 [贡献指南](./CONTRIBUTING.md)  
+👉 [自定义规则说明](./docs/custom-rules.md)
 
 ---
 
-## GKD 官方项目
+## ❓ 常见问题
 
-如果你还不了解 GKD，建议先看官方项目：
+### 添加订阅后提示“解析订阅失败”
 
-- **GKD 主项目**：https://github.com/gkd-kit/gkd
-- **GKD 官方网站**：https://gkd.li/
-- **GKD 使用教程**：https://gkd.li/guide/
-- **GKD API / 规则文档**：https://gkd.li/api/
-- **GKD 订阅模板**：https://github.com/gkd-kit/subscription-template
+先检查：
 
-官方订阅模板说明了 GKD 订阅的基本结构、构建方式以及 GitHub Actions 自动构建流程。citeturn0search0
+1. 网络是否能访问 GitHub Pages；
+2. 最近一次 Actions 是否构建成功；
+3. 订阅地址是否完整。
 
----
+👉 [详细排查方法](./docs/troubleshooting.md)
 
-## 常见问题
+### 为什么一个订阅里有这么多规则？
 
-### 添加后显示“解析订阅失败”怎么办？
+因为这是多源聚合订阅。目标就是减少你在 GKD 里维护多个订阅的麻烦。
 
-先检查订阅地址是否完整，并尝试切换 GitHub Raw 与 jsDelivr 地址。
+### 为什么旧订阅还在？
 
-也可以打开本仓库的 **Actions** 页面查看最近一次构建是否成功。
+它们作为低优先级历史规则库，主要用于补充活跃来源没有覆盖的内容。
 
----
+### 这是 GKD 官方项目吗？
 
-### 为什么我看到某个规则在这里和其他订阅不一样？
+**不是。**
 
-因为本项目会对不同来源进行合并和去重，并按照来源优先级处理冲突。
-
-它不是简单复制某一个上游订阅。
+GKD-Merged 是个人维护的第三方社区项目。GKD 本身请以官方项目和官方文档为准。
 
 ---
 
-### 为什么还保留已经停止维护的订阅？
+## 🔗 GKD 官方入口
 
-因为停止维护不等于所有历史规则都没有价值。
+如果你刚接触 GKD，建议先看看官方资料：
 
-对于活跃订阅没有覆盖的 APP，历史规则有时仍然可以工作，因此这里把它们作为低优先级补充来源。
-
----
-
-### 这个项目是 GKD 官方项目吗？
-
-不是。
-
-**GKD-Merged 是个人维护的第三方订阅聚合项目。**
-
-GKD 本身请以官方项目和官方文档为准。
+- [GKD 官方 GitHub](https://github.com/gkd-kit/gkd)
+- [GKD 官方网站](https://gkd.li/)
+- [GKD 使用教程](https://gkd.li/guide/)
+- [GKD API / 规则文档](https://gkd.li/api/)
+- [GKD 官方订阅模板](https://github.com/gkd-kit/subscription-template)
 
 ---
 
-## 注意事项
+## ⚠️ 使用提醒
 
-- GKD 规则具有自动点击能力，请只启用自己理解并信任的规则。
-- 不建议无脑开启大量规则。规则越多，可能增加匹配开销，并可能产生误触或规则冲突。
-- 上游规则的许可证、版权声明和维护政策仍然由各自上游项目决定；本项目只是进行订阅聚合。
-- 如果某个上游明确要求不要转载、镜像或再分发，应尊重其项目声明，并及时调整本项目的来源策略。
+GKD 规则具有自动点击能力，请只启用你理解并信任的规则。
 
----
+不建议无脑开启全部规则。规则数量越多，匹配开销和误触风险也可能增加。
 
-## 反馈与贡献
-
-发现问题可以：
-
-1. 先确认最近一次 GitHub Actions 构建是否成功；
-2. 确认问题是否来自某个上游规则；
-3. 再提交 Issue，并尽量提供 APP 名称、版本、规则组名称以及必要的快照信息。
-
-如果你想贡献代码或规则，欢迎提交 Pull Request。
+上游规则的版权、许可证和归属仍以各自项目为准。本项目只负责聚合与构建，**不主张拥有上游规则的原始版权。**
 
 ---
 
-## 致谢
+## ❤️ 致谢
 
-感谢 GKD 项目及各个公开订阅项目的维护者和贡献者。
+感谢：
 
-本项目建立在这些社区工作之上，**GKD-Merged 并不拥有上游规则的原始版权。**
+- [GKD](https://github.com/gkd-kit/gkd) 项目及其贡献者
+- Lin-arm
+- ganlinte
+- AIsouler
+- Adpro-Team
+- 所有提供规则、反馈问题和帮助测试的社区用户
+
+没有这些社区项目，就不会有这个聚合器。
 
 ---
 
 <div align="center">
 
-**如果这个项目对你有帮助，欢迎点一个 Star。**
+### 如果这个项目帮到了你，欢迎给仓库点一个 ⭐ Star
 
-Made with ❤️ for GKD users
+**让多个订阅，变成一个更省心的选择。**
 
 </div>

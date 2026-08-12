@@ -1,6 +1,8 @@
 import json
+import hashlib
 import time
 import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 
 SOURCES = [
@@ -26,7 +28,7 @@ STATUS = []
 def load_source(src):
     cache = CACHE / f"{src['id']}.json5"
     try:
-        req = urllib.request.Request(src['url'], headers={'User-Agent': 'GKD-Merged/1.3'})
+        req = urllib.request.Request(src['url'], headers={'User-Agent': 'GKD-Merged/2.0'})
         with urllib.request.urlopen(req, timeout=60) as r:
             data = r.read()
         cache.write_bytes(data)
@@ -56,7 +58,6 @@ def normalize_list(v):
 
 
 def ensure_rules_list(group):
-    """GKD allows rules to be either one object or an array; merge internally as an array."""
     rules = group.get('rules')
     if rules is None:
         group['rules'] = []
@@ -74,24 +75,23 @@ def fingerprint(obj):
     return json.dumps(x, ensure_ascii=False, sort_keys=True, separators=(',', ':'))
 
 
-def append_rules(dst_rules, src_rules):
-    if isinstance(dst_rules, dict):
-        dst_rules = [dst_rules]
-    if not isinstance(dst_rules, list):
-        dst_rules = []
+def remap_rules(dst_rules, src_rules):
+    """Merge rules while preserving the complete old->new key map before rewriting preKeys."""
+    dst_rules = dst_rules if isinstance(dst_rules, list) else []
     used = {r.get('key') for r in dst_rules if isinstance(r, dict) and isinstance(r.get('key'), int)}
-    existing = {fingerprint(r) for r in dst_rules if isinstance(r, dict)}
+    existing_by_fp = {fingerprint(r): r.get('key') for r in dst_rules if isinstance(r, dict)}
     next_key = max(used, default=-1) + 1
     mapping = {}
     pending = []
+
     for r in src_rules:
         if not isinstance(r, dict):
             continue
-        fp = fingerprint(r)
         old = r.get('key')
-        if fp in existing:
+        fp = fingerprint(r)
+        if fp in existing_by_fp:
             if isinstance(old, int):
-                mapping[old] = next((x.get('key') for x in dst_rules if isinstance(x, dict) and fingerprint(x) == fp), old)
+                mapping[old] = existing_by_fp[fp]
             continue
         nr = dict(r)
         if isinstance(old, int):
@@ -102,7 +102,8 @@ def append_rules(dst_rules, src_rules):
             used.add(next_key)
             next_key += 1
         pending.append(nr)
-        existing.add(fp)
+        existing_by_fp[fp] = nr.get('key')
+
     for nr in pending:
         if isinstance(nr.get('preKeys'), list):
             nr['preKeys'] = [mapping.get(k, k) for k in nr['preKeys']]
@@ -123,7 +124,7 @@ def merge_groups(dst_groups, src_groups):
         if name in by_name:
             dg = by_name[name]
             ensure_rules_list(dg)
-            append_rules(dg['rules'], normalize_list(sg.get('rules')))
+            remap_rules(dg['rules'], normalize_list(sg.get('rules')))
             for k, v in sg.items():
                 if k not in dg and k != 'rules':
                     dg[k] = v
@@ -152,7 +153,7 @@ def merge_global_groups(dst, src):
         if name in by_name:
             dg = by_name[name]
             ensure_rules_list(dg)
-            append_rules(dg['rules'], normalize_list(sg.get('rules')))
+            remap_rules(dg['rules'], normalize_list(sg.get('rules')))
             for k, v in sg.items():
                 if k not in dg and k != 'rules':
                     dg[k] = v
@@ -169,6 +170,35 @@ def merge_global_groups(dst, src):
         if name is not None:
             by_name[name] = ng
 
+
+def canonical_hash(obj):
+    raw = json.dumps(obj, ensure_ascii=False, sort_keys=True, separators=(',', ':'))
+    return hashlib.sha256(raw.encode('utf-8')).hexdigest()
+
+
+def next_version(content_hash):
+    meta_path = OUT / 'version-state.json'
+    today = datetime.now(timezone.utc).strftime('%Y%m%d')
+    if meta_path.exists():
+        try:
+            meta = json.loads(meta_path.read_text(encoding='utf-8'))
+        except Exception:
+            meta = {}
+    else:
+        meta = {}
+
+    if meta.get('contentHash') == content_hash and meta.get('version'):
+        return int(meta['version']), meta
+
+    old_version = int(meta.get('version', 0) or 0)
+    old_day = str(old_version)[:8] if old_version >= 100000000 else ''
+    old_seq = int(str(old_version)[8:]) if old_day and str(old_version)[8:] else 0
+    seq = old_seq + 1 if old_day == today else 1
+    version = int(f'{today}{seq:02d}')
+    new_meta = {'version': version, 'date': today, 'sequence': seq, 'contentHash': content_hash}
+    return version, new_meta
+
+
 loaded = []
 for s in SOURCES:
     d = load_source(s)
@@ -178,12 +208,12 @@ for s in SOURCES:
 if not loaded:
     (OUT / 'merge-status.json').write_text(json.dumps({'ok': False, 'time': int(time.time()), 'sources': STATUS}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print('No upstream subscription could be loaded; wrote gkd/merge-status.json')
-    raise SystemExit(0)
+    raise SystemExit(1)
 
 result = {
     'id': 2186748980,
     'name': 'GKD-Merged',
-    'version': int(time.time()),
+    'version': 0,
     'author': '吹落日晚风',
     'description': '自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。',
     'checkUpdateUrl': './gkd.version.json5',
@@ -225,7 +255,14 @@ for a in apps:
 apps.sort(key=lambda a: a.get('id', ''))
 result['apps'] = apps
 
+# Hash only the actual subscription content; metadata/version is deliberately excluded.
+content_hash = canonical_hash({k: v for k, v in result.items() if k not in {'version', 'checkUpdateUrl'}})
+version, meta = next_version(content_hash)
+result['version'] = version
+
 (OUT / 'gkd.json5').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-(OUT / 'gkd.version.json5').write_text(json.dumps({'version': result['version']}) + '\n', encoding='utf-8')
-(OUT / 'merge-status.json').write_text(json.dumps({'ok': True, 'time': int(time.time()), 'sources': STATUS, 'apps': len(apps), 'globalGroups': len(result['globalGroups'])}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-print(f"Generated {OUT/'gkd.json5'}: {len(apps)} apps, {len(result['globalGroups'])} global groups")
+(OUT / 'gkd.version.json5').write_text(json.dumps({'version': version}) + '\n', encoding='utf-8')
+meta['sourceVersions'] = {s['id']: d.get('version') for s, d in loaded}
+(OUT / 'version-state.json').write_text(json.dumps(meta, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+(OUT / 'merge-status.json').write_text(json.dumps({'ok': True, 'time': int(time.time()), 'version': version, 'contentHash': content_hash, 'sources': STATUS, 'apps': len(apps), 'globalGroups': len(result['globalGroups'])}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+print(f"Generated {OUT/'gkd.json5'}: version {version}, {len(apps)} apps, {len(result['globalGroups'])} global groups")

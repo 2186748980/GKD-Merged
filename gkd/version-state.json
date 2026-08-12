@@ -1,0 +1,12 @@
+{
+  "version": 2026081201,
+  "date": "20260812",
+  "sequence": 1,
+  "contentHash": "76ae34063714217d63b34bddd4f0faa8bcd8cedb2c41947502538e4ddfed975a",
+  "sourceVersions": {
+    "linarm": 563,
+    "ganlinte": 71,
+    "aisouler": 205,
+    "adpro": 90
+  }
+}

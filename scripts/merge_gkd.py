@@ -182,9 +182,9 @@ if not loaded:
 
 result = {
     'id': 2186748980,
-    'name': 'GKD-Merged 综合订阅',
+    'name': 'GKD-Merged',
     'version': int(time.time()),
-    'author': '2186748980 + upstream contributors',
+    'author': '吹落日晚风',
     'description': '自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。',
     'checkUpdateUrl': './gkd.version.json5',
     'supportUri': 'https://github.com/2186748980/GKD-Merged',

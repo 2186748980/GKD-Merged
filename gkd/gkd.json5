@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026082201,
+  "version": 2026082301,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -30258,6 +30258,12 @@
               "snapshotUrls": "https://i.gkd.li/i/28907537"
             },
             {
+              "key": 2,
+              "activityIds": ".pages.main.MainFragmentActivity",
+              "matches": "@ImageView[clickable=true] + ViewGroup[vid=\"root_view\"] > [text=\"立即领取\"]",
+              "snapshotUrls": "https://i.gkd.li/i/31327606"
+            },
+            {
               "fastQuery": true,
               "activityIds": [
                 "com.dragon.read.pages.main.MainFragmentActivity",
@@ -30401,7 +30407,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "@[(name$=\"ImageView\" || getChild(0).name$=\"ImageView\") && desc!=\"back_unfold\"][clickable=true][visibleToUser=true][width<102 && height<102] <n [childCount>1] >(2,3) [text*=\"查看\" || text$=\"优惠\" || text^=\"立即\" || text^=\"马上\" || text*=\"参与\" || text*=\"免费\" || (text*=\"领\" && text*=\"券\") || (text*=\"返\" && text*=\"金币\")][text.length<10]",
+              "matches": "@[(name$=\"ImageView\" || getChild(0).name$=\"ImageView\") && desc!=\"back_unfold\"][clickable=true][visibleToUser=true][width<102 && height<102] <n [childCount>1] >(2,3) [text*=\"查看\" || text$=\"优惠\" || text^=\"立即\" || text^=\"马上\" || text*=\"参与\" || text*=\"参加\" || text*=\"免费\" || (text*=\"领\" && text*=\"券\") || (text*=\"返\" && text*=\"金币\")][text.length<10]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/12908734",
                 "https://i.gkd.li/i/18138903",
@@ -30412,7 +30418,8 @@
                 "https://i.gkd.li/i/13520314",
                 "https://i.gkd.li/i/24706223",
                 "https://i.gkd.li/i/14548657",
-                "https://i.gkd.li/i/14810480"
+                "https://i.gkd.li/i/14810480",
+                "https://i.gkd.li/i/31328323"
               ],
               "excludeSnapshotUrls": [
                 "https://i.gkd.li/i/28821485",
@@ -46728,12 +46735,41 @@
           "rules": [
             {
               "key": 0,
+              "name": "评论区",
+              "matches": "[text=\"查看翻译\"][clickable=true]",
+              "snapshotUrls": "https://i.gkd.li/i/14093211",
+              "exampleUrls": "https://m.gkd.li/57941037/e92702d8-8349-4718-aa4d-664bf3d2f6e5"
+            },
+            {
+              "key": 1,
+              "name": "评论区2",
+              "matches": "@[clickable=true][text=\"查看翻译\"] <<n [vid=\"sticky_header_list\"][getChild(0).id=null]",
+              "snapshotUrls": "https://i.gkd.li/i/31329753"
+            },
+            {
+              "key": 2,
+              "name": "首页",
+              "position": {
+                "left": "width * 0.3",
+                "top": "height * 0.45"
+              },
+              "excludeMatches": "[text=\"查看翻译\"][clickable=true]",
+              "matches": "[text$=\"查看翻译\"][clickable=false][desc!=null][visibleToUser=true]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/14784095",
+                "https://i.gkd.li/i/31329663"
+              ],
+              "excludeSnapshotUrls": "https://i.gkd.li/i/16776676",
+              "exampleUrls": "https://m.gkd.li/57941037/7d6da15b-1c3f-4160-a2d3-d8223bc55132"
+            },
+            {
+              "key": 3,
               "matches": "[text=\"查看翻译\"][clickable=true]",
               "exampleUrls": "https://m.gkd.li/57941037/e92702d8-8349-4718-aa4d-664bf3d2f6e5",
               "snapshotUrls": "https://i.gkd.li/i/14093211"
             },
             {
-              "key": 1,
+              "key": 4,
               "excludeMatches": "[text=\"查看翻译\"][clickable=true]",
               "matches": "[text$=\"查看翻译\"][clickable=false][desc!=null][visibleToUser=true]",
               "exampleUrls": "https://m.gkd.li/57941037/7d6da15b-1c3f-4160-a2d3-d8223bc55132",
@@ -46743,13 +46779,13 @@
               ]
             },
             {
-              "key": 2,
+              "key": 5,
               "matches": "[text=\"查看翻译\"]",
               "exampleUrls": "https://m.gkd.li/57941037/e92702d8-8349-4718-aa4d-664bf3d2f6e5",
               "snapshotUrls": "https://i.gkd.li/i/14093211"
             },
             {
-              "key": 3,
+              "key": 6,
               "excludeMatches": "[text=\"查看翻译\"]",
               "matches": "[text$=\"查看翻译\"][desc!=null]",
               "exampleUrls": "https://m.gkd.li/57941037/7d6da15b-1c3f-4160-a2d3-d8223bc55132",
@@ -49997,6 +50033,14 @@
             },
             {
               "key": 22,
+              "preKeys": [
+                2
+              ],
+              "matches": "[desc*=\"会员\"] -n @ImageView[clickable=true][width<157] <3 View < View < View < View < FrameLayout < FrameLayout < [id=\"android:id/content\"]",
+              "snapshotUrls": "https://i.gkd.li/i/31331586"
+            },
+            {
+              "key": 23,
               "matches": "@ImageView[clickable=true] <2 View < View < View < View < View < FrameLayout < FrameLayout < [id=\"android:id/content\"]",
               "snapshotUrls": "https://i.gkd.li/i/29038568"
             }
@@ -107935,6 +107979,14 @@
             },
             {
               "key": 1,
+              "matches": "TextView[width<114 && height<67] - @View[clickable=true][visibleToUser=true][width<135] <3 FrameLayout[childCount=4][getChild(1).getChild(0).childCount=3] <2 FrameLayout[childCount=2][getChild(0).width=0] < [vid=\"show_layout\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/30968922",
+                "https://i.gkd.li/i/31332983"
+              ]
+            },
+            {
+              "key": 2,
               "matches": "@View[text=null][clickable=true][childCount=0][visibleToUser=true][width<200 && height<200] +(1,2) TextView[index=parent.childCount.minus(1)][childCount=0] <n FrameLayout[childCount>2][text=null][desc=null] >(n+6) [text*=\"第三方应用\" || text*=\"扭动手机\" || text*=\"点击或上滑\" || text*=\"省钱好物\" || text*=\"扭一扭\"][visibleToUser=true]",
               "snapshotUrls": "https://i.gkd.li/i/30968922"
             },

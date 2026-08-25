@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026082301,
+  "version": 2026082501,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -48468,40 +48468,20 @@
         },
         {
           "key": 2,
-          "name": "全屏广告-首页弹窗广告",
-          "matchTime": 10000,
-          "actionMaximum": 1,
-          "resetMatch": "app",
+          "name": "全屏广告-弹窗广告",
+          "desc": "点击x掉",
           "rules": [
             {
+              "fastQuery": true,
               "activityIds": ".lgd.biz.MainActivity",
-              "matches": "[vid=\"iv_body\"] + [vid=\"iv_close\"]",
-              "snapshotUrls": "https://i.gkd.li/i/12706045"
-            },
-            {
-              "activityIds": "com.jin10.lgd.biz.MainActivity",
-              "matches": "[id=\"com.jin10:id/iv_body\"] + [id=\"com.jin10:id/iv_close\"]",
-              "snapshotUrls": "https://i.gkd.li/i/12706045"
+              "matches": "[id$=\"iv_body\" || id$=\"iv_pic\" || vid=\"body_ad\"] <n [visibleToUser=true] > [vid=\"iv_close\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/12706045",
+                "https://i.gkd.li/i/12706047",
+                "https://i.gkd.li/i/31375320"
+              ]
             }
-          ],
-          "enable": false
-        },
-        {
-          "key": 3,
-          "name": "全屏广告-快讯页面弹窗广告",
-          "rules": [
-            {
-              "activityIds": ".lgd.biz.MainActivity",
-              "matches": "@[vid=\"iv_close\"] + [vid=\"iv_pic\"]",
-              "snapshotUrls": "https://i.gkd.li/i/12706047"
-            },
-            {
-              "activityIds": "com.jin10.lgd.biz.MainActivity",
-              "matches": "@[id=\"com.jin10:id/iv_close\"] + [id=\"com.jin10:id/iv_pic\"]",
-              "snapshotUrls": "https://i.gkd.li/i/12706047"
-            }
-          ],
-          "enable": false
+          ]
         },
         {
           "key": 10,
@@ -48558,6 +48538,33 @@
         },
         {
           "key": 14,
+          "name": "全屏广告-首页弹窗广告",
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "rules": [
+            {
+              "activityIds": "com.jin10.lgd.biz.MainActivity",
+              "matches": "[id=\"com.jin10:id/iv_body\"] + [id=\"com.jin10:id/iv_close\"]",
+              "snapshotUrls": "https://i.gkd.li/i/12706045"
+            }
+          ],
+          "enable": false
+        },
+        {
+          "key": 15,
+          "name": "全屏广告-快讯页面弹窗广告",
+          "rules": [
+            {
+              "activityIds": "com.jin10.lgd.biz.MainActivity",
+              "matches": "@[id=\"com.jin10:id/iv_close\"] + [id=\"com.jin10:id/iv_pic\"]",
+              "snapshotUrls": "https://i.gkd.li/i/12706047"
+            }
+          ],
+          "enable": false
+        },
+        {
+          "key": 16,
           "name": "未分类-首页广告弹窗",
           "activityIds": [
             "com.jin10.lgd.biz.MainActivity"
@@ -48569,7 +48576,7 @@
           "enable": false
         },
         {
-          "key": 15,
+          "key": 17,
           "name": "未分类-快讯页面-广告弹窗",
           "activityIds": [
             "com.jin10.lgd.biz.MainActivity"
@@ -48581,7 +48588,7 @@
           "enable": false
         },
         {
-          "key": 16,
+          "key": 18,
           "name": "未分类-会员页面-顶部广告",
           "activityIds": [
             "com.jin10.lgd.biz.MainActivity"
@@ -87758,6 +87765,35 @@
             }
           ],
           "order": -10
+        },
+        {
+          "key": 1,
+          "name": "分段广告-文件界面-卡片广告",
+          "desc": "①点击[广告] ②点击[不感兴趣]",
+          "fastQuery": true,
+          "actionCd": 5000,
+          "activityIds": ".MainActivity",
+          "rules": [
+            {
+              "key": 1,
+              "name": "①点击[广告]",
+              "matches": "ImageView[visibleToUser=true] < @[clickable=true] < [childCount=1] <3 [childCount=5] >6 [vid=\"video_wonder_video_view\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/31367445",
+                "https://i.gkd.li/i/31367447"
+              ],
+              "exampleUrls": "https://e.gkd.li/a8d89cb8-fa33-4400-a4e1-e8cceb148ac5"
+            },
+            {
+              "key": 2,
+              "preKeys": [
+                1
+              ],
+              "name": "②点击[不感兴趣]",
+              "matches": "[desc=\"不感兴趣\"] < @[clickable=true] <n ViewGroup < ViewGroup < ViewGroup < ViewGroup < FrameLayout < FrameLayout < [id=\"android:id/content\"]",
+              "snapshotUrls": "https://i.gkd.li/i/31371556"
+            }
+          ]
         },
         {
           "key": 10,

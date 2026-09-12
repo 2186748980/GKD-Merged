@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026091101,
+  "version": 2026091201,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -30458,7 +30458,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "@[(name$=\"ImageView\" || getChild(0).name$=\"ImageView\") && desc!=\"back_unfold\"][clickable=true][visibleToUser=true][width<102 && height<102] <n [childCount>1] >(2,3) [text*=\"查看\" || text$=\"优惠\" || text^=\"立即\" || text^=\"马上\" || text*=\"参与\" || text*=\"参加\" || text*=\"免费\" || (text*=\"领\" && text*=\"券\") || (text*=\"返\" && text*=\"金币\")][text.length<10]",
+              "matches": "@[(name$=\"ImageView\" || getChild(0).name$=\"ImageView\") && desc!=\"back_unfold\"][clickable=true][visibleToUser=true][width<102 && height<102] <n [childCount>1] >(2,3) [text*=\"查看\" || text$=\"优惠\" || text^=\"立即\" || text^=\"马上\" || text*=\"参与\" || text*=\"参加\" || text*=\"免费\" || (text*=\"领\" && text*=\"券\") || (text*=\"返\" && text*=\"金币\")][text!=\"查看下载\"][text.length<10]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/12908734",
                 "https://i.gkd.li/i/18138903",
@@ -30474,7 +30474,8 @@
               ],
               "excludeSnapshotUrls": [
                 "https://i.gkd.li/i/28821485",
-                "https://i.gkd.li/i/31111672"
+                "https://i.gkd.li/i/31111672",
+                "https://i.gkd.li/i/32085481"
               ],
               "exampleUrls": "https://e.gkd.li/3de0d5d9-0c02-4fe7-b5e8-b9fdb6688f8e"
             },

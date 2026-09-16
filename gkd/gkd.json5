@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026091501,
+  "version": 2026091601,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -33272,13 +33272,20 @@
             },
             {
               "key": 2,
+              "name": "局部横幅",
+              "activityIds": "com.alipay.mobile.nebulax.xriver.activity.XRiverActivity",
+              "matches": "@[clickable=true][id$=\"iv_close\"] -2 [text*=\"权限\"][text*=\"定位\" || text*=\"位置\"][visibleToUser=true]",
+              "snapshotUrls": "https://i.gkd.li/i/32203447"
+            },
+            {
+              "key": 3,
               "activityIds": ".AlipayLogin",
               "matches": "@[desc=\"取消\"] + [text*=\"位置权限\"][visibleToUser=true]",
               "exampleUrls": "https://e.gkd.li/caa96cc4-9943-40d8-8cb6-8c89aa60b20f",
               "snapshotUrls": "https://i.gkd.li/i/18549931"
             },
             {
-              "key": 3,
+              "key": 4,
               "activityIds": ".AlipayLogin",
               "matches": "@[desc=\"关闭\"] - LinearLayout >2 [text^=\"定位到\" || text^=\"开启定位权限\"][visibleToUser=true]",
               "exampleUrls": "https://e.gkd.li/c153cd53-16a1-4d77-bf99-9cac8821ccf8",
@@ -100223,11 +100230,12 @@
             },
             {
               "key": 1,
-              "matches": "Button[text=\"立即安装\"] + Button[text=\"稍后再说\"]",
+              "matches": "Button[text=\"立即安装\" || text=\"Install now\"] + Button[text=\"稍后再说\" || text=\"Later\"]",
               "exampleUrls": "https://e.gkd.li/7064a569-fcdd-44e2-b4d1-c55e093f4a02",
               "snapshotUrls": [
                 "https://i.gkd.li/i/15283162",
-                "https://i.gkd.li/i/30352967"
+                "https://i.gkd.li/i/30352967",
+                "https://i.gkd.li/i/32207987"
               ]
             },
             {
@@ -117530,9 +117538,10 @@
             },
             {
               "key": 1,
+              "forcedTime": 120000,
               "matches": "@[vid=\"close\" || vid=\"iv_close\"] - [vid=\"up_avatar\" || vid=\"gift_icon\" || vid=\"follow_container\"][visibleToUser=true]",
               "snapshotUrls": [
-                "https://i.gkd.li/i/14782965",
+                "https://i.gkd.li/i/32246446",
                 "https://i.gkd.li/i/18046573",
                 "https://i.gkd.li/i/22990105"
               ]

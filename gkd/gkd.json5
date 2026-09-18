@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026091701,
+  "version": 2026091801,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -27302,6 +27302,20 @@
               "matches": "@ImageView[vid=null][text=null][width<88 && height<88] < FrameLayout[childCount=1] + FrameLayout >n  [text$=\"了解更多内容\" || text=\"立即打开\"]",
               "snapshotUrls": "https://i.gkd.li/i/32194584",
               "exampleUrls": "https://e.gkd.li/cc89f931-daf3-41be-bae4-54e471c601ee"
+            }
+          ]
+        },
+        {
+          "key": 3,
+          "name": "全屏广告-插屏广告",
+          "desc": "视频暂停时出现, 点击[跳过]",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": "com.windmill.sdk.widget.InterstitialView",
+              "matches": "[vid=\"tobid_interstitial_skip_ll\"]",
+              "snapshotUrls": "https://i.gkd.li/i/32318689",
+              "exampleUrls": "https://e.gkd.li/67e9c8a2-f9ed-477b-ae46-39f493035a20"
             }
           ]
         }
@@ -92364,8 +92378,11 @@
             {
               "key": 2,
               "activityIds": "com.x.android.main.MainActivity",
-              "matches": "@ImageView[desc=\"发帖选项\"] - [visibleToUser=true][text=\"Ad\"]",
-              "snapshotUrls": "https://i.gkd.li/i/29085434"
+              "matches": "[text=\"Ad\" || getChild(0).text=\"已推广\"] +(1,4) ImageView[visibleToUser=true][desc=\"发帖选项\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/29085434",
+                "https://i.gkd.li/i/32325884"
+              ]
             },
             {
               "key": 10,

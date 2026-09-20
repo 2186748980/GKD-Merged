@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026091801,
+  "version": 2026092001,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -89,7 +89,7 @@
       "rules": [
         {
           "key": 0,
-          "excludeMatches": "[text=\"Submit\" || text=\"书签\" || text=\"NEXT\" || text=\"覆盖\" || text*=\"阅读并同意\" || ((text*=\"搜索\" || text=\"历史记录\" || text$=\"在搜\") && text.length>3 && text.length<7) || ((text$=\"设置\" || text*=\"跳过片\" || (text^=\"选择\" && (text*=\"偏好\" || text*=\"兴趣\" || text*=\"喜好\" || text*=\"行业\"))) && text.length<10)][visibleToUser=true]",
+          "excludeMatches": "([text=\"Submit\" || text=\"书签\" || text=\"NEXT\" || text=\"覆盖\" || text*=\"阅读并同意\" || text=\"跳过空白\"][visibleToUser=true]) || ([text*=\"搜索\" || text=\"历史记录\" || text$=\"在搜\"][text.length>3 && text.length<7][visibleToUser=true]) || ([text$=\"设置\" || text*=\"跳过片\"][text.length<10][visibleToUser=true]) || ([text^=\"选择\"][text*=\"偏好\" || text*=\"兴趣\" || text*=\"喜好\" || text*=\"行业\"][text.length<10][visibleToUser=true])",
           "anyMatches": [
             "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
             "@[name$=\"View\" || name$=\"LinearLayout\"][clickable=true][childCount<2][width<300 && height<200] - [text=\"互动广告\"][visibleToUser=true]",
@@ -111,6 +111,7 @@
             "https://i.gkd.li/i/23225609",
             "https://i.gkd.li/i/27801562",
             "https://i.gkd.li/i/22634992",
+            "https://i.gkd.li/i/32416687",
             "https://i.gkd.li/i/20946730",
             "https://i.gkd.li/i/23741801",
             "https://i.gkd.li/i/23741779",
@@ -7732,23 +7733,41 @@
             },
             {
               "key": 3,
+              "matches": "@[clickable=true][id*=\"close\"] +n [visibleToUser=true] > [text=\"广告\"]",
+              "snapshotUrls": "https://i.gkd.li/i/32418085"
+            },
+            {
+              "key": 4,
               "matches": "@View[id=\"\"][text=null][clickable=true][width<107][height<107] - ImageView[width>540] < [childCount=2] < View < View < View < FrameLayout < [id=\"android:id/content\"]",
               "snapshotUrls": "https://i.gkd.li/i/27126440"
             },
             {
-              "key": 4,
-              "activityIds": "com.byazt.x.Stub_Standard_Portrait_Activity",
-              "matches": "@Image[width<72] < View < View - View > [visibleToUser=true][text=\"反馈\"]",
-              "snapshotUrls": "https://i.gkd.li/i/30507034"
+              "key": 10,
+              "forcedTime": 10000,
+              "activityIds": "com.byazt.az.Stub_Standard_Portrait_Activity",
+              "matches": "@ImageView[width<71] < [visibleToUser=true] < [childCount=1] < [childCount=1] <2 [childCount=2] >6 [text=\"点击到落地页或三方APP\"]",
+              "snapshotUrls": "https://i.gkd.li/i/32418708"
             },
             {
-              "key": 5,
+              "key": 11,
+              "activityIds": [
+                "com.byazt.x.Stub_Standard_Portrait_Activity",
+                "com.byazt.az.Stub_Standard_Portrait_Activity"
+              ],
+              "matches": "@Image[width<72] < View < View - View > [visibleToUser=true][text=\"反馈\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/30507034",
+                "https://i.gkd.li/i/32418089"
+              ]
+            },
+            {
+              "key": 12,
               "activityIds": "cj.mobile.fw.activity.PtgInteractionPortraitActivity",
               "matches": "[vid=\"closeAdvertLayout\"]",
               "snapshotUrls": "https://i.gkd.li/i/32036987"
             },
             {
-              "key": 6,
+              "key": 13,
               "activityIds": "com.beizi.ad.v2.activity.BeiZiNewInterstitialActivity",
               "matches": "[vid=\"beizi_interstitial_ad_close_container_rl\"]",
               "snapshotUrls": "https://i.gkd.li/i/32038130"
@@ -7794,6 +7813,15 @@
               "snapshotUrls": [
                 "https://i.gkd.li/i/32036977",
                 "https://i.gkd.li/i/32037625"
+              ]
+            },
+            {
+              "key": 3,
+              "matches": "ImageView[width>parent.width.minus(120)] - @ImageView[clickable=true][width<91 && height<91] -(1,2) TextView[text.length>9] <(1,2,3) FrameLayout[childCount>4][visibleToUser=true]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/32418084",
+                "https://i.gkd.li/i/32418087",
+                "https://i.gkd.li/i/32418478"
               ]
             }
           ]
@@ -23857,9 +23885,15 @@
               "key": 1,
               "name": "卡片信息流式",
               "actionCd": 120,
-              "activityIds": ".SmartMainProxyActivity",
+              "activityIds": [
+                ".SmartMainProxyActivity",
+                ".SmartMainActivity"
+              ],
               "matches": "[vid=\"iv_close\"][visibleToUser=true]",
-              "snapshotUrls": "https://i.gkd.li/i/30197268"
+              "snapshotUrls": [
+                "https://i.gkd.li/i/30197268",
+                "https://i.gkd.li/i/32419081"
+              ]
             },
             {
               "key": 2,

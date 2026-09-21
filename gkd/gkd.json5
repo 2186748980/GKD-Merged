@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026092001,
+  "version": 2026092101,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -30514,17 +30514,6 @@
               "snapshotUrls": "https://i.gkd.li/i/23621776"
             },
             {
-              "key": 8,
-              "name": "坐标点击[关闭]",
-              "activityIds": ".reader.ui.ReaderActivity",
-              "position": {
-                "left": "width * 0.9141",
-                "top": "width * 0.0687"
-              },
-              "matches": "@ViewGroup[visibleToUser=true] < [childCount=2] - [childCount=1] >6 [vid=\"ttlive_player_render_view\"]",
-              "snapshotUrls": "https://i.gkd.li/i/27706770"
-            },
-            {
               "fastQuery": true,
               "activityIds": "com.dragon.read.reader.ui.ReaderActivity",
               "matches": "TextView[text=\"广告\"] +2 Button[id=\"com.dragon.read:id/close\"]",
@@ -30605,11 +30594,15 @@
               "key": 3,
               "name": "坐标点击[反馈]",
               "position": {
-                "top": "width * 0.0617",
-                "left": "width * 0.7885"
+                "left": "width * 0.77",
+                "top": "height * 0.64"
               },
-              "matches": "@ViewGroup[visibleToUser=true][height<150][width=prev.width] < [childCount=2] <3 FrameLayout[childCount=3] >7 [vid=\"ttlive_player_render_view\"]",
-              "snapshotUrls": "https://i.gkd.li/i/28834344",
+              "matches": "@ViewGroup[visibleToUser=true][height<150][width=prev.width] < [childCount=2] <(2,3) FrameLayout[childCount<4] >7 [vid=\"ttlive_player_render_view\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/27706770",
+                "https://i.gkd.li/i/28834344",
+                "https://i.gkd.li/i/32435385"
+              ],
               "exampleUrls": "https://e.gkd.li/aef38288-d84b-4e13-8161-ebebc27b822b"
             },
             {
@@ -30646,7 +30639,8 @@
                 "https://i.gkd.li/i/14913207",
                 "https://i.gkd.li/i/24128392",
                 "https://i.gkd.li/i/24189605",
-                "https://i.gkd.li/i/14540281"
+                "https://i.gkd.li/i/14540281",
+                "https://i.gkd.li/i/32435735"
               ],
               "exampleUrls": "https://e.gkd.li/e04bcb90-ad61-43d9-97e9-b4f6e3873320"
             },
@@ -53574,14 +53568,23 @@
           "resetMatch": "app",
           "rules": [
             {
-              "key": 0,
-              "matches": "[vid=\"back_icon\"][desc=\"对话列表\"][clickable=true]",
-              "snapshotUrls": "https://i.gkd.li/i/26175174"
+              "key": 1,
+              "name": "①直接[创建新对话]",
+              "matches": "[vid=\"larus_chat_top_left_create_new_cvs\"][desc=\"创建新对话\"]",
+              "snapshotUrls": "https://i.gkd.li/i/32434802"
+            },
+            {
+              "key": 2,
+              "name": "①展开[对话列表]",
+              "matches": "[!(desc=\"创建新对话\")] - [vid=\"back_icon\"][desc=\"对话列表\"][clickable=true]",
+              "snapshotUrls": "https://i.gkd.li/i/26175174",
+              "excludeSnapshotUrls": "https://i.gkd.li/i/32434802"
             },
             {
               "preKeys": [
-                0
+                2
               ],
+              "name": "②点击[创建新对话]",
               "matches": "[vid=\"side_bar_create_conversation\"][desc=\"创建新对话\"][clickable=true]",
               "snapshotUrls": "https://i.gkd.li/i/26175178"
             }
@@ -67111,11 +67114,16 @@
           "key": 1,
           "name": "功能类-自动[上滑]继续看短剧",
           "desc": "①读秒结束后[上滑] ②4.5秒[上滑]1次",
+          "fastQuery": true,
+          "activityIds": [
+            "com.dragon.read.component.shortvideo.impl.ShortSeriesActivity",
+            "com.dragon.read.component.shortvideo.impl.fullscreen.ShortSeriesLandActivity",
+            "com.dragon.read.pages.main.MainFragmentActivity"
+          ],
           "rules": [
             {
               "key": 1,
               "name": "①读秒结束后[上滑]",
-              "fastQuery": true,
               "swipeArg": {
                 "start": {
                   "x": "screenWidth/2",
@@ -67127,16 +67135,16 @@
                 },
                 "duration": 200
               },
-              "activityIds": "com.dragon.read.component.shortvideo.impl.ShortSeriesActivity",
               "matches": "[text=\"上滑继续观看短剧\"][visibleToUser=true]",
-              "snapshotUrls": "https://i.gkd.li/i/29092674",
-              "excludeSnapshotUrls": "https://i.gkd.li/i/29092652",
-              "exampleUrls": "https://e.gkd.li/36e57d51-d134-4507-9aca-ada9e71b9b14"
+              "snapshotUrls": "https://i.gkd.li/i/32430183",
+              "excludeSnapshotUrls": "https://i.gkd.li/i/32430193",
+              "exampleUrls": "https://e.gkd.li/248c4c7b-469c-459b-a489-23c123f35766"
             },
             {
               "key": 2,
               "name": "②4.5秒[上滑]1次",
               "actionCd": 4500,
+              "actionDelay": 1000,
               "swipeArg": {
                 "start": {
                   "x": "screenWidth/2",
@@ -67148,9 +67156,23 @@
                 },
                 "duration": 200
               },
-              "activityIds": "com.dragon.read.component.shortvideo.impl.fullscreen.ShortSeriesLandActivity",
-              "matches": "[visibleToUser=true][desc=\"广告\"]",
-              "snapshotUrls": "https://i.gkd.li/i/29092652"
+              "excludeMatches": "([text=\"选集\"][visibleToUser=true]) || ([text=\"发条友善的弹幕吧\"])",
+              "matches": "[text=\"选集\"][visibleToUser=false]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/32429827",
+                "https://i.gkd.li/i/32429882",
+                "https://i.gkd.li/i/32429877",
+                "https://i.gkd.li/i/32429830"
+              ],
+              "excludeSnapshotUrls": [
+                "https://i.gkd.li/i/32430107",
+                "https://i.gkd.li/i/32434872"
+              ],
+              "exampleUrls": [
+                "https://e.gkd.li/0128820c-4e8d-44ed-9ebc-ef2d5a062e26",
+                "https://e.gkd.li/b70813b8-1377-4210-be6c-fe04f3c9c701",
+                "https://e.gkd.li/38c5c9d1-9962-4e07-a7de-49999d3ddf2b"
+              ]
             }
           ]
         },
@@ -69844,16 +69866,32 @@
           "fastQuery": true,
           "matchTime": 10000,
           "actionMaximum": 1,
+          "actionMaximumKey": 0,
           "resetMatch": "app",
-          "activityIds": ".activity.SplashADVActivity",
+          "priorityTime": 10000,
           "rules": [
             {
-              "matches": "@ImageView[width<140 && height<140][visibleToUser=true][vid=null][text=null] < * < ViewGroup +n ViewGroup[index=parent.childCount.minus(1)] >2 [text=\"广告\"]",
-              "snapshotUrls": "https://i.gkd.li/i/32193204",
-              "exampleUrls": "https://e.gkd.li/384711c3-c996-4919-bde6-28355a6e48c3"
+              "key": 0,
+              "matches": "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
+              "snapshotUrls": "https://i.gkd.li/i/32436978",
+              "exampleUrls": "https://e.gkd.li/cf0112a6-887e-4dd3-ba53-6dfdb592bf03"
             },
             {
-              "key": 0,
+              "key": 1,
+              "matches": "TextView[width<200] - @View[clickable=true][width<170 && height<170] - FrameLayout[childCount=1][height=getPrev(2).height] <2 [childCount=4] <2 FrameLayout < [vid=\"splash_container\"]",
+              "snapshotUrls": "https://i.gkd.li/i/32436980",
+              "exampleUrls": "https://e.gkd.li/ef7dc5c7-ad3d-45e8-8fa2-ae9a4c279052"
+            },
+            {
+              "key": 2,
+              "matches": "@ImageView[width<140 && height<140][visibleToUser=true][vid=null][text=null] < * < ViewGroup +n ViewGroup[index=parent.childCount.minus(1)] >2 [text=\"广告\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/32437199",
+                "https://i.gkd.li/i/32436976"
+              ]
+            },
+            {
+              "key": 3,
               "matches": "FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][visibleToUser=true] + TextView[text=null] <<n [id=\"android:id/content\"]",
               "snapshotUrls": "https://i.gkd.li/i/14978239"
             }
@@ -76010,7 +76048,7 @@
       "groups": [
         {
           "key": 10,
-          "name": "全屏广告-首页红包弹窗",
+          "name": "全屏广告-红包弹窗",
           "desc": "点击关闭",
           "matchTime": 10000,
           "actionMaximum": 1,
@@ -76031,9 +76069,16 @@
               "name": "限时高额奖励弹窗",
               "matches": "@ImageView[id=null][clickable=true] < ViewGroup + ViewGroup >2 [text=\"立即领取\"]",
               "snapshotUrls": "https://i.gkd.li/i/12708681"
+            },
+            {
+              "key": 3,
+              "name": "新人红包弹窗",
+              "fastQuery": true,
+              "activityIds": "com.yxcorp.plugin.search.SearchActivity",
+              "matches": "ImageView[width<128] < [childCount=1] < @[clickable=true] - HorizontalScrollView >5 [text=\"恭喜你获得\"]",
+              "snapshotUrls": "https://i.gkd.li/i/32433383"
             }
-          ],
-          "enable": false
+          ]
         },
         {
           "key": 11,
@@ -76237,6 +76282,33 @@
         },
         {
           "key": 20,
+          "name": "全屏广告-首页红包弹窗",
+          "desc": "点击关闭",
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "activityIds": "com.yxcorp.gifshow.HomeActivity",
+          "rules": [
+            {
+              "key": 1,
+              "name": "老友回归红包弹窗",
+              "matches": "@ImageView[id=null][clickable=true] + ViewGroup > [text!=null] + [text!=null]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/12708649",
+                "https://i.gkd.li/i/12708660"
+              ]
+            },
+            {
+              "key": 2,
+              "name": "限时高额奖励弹窗",
+              "matches": "@ImageView[id=null][clickable=true] < ViewGroup + ViewGroup >2 [text=\"立即领取\"]",
+              "snapshotUrls": "https://i.gkd.li/i/12708681"
+            }
+          ],
+          "enable": false
+        },
+        {
+          "key": 21,
           "name": "功能类-首页-左侧红包悬浮控件",
           "desc": "自动点击x按钮",
           "activityIds": "com.yxcorp.gifshow.HomeActivity",
@@ -76252,7 +76324,7 @@
           "enable": false
         },
         {
-          "key": 21,
+          "key": 22,
           "name": "功能类-你可能感兴趣的人",
           "desc": "自动点击【关闭】",
           "activityIds": "com.yxcorp.gifshow.HomeActivity",
@@ -113485,6 +113557,23 @@
         },
         {
           "key": 8,
+          "name": "功能类-自动进入应用更新界面",
+          "desc": "点击[右下角火箭图标]",
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": "info.muge.appshare.MainActivity",
+              "matches": "Button - [desc=\"应用更新\"] < @View[clickable=true] <5 View < View < View < View < ComposeView < [id=\"android:id/content\"]",
+              "snapshotUrls": "https://i.gkd.li/i/32435116",
+              "exampleUrls": "https://e.gkd.li/362e7d1e-d4a4-4a27-90ca-b53af995d9f8"
+            }
+          ]
+        },
+        {
+          "key": 9,
           "name": "局部广告-卡片式广告",
           "rules": [
             {
@@ -113505,7 +113594,7 @@
           "enable": false
         },
         {
-          "key": 9,
+          "key": 10,
           "name": "分段广告-软件详情页广告",
           "desc": "点击关闭-点击不感兴趣",
           "fastQuery": true,

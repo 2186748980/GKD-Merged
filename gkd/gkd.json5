@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026092101,
+  "version": 2026092301,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -107776,6 +107776,26 @@
           ],
           "enable": false,
           "snapshotUrls": "https://i.gkd.li/import/13224234"
+        }
+      ]
+    },
+    {
+      "id": "com.yunx.app",
+      "name": "云析",
+      "groups": [
+        {
+          "key": 1,
+          "name": "权限提示-忽略电池优化",
+          "desc": "点击[暂不]",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": ".MainActivity",
+              "matches": "[text=\"暂不\"] < @View[clickable=true] <3 View[getChild(0).text=\"保持后台下载\"] < View < View < View < ViewGroup < [id=\"android:id/content\"]",
+              "snapshotUrls": "https://i.gkd.li/i/32522962",
+              "exampleUrls": "https://e.gkd.li/6fc05152-c83a-488b-b74d-2a4fe247ee58"
+            }
+          ]
         }
       ]
     },

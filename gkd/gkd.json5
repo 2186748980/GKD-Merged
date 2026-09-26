@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026092501,
+  "version": 2026092601,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -10388,6 +10388,30 @@
                 "https://i.gkd.li/i/28805036",
                 "https://i.gkd.li/i/29465828"
               ]
+            }
+          ]
+        },
+        {
+          "key": 3,
+          "name": "功能类-[关闭]保存成功弹窗",
+          "desc": "点击x掉",
+          "rules": [
+            {
+              "fastQuery": true,
+              "forcedTime": 1800000,
+              "activityIds": [
+                ".MainActivity",
+                ".program.devicetools.appmanager.AppManagerActivity",
+                ".program.imageutils."
+              ],
+              "matches": "[getChild(0).text*=\"保存成功\"] + [vid=\"dialog_close_view\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/32636850",
+                "https://i.gkd.li/i/32635902",
+                "https://i.gkd.li/i/32636933",
+                "https://i.gkd.li/i/32636972"
+              ],
+              "exampleUrls": "https://e.gkd.li/5c650324-bf22-4d9f-9fe0-2c0b738040c4"
             }
           ]
         }
@@ -24465,17 +24489,23 @@
             {
               "key": 0,
               "actionMaximum": 1,
-              "matches": "TextView - @View[clickable=true][width<200] <(2,3) FrameLayout <2 FrameLayout < FrameLayout < [vid=\"ad_container\"]",
+              "matches": "@View[text=null][clickable=true][childCount=0][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][childCount=0] <n FrameLayout[childCount>2][text=null][desc=null] >(n+6) [text*=\"第三方应用\" || text*=\"扭动手机\" || text*=\"点击或上滑\" || text*=\"省钱好物\" || text*=\"扭一扭\" || text*=\"Shake\"]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/13247610",
                 "https://i.gkd.li/i/13264779",
                 "https://i.gkd.li/i/13826359",
                 "https://i.gkd.li/i/13827095",
-                "https://i.gkd.li/i/30529874"
+                "https://i.gkd.li/i/32639518"
               ]
             },
             {
               "key": 1,
+              "actionMaximum": 1,
+              "matches": "TextView - @View[clickable=true][width<200] <(2,3) FrameLayout <2 FrameLayout < FrameLayout < [vid=\"ad_container\"]",
+              "snapshotUrls": "https://i.gkd.li/i/30529874"
+            },
+            {
+              "key": 2,
               "actionCd": 300,
               "actionMaximum": 5,
               "excludeMatches": "[text*=\"搜索\"]",
@@ -24494,7 +24524,7 @@
               ]
             },
             {
-              "key": 2,
+              "key": 3,
               "actionMaximum": 1,
               "actionMaximumKey": 0,
               "matches": "@ImageView[childCount=0] < ViewGroup < ViewGroup +(2,3) ViewGroup >2 [text=\"广告\"][visibleToUser=true]",
@@ -24505,7 +24535,7 @@
             },
             {
               "fastQuery": true,
-              "key": 3,
+              "key": 4,
               "matches": "[id$=\"tt_splash_skip_btn\"] <<n [id=\"com.coolapk.market:id/ad_container\"]",
               "snapshotUrls": [
                 "https://i.gkd.li/import/12503773",
@@ -24514,7 +24544,7 @@
               ]
             },
             {
-              "key": 4,
+              "key": 5,
               "fastQuery": true,
               "matches": "[text^=\"跳过\"][text.length<=4]",
               "excludeMatches": "[id=\"com.coolapk.market:id/item_view\"]",
@@ -24527,7 +24557,7 @@
               ]
             },
             {
-              "key": 5,
+              "key": 6,
               "fastQuery": true,
               "matches": "@View[clickable=true] <(2,3) FrameLayout <2 FrameLayout <<n FrameLayout[id=\"com.coolapk.market:id/ad_container\"]",
               "snapshotUrls": [
@@ -24536,7 +24566,7 @@
               ]
             },
             {
-              "key": 6,
+              "key": 7,
               "fastQuery": true,
               "anyMatches": [
                 "@View[text=null][clickable=true][childCount=0][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][text=null] <n FrameLayout[childCount>2] >(7,8,9,10) [text*=\"第三方应用\" || text*=\"扭动手机\" || text*=\"点击或上滑\"][visibleToUser=true]",
@@ -24551,7 +24581,7 @@
               ]
             },
             {
-              "key": 7,
+              "key": 8,
               "fastQuery": true,
               "excludeMatches": "[id=\"com.coolapk.market:id/item_view\" || vid=\"card_view\"]",
               "matches": "[text*=\"跳过\"][text.length<5][visibleToUser=true]",
@@ -24567,7 +24597,7 @@
             },
             {
               "fastQuery": true,
-              "key": 8,
+              "key": 9,
               "matches": "[id$=\"tt_splash_skip_btn\"] <<n [id=\"com.coolapk.market:id/ad_container\"]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/12503773",
@@ -24577,7 +24607,7 @@
             },
             {
               "fastQuery": true,
-              "key": 9,
+              "key": 10,
               "matches": "[text^=\"跳过\"][text.length<=4]",
               "excludeMatches": "[id=\"com.coolapk.market:id/item_view\"]",
               "snapshotUrls": [
@@ -24589,7 +24619,7 @@
               ]
             },
             {
-              "key": 10,
+              "key": 11,
               "fastQuery": true,
               "matches": "@View[clickable=true] <(2,3) FrameLayout <2 FrameLayout <<n FrameLayout[id=\"com.coolapk.market:id/ad_container\"]",
               "snapshotUrls": [
@@ -79536,7 +79566,8 @@
             "com.bytedance.ies.ugc.aweme.photos.detail.flow.page.FlowPageActivity",
             ".searcharticle.detail.ArticleDetailActivity",
             ".search.activity.SearchResultActivity",
-            ".detail.ultra.ui.UltraDetailActivity"
+            ".detail.ultra.ui.UltraDetailActivity",
+            ".playlet.videodetail.PlayletVideoPlayActivity"
           ],
           "rules": [
             {
@@ -79545,7 +79576,8 @@
               "snapshotUrls": [
                 "https://i.gkd.li/i/25356027",
                 "https://i.gkd.li/i/26240597",
-                "https://i.gkd.li/i/26240834"
+                "https://i.gkd.li/i/26240834",
+                "https://i.gkd.li/i/32637248"
               ],
               "excludeSnapshotUrls": "https://i.gkd.li/i/25356355",
               "exampleUrls": [
@@ -79574,7 +79606,9 @@
             ".main.MainActivity",
             "com.bytedance.ies.ugc.aweme.photos.detail.flow.page.FlowPageActivity",
             ".searcharticle.detail.ArticleDetailActivity",
-            ".search.activity.SearchResultActivity"
+            ".search.activity.SearchResultActivity",
+            ".detail.ultra.ui.UltraDetailActivity",
+            ".playlet.videodetail.PlayletVideoPlayActivity"
           ],
           "rules": [
             {
@@ -79655,7 +79689,9 @@
             ".main.MainActivity",
             "com.bytedance.ies.ugc.aweme.photos.detail.flow.page.FlowPageActivity",
             ".searcharticle.detail.ArticleDetailActivity",
-            ".search.activity.SearchResultActivity"
+            ".search.activity.SearchResultActivity",
+            ".detail.ultra.ui.UltraDetailActivity",
+            ".playlet.videodetail.PlayletVideoPlayActivity"
           ],
           "rules": [
             {
@@ -79684,7 +79720,9 @@
             ".main.MainActivity",
             "com.bytedance.ies.ugc.aweme.photos.detail.flow.page.FlowPageActivity",
             ".searcharticle.detail.ArticleDetailActivity",
-            ".search.activity.SearchResultActivity"
+            ".search.activity.SearchResultActivity",
+            ".detail.ultra.ui.UltraDetailActivity",
+            ".playlet.videodetail.PlayletVideoPlayActivity"
           ],
           "rules": [
             {
@@ -87206,20 +87244,44 @@
         {
           "key": 37,
           "name": "分段广告-QQ空间空友爱看",
-          "desc": "①点击卡片右侧[推荐] ②点击[关闭推荐]",
+          "desc": "①点击[更多操作] ②点击[不感兴趣] ③选择原因 ④点击[提交]",
           "fastQuery": true,
           "activityIds": "com.qzone.reborn.feedpro.activity.QzoneFriendFeedProActivity",
           "rules": [
             {
               "key": 0,
-              "matches": "[text=\"推荐\"] < * < @[clickable=true] -2 [text=\"空友爱看\"]",
-              "snapshotUrls": "https://i.gkd.li/i/27521340"
+              "name": "①更多操作",
+              "matches": "@[desc=\"更多操作\"][clickable=true][visibleToUser=true] <3 * +4 * >5 [text=\"空友爱看\"]",
+              "snapshotUrls": "https://i.gkd.li/i/32656065"
             },
             {
               "key": 1,
-              "preKeys": 0,
-              "matches": "@[clickable=true] >2 [text=\"关闭推荐\"]",
-              "snapshotUrls": "https://i.gkd.li/i/27521350"
+              "preKeys": [
+                0
+              ],
+              "name": "②不感兴趣",
+              "matches": "@[clickable=true] >2 [text=\"不感兴趣\"]",
+              "snapshotUrls": "https://i.gkd.li/i/32656067"
+            },
+            {
+              "key": 2,
+              "preKeys": [
+                1
+              ],
+              "name": "③选择原因",
+              "activityIds": ".activity.QPublicTransFragmentActivity",
+              "matches": "[desc=\"没有我想看的类型 未选中\"]",
+              "snapshotUrls": "https://i.gkd.li/i/32656073"
+            },
+            {
+              "key": 3,
+              "preKeys": [
+                2
+              ],
+              "name": "④提交",
+              "activityIds": ".activity.QPublicTransFragmentActivity",
+              "matches": "[desc$=\"已选中\"] +n * > [desc=\"提交\"]",
+              "snapshotUrls": "https://i.gkd.li/i/32656070"
             }
           ]
         },

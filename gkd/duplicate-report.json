@@ -1,6 +1,6 @@
 {
-  "safeRemovedCount": 97,
-  "reviewCount": 192,
+  "safeRemovedCount": 87,
+  "reviewCount": 202,
   "safeRemoved": [
     {
       "app": "bubei.tingshu",
@@ -78,13 +78,6 @@
       "keptGroup": "局部广告-信息流广告",
       "rule": "快手广告",
       "matches": "[desc=\"ad-logo\"] + [id=\"logo-close-btn\"][clickable=true]"
-    },
-    {
-      "app": "com.baidu.tieba_mini",
-      "removedGroup": "未分类-首页-信息流广告",
-      "keptGroup": "分段广告-首页信息流广告",
-      "rule": null,
-      "matches": "LinearLayout > [text=\"广告\"] + ImageView"
     },
     {
       "app": "com.baidutieba.davy",
@@ -255,13 +248,6 @@
       "matches": "[id=\"com.hihonor.health:id/iv_close_filled\"]"
     },
     {
-      "app": "com.huawei.android.totemweather",
-      "removedGroup": "未分类-卡片式广告",
-      "keptGroup": "分段广告-卡片广告",
-      "rule": null,
-      "matches": "[id=\"com.huawei.android.totemweather:id/promote_ad_cancel\"]"
-    },
-    {
       "app": "com.jarworld.bleach.bvn.sjm.cyc",
       "removedGroup": "未分类-广告弹窗",
       "keptGroup": "全屏广告-弹窗广告",
@@ -388,13 +374,6 @@
       "matches": "[text=\"送亲友\"] <2 FrameLayout[childCount=2] > [text=\"暂时放弃\"][clickable=true]"
     },
     {
-      "app": "com.sgcc.wsgw.cn",
-      "removedGroup": "未分类-首页弹窗广告",
-      "keptGroup": "分段广告-首页弹窗广告",
-      "rule": null,
-      "matches": "@[focusable=true] + [text=\"今日不再出现\"]"
-    },
-    {
       "app": "com.shuqi.controller",
       "removedGroup": "未分类-阅读页面底部广告",
       "keptGroup": "局部广告-阅读页面底部广告",
@@ -440,13 +419,6 @@
       "matches": "[id=\"com.shuqi.controller:id/ad_close_but\"]"
     },
     {
-      "app": "com.sina.oasis",
-      "removedGroup": "未分类-首页-推荐广告",
-      "keptGroup": "分段广告-首页推荐广告",
-      "rule": null,
-      "matches": "ImageView[id=\"com.sina.oasis:id/gdt_v2_banner_ad_close_btn\"]"
-    },
-    {
       "app": "com.snda.wifilocating",
       "removedGroup": "全屏广告-广告弹窗",
       "keptGroup": "全屏广告-弹窗广告",
@@ -483,13 +455,6 @@
     },
     {
       "app": "com.tencent.mobileqq",
-      "removedGroup": "分段广告-小世界评论区广告",
-      "keptGroup": "分段广告-QQ小世界评论区广告",
-      "rule": null,
-      "matches": "RelativeLayout[childCount=5] > @LinearLayout[clickable=true][childCount=2][id!=null] > TextView[text=\"广告\"][id!=null]"
-    },
-    {
-      "app": "com.tencent.mobileqq",
       "removedGroup": "全屏广告-广告弹窗",
       "keptGroup": "全屏广告-首页弹窗广告",
       "rule": "现金瓜分弹窗",
@@ -501,13 +466,6 @@
       "keptGroup": "全屏广告-广告、活动弹窗",
       "rule": null,
       "matches": "@[text=\"关闭\"] + [text=\"查看活动详情\"]"
-    },
-    {
-      "app": "com.tongcheng.android",
-      "removedGroup": "未分类-应用内卡片广告",
-      "keptGroup": "分段广告-卡片广告",
-      "rule": null,
-      "matches": "ViewGroup[childCount=2] > ImageView + ViewGroup[childCount=1] > ImageView"
     },
     {
       "app": "com.unionpay",
@@ -545,13 +503,6 @@
       "matches": "@Image < View + View + View > View > View > TextView[text=\"广告\"]"
     },
     {
-      "app": "com.xingin.xhs",
-      "removedGroup": "功能类-自动倍速⏩x2.0⚠️五选一",
-      "keptGroup": "功能类-自动倍速⏩x1.5⚠️五选一",
-      "rule": null,
-      "matches": "[vid=\"layer_player\"][visibleToUser=true]"
-    },
-    {
       "app": "com.xsj.app",
       "removedGroup": "未分类-弹窗广告",
       "keptGroup": "全屏广告-弹窗广告",
@@ -571,13 +522,6 @@
       "keptGroup": "局部广告-评论区广告",
       "rule": null,
       "matches": "[id=\"com.xueqiu.android:id/ad_card_close\"]"
-    },
-    {
-      "app": "com.xuexiaoyi.xxy",
-      "removedGroup": "未分类-首页-底部广告",
-      "keptGroup": "分段广告-首页-底部广告",
-      "rule": "点击在内部的X",
-      "matches": "View[text.length=4] - View > View > Image[text.length=0]"
     },
     {
       "app": "com.youdao.dict",
@@ -651,20 +595,6 @@
       "keptGroup": "全屏广告-弹窗广告",
       "rule": "字节广告-1",
       "matches": "Image < @View +3 View > View > TextView[text$=\"广告\"]"
-    },
-    {
-      "app": "org.gushiwen.gushiwen",
-      "removedGroup": "未分类-应用内广告弹窗",
-      "keptGroup": "分段广告-弹窗广告",
-      "rule": null,
-      "matches": "@Image < View[width<100] <n View > [text=\"反馈\"]"
-    },
-    {
-      "app": "org.gushiwen.gushiwen",
-      "removedGroup": "未分类-应用内广告弹窗",
-      "keptGroup": "分段广告-弹窗广告",
-      "rule": null,
-      "matches": "@FrameLayout  +2 FrameLayout > LinearLayout > LinearLayout > [text^=\"摇动\"]"
     },
     {
       "app": "org.zwanoo.android.speedtest",
@@ -766,7 +696,7 @@
       "groupB": "功能类-自动允许白描共享整个屏幕",
       "rule": null,
       "matches": "@[clickable=true] > [text=\"共享整个屏幕\"]",
-      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+      "reason": "duplicate rule has key dependency references"
     },
     {
       "app": "com.android.systemui",
@@ -774,7 +704,7 @@
       "groupB": "功能类-自动允许白描共享整个屏幕",
       "rule": null,
       "matches": "Button[text=\"共享屏幕\"][clickable=true]",
-      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+      "reason": "duplicate rule requires review because preKeys are involved"
     },
     {
       "app": "com.android.systemui",
@@ -782,7 +712,7 @@
       "groupB": "功能类-自动允许QQ音乐共享整个屏幕",
       "rule": null,
       "matches": "@[clickable=true] > [text=\"共享整个屏幕\"]",
-      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+      "reason": "duplicate rule has key dependency references"
     },
     {
       "app": "com.android.systemui",
@@ -790,7 +720,7 @@
       "groupB": "功能类-自动允许QQ音乐共享整个屏幕",
       "rule": null,
       "matches": "Button[text=\"共享屏幕\"][clickable=true]",
-      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+      "reason": "duplicate rule requires review because preKeys are involved"
     },
     {
       "app": "com.android.systemui",
@@ -864,8 +794,16 @@
       "groupA": "分段广告-首页信息流广告",
       "groupB": "未分类-首页-信息流广告",
       "rule": null,
+      "matches": "LinearLayout > [text=\"广告\"] + ImageView",
+      "reason": "duplicate rule has key dependency references"
+    },
+    {
+      "app": "com.baidu.tieba_mini",
+      "groupA": "分段广告-首页信息流广告",
+      "groupB": "未分类-首页-信息流广告",
+      "rule": null,
       "matches": "[text=\"屏蔽广告\"]",
-      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+      "reason": "duplicate rule requires review because preKeys are involved"
     },
     {
       "app": "com.banjixiaoguanjia.app",
@@ -1245,6 +1183,14 @@
       "rule": null,
       "matches": "[id=\"com.zhangyue.commonplugin:id/dialog_welfare_card_close\"]",
       "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.huawei.android.totemweather",
+      "groupA": "分段广告-卡片广告",
+      "groupB": "未分类-卡片式广告",
+      "rule": null,
+      "matches": "[id=\"com.huawei.android.totemweather:id/promote_ad_cancel\"]",
+      "reason": "duplicate rule has key dependency references"
     },
     {
       "app": "com.huawei.wallet",
@@ -1638,8 +1584,16 @@
       "groupA": "分段广告-首页弹窗广告",
       "groupB": "未分类-首页弹窗广告",
       "rule": null,
+      "matches": "@[focusable=true] + [text=\"今日不再出现\"]",
+      "reason": "duplicate rule has key dependency references"
+    },
+    {
+      "app": "com.sgcc.wsgw.cn",
+      "groupA": "分段广告-首页弹窗广告",
+      "groupB": "未分类-首页弹窗广告",
+      "rule": null,
       "matches": "ViewGroup[childCount=1] > @ViewGroup[childCount=1] > ImageView",
-      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+      "reason": "duplicate rule requires review because preKeys are involved"
     },
     {
       "app": "com.showstartfans.activity",
@@ -1654,8 +1608,16 @@
       "groupA": "分段广告-首页推荐广告",
       "groupB": "未分类-首页-推荐广告",
       "rule": null,
+      "matches": "ImageView[id=\"com.sina.oasis:id/gdt_v2_banner_ad_close_btn\"]",
+      "reason": "duplicate rule has key dependency references"
+    },
+    {
+      "app": "com.sina.oasis",
+      "groupA": "分段广告-首页推荐广告",
+      "groupB": "未分类-首页-推荐广告",
+      "rule": null,
       "matches": "@LinearLayout > [text*=\"关闭此广告\"][text.length<=10]",
-      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+      "reason": "duplicate rule requires review because preKeys are involved"
     },
     {
       "app": "com.smile.gifmaker",
@@ -1770,7 +1732,7 @@
       "groupB": "综合广告-好友动态-广告卡片",
       "rule": null,
       "matches": "@[clickable=true] > * > ImageView + [text=\"隐藏此条动态\"]",
-      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+      "reason": "duplicate rule requires review because preKeys are involved"
     },
     {
       "app": "com.tencent.mobileqq",
@@ -1801,8 +1763,16 @@
       "groupA": "分段广告-QQ小世界评论区广告",
       "groupB": "分段广告-小世界评论区广告",
       "rule": null,
+      "matches": "RelativeLayout[childCount=5] > @LinearLayout[clickable=true][childCount=2][id!=null] > TextView[text=\"广告\"][id!=null]",
+      "reason": "duplicate rule has key dependency references"
+    },
+    {
+      "app": "com.tencent.mobileqq",
+      "groupA": "分段广告-QQ小世界评论区广告",
+      "groupB": "分段广告-小世界评论区广告",
+      "rule": null,
       "matches": "@LinearLayout[clickable=true] > TextView[text=\"关闭此条广告\"]",
-      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+      "reason": "duplicate rule requires review because preKeys are involved"
     },
     {
       "app": "com.tencent.qqlive",
@@ -1841,8 +1811,16 @@
       "groupA": "分段广告-卡片广告",
       "groupB": "未分类-应用内卡片广告",
       "rule": null,
+      "matches": "ViewGroup[childCount=2] > ImageView + ViewGroup[childCount=1] > ImageView",
+      "reason": "duplicate rule has key dependency references"
+    },
+    {
+      "app": "com.tongcheng.android",
+      "groupA": "分段广告-卡片广告",
+      "groupB": "未分类-应用内卡片广告",
+      "rule": null,
       "matches": "@* > * > [id=\"com.tongcheng.android:id/tv_home_banner_pop_up\"][text=\"关闭\"]",
-      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+      "reason": "duplicate rule requires review because preKeys are involved"
     },
     {
       "app": "com.twitter.android",
@@ -2030,6 +2008,14 @@
     },
     {
       "app": "com.xingin.xhs",
+      "groupA": "功能类-自动倍速⏩x1.5⚠️五选一",
+      "groupB": "功能类-自动倍速⏩x2.0⚠️五选一",
+      "rule": null,
+      "matches": "[vid=\"layer_player\"][visibleToUser=true]",
+      "reason": "duplicate rule has key dependency references"
+    },
+    {
+      "app": "com.xingin.xhs",
       "groupA": "功能类-自动倍速⏩x0.75⚠️五选一",
       "groupB": "功能类-自动倍速⏩x3.0⚠️五选一",
       "rule": null,
@@ -2072,9 +2058,17 @@
       "app": "com.xuexiaoyi.xxy",
       "groupA": "分段广告-首页-底部广告",
       "groupB": "未分类-首页-底部广告",
+      "rule": "点击在内部的X",
+      "matches": "View[text.length=4] - View > View > Image[text.length=0]",
+      "reason": "duplicate rule has key dependency references"
+    },
+    {
+      "app": "com.xuexiaoyi.xxy",
+      "groupA": "分段广告-首页-底部广告",
+      "groupB": "未分类-首页-底部广告",
       "rule": "点击不感兴趣",
       "matches": "TextView[text=\"不感兴趣\"]",
-      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+      "reason": "duplicate rule requires review because preKeys are involved"
     },
     {
       "app": "com.xunlei.downloadprovider",
@@ -2090,7 +2084,7 @@
       "groupB": "综合广告-视频详情页广告",
       "rule": "点击不感兴趣",
       "matches": "[id=\"com.xunlei.downloadprovider:id/feedback_not_interested_layout\"]",
-      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+      "reason": "duplicate rule requires review because preKeys are involved"
     },
     {
       "app": "com.xunlei.downloadprovider",
@@ -2192,9 +2186,25 @@
       "app": "org.gushiwen.gushiwen",
       "groupA": "分段广告-弹窗广告",
       "groupB": "未分类-应用内广告弹窗",
+      "rule": null,
+      "matches": "@Image < View[width<100] <n View > [text=\"反馈\"]",
+      "reason": "duplicate rule has key dependency references"
+    },
+    {
+      "app": "org.gushiwen.gushiwen",
+      "groupA": "分段广告-弹窗广告",
+      "groupB": "未分类-应用内广告弹窗",
+      "rule": null,
+      "matches": "@FrameLayout  +2 FrameLayout > LinearLayout > LinearLayout > [text^=\"摇动\"]",
+      "reason": "duplicate rule has key dependency references"
+    },
+    {
+      "app": "org.gushiwen.gushiwen",
+      "groupA": "分段广告-弹窗广告",
+      "groupB": "未分类-应用内广告弹窗",
       "rule": "打赏页面-点击返回按钮",
       "matches": "[id=\"org.gushiwen.gushiwen:id/btn_back\"]",
-      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+      "reason": "duplicate rule requires review because preKeys are involved"
     },
     {
       "app": "org.gushiwen.gushiwen",
@@ -2202,7 +2212,7 @@
       "groupB": "未分类-应用内广告弹窗",
       "rule": "荣誉会员-点击返回按钮",
       "matches": "[id=\"org.gushiwen.gushiwen:id/backBtn\"]",
-      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+      "reason": "duplicate rule requires review because preKeys are involved"
     },
     {
       "app": "tv.danmaku.bili",

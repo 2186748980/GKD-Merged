@@ -87,6 +87,36 @@ def has_prekeys(rule):
     return value not in (None, [], '')
 
 
+def referenced_rule_keys(rules):
+    """Return rule keys referenced by dependency-style key properties."""
+    refs = set()
+    for rule in rules:
+        if not isinstance(rule, dict):
+            continue
+        for field in ('preKeys', 'actionCdKey', 'actionMaximumKey'):
+            value = rule.get(field)
+            if isinstance(value, list):
+                refs.update(k for k in value if isinstance(k, int))
+            elif isinstance(value, int):
+                refs.add(value)
+    return refs
+
+
+def is_rule_key_referenced(rules, key, ignore_rule=None):
+    if not isinstance(key, int):
+        return False
+    for rule in rules:
+        if rule is ignore_rule or not isinstance(rule, dict):
+            continue
+        for field in ('preKeys', 'actionCdKey', 'actionMaximumKey'):
+            value = rule.get(field)
+            if isinstance(value, list) and key in value:
+                return True
+            if isinstance(value, int) and value == key:
+                return True
+    return False
+
+
 def rewrite_prekeys(rules, mapping):
     """Rewrite rule dependencies after safely removing duplicate rules."""
     for rule in rules:
@@ -123,7 +153,9 @@ def dedupe_cross_group_rules(app):
             any_candidate = seen_any.get(fp)
             if candidate and isinstance(rule, dict):
                 existing_group, existing_rule = candidate
-                if not has_prekeys(rule) and not has_prekeys(existing_rule):
+                key_is_referenced = is_rule_key_referenced(rules, key, ignore_rule=rule)
+                existing_key_is_referenced = is_rule_key_referenced(rules, existing_rule.get('key'), ignore_rule=existing_rule)
+                if not has_prekeys(rule) and not has_prekeys(existing_rule) and not key_is_referenced and not existing_key_is_referenced:
                     if isinstance(key, int) and isinstance(existing_rule.get('key'), int):
                         local_mapping[key] = existing_rule['key']
                     DUPLICATE_REPORT['safeRemoved'].append({
@@ -140,7 +172,11 @@ def dedupe_cross_group_rules(app):
                     'groupB': group.get('name'),
                     'rule': rule.get('name'),
                     'matches': rule.get('matches'),
-                    'reason': 'duplicate rule requires review because group settings differ or preKeys are involved',
+                    'reason': (
+                        'duplicate rule has key dependency references'
+                        if key_is_referenced or existing_key_is_referenced
+                        else 'duplicate rule requires review because preKeys are involved'
+                    ),
                 })
             else:
                 if any_candidate and isinstance(rule, dict):

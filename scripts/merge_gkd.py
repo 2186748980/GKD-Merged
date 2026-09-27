@@ -108,6 +108,7 @@ def dedupe_cross_group_rules(app):
     """
     groups = app.get('groups') or []
     seen = {}
+    seen_any = {}
     for group in groups:
         if not isinstance(group, dict):
             continue
@@ -119,6 +120,7 @@ def dedupe_cross_group_rules(app):
             fp = fingerprint(rule)
             key = rule.get('key') if isinstance(rule, dict) else None
             candidate = seen.get((context, fp))
+            any_candidate = seen_any.get(fp)
             if candidate and isinstance(rule, dict):
                 existing_group, existing_rule = candidate
                 if not has_prekeys(rule) and not has_prekeys(existing_rule):
@@ -141,7 +143,18 @@ def dedupe_cross_group_rules(app):
                     'reason': 'duplicate rule requires review because group settings differ or preKeys are involved',
                 })
             else:
+                if any_candidate and isinstance(rule, dict):
+                    existing_group, existing_rule = any_candidate
+                    DUPLICATE_REPORT['review'].append({
+                        'app': app.get('id'),
+                        'groupA': existing_group.get('name'),
+                        'groupB': group.get('name'),
+                        'rule': rule.get('name'),
+                        'matches': rule.get('matches'),
+                        'reason': 'duplicate rule retained because group settings differ',
+                    })
                 seen[(context, fp)] = (group, rule)
+                seen_any.setdefault(fp, (group, rule))
             kept.append(rule)
         if local_mapping:
             rewrite_prekeys(kept, local_mapping)

@@ -1,6 +1,11 @@
 {
   "safeRemovedCount": 87,
   "reviewCount": 202,
+  "reviewBreakdown": {
+    "duplicate rule retained because group settings differ": 178,
+    "duplicate rule has key dependency references": 12,
+    "duplicate rule requires review because preKeys are involved": 12
+  },
   "safeRemoved": [
     {
       "app": "bubei.tingshu",

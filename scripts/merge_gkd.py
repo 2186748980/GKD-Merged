@@ -23,6 +23,7 @@ except ImportError:
     raise SystemExit('json5 package missing')
 
 STATUS = []
+DUPLICATE_REPORT = {'safeRemoved': [], 'review': []}
 
 
 def load_source(src):
@@ -73,6 +74,78 @@ def fingerprint(obj):
         return json.dumps(obj, ensure_ascii=False, sort_keys=True, separators=(',', ':'))
     x = {k: v for k, v in obj.items() if k not in {'key', 'preKeys'}}
     return json.dumps(x, ensure_ascii=False, sort_keys=True, separators=(',', ':'))
+
+
+def group_context_fingerprint(group):
+    """Fingerprint group behavior while ignoring display identity and rules."""
+    x = {k: v for k, v in group.items() if k not in {'name', 'key', 'rules'}}
+    return json.dumps(x, ensure_ascii=False, sort_keys=True, separators=(',', ':'))
+
+
+def has_prekeys(rule):
+    value = rule.get('preKeys') if isinstance(rule, dict) else None
+    return value not in (None, [], '')
+
+
+def rewrite_prekeys(rules, mapping):
+    """Rewrite rule dependencies after safely removing duplicate rules."""
+    for rule in rules:
+        if not isinstance(rule, dict):
+            continue
+        value = rule.get('preKeys')
+        if isinstance(value, list):
+            rule['preKeys'] = [mapping.get(k, k) for k in value]
+        elif isinstance(value, int):
+            rule['preKeys'] = mapping.get(value, value)
+
+
+def dedupe_cross_group_rules(app):
+    """Remove only behavior-safe duplicates across groups of one app.
+
+    A duplicate may be removed when both groups have identical non-identity
+    settings and neither copy participates in a preKeys dependency. Otherwise
+    it is retained and reported for review.
+    """
+    groups = app.get('groups') or []
+    seen = {}
+    for group in groups:
+        if not isinstance(group, dict):
+            continue
+        rules = ensure_rules_list(group)
+        context = group_context_fingerprint(group)
+        kept = []
+        local_mapping = {}
+        for rule in rules:
+            fp = fingerprint(rule)
+            key = rule.get('key') if isinstance(rule, dict) else None
+            candidate = seen.get((context, fp))
+            if candidate and isinstance(rule, dict):
+                existing_group, existing_rule = candidate
+                if not has_prekeys(rule) and not has_prekeys(existing_rule):
+                    if isinstance(key, int) and isinstance(existing_rule.get('key'), int):
+                        local_mapping[key] = existing_rule['key']
+                    DUPLICATE_REPORT['safeRemoved'].append({
+                        'app': app.get('id'),
+                        'removedGroup': group.get('name'),
+                        'keptGroup': existing_group.get('name'),
+                        'rule': rule.get('name'),
+                        'matches': rule.get('matches'),
+                    })
+                    continue
+                DUPLICATE_REPORT['review'].append({
+                    'app': app.get('id'),
+                    'groupA': existing_group.get('name'),
+                    'groupB': group.get('name'),
+                    'rule': rule.get('name'),
+                    'matches': rule.get('matches'),
+                    'reason': 'duplicate rule requires review because group settings differ or preKeys are involved',
+                })
+            else:
+                seen[(context, fp)] = (group, rule)
+            kept.append(rule)
+        if local_mapping:
+            rewrite_prekeys(kept, local_mapping)
+        group['rules'] = kept
 
 
 def remap_rules(dst_rules, src_rules):
@@ -253,6 +326,12 @@ for _, d in loaded:
 for a in apps:
     a['groups'] = sorted(a.get('groups', []), key=lambda g: (g.get('key', 10**9), g.get('name', '')))
 apps.sort(key=lambda a: a.get('id', ''))
+
+# Remove only behavior-safe duplicates that survived normal same-group merging.
+# Cross-group duplicates with different behavior are intentionally retained and reported.
+for app in apps:
+    dedupe_cross_group_rules(app)
+
 result['apps'] = apps
 
 # Hash only the actual subscription content; metadata/version is deliberately excluded.
@@ -264,5 +343,11 @@ result['version'] = version
 (OUT / 'gkd.version.json5').write_text(json.dumps({'version': version}) + '\n', encoding='utf-8')
 meta['sourceVersions'] = {s['id']: d.get('version') for s, d in loaded}
 (OUT / 'version-state.json').write_text(json.dumps(meta, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-(OUT / 'merge-status.json').write_text(json.dumps({'ok': True, 'time': int(time.time()), 'version': version, 'contentHash': content_hash, 'sources': STATUS, 'apps': len(apps), 'globalGroups': len(result['globalGroups'])}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+(OUT / 'duplicate-report.json').write_text(json.dumps({
+    'safeRemovedCount': len(DUPLICATE_REPORT['safeRemoved']),
+    'reviewCount': len(DUPLICATE_REPORT['review']),
+    'safeRemoved': DUPLICATE_REPORT['safeRemoved'],
+    'review': DUPLICATE_REPORT['review'],
+}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+(OUT / 'merge-status.json').write_text(json.dumps({'ok': True, 'time': int(time.time()), 'version': version, 'contentHash': content_hash, 'sources': STATUS, 'apps': len(apps), 'globalGroups': len(result['globalGroups']), 'safeDuplicateRemovals': len(DUPLICATE_REPORT['safeRemoved']), 'duplicateReviewItems': len(DUPLICATE_REPORT['review'])}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 print(f"Generated {OUT/'gkd.json5'}: version {version}, {len(apps)} apps, {len(result['globalGroups'])} global groups")

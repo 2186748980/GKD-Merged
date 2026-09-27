@@ -1,6 +1,6 @@
 {
   "safeRemovedCount": 97,
-  "reviewCount": 14,
+  "reviewCount": 192,
   "safeRemoved": [
     {
       "app": "bubei.tingshu",
@@ -697,6 +697,70 @@
   ],
   "review": [
     {
+      "app": "cn.com.langeasy.LangEasyLexis",
+      "groupA": "功能类-自动签到",
+      "groupB": "未分类-自动签到",
+      "rule": null,
+      "matches": "[id=\"cn.com.langeasy.LangEasyLexis:id/bb_checkin\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "cn.com.langeasy.LangEasyLexis",
+      "groupA": "功能类-右下角年度报告弹窗",
+      "groupB": "未分类-右下角弹窗",
+      "rule": null,
+      "matches": "[id=\"cn.com.langeasy.LangEasyLexis:id/close_float_button\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "cn.dxy.idxyer",
+      "groupA": "功能类-📋病例视频自动x0.8倍速(⚠️四选一)",
+      "groupB": "功能类-📋病例视频自动x1.5倍速(⚠️四选一)",
+      "rule": "①调出倍速栏",
+      "matches": "[text=\"Playback Rate\"][clickable=true][visibleToUser=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "cn.dxy.idxyer",
+      "groupA": "功能类-📋病例视频自动x0.8倍速(⚠️四选一)",
+      "groupB": "功能类-📋病例视频自动x2.0倍速(⚠️四选一)",
+      "rule": "①调出倍速栏",
+      "matches": "[text=\"Playback Rate\"][clickable=true][visibleToUser=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "cn.ms.pages",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-弹窗广告",
+      "rule": "字节广告",
+      "matches": "@Image[text=\"\"] < View +n View > View > TextView[text=\"广告\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.android.browser",
+      "groupA": "局部广告-关闭[个性推荐开启提示]",
+      "groupB": "未分类-关闭[个性推荐开启提示]",
+      "rule": null,
+      "matches": "@ImageView[id!=null][clickable=true] -2 [text=\"个性推荐获得更丰富内容\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.android.browser",
+      "groupA": "分段广告-主页信息流广告",
+      "groupB": "未分类-主页信息流广告",
+      "rule": null,
+      "matches": "@[id!=null][desc=\"负反馈\"][visibleToUser=true] -n * > * > [text=\"广告\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.android.browser",
+      "groupA": "分段广告-主页信息流广告",
+      "groupB": "未分类-主页信息流广告",
+      "rule": null,
+      "matches": "@FrameLayout > ViewGroup > [text=\"不感兴趣\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
       "app": "com.android.systemui",
       "groupA": "功能类-自动允许网易云音乐共享整个屏幕",
       "groupB": "功能类-自动允许白描共享整个屏幕",
@@ -727,6 +791,73 @@
       "rule": null,
       "matches": "Button[text=\"共享屏幕\"][clickable=true]",
       "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    },
+    {
+      "app": "com.android.systemui",
+      "groupA": "功能类-自动允许USB调试",
+      "groupB": "功能类-自动允许无线调试(真我📱)",
+      "rule": null,
+      "matches": "[text=\"允许\" || text=\"确定\"][clickable=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.android.updater",
+      "groupA": "功能类-不开启自动更新",
+      "groupB": "更新提示-智能更新弹窗",
+      "rule": null,
+      "matches": [
+        "[vid=\"alertTitle\"][text=\"开启智能更新\" || text=\"Install automatically?\"]",
+        "[id=\"android:id/button2\"][text=\"暂不开启\" || text=\"No\"]"
+      ],
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.autonavi.minimap",
+      "groupA": "全屏广告",
+      "groupB": "全屏广告-弹窗广告",
+      "rule": "[欢迎]弹窗",
+      "matches": "ViewGroup[childCount=6] >4 ViewGroup[childCount=5] > @ImageView[clickable=true] + View[text!=null] <<n [vid=\"fragment_container\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.autonavi.minimap",
+      "groupA": "全屏广告",
+      "groupB": "全屏广告-弹窗广告",
+      "rule": "签到弹窗",
+      "matches": "[vid=\"main_map_msg_dialog_close\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.babytree.apps.pregnancy",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-弹出广告(偶发)",
+      "rule": null,
+      "matches": "ImageView[id=\"com.babytree.apps.pregnancy:id/bb_referenced_active_dialog_img_2\"] + ImageView[id!=null][clickable=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.babytree.apps.pregnancy",
+      "groupA": "局部广告-首页右侧悬浮广告",
+      "groupB": "未分类-首页右侧悬浮广告(偶发)",
+      "rule": null,
+      "matches": "ImageView[id!=null][clickable=false] + @ImageView[id!=null][clickable=true] + FrameLayout[id=null] > TextView[text=null][id!=null]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.baidu.tieba",
+      "groupA": "分段广告-信息流广告",
+      "groupB": "局部广告-信息流广告",
+      "rule": null,
+      "matches": "@ImageView[childCount=0][clickable=true][visibleToUser=true] < LinearLayout[childCount=1] <4 RelativeLayout +3 LinearLayout >4 [text=\"小游戏\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.baidu.tieba",
+      "groupA": "局部广告-首页、推荐列表顶部卡片广告",
+      "groupB": "局部广告-首页、推荐列表顶部卡片式广告",
+      "rule": null,
+      "matches": "RelativeLayout[childCount=2] > @RelativeLayout[childCount=1][clickable=true] > ImageView",
+      "reason": "duplicate rule retained because group settings differ"
     },
     {
       "app": "com.baidu.tieba_mini",
@@ -737,6 +868,772 @@
       "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
     },
     {
+      "app": "com.banjixiaoguanjia.app",
+      "groupA": "分段广告-卡片广告",
+      "groupB": "未分类-应用内广告卡片",
+      "rule": null,
+      "matches": "[id=\"com.byted.pangle:id/tt_bu_close\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.banjixiaoguanjia.app",
+      "groupA": "分段广告-卡片广告",
+      "groupB": "未分类-应用内广告卡片",
+      "rule": null,
+      "matches": "@LinearLayout > [text=\"不感兴趣\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.bilibili.studio",
+      "groupA": "权限提示-通知权限",
+      "groupB": "未分类-通知权限请求",
+      "rule": null,
+      "matches": "TextView[text=\"开启设置\"] - TextView[text=\"取消\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.bilibili.studio",
+      "groupA": "权限提示-通知权限",
+      "groupB": "未分类-通知权限请求",
+      "rule": null,
+      "matches": "ImageView[id=\"com.bilibili.studio:id/iv_close\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.bilibili.studio",
+      "groupA": "权限提示-通知权限",
+      "groupB": "未分类-通知权限请求",
+      "rule": null,
+      "matches": "ImageView[id=\"com.bilibili.studio:id/iv_push_tips_close\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.bilibili.studio",
+      "groupA": "更新提示",
+      "groupB": "未分类-版本更新",
+      "rule": "勾选【忽略】",
+      "matches": "[id=\"com.bilibili.studio:id/update_cbx_ignore_version\"][checked=false]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.bilibili.studio",
+      "groupA": "更新提示",
+      "groupB": "未分类-版本更新",
+      "rule": "点击【以后再说】",
+      "matches": "[id=\"com.bilibili.studio:id/update_btn_cancel\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.byyoung.setting",
+      "groupA": "功能类-忽略授权提示",
+      "groupB": "未分类-忽略授权提示",
+      "rule": null,
+      "matches": "[id=\"com.byyoung.setting:id/tv_name\"][text*=\"忽略授权\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.coloros.phonemanager",
+      "groupA": "更新提示",
+      "groupB": "未分类-版本更新",
+      "rule": null,
+      "matches": "@[text=\"取消\"] < [id=\"com.coloros.phonemanager:id/buttonPanel\"] > [text=\"更新\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.copymanga.app",
+      "groupA": "全屏广告-关闭赞助提示",
+      "groupB": "未分类-关闭赞助提示",
+      "rule": null,
+      "matches": "@[desc=\"就这样吧\"] + [desc^=\"赞助免广告\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.daysko.safp",
+      "groupA": "局部广告-页面底部广告",
+      "groupB": "未分类-谷歌广告-页面底部广告",
+      "rule": null,
+      "matches": "[id!=\"why_this_ad_btn\"] -2 View[id=\"mys-wrapper\"] + View >2 Button[clickable=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.daysko.safp",
+      "groupA": "局部广告-页面底部广告",
+      "groupB": "未分类-谷歌广告-页面底部广告",
+      "rule": null,
+      "matches": "View[desc=\"Advertisement\"] + View >(2) Button",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.dianping.v1",
+      "groupA": "全屏广告-消息页上方开启系统通知提醒",
+      "groupB": "通知提示-消息页上方开启系统通知提醒",
+      "rule": null,
+      "matches": "[text=\"去开启\"][clickable=true] +2 @FrameLayout[clickable=true] > ImageView",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.dongqiudi.news",
+      "groupA": "分段广告-首页信息流广告",
+      "groupB": "未分类-首页信息流广告",
+      "rule": "首页信息流广告-反馈理由",
+      "matches": "TextView[text=\"诱导点击\"][id=\"com.dongqiudi.news:id/text_item\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.dongqiudi.news",
+      "groupA": "分段广告-首页信息流广告",
+      "groupB": "未分类-首页信息流广告",
+      "rule": null,
+      "matches": "TextView[id=\"com.dongqiudi.news:id/ads_label\"] +(n) ImageView[id=\"com.dongqiudi.news:id/feedback_close\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.dongqiudi.news",
+      "groupA": "分段广告-首页信息流广告",
+      "groupB": "未分类-首页信息流广告",
+      "rule": null,
+      "matches": "TextView[id=\"com.dongqiudi.news:id/ads_title\"] +(2) RelativeLayout > ImageView[id=\"com.dongqiudi.news:id/feedback_close\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.dongqiudi.news",
+      "groupA": "全屏广告-数据页弹窗广告",
+      "groupB": "未分类-数据页弹窗广告",
+      "rule": "字节广告穿山甲SDK-1",
+      "matches": "View[text=\"反馈\"] -2 @View > Image",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.dongqiudi.news",
+      "groupA": "全屏广告-数据页弹窗广告",
+      "groupB": "未分类-数据页弹窗广告",
+      "rule": "字节广告穿山甲SDK-2",
+      "matches": "FrameLayout[desc^=\"webview-close\"] > View[clickable=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.douban.frodo",
+      "groupA": "分段广告",
+      "groupB": "分段广告-信息流广告",
+      "rule": null,
+      "matches": "@View[clickable=true][childCount=0][visibleToUser=true] < FrameLayout[desc^=\"dislike\"] -2 FrameLayout >2 [text=\"广告\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.duokan.reader",
+      "groupA": "全屏广告-小说页全屏卡片广告",
+      "groupB": "未分类-小说页全屏卡片广告",
+      "rule": null,
+      "matches": "@TextView[id=\"com.duokan.reader:id/reading__app_ad_view__close\"][text=\"广告\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.duokan.reader",
+      "groupA": "全屏广告-小说页全屏卡片广告",
+      "groupB": "未分类-小说页全屏卡片广告",
+      "rule": null,
+      "matches": "@TextView[id=\"com.duokan.reader:id/ad__feedback_close_dialog_button\"][text=\"知道了\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.eg.android.AlipayGphone",
+      "groupA": "全屏广告-小组件弹窗",
+      "groupB": "功能类-设置支付宝小组件",
+      "rule": null,
+      "matches": [
+        "[text=\"设置支付宝小组件\"]",
+        "@[clickable=true] > [text=\"关闭\"]"
+      ],
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.eg.android.AlipayGphone",
+      "groupA": "全屏广告-[0元下单权益]弹窗",
+      "groupB": "功能类-[0元下单权益]弹窗",
+      "rule": null,
+      "matches": "[text=\"关闭\"] < @FrameLayout[clickable=true] <3 FrameLayout[childCount=3] < * + FrameLayout[childCount=3] [text*=\"0元下单\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.enflick.android.TextNow",
+      "groupA": "其他-设为默认应用提示",
+      "groupB": "功能类-设为默认应用提示",
+      "rule": null,
+      "matches": "[id=\"com.enflick.android.TextNow:id/btn_dismiss\"][text=\"Not Now\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.enflick.android.TextNow",
+      "groupA": "其他-设为默认应用提示",
+      "groupB": "功能类-设为默认应用提示",
+      "rule": null,
+      "matches": "[id=\"android:id/button2\"][text=\"SKIP\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.fan.app",
+      "groupA": "分段广告-卡片广告",
+      "groupB": "综合广告-广告卡片",
+      "rule": null,
+      "matches": "@LinearLayout > [text=\"不感兴趣\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.fcbox.hivebox",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-弹窗广告",
+      "rule": "首页弹窗广告",
+      "matches": "[id=\"com.fcbox.hivebox:id/fl_content_container\"] + [id=\"com.fcbox.hivebox:id/iv_close\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.fileunzip.zxwknight",
+      "groupA": "全屏广告-软件推广",
+      "groupB": "全屏广告-应用推荐广告",
+      "rule": null,
+      "matches": "@[text=\"本次启动不再提示\"][checked=false]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.fileunzip.zxwknight",
+      "groupA": "全屏广告-软件推广",
+      "groupB": "全屏广告-应用推荐广告",
+      "rule": null,
+      "matches": "[vid=\"promote_vault_full_screen_close\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.gkid.crazyrope",
+      "groupA": "全屏广告-会员提示",
+      "groupB": "未分类-会员提示",
+      "rule": null,
+      "matches": "[id=\"com.gkid.crazyrope:id/btn_close\"][text=\"暂不需要\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.google.android.documentsui",
+      "groupA": "功能类-授权第三方应用访问文件夹",
+      "groupB": "未分类-授权第三方应用访问文件夹",
+      "rule": null,
+      "matches": "[text=\"使用此文件夹\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.google.android.documentsui",
+      "groupA": "功能类-授权第三方应用访问文件夹",
+      "groupB": "未分类-授权第三方应用访问文件夹",
+      "rule": null,
+      "matches": "[text=\"取消\"] + [text=\"允许\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.google.android.gm",
+      "groupA": "分段广告-信息流广告",
+      "groupB": "未分类-信息流广告",
+      "rule": "点击广告扩展-1",
+      "matches": "[id=\"com.google.android.gm:id/button_chip_ad_teaser_info_icon\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.google.android.gm",
+      "groupA": "分段广告-信息流广告",
+      "groupB": "未分类-信息流广告",
+      "rule": "点击广告扩展-2",
+      "matches": "[id=\"com.google.android.gm:id/basic_ad_teaser_info_icon\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.google.android.gm",
+      "groupA": "分段广告-信息流广告",
+      "groupB": "未分类-信息流广告",
+      "rule": "广告中心-点击屏蔽",
+      "matches": "Button[text=\"屏蔽此广告\"||text^=\"Block\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.google.android.gm",
+      "groupA": "分段广告-信息流广告",
+      "groupB": "未分类-信息流广告",
+      "rule": "点击继续确认屏蔽",
+      "matches": "Button[text=\"继续\"||text=\"Continue\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.google.android.gm",
+      "groupA": "分段广告-信息流广告",
+      "groupB": "未分类-信息流广告",
+      "rule": "关闭弹窗",
+      "matches": "[id=\"com.google.android.gm:id/my_ad_center_close_icon\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.gspace.android",
+      "groupA": "局部广告-主页面上方广告",
+      "groupB": "未分类-主页面上方广告",
+      "rule": null,
+      "matches": "[id=\"com.gspace.android:id/hiad_banner_close_button\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.gspace.android",
+      "groupA": "局部广告-主页面上方广告",
+      "groupB": "未分类-主页面上方广告",
+      "rule": null,
+      "matches": "@Image < View -2 View > View > View TextView[text=\"广告\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.gspace.android",
+      "groupA": "局部广告-主页面上方广告",
+      "groupB": "未分类-主页面上方广告",
+      "rule": null,
+      "matches": "[id=\"com.byted.pangle:id/tt_item_tv\" && text= \"不感兴趣\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.guwendao.gwd",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-第三方 SDK 广告弹窗",
+      "rule": null,
+      "matches": "[id=\"com.byted.pangle.m:id/tt_reward_full_count_down_after\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.guwendao.gwd",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-第三方 SDK 广告弹窗",
+      "rule": null,
+      "matches": "@Image[id=null] < View + View + TextView[text=\"反馈\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.gvsoft.gofun",
+      "groupA": "全屏广告-广告弹窗",
+      "groupB": "未分类-广告弹窗",
+      "rule": null,
+      "matches": "[id=\"com.gvsoft.gofun:id/cardView\"] + [id=\"com.gvsoft.gofun:id/iv_close\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.hexin.plat.android",
+      "groupA": "分段广告-信息流广告",
+      "groupB": "未分类-信息流广告",
+      "rule": null,
+      "matches": "@[id=\"com.hexin.plat.android:id/iv_feed_bottom_bar_dislike\"] < LinearLayout -(2) LinearLayout >(2) [text=\"广告\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.hexin.plat.android",
+      "groupA": "分段广告-信息流广告",
+      "groupB": "未分类-信息流广告",
+      "rule": null,
+      "matches": "[id=\"com.hexin.plat.android:id/tv_negative_feedback_option\"][text=\"内容质量差\"] - ImageView < LinearLayout[clickable=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.hexin.plat.android",
+      "groupA": "局部广告-底部产品广告",
+      "groupB": "未分类-指数页面-底部产品广告",
+      "rule": null,
+      "matches": "[id=\"com.hexin.plat.android:id/prod_ad\"] + [id=\"com.hexin.plat.android:id/prod_close_image\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.heytap.reader",
+      "groupA": "全屏广告-首页弹窗广告",
+      "groupB": "未分类-首页广告",
+      "rule": null,
+      "matches": "[id=\"com.zhangyue.commonplugin:id/dialog_welfare_card_close\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.huawei.wallet",
+      "groupA": "局部广告-钱包扩展服务提示",
+      "groupB": "未分类-服务提示",
+      "rule": null,
+      "matches": "[text=\"开启钱包扩展服务\"] +2 [id=\"com.huawei.wallet:id/linear_close\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.hunantv.imgo.activity",
+      "groupA": "分段广告-首页推荐广告",
+      "groupB": "未分类-首页推荐流-卡片广告",
+      "rule": null,
+      "matches": "@[id=\"com.hunantv.imgo.activity:id/layout_logo\"] > [id=\"com.hunantv.imgo.activity:id/tv_ad_logo\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.hunantv.imgo.activity",
+      "groupA": "分段广告-首页推荐广告",
+      "groupB": "未分类-首页推荐流-卡片广告",
+      "rule": null,
+      "matches": "[id=\"com.hunantv.imgo.activity:id/close_ad\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.hunantv.imgo.activity",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-弹窗广告",
+      "rule": null,
+      "matches": "[id=\"com.hunantv.imgo.activity:id/imgPromotion\"] + [id=\"com.hunantv.imgo.activity:id/vClosePromotionView\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.hunantv.imgo.activity",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-弹窗广告",
+      "rule": null,
+      "matches": "@TextView[id=null][text=\"\"] - View > Image[id=\"hotGif\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.hunantv.imgo.activity",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-弹窗广告",
+      "rule": null,
+      "matches": "[id=\"com.hunantv.imgo.activity:id/ivPromotion\"] + [id=\"com.hunantv.imgo.activity:id/btnClose\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.hunantv.imgo.activity",
+      "groupA": "局部广告-右侧悬浮广告",
+      "groupB": "未分类-右侧悬浮广告",
+      "rule": null,
+      "matches": "@[id=\"com.hunantv.imgo.activity:id/apperience_close\"] + [id=\"com.hunantv.imgo.activity:id/apperience_enter\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.hunantv.imgo.activity",
+      "groupA": "局部广告-右侧悬浮广告",
+      "groupB": "未分类-右侧悬浮广告",
+      "rule": null,
+      "matches": "@[id=\"com.hunantv.imgo.activity:id/iv_float_close\"] + [id=\"com.hunantv.imgo.activity:id/iv_float_content\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.iflytek.womusicclient",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "全屏广告-广告弹窗",
+      "rule": null,
+      "matches": "[vid=\"iv_img\"] + [vid=\"btn_close\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.jf.my",
+      "groupA": "更新提示-版本升级弹窗",
+      "groupB": "未分类-版本升级弹窗",
+      "rule": null,
+      "matches": "[id=\"com.jf.my:id/toUpgradeTv\"] - [id=\"com.jf.my:id/cancelTv\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.jincheng.supercaculator",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-弹窗广告",
+      "rule": "字节广告",
+      "matches": "@Image < View < View TextView[text = \"反馈\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.juduoduo.app",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-弹窗广告",
+      "rule": null,
+      "matches": "[id=\"com.juduoduo.app:id/ksad_tk_view\"] @ViewGroup[clickable=true] > [text=\"跳过\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.klcxkj.zqxy",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-弹窗广告",
+      "rule": null,
+      "matches": "[id=\"com.klcxkj.zqxy:id/anythink_myoffer_btn_close_id\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.klcxkj.zqxy",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-弹窗广告",
+      "rule": "字节广告",
+      "matches": "@Image[text=\"\"] < View +n View > View > TextView[text=\"广告\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.kmxs.reader",
+      "groupA": "局部广告-右侧悬浮红包",
+      "groupB": "未分类-右侧悬浮红包",
+      "rule": null,
+      "matches": "[id=\"com.kmxs.reader:id/red_packet_img\"] + [id=\"com.kmxs.reader:id/close_red_packet\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.ksf.yyx",
+      "groupA": "通知提示-公告弹窗",
+      "groupB": "未分类-首页通知",
+      "rule": null,
+      "matches": "[desc=\"了解更多\"] - [desc=\"我知道了\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.lucky.luckyclient",
+      "groupA": "全屏广告-优惠卷领取提示",
+      "groupB": "未分类-优惠卷领取提示",
+      "rule": null,
+      "matches": "[id=\"com.lucky.luckyclient:id/webcontent\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.m4399.gamecenter",
+      "groupA": "局部广告-悬浮广告",
+      "groupB": "未分类-悬浮广告",
+      "rule": "首页右侧悬浮广告",
+      "matches": "@[id=\"com.m4399.gamecenter:id/close\"] + [id=\"com.m4399.gamecenter:id/image\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.mfcloudcalculate.networkdisk",
+      "groupA": "全屏广告",
+      "groupB": "全屏广告-弹窗广告",
+      "rule": null,
+      "matches": "@ImageView[clickable=true] - [text=\"反馈\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.mfcloudcalculate.networkdisk",
+      "groupA": "全屏广告",
+      "groupB": "全屏广告-弹窗广告",
+      "rule": null,
+      "matches": "@ImageView[childCount=0][text=null][visibleToUser=true] < FrameLayout[childCount=1] <2 FrameLayout[childCount=2] <2 FrameLayout[childCount=2] <2 FrameLayout[childCount=2] - FrameLayout > [text^=\"扭动或点击\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.mfcloudcalculate.networkdisk",
+      "groupA": "全屏广告",
+      "groupB": "全屏广告-弹窗广告",
+      "rule": null,
+      "matches": [
+        "[text=\"反馈\"][visibleToUser=true]",
+        "[text=\"跳过\"][visibleToUser=true]"
+      ],
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.mfcloudcalculate.networkdisk",
+      "groupA": "全屏广告",
+      "groupB": "全屏广告-弹窗广告",
+      "rule": null,
+      "matches": "[vid=\"ms_activity_sdk_interstitial_cacel\"][visibleToUser=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.miaoying.appmy.cs",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-内部弹窗广告",
+      "rule": null,
+      "matches": "TextView[text=null] - FrameLayout > ImageView + FrameLayout > ImageView",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.miui.packageinstaller",
+      "groupA": "功能类-自动安装/更新应用",
+      "groupB": "功能类-澎湃-自动安装/更新",
+      "rule": "点击[完成]",
+      "matches": "[text=\"完成\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.miui.securitycenter",
+      "groupA": "功能类-USB安装应用,自动点击[继续安装]",
+      "groupB": "功能类-自动继续安装",
+      "rule": null,
+      "matches": "[text=\"继续安装\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.mxchip.petmarvel",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "全屏广告-广告弹窗",
+      "rule": null,
+      "matches": "[vid=\"iv_close\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.mygolbs.mybus",
+      "groupA": "分段广告-卡片广告",
+      "groupB": "局部广告-广告卡片",
+      "rule": "点击底部中间x关闭图标",
+      "matches": "[id=\"com.mygolbs.mybus:id/ad_frameLayout\"] RelativeLayout[childCount=4] > TextView[text.length>0] + ImageView + ImageView[clickable=true][id=null]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.mygolbs.mybus",
+      "groupA": "分段广告-卡片广告",
+      "groupB": "局部广告-广告卡片",
+      "rule": "点击右上/下角x关闭图标",
+      "matches": "[id=\"com.mygolbs.mybus:id/ad_frameLayout\"] View[childCount=2||childCount=3] > View[childCount=4] > View[childCount=1] > Image[text=\"\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.mygolbs.mybus",
+      "groupA": "分段广告-卡片广告",
+      "groupB": "局部广告-广告卡片",
+      "rule": "点击右上角x关闭图标-2",
+      "matches": "[id=\"com.mygolbs.mybus:id/ad_frameLayout\"] View[childCount=5] > View[childCount=2][index=4] > View[childCount=1] > Image[text=\"\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.mygolbs.mybus",
+      "groupA": "分段广告-卡片广告",
+      "groupB": "局部广告-广告卡片",
+      "rule": "点击右上角x关闭图标-3",
+      "matches": "[id=\"com.mygolbs.mybus:id/ad_frameLayout\"] View[childCount=2] > View[childCount=6][index=0] > View[childCount=1][index=3] > Image[text=\"\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.mygolbs.mybus",
+      "groupA": "分段广告-卡片广告",
+      "groupB": "局部广告-广告卡片",
+      "rule": "点击右下角x关闭按钮",
+      "matches": "[text=\"广告\"] <3 View + @View[clickable=true] >2 [text=\"×\"][visibleToUser=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.mygolbs.mybus",
+      "groupA": "分段广告-卡片广告",
+      "groupB": "局部广告-广告卡片",
+      "rule": "点击不感兴趣",
+      "matches": "@LinearLayout[clickable=true][childCount<=2] > [text=\"不感兴趣\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.mygolbs.mybus",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "全屏广告-广告弹窗",
+      "rule": null,
+      "matches": "ImageView[childCount=0] < LinearLayout < @LinearLayout[clickable=true] - * > [text=\"反馈\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.mygolbs.mybus",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "全屏广告-广告弹窗",
+      "rule": null,
+      "matches": "@ImageView[clickable=true][visibleToUser=true] - [text=\"国货大牌 新年必囤\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.netease.newsreader.activity",
+      "groupA": "分段广告-首页信息流广告",
+      "groupB": "未分类-首页信息流广告",
+      "rule": "首页信息流广告-反馈理由",
+      "matches": "[text=\"不感兴趣\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.netease.newsreader.activity",
+      "groupA": "分段广告-首页信息流广告",
+      "groupB": "未分类-首页信息流广告",
+      "rule": null,
+      "matches": "FrameLayout[childCount=1] >5 TextView[text=\"广告\"] +2 ImageView[clickable=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.nowcasting.activity",
+      "groupA": "分段广告-卡片广告",
+      "groupB": "综合广告-卡片广告",
+      "rule": null,
+      "matches": "[id=\"com.nowcasting.activity:id/ll_close\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.nowcasting.activity",
+      "groupA": "分段广告-卡片广告",
+      "groupB": "综合广告-卡片广告",
+      "rule": null,
+      "matches": "[id=\"com.nowcasting.activity:id/ll_uninterested\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.nowcasting.activity",
+      "groupA": "局部广告-卡片广告",
+      "groupB": "综合广告-卡片广告",
+      "rule": null,
+      "matches": "[id=\"com.nowcasting.activity:id/jad_feed_close\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.nowcasting.activity",
+      "groupA": "局部广告-卡片广告",
+      "groupB": "综合广告-卡片广告",
+      "rule": null,
+      "matches": "@FrameLayout[visibleToUser=true] +2 * > [text=\"广告\"][visibleToUser=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.qihoo.camera",
+      "groupA": "全屏广告-卡录像界面广告",
+      "groupB": "未分类-卡录像界面广告",
+      "rule": "视频下方卡片式广告",
+      "matches": "ViewGroup[childCount=2] > ImageView[clickable=true] + ImageView[clickable=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.qihoo.camera",
+      "groupA": "全屏广告-卡录像界面广告",
+      "groupB": "未分类-卡录像界面广告",
+      "rule": "云收藏弹窗广告",
+      "matches": "ViewGroup > @ImageView[clickable=true] -n TextView[text=\"云收藏\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.realtech.xiaocan",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-弹窗广告",
+      "rule": null,
+      "matches": "View[childCount=3] > View + ImageView + ImageView[clickable=true][childCount=0]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.redfinger.app",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-弹窗广告",
+      "rule": null,
+      "matches": "[id=\"com.redfinger.app:id/rl_screen_ad_close\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.romielf.mrsc",
+      "groupA": "分段广告-新闻页面摇一摇广告",
+      "groupB": "未分类-新闻页面摇一摇广告",
+      "rule": null,
+      "matches": "@Image < View -n View >2 View[text=\"广告\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.romielf.mrsc",
+      "groupA": "分段广告-新闻页面摇一摇广告",
+      "groupB": "未分类-新闻页面摇一摇广告",
+      "rule": null,
+      "matches": "[id=\"com.byted.pangle:id/tt_item_tv\"][text=\"不感兴趣\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.seebaby",
+      "groupA": "分段广告-信息流、文章底部广告",
+      "groupB": "未分类-信息流、文章底部广告",
+      "rule": null,
+      "matches": "[id=\"com.seebaby:id/tv_ad_detail\"] + [id=\"com.seebaby:id/ic_delad\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.sfexpress.sfim",
+      "groupA": "功能类-自动确认登录",
+      "groupB": "功能类-登录确认",
+      "rule": null,
+      "matches": "[text=\"登录\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
       "app": "com.sgcc.wsgw.cn",
       "groupA": "分段广告-首页弹窗广告",
       "groupB": "未分类-首页弹窗广告",
@@ -745,12 +1642,127 @@
       "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
     },
     {
+      "app": "com.showstartfans.activity",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-弹窗广告",
+      "rule": null,
+      "matches": "[id=\"com.showstartfans.activity:id/img_close_coupon\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
       "app": "com.sina.oasis",
       "groupA": "分段广告-首页推荐广告",
       "groupB": "未分类-首页-推荐广告",
       "rule": null,
       "matches": "@LinearLayout > [text*=\"关闭此广告\"][text.length<=10]",
       "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    },
+    {
+      "app": "com.smile.gifmaker",
+      "groupA": "全屏广告-红包弹窗",
+      "groupB": "全屏广告-首页-红包弹窗",
+      "rule": "老友回归红包弹窗",
+      "matches": "@ImageView[id=null][clickable=true] + ViewGroup > [text!=null] + [text!=null]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.smile.gifmaker",
+      "groupA": "全屏广告-红包弹窗",
+      "groupB": "全屏广告-首页红包弹窗",
+      "rule": "老友回归红包弹窗",
+      "matches": "@ImageView[id=null][clickable=true] + ViewGroup > [text!=null] + [text!=null]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.smile.gifmaker",
+      "groupA": "全屏广告-红包弹窗",
+      "groupB": "全屏广告-首页红包弹窗",
+      "rule": "限时高额奖励弹窗",
+      "matches": "@ImageView[id=null][clickable=true] < ViewGroup + ViewGroup >2 [text=\"立即领取\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.smile.gifmaker",
+      "groupA": "局部广告-首页左侧红包悬浮控件",
+      "groupB": "功能类-首页-左侧红包悬浮控件",
+      "rule": null,
+      "matches": "[id=\"com.smile.gifmaker:id/pendant_mask_bg\"] + [id=\"com.smile.gifmaker:id/pendant_close\"][visibleToUser=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.snda.wifilocating",
+      "groupA": "局部广告-[我的]界面广告卡片",
+      "groupB": "局部广告-“我的”界面广告卡片",
+      "rule": null,
+      "matches": "[vid=\"native_express_ad_close\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.ss.android.article.news",
+      "groupA": "全屏广告-竖屏视频广告",
+      "groupB": "分段广告-竖屏视频广告",
+      "rule": "点击不感兴趣",
+      "matches": "@LinearLayout[clickable=true] > RelativeLayout + TextView[text=\"不感兴趣\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.ss.android.ugc.aweme",
+      "groupA": "权限提示-通讯录权限",
+      "groupB": "权限提示-请求访问通讯录弹窗",
+      "rule": null,
+      "matches": [
+        "[text*=\"通讯录\"]",
+        "[text=\"拒绝\"]"
+      ],
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.taptap",
+      "groupA": "分段广告-游戏浏览页面推荐广告",
+      "groupB": "分段广告-游戏浏览界面-推荐广告",
+      "rule": null,
+      "matches": "@LinearLayout > [text=\"对此内容不感兴趣\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.tencent.mm",
+      "groupA": "分段广告-订阅号消息-推荐阅读",
+      "groupB": "分段广告-订阅号消息页面-推荐阅读",
+      "rule": null,
+      "matches": "View > Button > View[desc$=\"推​荐​\"] > ImageView[index=1][clickable=true][visibleToUser=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.tencent.mm",
+      "groupA": "分段广告-订阅号消息-推荐阅读",
+      "groupB": "分段广告-订阅号消息页面-推荐阅读",
+      "rule": null,
+      "matches": "[desc=\"不看此类内容\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.tencent.mm",
+      "groupA": "分段广告-订阅号消息-推荐阅读",
+      "groupB": "分段广告-订阅号消息页面-推荐阅读",
+      "rule": null,
+      "matches": "[desc=\"确定\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.tencent.mobileqq",
+      "groupA": "局部广告",
+      "groupB": "局部广告-动态页-卡片广告",
+      "rule": "好友动态详情页广告",
+      "matches": "@[desc=\"关闭广告\"][visibleToUser=true] <4 RelativeLayout <2 LinearLayout <2 LinearLayout < FrameLayout <n RecyclerView < FrameLayout - FrameLayout >2 [text=\"详情\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.tencent.mobileqq",
+      "groupA": "局部广告",
+      "groupB": "局部广告-动态页-卡片广告",
+      "rule": "推荐你试试这些玩法",
+      "matches": "@[desc=\"关闭\"] - [text=\"推荐你试试这些玩法\"]",
+      "reason": "duplicate rule retained because group settings differ"
     },
     {
       "app": "com.tencent.mobileqq",
@@ -762,11 +1774,67 @@
     },
     {
       "app": "com.tencent.mobileqq",
+      "groupA": "局部广告-动态页-卡片广告",
+      "groupB": "综合广告-好友动态-广告卡片",
+      "rule": null,
+      "matches": "@ImageView[clickable=true] - [text=\"广告\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.tencent.mobileqq",
+      "groupA": "功能类-登录授权",
+      "groupB": "功能类-扫一扫登录确认",
+      "rule": "点击同意",
+      "matches": "Button[text=\"同意\"][clickable=true][visibleToUser=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.tencent.mobileqq",
+      "groupA": "功能类-登录授权",
+      "groupB": "功能类-扫一扫登录确认",
+      "rule": "点击确认",
+      "matches": "Button[text=\"确认\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.tencent.mobileqq",
       "groupA": "分段广告-QQ小世界评论区广告",
       "groupB": "分段广告-小世界评论区广告",
       "rule": null,
       "matches": "@LinearLayout[clickable=true] > TextView[text=\"关闭此条广告\"]",
       "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    },
+    {
+      "app": "com.tencent.qqlive",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "全屏广告-首页-广告弹窗",
+      "rule": null,
+      "matches": "@ImageView[clickable=true] < ViewGroup[childCount=5] < [id=\"android:id/content\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.tencent.qqlive",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "全屏广告-首页-广告弹窗",
+      "rule": null,
+      "matches": "@RelativeLayout[clickable=true] + * >3 [text=\"立即预约\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.tencent.qqlive",
+      "groupA": "全屏广告-视频播放时的广告",
+      "groupB": "未分类-视频播放时的广告",
+      "rule": "全屏广告2",
+      "matches": "@[text$=\"关闭广告\"][clickable=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.tmri.app.main",
+      "groupA": "权限提示-通知权限",
+      "groupB": "未分类-消息通知",
+      "rule": null,
+      "matches": "ImageButton[id=\"com.tmri.app.main:id/btn_cancel\"]",
+      "reason": "duplicate rule retained because group settings differ"
     },
     {
       "app": "com.tongcheng.android",
@@ -775,6 +1843,230 @@
       "rule": null,
       "matches": "@* > * > [id=\"com.tongcheng.android:id/tv_home_banner_pop_up\"][text=\"关闭\"]",
       "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    },
+    {
+      "app": "com.twitter.android",
+      "groupA": "分段广告-帖子详情页、搜索页信息流广告",
+      "groupB": "分段广告-用户资料页信息流广告",
+      "rule": "点击右上角关闭-1",
+      "matches": "@[vid=\"tweet_curation_action\"] +n [vid=\"tweet_promoted_badge_bottom\"][text=\"推荐\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.twitter.android",
+      "groupA": "分段广告-帖子详情页、搜索页信息流广告",
+      "groupB": "分段广告-用户资料页信息流广告",
+      "rule": "点击右上角关闭-2",
+      "matches": "@[vid=\"tweet_curation_action\"] <2 * + [vid=\"tweet_auto_playable_content_parent\"] > [vid=\"tweet_promoted_badge_bottom\"][text$=\"推荐\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.twitter.android",
+      "groupA": "分段广告-帖子详情页、搜索页信息流广告",
+      "groupB": "分段广告-用户资料页信息流广告",
+      "rule": "点击右上角关闭-1",
+      "matches": "@[id=\"com.twitter.android:id/tweet_curation_action\"] +n [id=\"com.twitter.android:id/tweet_promoted_badge_bottom\"][text=\"推荐\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.twitter.android",
+      "groupA": "分段广告-帖子详情页、搜索页信息流广告",
+      "groupB": "分段广告-用户资料页信息流广告",
+      "rule": "点击右上角关闭-2",
+      "matches": "@[id=\"com.twitter.android:id/tweet_curation_action\"] <2 * + [id=\"com.twitter.android:id/tweet_auto_playable_content_parent\"] > [id=\"com.twitter.android:id/tweet_promoted_badge_bottom\"][text$=\"推荐\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.twitter.android",
+      "groupA": "局部广告-信息流广告-帖子详情页、搜索页",
+      "groupB": "局部广告-信息流广告-用户资料页",
+      "rule": "点击右上角关闭",
+      "matches": "@[id=\"com.twitter.android:id/tweet_curation_action\"] +n [id=\"com.twitter.android:id/tweet_promoted_badge_bottom\"][text=\"推荐\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.twitter.android",
+      "groupA": "局部广告-信息流广告-帖子详情页、搜索页",
+      "groupB": "局部广告-信息流广告-用户资料页",
+      "rule": "点击右上角关闭2",
+      "matches": "@[id=\"com.twitter.android:id/tweet_curation_action\"] <2 * + [id=\"com.twitter.android:id/tweet_auto_playable_content_parent\"] > [id=\"com.twitter.android:id/tweet_promoted_badge_bottom\"][text$=\"推荐\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.twitter.android",
+      "groupA": "局部广告-信息流广告-主页",
+      "groupB": "局部广告-信息流广告-用户资料页",
+      "rule": "点击[我不喜欢这个广告]",
+      "matches": "@ViewGroup > [id=\"com.twitter.android:id/action_sheet_item_title\"][text=\"我不喜欢这个广告\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.twitter.android",
+      "groupA": "功能类-自动[显示更多帖子]",
+      "groupB": "功能类-自动点击\"显示更多帖子\"",
+      "rule": null,
+      "matches": "@FrameLayout[clickable=true] > [text=\"显示更多帖子\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.twitter.android",
+      "groupA": "分段广告-帖子详情页、搜索页信息流广告",
+      "groupB": "未分类-信息流广告-帖子详情页、搜索页",
+      "rule": "点击右上角关闭-1",
+      "matches": "@[id=\"com.twitter.android:id/tweet_curation_action\"] +n [id=\"com.twitter.android:id/tweet_promoted_badge_bottom\"][text=\"推荐\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.twitter.android",
+      "groupA": "分段广告-帖子详情页、搜索页信息流广告",
+      "groupB": "未分类-信息流广告-帖子详情页、搜索页",
+      "rule": "点击右上角关闭-2",
+      "matches": "@[id=\"com.twitter.android:id/tweet_curation_action\"] <2 * + [id=\"com.twitter.android:id/tweet_auto_playable_content_parent\"] > [id=\"com.twitter.android:id/tweet_promoted_badge_bottom\"][text$=\"推荐\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.twitter.android",
+      "groupA": "分段广告-帖子详情页、搜索页信息流广告",
+      "groupB": "未分类-信息流广告-帖子详情页、搜索页",
+      "rule": "点击右上角关闭-英文",
+      "matches": "[id=\"com.twitter.android:id/tweet_ad_badge_top_right\"] + [id=\"com.twitter.android:id/tweet_curation_action\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.twitter.android",
+      "groupA": "分段广告-帖子详情页、搜索页信息流广告",
+      "groupB": "未分类-信息流广告-帖子详情页、搜索页",
+      "rule": "点击屏蔽",
+      "matches": "@ViewGroup > [id=\"com.twitter.android:id/action_sheet_item_title\"][text^=\"屏蔽\"||text^=\"屏蔽\"||text^=\"Block\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.twitter.android",
+      "groupA": "分段广告-帖子详情页、搜索页信息流广告",
+      "groupB": "未分类-信息流广告-帖子详情页、搜索页",
+      "rule": "二次确认-点击屏蔽",
+      "matches": "[text=\"取消\"||text^=\"Cancel\"] + [text=\"屏蔽\"||text^=\"Block\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.twitter.android",
+      "groupA": "分段广告-帖子详情页、搜索页信息流广告",
+      "groupB": "未分类-信息流广告-用户资料页",
+      "rule": "点击右上角关闭-1",
+      "matches": "@[id=\"com.twitter.android:id/tweet_curation_action\"] +n [id=\"com.twitter.android:id/tweet_promoted_badge_bottom\"][text=\"推荐\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.twitter.android",
+      "groupA": "分段广告-帖子详情页、搜索页信息流广告",
+      "groupB": "未分类-信息流广告-用户资料页",
+      "rule": "点击右上角关闭-2",
+      "matches": "@[id=\"com.twitter.android:id/tweet_curation_action\"] <2 * + [id=\"com.twitter.android:id/tweet_auto_playable_content_parent\"] > [id=\"com.twitter.android:id/tweet_promoted_badge_bottom\"][text$=\"推荐\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.twitter.android",
+      "groupA": "分段广告-用户资料页信息流广告",
+      "groupB": "未分类-信息流广告-用户资料页",
+      "rule": "点击[我不喜欢这个广告]",
+      "matches": "@ViewGroup > [id=\"com.twitter.android:id/action_sheet_item_title\"][text=\"我不喜欢这个广告\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.twitter.android",
+      "groupA": "评价提示",
+      "groupB": "未分类-评价弹窗",
+      "rule": null,
+      "matches": "[id=\"com.twitter.android:id/app_rating_button_never\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.unionpay",
+      "groupA": "分段广告-支付完成界面卡片广告",
+      "groupB": "未分类-支付完成界面广告卡片",
+      "rule": null,
+      "matches": "[id=\"bannerBox\"] > @View[clickable=true] > [text=\"广告\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.unionpay",
+      "groupA": "分段广告-支付完成界面卡片广告",
+      "groupB": "未分类-支付完成界面广告卡片",
+      "rule": null,
+      "matches": "[text=\"关闭广告\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.videogo",
+      "groupA": "分段广告-主页广告",
+      "groupB": "未分类-主页广告",
+      "rule": null,
+      "matches": "[id=\"com.videogo:id/ad_close\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.videogo",
+      "groupA": "分段广告-主页广告",
+      "groupB": "未分类-主页广告",
+      "rule": null,
+      "matches": "[id=\"com.videogo:id/ad_closead_nointerest\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.xingin.xhs",
+      "groupA": "功能类-自动倍速⏩x0.75⚠️五选一",
+      "groupB": "功能类-自动倍速⏩x1.25⚠️五选一",
+      "rule": null,
+      "matches": "[vid=\"layer_player\"][visibleToUser=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.xingin.xhs",
+      "groupA": "功能类-自动倍速⏩x0.75⚠️五选一",
+      "groupB": "功能类-自动倍速⏩x1.5⚠️五选一",
+      "rule": null,
+      "matches": "[vid=\"layer_player\"][visibleToUser=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.xingin.xhs",
+      "groupA": "功能类-自动倍速⏩x0.75⚠️五选一",
+      "groupB": "功能类-自动倍速⏩x3.0⚠️五选一",
+      "rule": null,
+      "matches": "[vid=\"layer_player\"][visibleToUser=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.xingluo.allcolor",
+      "groupA": "分段广告-底部穿山甲广告",
+      "groupB": "未分类-底部穿山甲广告",
+      "rule": "穿山甲广告-反馈理由",
+      "matches": "[id=\"com.byted.pangle:id/tt_item_tv\"][text=\"不感兴趣\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.xinhang.mobileclient",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-应用内广告弹窗",
+      "rule": null,
+      "matches": "View[desc^=\"close\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.xinhang.mobileclient",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-应用内广告弹窗",
+      "rule": null,
+      "matches": "View > View > TextView + TextView[text=\"\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.xpx365.projphoto",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-广告弹窗",
+      "rule": "快手广告SDK",
+      "matches": "[id=\"com.kwad.dy.sdk:id/ksad_tk_view\"] @ViewGroup[clickable=true] > TextView[text=\"跳过\"]",
+      "reason": "duplicate rule retained because group settings differ"
     },
     {
       "app": "com.xuexiaoyi.xxy",
@@ -786,11 +2078,115 @@
     },
     {
       "app": "com.xunlei.downloadprovider",
+      "groupA": "全屏广告",
+      "groupB": "全屏广告-弹窗广告",
+      "rule": null,
+      "matches": "@Image[childCount=0][text=\"\"][width<60 && height<60] < View[childCount=1] + View +n View > View[childCount=1] > TextView[text$=\"广告\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.xunlei.downloadprovider",
       "groupA": "分段广告-视频详情页广告",
       "groupB": "综合广告-视频详情页广告",
       "rule": "点击不感兴趣",
       "matches": "[id=\"com.xunlei.downloadprovider:id/feedback_not_interested_layout\"]",
       "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    },
+    {
+      "app": "com.xunlei.downloadprovider",
+      "groupA": "分段广告-视频详情页直播推荐",
+      "groupB": "分段广告-视频详情-直播推荐",
+      "rule": null,
+      "matches": "[id=\"com.xunlei.downloadprovider:id/title_tv\"] + [id=\"com.xunlei.downloadprovider:id/more\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.xunlei.downloadprovider",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-应用内广告弹窗",
+      "rule": null,
+      "matches": "[id=\"com.xunlei.downloadprovider:id/hermes_ad_banner_negative\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.ygkj.chelaile.standard",
+      "groupA": "功能类-自动选第1个车🚗",
+      "groupB": "功能类-自动选第1个车🚗后打开地图🗺️",
+      "rule": null,
+      "matches": "@FrameLayout[clickable=true][getChild(0).vid=\"fav_line_layout\"] - LinearLayout >2 [text=\"我的收藏\"][visibleToUser=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.zhiyin.qingdan.dashixiong",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "全屏广告",
+      "rule": "快手广告-1",
+      "matches": "@ImageView <n ViewGroup -2 ViewGroup > ViewGroup > [text=\"广告\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.zhiyin.qingdan.dashixiong",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "全屏广告",
+      "rule": "字节广告",
+      "matches": "@Image < View +n View > View > View > [text=\"广告\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "com.zhiyin.qingdan.dashixiong",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "全屏广告-首页广告弹窗",
+      "rule": null,
+      "matches": "[id=\"close_btn\"][clickable=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "io.dcloud.H576E6CC7",
+      "groupA": "局部广告-卡片广告",
+      "groupB": "局部广告-信息流广告",
+      "rule": null,
+      "matches": "ImageView < @FrameLayout <3 FrameLayout <2 FrameLayout - FrameLayout >2 [text=\"摇动或点击了解更多\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "ltd.sky.okay.cn",
+      "groupA": "全屏广告-弹窗广告",
+      "groupB": "未分类-弹窗广告",
+      "rule": "字节广告",
+      "matches": "@Image[text=\"\"] < View +n View > View > TextView[text=\"广告\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "net.csdn.csdnplus",
+      "groupA": "分段广告-信息流广告",
+      "groupB": "未分类-信息流广告",
+      "rule": null,
+      "matches": "[text=\"广告\"] + [id=\"net.csdn.csdnplus:id/iv_more\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "net.csdn.csdnplus",
+      "groupA": "分段广告-信息流广告",
+      "groupB": "未分类-信息流广告",
+      "rule": null,
+      "matches": "@[clickable=true] > [id=\"net.csdn.csdnplus:id/img_feedback_title\"][text=\"重复推荐该广告\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "net.pchome.kds",
+      "groupA": "分段广告-应用内卡片广告",
+      "groupB": "未分类-应用内广告卡片",
+      "rule": null,
+      "matches": "@Image[text=\"\"] < View +2 View > View > View > TextView",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "net.pchome.kds",
+      "groupA": "分段广告-应用内卡片广告",
+      "groupB": "未分类-应用内广告卡片",
+      "rule": null,
+      "matches": "@LinearLayout > [text=\"不感兴趣\"]",
+      "reason": "duplicate rule retained because group settings differ"
     },
     {
       "app": "org.gushiwen.gushiwen",
@@ -807,6 +2203,46 @@
       "rule": "荣誉会员-点击返回按钮",
       "matches": "[id=\"org.gushiwen.gushiwen:id/backBtn\"]",
       "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    },
+    {
+      "app": "tv.danmaku.bili",
+      "groupA": "功能类-视频自动x1.5倍速(⚠️三选一)",
+      "groupB": "功能类-视频自动x2.0倍速(⚠️三选一)",
+      "rule": "①点击视频",
+      "matches": "[vid=\"video_container\"] >2 [vid=\"control_container\"][visibleToUser=true][childCount=0]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "tv.danmaku.bili",
+      "groupA": "功能类-视频自动x1.5倍速(⚠️三选一)",
+      "groupB": "功能类-视频自动x2.0倍速(⚠️三选一)",
+      "rule": "②点击[更多]",
+      "matches": "[vid=\"toolbar_action_overflow\"][desc^=\"更多\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "tv.danmaku.bili",
+      "groupA": "功能类-视频自动x1.5倍速(⚠️三选一)",
+      "groupB": "功能类-视频自动x2.0倍速(⚠️三选一)",
+      "rule": "②直接点击[更多]",
+      "matches": "[vid=\"container_top_more\"][visibleToUser=true]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "tv.danmaku.bili",
+      "groupA": "分段广告-动态推荐卡片广告",
+      "groupB": "局部广告-动态推荐卡片广告",
+      "rule": null,
+      "matches": "[id=\"tv.danmaku.bili:id/ad_goods_mark_big\"]",
+      "reason": "duplicate rule retained because group settings differ"
+    },
+    {
+      "app": "tv.danmaku.bili",
+      "groupA": "分段广告-动态推荐卡片广告",
+      "groupB": "局部广告-动态推荐卡片广告",
+      "rule": null,
+      "matches": "[text=\"不感兴趣\"][id^=\"tv.danmaku.bili:id/reason\"]",
+      "reason": "duplicate rule retained because group settings differ"
     }
   ]
 }

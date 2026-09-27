@@ -1,0 +1,812 @@
+{
+  "safeRemovedCount": 97,
+  "reviewCount": 14,
+  "safeRemoved": [
+    {
+      "app": "bubei.tingshu",
+      "removedGroup": "未分类-悬浮广告",
+      "keptGroup": "局部广告-悬浮广告",
+      "rule": "播放列表-右侧悬浮广告",
+      "matches": "[id=\"bubei.tingshu:id/closeIcon\"][desc=\"关闭\"]"
+    },
+    {
+      "app": "cmb.pb",
+      "removedGroup": "全屏广告-广告弹窗",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": null,
+      "matches": "[id=\"cover-img\"] + [text=\"关闭推荐\"]"
+    },
+    {
+      "app": "cn.wps.moffice_eng",
+      "removedGroup": "功能类-开启WPS云服务",
+      "keptGroup": "功能类-关闭[开启WPS云服务]弹窗",
+      "rule": null,
+      "matches": "[id=\"cn.wps.moffice_eng:id/cloud_protocol_dialog_not_start_btn\"]"
+    },
+    {
+      "app": "cn.wps.moffice_eng",
+      "removedGroup": "功能类-开启WPS云服务",
+      "keptGroup": "功能类-关闭[开启WPS云服务]弹窗",
+      "rule": null,
+      "matches": "[id=\"cn.wps.moffice_eng:id/dialog_button_positive\"]"
+    },
+    {
+      "app": "com.allinone.callerid",
+      "removedGroup": "未分类-弹窗广告",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": null,
+      "matches": "[id=\"mys-content\"] > View > View > Button[clickable=true]"
+    },
+    {
+      "app": "com.allinone.callerid",
+      "removedGroup": "未分类-弹窗广告",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": null,
+      "matches": "[id=\"close-button\"] > View > View > Image"
+    },
+    {
+      "app": "com.apkpure.aegon",
+      "removedGroup": "未分类-添加桌面快捷方式",
+      "keptGroup": "功能类-添加桌面快捷方式",
+      "rule": null,
+      "matches": "[id=\"com.apkpure.aegon:id/arg\"][text=\"下次添加\"]"
+    },
+    {
+      "app": "com.baidu.netdisk",
+      "removedGroup": "全屏广告-广告弹窗",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": null,
+      "matches": "[vid=\"iv_close\"]"
+    },
+    {
+      "app": "com.baidu.netdisk",
+      "removedGroup": "全屏广告-广告弹窗",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": "相册页面激活无限空间弹窗",
+      "matches": "@ImageView[id=\"com.baidu.netdisk:id/close_btn\"] + ImageView[id=\"com.baidu.netdisk:id/bg_image\"]"
+    },
+    {
+      "app": "com.baidu.netdisk.samsung",
+      "removedGroup": "通知提示",
+      "keptGroup": "权限提示-通知权限",
+      "rule": null,
+      "matches": "[vid=\"dialog_cancel\"]"
+    },
+    {
+      "app": "com.baidu.searchcraft",
+      "removedGroup": "未分类-信息流广告",
+      "keptGroup": "局部广告-信息流广告",
+      "rule": "快手广告",
+      "matches": "[desc=\"ad-logo\"] + [id=\"logo-close-btn\"][clickable=true]"
+    },
+    {
+      "app": "com.baidu.tieba_mini",
+      "removedGroup": "未分类-首页-信息流广告",
+      "keptGroup": "分段广告-首页信息流广告",
+      "rule": null,
+      "matches": "LinearLayout > [text=\"广告\"] + ImageView"
+    },
+    {
+      "app": "com.baidutieba.davy",
+      "removedGroup": "未分类-内部弹窗广告",
+      "keptGroup": "全屏广告-内部弹窗广告",
+      "rule": null,
+      "matches": "[id=\"com.baidutieba.davy:id/exit\"]"
+    },
+    {
+      "app": "com.baidutieba.davy",
+      "removedGroup": "未分类-内部弹窗广告",
+      "keptGroup": "全屏广告-内部弹窗广告",
+      "rule": null,
+      "matches": "[id=\"com.baidutieba.davy:id/mimo_interstitial_close_img\"]"
+    },
+    {
+      "app": "com.copymanga.app",
+      "removedGroup": "未分类-卡片式广告",
+      "keptGroup": "局部广告-卡片广告",
+      "rule": "快手广告-1",
+      "matches": "[id^=\"com.copymanga.app:id/ad_flag_source\"] - * > [id=\"com.copymanga.app:id/close\"]"
+    },
+    {
+      "app": "com.copymanga.app",
+      "removedGroup": "未分类-卡片式广告",
+      "keptGroup": "局部广告-卡片广告",
+      "rule": "快手广告-2",
+      "matches": "[id=\"com.copymanga.app:id/close_m_image_left_text_right_no_compliance\"]"
+    },
+    {
+      "app": "com.copymanga.app",
+      "removedGroup": "未分类-卡片式广告",
+      "keptGroup": "局部广告-卡片广告",
+      "rule": "腾讯广告",
+      "matches": "FrameLayout[childCount=3] > LinearLayout + FrameLayout[childCount=1] > ImageView[id=null]"
+    },
+    {
+      "app": "com.copymanga.app",
+      "removedGroup": "未分类-自动确认线路",
+      "keptGroup": "功能类-自动确认线路",
+      "rule": null,
+      "matches": "[desc=\"进入拷贝漫画\"]"
+    },
+    {
+      "app": "com.ct.client",
+      "removedGroup": "通知提示-开启消息通知弹窗",
+      "keptGroup": "权限提示-通知权限",
+      "rule": null,
+      "matches": "ImageView[id=\"com.ct.client:id/msg_close\"]"
+    },
+    {
+      "app": "com.daysko.safp",
+      "removedGroup": "未分类-谷歌广告-全屏广告",
+      "keptGroup": "全屏广告-谷歌广告",
+      "rule": null,
+      "matches": "View > [text=\"关闭\"]"
+    },
+    {
+      "app": "com.daysko.safp",
+      "removedGroup": "未分类-谷歌广告-全屏广告",
+      "keptGroup": "全屏广告-谷歌广告",
+      "rule": null,
+      "matches": "[id=\"adchoiceWrap\"] + [id=\"mv_close_btn\"]"
+    },
+    {
+      "app": "com.daysko.safp",
+      "removedGroup": "未分类-谷歌广告-全屏广告",
+      "keptGroup": "全屏广告-谷歌广告",
+      "rule": "右上角白色圆形背景黑色x关闭按钮",
+      "matches": "View[clickable=false][childCount=2] > TextView[clickable=true] + View[clickable=true][childCount=1] > Button[clickable=true]"
+    },
+    {
+      "app": "com.daysko.safp",
+      "removedGroup": "未分类-谷歌广告-视频广告",
+      "keptGroup": "全屏广告-视频广告",
+      "rule": null,
+      "matches": "[id=null][text=\"跳过视频\"] < View +(2) @View > Button[clickable=true]"
+    },
+    {
+      "app": "com.daysko.safp",
+      "removedGroup": "未分类-谷歌广告-视频广告",
+      "keptGroup": "全屏广告-视频广告",
+      "rule": null,
+      "matches": [
+        "Button[id=null][clickable=true] < @View - * < View - View >(n) View[desc=\"安装\"]"
+      ]
+    },
+    {
+      "app": "com.daysko.safp",
+      "removedGroup": "未分类-谷歌广告-视频广告",
+      "keptGroup": "全屏广告-视频广告",
+      "rule": null,
+      "matches": [
+        "[desc=\"了解详情\"] - View > [text=\"关闭\"]"
+      ]
+    },
+    {
+      "app": "com.dianping.v1",
+      "removedGroup": "分段广告-推荐页卡片式广告",
+      "keptGroup": "分段广告-推荐页卡片广告",
+      "rule": null,
+      "matches": "@[desc=\"reculike_delete\"][clickable=true][visibleToUser=true] +3 [childCount=2]"
+    },
+    {
+      "app": "com.dragon.read",
+      "removedGroup": "功能类-阅读页面-关注作者",
+      "keptGroup": "全屏广告-阅读页面关注作者弹窗",
+      "rule": null,
+      "matches": "@ImageView +2 FrameLayout >3 [text=\"关注\"]"
+    },
+    {
+      "app": "com.duokan.reader",
+      "removedGroup": "未分类-小说推荐弹窗",
+      "keptGroup": "全屏广告-小说推荐弹窗",
+      "rule": "退出阅读时的推荐弹窗",
+      "matches": "[id=\"com.duokan.reader:id/reading_stop_read_recommend_stop\"]"
+    },
+    {
+      "app": "com.dz.xmbnxj",
+      "removedGroup": "未分类-底部卡片广告",
+      "keptGroup": "局部广告-底部卡片广告",
+      "rule": null,
+      "matches": "[id=\"com.dz.xmbnxj:id/mix_img_close\"]"
+    },
+    {
+      "app": "com.eg.android.AlipayGphone",
+      "removedGroup": "未分类-其他-蚂蚁理财社区-[加入同路人]弹窗",
+      "keptGroup": "其他-蚂蚁理财社区-[加入同路人]弹窗",
+      "rule": null,
+      "matches": "@TextView[clickable=true][text=\"\"] < * > [visibleToUser=true][text=\"立即加入\"] <<n [id=\"com.alipay.mobile.nebula:id/h5_trans_web_content\"]"
+    },
+    {
+      "app": "com.google.android.apps.googlevoice",
+      "removedGroup": "未分类-跳过实体号码链接",
+      "keptGroup": "功能类-跳过实体号码链接",
+      "rule": null,
+      "matches": [
+        "[id=\"com.google.android.apps.googlevoice:id/title_view\"][text=\"Link this device to Google Voice\" || text=\"将此设备与 Google Voice 关联\"]",
+        "[id=\"com.google.android.apps.googlevoice:id/skip_button\"]"
+      ]
+    },
+    {
+      "app": "com.gotokeep.keep",
+      "removedGroup": "未分类-运动购页面-广告弹窗",
+      "keptGroup": "全屏广告-运动购页面-弹窗广告",
+      "rule": null,
+      "matches": "ImageView + LinearLayout > ImageView[id=null][clickable=true]"
+    },
+    {
+      "app": "com.gotokeep.keep",
+      "removedGroup": "未分类-运动购页面-广告弹窗",
+      "keptGroup": "全屏广告-运动购页面-弹窗广告",
+      "rule": null,
+      "matches": "[id=\"com.gotokeep.keep:id/contentContainer\"] + [id=\"com.gotokeep.keep:id/closeImageView\"]"
+    },
+    {
+      "app": "com.heytap.reader",
+      "removedGroup": "未分类-首页浮窗",
+      "keptGroup": "局部广告-首页浮窗广告",
+      "rule": null,
+      "matches": "[id=\"com.heytap.reader:id/float_delete\"]"
+    },
+    {
+      "app": "com.hihonor.health",
+      "removedGroup": "未分类-卡片式广告",
+      "keptGroup": "局部广告-卡片广告",
+      "rule": null,
+      "matches": "[id=\"com.hihonor.health:id/iv_close_filled\"]"
+    },
+    {
+      "app": "com.huawei.android.totemweather",
+      "removedGroup": "未分类-卡片式广告",
+      "keptGroup": "分段广告-卡片广告",
+      "rule": null,
+      "matches": "[id=\"com.huawei.android.totemweather:id/promote_ad_cancel\"]"
+    },
+    {
+      "app": "com.jarworld.bleach.bvn.sjm.cyc",
+      "removedGroup": "未分类-广告弹窗",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": null,
+      "matches": "[text*=\"跳过\"][text.length<=10]"
+    },
+    {
+      "app": "com.jianshu.haruki",
+      "removedGroup": "未分类-VIP弹窗",
+      "keptGroup": "全屏广告-VIP弹窗",
+      "rule": null,
+      "matches": "[id=\"com.jianshu.haruki:id/dialog_lucky_prize_close\"]"
+    },
+    {
+      "app": "com.jingdong.app.mall",
+      "removedGroup": "全屏广告-购物车页面支付成功广告弹窗",
+      "keptGroup": "全屏广告-购物车页面支付成功弹窗广告",
+      "rule": null,
+      "matches": "@ImageView - ViewGroup >2 TextView[text=\"查看订单\"]"
+    },
+    {
+      "app": "com.le123.ysdq",
+      "removedGroup": "未分类-卡片式广告",
+      "keptGroup": "局部广告-卡片广告",
+      "rule": null,
+      "matches": "[id=\"com.le123.ysdq:id/ad_close_iv\"]"
+    },
+    {
+      "app": "com.lptiyu.tanke",
+      "removedGroup": "未分类-弹窗广告",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": "腾讯广告-1",
+      "matches": "[id=\"com.lptiyu.tanke:id/interact_ad_root\"] >n [id=\"com.lptiyu.tanke:id/iv_close\"]"
+    },
+    {
+      "app": "com.lptiyu.tanke",
+      "removedGroup": "未分类-弹窗广告",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": "快手广告-2",
+      "matches": "[text=\"广告\"] <2 ViewGroup - ViewGroup > ViewGroup > [text=\"跳过\"]"
+    },
+    {
+      "app": "com.lptiyu.tanke",
+      "removedGroup": "未分类-弹窗广告",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": "快手广告-3",
+      "matches": "[id=\"com.lptiyu.tanke:id/ksad_splash_circle_skip_left_view\"]"
+    },
+    {
+      "app": "com.lptiyu.tanke",
+      "removedGroup": "未分类-弹窗广告",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": "其他广告",
+      "matches": "@LinearLayout > [id=\"com.lptiyu.tanke:id/skip_parent_view\"]"
+    },
+    {
+      "app": "com.magicalstory.AppStore",
+      "removedGroup": "局部广告-卡片式广告",
+      "keptGroup": "局部广告-卡片广告",
+      "rule": "搜索页面",
+      "matches": "FrameLayout[childCount=5] > FrameLayout[childCount=1] > @ImageView < FrameLayout +2 *[visibleToUser=true]"
+    },
+    {
+      "app": "com.magicalstory.AppStore",
+      "removedGroup": "局部广告-卡片式广告",
+      "keptGroup": "局部广告-卡片广告",
+      "rule": "首页",
+      "matches": "[vid=\"button_close_ad\"]"
+    },
+    {
+      "app": "com.mcdonalds.gma.cn",
+      "removedGroup": "功能类-关闭 [开通免密支付] 弹窗",
+      "keptGroup": "功能类-关闭[开通免密支付]弹窗",
+      "rule": null,
+      "matches": "@[vid=\"iv_close\"] - * >2 [text*=\"免密支付\"]"
+    },
+    {
+      "app": "com.movie.store",
+      "removedGroup": "未分类-卡片式广告",
+      "keptGroup": "局部广告-卡片广告",
+      "rule": "快手广告",
+      "matches": "[text=\"广告\"] +2 View > View + TextView"
+    },
+    {
+      "app": "com.netease.gl",
+      "removedGroup": "未分类-应用内广告弹窗",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": null,
+      "matches": "@[id=\"com.netease.gl:id/iv_close\"] + [id=\"com.netease.gl:id/iv_cover\"]"
+    },
+    {
+      "app": "com.practical.master.toolsme",
+      "removedGroup": "未分类-广告弹窗",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": "字节穿山甲SDK",
+      "matches": "Image[width<60][height<60] < @View <n View [text=\"反馈\"]"
+    },
+    {
+      "app": "com.qingdaonews.bus",
+      "removedGroup": "未分类-弹窗广告",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": null,
+      "matches": "[id=\"com.qingdaonews.bus:id/iv_native_dislike\"]"
+    },
+    {
+      "app": "com.reddit.frontpage",
+      "removedGroup": "未分类-NSFW 内容提示",
+      "keptGroup": "其他-NSFW 内容提示",
+      "rule": null,
+      "matches": "Button[text=\"Cancel\"] + Button[text=\"Continue\"]"
+    },
+    {
+      "app": "com.sankuai.meituan.dispatch.crowdsource",
+      "removedGroup": "功能类-[保级成功]弹窗",
+      "keptGroup": "其他-[保级成功]弹窗",
+      "rule": null,
+      "matches": "[vid=\"btn_close\"]"
+    },
+    {
+      "app": "com.sankuai.meituan.takeoutnew",
+      "removedGroup": "未分类-付款后广告弹窗",
+      "keptGroup": "全屏广告-付款后广告弹窗",
+      "rule": "美团买药弹窗-点击[暂时放弃]",
+      "matches": "[text=\"送亲友\"] <2 FrameLayout[childCount=2] > [text=\"暂时放弃\"][clickable=true]"
+    },
+    {
+      "app": "com.sgcc.wsgw.cn",
+      "removedGroup": "未分类-首页弹窗广告",
+      "keptGroup": "分段广告-首页弹窗广告",
+      "rule": null,
+      "matches": "@[focusable=true] + [text=\"今日不再出现\"]"
+    },
+    {
+      "app": "com.shuqi.controller",
+      "removedGroup": "未分类-阅读页面底部广告",
+      "keptGroup": "局部广告-阅读页面底部广告",
+      "rule": null,
+      "matches": "[id=\"com.shuqi.controller:id/right_close_ad_text\"]"
+    },
+    {
+      "app": "com.shuqi.controller",
+      "removedGroup": "未分类-阅读页面底部广告",
+      "keptGroup": "局部广告-阅读页面底部广告",
+      "rule": null,
+      "matches": [
+        "[text*=\"优惠券\"]",
+        "[id=\"com.shuqi.controller:id/close_btn\"]"
+      ]
+    },
+    {
+      "app": "com.shuqi.controller",
+      "removedGroup": "未分类-阅读页面底部广告",
+      "keptGroup": "局部广告-阅读页面底部广告",
+      "rule": null,
+      "matches": "@ImageView[clickable=true] - RelativeLayout [id=\"com.shuqi.controller:id/noah_tv_stencil_native_source\"]"
+    },
+    {
+      "app": "com.shuqi.controller",
+      "removedGroup": "未分类-阅读页面底部广告",
+      "keptGroup": "局部广告-阅读页面底部广告",
+      "rule": null,
+      "matches": "[id=\"com.shuqi.controller:id/banner_container_ad\"] >n RelativeLayout + ImageView"
+    },
+    {
+      "app": "com.shuqi.controller",
+      "removedGroup": "未分类-听书页面底部广告",
+      "keptGroup": "局部广告-听书页面底部广告",
+      "rule": null,
+      "matches": "[id=\"com.shuqi.controller:id/remove_current_ad\"]"
+    },
+    {
+      "app": "com.shuqi.controller",
+      "removedGroup": "未分类-听书页面底部广告",
+      "keptGroup": "局部广告-听书页面底部广告",
+      "rule": null,
+      "matches": "[id=\"com.shuqi.controller:id/ad_close_but\"]"
+    },
+    {
+      "app": "com.sina.oasis",
+      "removedGroup": "未分类-首页-推荐广告",
+      "keptGroup": "分段广告-首页推荐广告",
+      "rule": null,
+      "matches": "ImageView[id=\"com.sina.oasis:id/gdt_v2_banner_ad_close_btn\"]"
+    },
+    {
+      "app": "com.snda.wifilocating",
+      "removedGroup": "全屏广告-广告弹窗",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": null,
+      "matches": "[vid=\"interstitial_close_iv\"]"
+    },
+    {
+      "app": "com.snda.wifilocating",
+      "removedGroup": "全屏广告-广告弹窗",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": null,
+      "matches": "[text=\"反馈\"] + View[visibleToUser=true]"
+    },
+    {
+      "app": "com.sodalife.sodax",
+      "removedGroup": "未分类-弹窗广告",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": "字节广告",
+      "matches": "@Image < View +3 View > View > TextView[text$=\"广告\"]"
+    },
+    {
+      "app": "com.soft.blued",
+      "removedGroup": "局部广告-卡片式广告",
+      "keptGroup": "局部广告-卡片广告",
+      "rule": null,
+      "matches": "[id=\"com.soft.blued:id/fl_main\"] [id=\"com.soft.blued:id/img_close\"]"
+    },
+    {
+      "app": "com.ss.android.ugc.aweme",
+      "removedGroup": "功能类-关闭用户推荐",
+      "keptGroup": "局部广告-关闭用户推荐",
+      "rule": null,
+      "matches": "@[text=\"不感兴趣\"] - * [text*=\"也关注了\"]"
+    },
+    {
+      "app": "com.tencent.mobileqq",
+      "removedGroup": "分段广告-小世界评论区广告",
+      "keptGroup": "分段广告-QQ小世界评论区广告",
+      "rule": null,
+      "matches": "RelativeLayout[childCount=5] > @LinearLayout[clickable=true][childCount=2][id!=null] > TextView[text=\"广告\"][id!=null]"
+    },
+    {
+      "app": "com.tencent.mobileqq",
+      "removedGroup": "全屏广告-广告弹窗",
+      "keptGroup": "全屏广告-首页弹窗广告",
+      "rule": "现金瓜分弹窗",
+      "matches": "RelativeLayout >5 ViewGroup[childCount=6] > ViewGroup[index=2][clickable=true]"
+    },
+    {
+      "app": "com.tencent.news",
+      "removedGroup": "未分类-广告、活动弹窗",
+      "keptGroup": "全屏广告-广告、活动弹窗",
+      "rule": null,
+      "matches": "@[text=\"关闭\"] + [text=\"查看活动详情\"]"
+    },
+    {
+      "app": "com.tongcheng.android",
+      "removedGroup": "未分类-应用内卡片广告",
+      "keptGroup": "分段广告-卡片广告",
+      "rule": null,
+      "matches": "ViewGroup[childCount=2] > ImageView + ViewGroup[childCount=1] > ImageView"
+    },
+    {
+      "app": "com.unionpay",
+      "removedGroup": "未分类-天天签到-获得新勋章提示",
+      "keptGroup": "全屏广告-天天签到-获得新勋章提示",
+      "rule": null,
+      "matches": "WebView[text=\"天天签到\"] TextView[text=\"炫耀一下\"] + TextView[clickable=true]"
+    },
+    {
+      "app": "com.waimaiii.waimaiii",
+      "removedGroup": "未分类-广告弹窗",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": null,
+      "matches": "View > View[childCount=2] > ImageView[clickable=true] + ImageView[id=\"\"][clickable=true]"
+    },
+    {
+      "app": "com.xbxxhz.box",
+      "removedGroup": "全屏广告-广告弹窗",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": "红包弹窗",
+      "matches": "[vid=\"dg_dialog_frag_ads_popup_x\"][clickable=true]"
+    },
+    {
+      "app": "com.xbxxhz.box",
+      "removedGroup": "全屏广告-广告弹窗",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": null,
+      "matches": "@View +4 [text=\"反馈\"]"
+    },
+    {
+      "app": "com.ximalaya.ting.lite",
+      "removedGroup": "未分类-广告弹窗",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": null,
+      "matches": "@Image < View + View + View > View > View > TextView[text=\"广告\"]"
+    },
+    {
+      "app": "com.xingin.xhs",
+      "removedGroup": "功能类-自动倍速⏩x2.0⚠️五选一",
+      "keptGroup": "功能类-自动倍速⏩x1.5⚠️五选一",
+      "rule": null,
+      "matches": "[vid=\"layer_player\"][visibleToUser=true]"
+    },
+    {
+      "app": "com.xsj.app",
+      "removedGroup": "未分类-弹窗广告",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": null,
+      "matches": "FrameLayout[childCount=3] > TextView[text!=\"\"] + @ImageView[clickable=true][visibleToUser=true]"
+    },
+    {
+      "app": "com.xueqiu.android",
+      "removedGroup": "局部广告-首页信息流广告",
+      "keptGroup": "局部广告-信息流广告",
+      "rule": null,
+      "matches": "[id=\"com.xueqiu.android:id/ad_close\"]"
+    },
+    {
+      "app": "com.xueqiu.android",
+      "removedGroup": "局部广告-评论区信息流广告",
+      "keptGroup": "局部广告-评论区广告",
+      "rule": null,
+      "matches": "[id=\"com.xueqiu.android:id/ad_card_close\"]"
+    },
+    {
+      "app": "com.xuexiaoyi.xxy",
+      "removedGroup": "未分类-首页-底部广告",
+      "keptGroup": "分段广告-首页-底部广告",
+      "rule": "点击在内部的X",
+      "matches": "View[text.length=4] - View > View > Image[text.length=0]"
+    },
+    {
+      "app": "com.youdao.dict",
+      "removedGroup": "全屏广告",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": "首页-弹窗广告",
+      "matches": "@ImageView[id=\"com.youdao.dict:id/iv_close_bt\"]"
+    },
+    {
+      "app": "com.youdao.dict",
+      "removedGroup": "全屏广告",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": "首页-礼包弹窗",
+      "matches": "[vid=\"image\"] + [vid=\"close\"]"
+    },
+    {
+      "app": "com.youdao.note",
+      "removedGroup": "未分类-卡片式广告",
+      "keptGroup": "局部广告-卡片广告",
+      "rule": "首页上方卡片广告",
+      "matches": "[id=\"com.youdao.note:id/recycle_view\"] + [id=\"com.youdao.note:id/close_ad\"]"
+    },
+    {
+      "app": "com.youloft.calendar",
+      "removedGroup": "未分类-悬浮广告",
+      "keptGroup": "局部广告-悬浮广告",
+      "rule": "万年历页面-右侧悬浮广告",
+      "matches": "[id=\"com.youloft.calendar:id/ad_iv_close\"]"
+    },
+    {
+      "app": "com.zbx.ct.tvzhibo",
+      "removedGroup": "未分类-弹窗广告",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": "字节SDK",
+      "matches": "@Image[text.length=0] < View -n [text=\"反馈\"]"
+    },
+    {
+      "app": "com.zbx.ct.tvzhibo",
+      "removedGroup": "未分类-浮窗广告",
+      "keptGroup": "局部广告-浮窗广告",
+      "rule": null,
+      "matches": "[id=\"com.zbx.ct.tvzhibo:id/iv_close\"]"
+    },
+    {
+      "app": "com.zhizhou.days",
+      "removedGroup": "未分类-第三方 SDK 广告弹窗",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": "穿山甲-第一类广告",
+      "matches": "[desc^=\"webview-close\"] > View[clickable=true]"
+    },
+    {
+      "app": "com.zhizhou.days",
+      "removedGroup": "未分类-第三方 SDK 广告弹窗",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": "穿山甲-第二类广告",
+      "matches": [
+        "[text=\"广告\"]",
+        "@Image < View + [text=\"反馈\"]"
+      ]
+    },
+    {
+      "app": "com.zmzx.college.search",
+      "removedGroup": "全屏广告-广告弹窗",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": "腾讯广告",
+      "matches": "[id=\"com.zmzx.college.search:id/iv_close\"]"
+    },
+    {
+      "app": "com.zmzx.college.search",
+      "removedGroup": "全屏广告-广告弹窗",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": "字节广告-1",
+      "matches": "Image < @View +3 View > View > TextView[text$=\"广告\"]"
+    },
+    {
+      "app": "org.gushiwen.gushiwen",
+      "removedGroup": "未分类-应用内广告弹窗",
+      "keptGroup": "分段广告-弹窗广告",
+      "rule": null,
+      "matches": "@Image < View[width<100] <n View > [text=\"反馈\"]"
+    },
+    {
+      "app": "org.gushiwen.gushiwen",
+      "removedGroup": "未分类-应用内广告弹窗",
+      "keptGroup": "分段广告-弹窗广告",
+      "rule": null,
+      "matches": "@FrameLayout  +2 FrameLayout > LinearLayout > LinearLayout > [text^=\"摇动\"]"
+    },
+    {
+      "app": "org.zwanoo.android.speedtest",
+      "removedGroup": "未分类-测速后广告",
+      "keptGroup": "局部广告-测速后广告",
+      "rule": null,
+      "matches": "[id=\"org.zwanoo.android.speedtest:id/suite_completed_close_ad_button\"]"
+    },
+    {
+      "app": "run.xbud.android",
+      "removedGroup": "未分类-弹窗广告",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": "快手广告",
+      "matches": "[id=\"run.xbud.android:id/ksad_tk_view\"] >n @ViewGroup[clickable=true] > ImageView"
+    },
+    {
+      "app": "run.xbud.android",
+      "removedGroup": "未分类-弹窗广告",
+      "keptGroup": "全屏广告-弹窗广告",
+      "rule": "字节广告-1",
+      "matches": "@Image[text=\"\"] < View +n View > View > TextView[text=\"广告\"]"
+    },
+    {
+      "app": "tool.seagull.v",
+      "removedGroup": "未分类-谷歌广告",
+      "keptGroup": "全屏广告-谷歌广告",
+      "rule": "谷歌广告-3",
+      "matches": "[desc=\"Interstitial close button\"]"
+    }
+  ],
+  "review": [
+    {
+      "app": "com.android.systemui",
+      "groupA": "功能类-自动允许网易云音乐共享整个屏幕",
+      "groupB": "功能类-自动允许白描共享整个屏幕",
+      "rule": null,
+      "matches": "@[clickable=true] > [text=\"共享整个屏幕\"]",
+      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    },
+    {
+      "app": "com.android.systemui",
+      "groupA": "功能类-自动允许网易云音乐共享整个屏幕",
+      "groupB": "功能类-自动允许白描共享整个屏幕",
+      "rule": null,
+      "matches": "Button[text=\"共享屏幕\"][clickable=true]",
+      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    },
+    {
+      "app": "com.android.systemui",
+      "groupA": "功能类-自动允许网易云音乐共享整个屏幕",
+      "groupB": "功能类-自动允许QQ音乐共享整个屏幕",
+      "rule": null,
+      "matches": "@[clickable=true] > [text=\"共享整个屏幕\"]",
+      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    },
+    {
+      "app": "com.android.systemui",
+      "groupA": "功能类-自动允许网易云音乐共享整个屏幕",
+      "groupB": "功能类-自动允许QQ音乐共享整个屏幕",
+      "rule": null,
+      "matches": "Button[text=\"共享屏幕\"][clickable=true]",
+      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    },
+    {
+      "app": "com.baidu.tieba_mini",
+      "groupA": "分段广告-首页信息流广告",
+      "groupB": "未分类-首页-信息流广告",
+      "rule": null,
+      "matches": "[text=\"屏蔽广告\"]",
+      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    },
+    {
+      "app": "com.sgcc.wsgw.cn",
+      "groupA": "分段广告-首页弹窗广告",
+      "groupB": "未分类-首页弹窗广告",
+      "rule": null,
+      "matches": "ViewGroup[childCount=1] > @ViewGroup[childCount=1] > ImageView",
+      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    },
+    {
+      "app": "com.sina.oasis",
+      "groupA": "分段广告-首页推荐广告",
+      "groupB": "未分类-首页-推荐广告",
+      "rule": null,
+      "matches": "@LinearLayout > [text*=\"关闭此广告\"][text.length<=10]",
+      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    },
+    {
+      "app": "com.tencent.mobileqq",
+      "groupA": "分段广告-好友动态-卡片广告",
+      "groupB": "综合广告-好友动态-广告卡片",
+      "rule": null,
+      "matches": "@[clickable=true] > * > ImageView + [text=\"隐藏此条动态\"]",
+      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    },
+    {
+      "app": "com.tencent.mobileqq",
+      "groupA": "分段广告-QQ小世界评论区广告",
+      "groupB": "分段广告-小世界评论区广告",
+      "rule": null,
+      "matches": "@LinearLayout[clickable=true] > TextView[text=\"关闭此条广告\"]",
+      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    },
+    {
+      "app": "com.tongcheng.android",
+      "groupA": "分段广告-卡片广告",
+      "groupB": "未分类-应用内卡片广告",
+      "rule": null,
+      "matches": "@* > * > [id=\"com.tongcheng.android:id/tv_home_banner_pop_up\"][text=\"关闭\"]",
+      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    },
+    {
+      "app": "com.xuexiaoyi.xxy",
+      "groupA": "分段广告-首页-底部广告",
+      "groupB": "未分类-首页-底部广告",
+      "rule": "点击不感兴趣",
+      "matches": "TextView[text=\"不感兴趣\"]",
+      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    },
+    {
+      "app": "com.xunlei.downloadprovider",
+      "groupA": "分段广告-视频详情页广告",
+      "groupB": "综合广告-视频详情页广告",
+      "rule": "点击不感兴趣",
+      "matches": "[id=\"com.xunlei.downloadprovider:id/feedback_not_interested_layout\"]",
+      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    },
+    {
+      "app": "org.gushiwen.gushiwen",
+      "groupA": "分段广告-弹窗广告",
+      "groupB": "未分类-应用内广告弹窗",
+      "rule": "打赏页面-点击返回按钮",
+      "matches": "[id=\"org.gushiwen.gushiwen:id/btn_back\"]",
+      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    },
+    {
+      "app": "org.gushiwen.gushiwen",
+      "groupA": "分段广告-弹窗广告",
+      "groupB": "未分类-应用内广告弹窗",
+      "rule": "荣誉会员-点击返回按钮",
+      "matches": "[id=\"org.gushiwen.gushiwen:id/backBtn\"]",
+      "reason": "duplicate rule requires review because group settings differ or preKeys are involved"
+    }
+  ]
+}

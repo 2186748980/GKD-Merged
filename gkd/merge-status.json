@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "time": 1790486628,
-  "version": 2026092701,
-  "contentHash": "fbc0fb7085a08fa9aced845491e646ca58eabf1ddf9182d8a03557e5d4936da2",
+  "time": 1790507132,
+  "version": 2026092702,
+  "contentHash": "337c32a1366603d3dd7777f59e30c2bc2bde94037d97629818b7f9d8a266fddf",
   "sources": [
     {
       "id": "linarm",
@@ -38,5 +38,7 @@
     }
   ],
   "apps": 1053,
-  "globalGroups": 3
+  "globalGroups": 3,
+  "safeDuplicateRemovals": 97,
+  "duplicateReviewItems": 14
 }

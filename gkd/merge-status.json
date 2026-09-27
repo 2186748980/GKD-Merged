@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "time": 1790507629,
+  "time": 1790508596,
   "version": 2026092703,
   "contentHash": "08397099d9c5da9b48f29b0acffdb3bb1b0fa67b1678d5124be94d1dc3dbd1f6",
   "sources": [
@@ -39,6 +39,11 @@
   ],
   "apps": 1053,
   "globalGroups": 3,
+  "appRuleGroups": 4307,
+  "gkdDisplayedRuleCount": 4307,
+  "globalRuleObjects": 15,
+  "appRuleObjects": 8016,
+  "ruleObjects": 8031,
   "safeDuplicateRemovals": 87,
   "duplicateReviewItems": 202,
   "duplicateReviewBreakdown": {

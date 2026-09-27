@@ -392,11 +392,28 @@ result['version'] = version
 (OUT / 'gkd.version.json5').write_text(json.dumps({'version': version}) + '\n', encoding='utf-8')
 meta['sourceVersions'] = {s['id']: d.get('version') for s, d in loaded}
 (OUT / 'version-state.json').write_text(json.dumps(meta, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+review_by_reason = {}
+for item in DUPLICATE_REPORT['review']:
+    reason = item.get('reason', 'unknown')
+    review_by_reason[reason] = review_by_reason.get(reason, 0) + 1
+
 (OUT / 'duplicate-report.json').write_text(json.dumps({
     'safeRemovedCount': len(DUPLICATE_REPORT['safeRemoved']),
     'reviewCount': len(DUPLICATE_REPORT['review']),
+    'reviewBreakdown': review_by_reason,
     'safeRemoved': DUPLICATE_REPORT['safeRemoved'],
     'review': DUPLICATE_REPORT['review'],
 }, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-(OUT / 'merge-status.json').write_text(json.dumps({'ok': True, 'time': int(time.time()), 'version': version, 'contentHash': content_hash, 'sources': STATUS, 'apps': len(apps), 'globalGroups': len(result['globalGroups']), 'safeDuplicateRemovals': len(DUPLICATE_REPORT['safeRemoved']), 'duplicateReviewItems': len(DUPLICATE_REPORT['review'])}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+(OUT / 'merge-status.json').write_text(json.dumps({
+    'ok': True,
+    'time': int(time.time()),
+    'version': version,
+    'contentHash': content_hash,
+    'sources': STATUS,
+    'apps': len(apps),
+    'globalGroups': len(result['globalGroups']),
+    'safeDuplicateRemovals': len(DUPLICATE_REPORT['safeRemoved']),
+    'duplicateReviewItems': len(DUPLICATE_REPORT['review']),
+    'duplicateReviewBreakdown': review_by_reason,
+}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 print(f"Generated {OUT/'gkd.json5'}: version {version}, {len(apps)} apps, {len(result['globalGroups'])} global groups")

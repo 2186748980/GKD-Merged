@@ -383,6 +383,29 @@ for app in apps:
 
 result['apps'] = apps
 
+# Keep the three counts explicit because GKD's UI "规则" count refers to
+# application rule groups, while the number of individual rule objects is
+# the sum of every group's rules array.
+global_rule_groups = len(result.get('globalGroups', []))
+app_rule_groups = sum(
+    len(a.get('groups', []))
+    for a in result.get('apps', [])
+    if isinstance(a, dict)
+)
+global_rule_objects = sum(
+    len(ensure_rules_list(g))
+    for g in result.get('globalGroups', [])
+    if isinstance(g, dict)
+)
+app_rule_objects = sum(
+    len(ensure_rules_list(g))
+    for a in result.get('apps', [])
+    if isinstance(a, dict)
+    for g in a.get('groups', [])
+    if isinstance(g, dict)
+)
+rule_objects = global_rule_objects + app_rule_objects
+
 # Hash only the actual subscription content; metadata/version is deliberately excluded.
 content_hash = canonical_hash({k: v for k, v in result.items() if k not in {'version', 'checkUpdateUrl'}})
 version, meta = next_version(content_hash)
@@ -411,7 +434,12 @@ for item in DUPLICATE_REPORT['review']:
     'contentHash': content_hash,
     'sources': STATUS,
     'apps': len(apps),
-    'globalGroups': len(result['globalGroups']),
+    'globalGroups': global_rule_groups,
+    'appRuleGroups': app_rule_groups,
+    'gkdDisplayedRuleCount': app_rule_groups,
+    'globalRuleObjects': global_rule_objects,
+    'appRuleObjects': app_rule_objects,
+    'ruleObjects': rule_objects,
     'safeDuplicateRemovals': len(DUPLICATE_REPORT['safeRemoved']),
     'duplicateReviewItems': len(DUPLICATE_REPORT['review']),
     'duplicateReviewBreakdown': review_by_reason,

@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026092601,
+  "version": 2026092701,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -67174,7 +67174,7 @@
         {
           "key": 1,
           "name": "功能类-自动[上滑]继续看短剧",
-          "desc": "①读秒结束后[上滑] ②4.5秒[上滑]1次",
+          "desc": "①读秒结束后[上滑] ②未显示[选集]时,每5秒[上滑]1次",
           "fastQuery": true,
           "activityIds": [
             "com.dragon.read.component.shortvideo.impl.ShortSeriesActivity",
@@ -67203,8 +67203,8 @@
             },
             {
               "key": 2,
-              "name": "②4.5秒[上滑]1次",
-              "actionCd": 4500,
+              "name": "②5秒[上滑]1次",
+              "actionCd": 4000,
               "actionDelay": 1000,
               "swipeArg": {
                 "start": {
@@ -67217,17 +67217,17 @@
                 },
                 "duration": 200
               },
-              "excludeMatches": "([text=\"选集\"][visibleToUser=true]) || ([text=\"发条友善的弹幕吧\"])",
+              "excludeMatches": "([text=\"选集\"][visibleToUser=true]) || ([text*=\"网微剧备字\"][height>0])",
               "matches": "[text=\"选集\"][visibleToUser=false]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/32429827",
-                "https://i.gkd.li/i/32429882",
                 "https://i.gkd.li/i/32429877",
                 "https://i.gkd.li/i/32429830"
               ],
               "excludeSnapshotUrls": [
                 "https://i.gkd.li/i/32430107",
-                "https://i.gkd.li/i/32434872"
+                "https://i.gkd.li/i/32434872",
+                "https://i.gkd.li/i/32683026"
               ],
               "exampleUrls": [
                 "https://e.gkd.li/0128820c-4e8d-44ed-9ebc-ef2d5a062e26",
@@ -101480,6 +101480,7 @@
         {
           "key": 0,
           "name": "开屏广告",
+          "fastQuery": true,
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
@@ -101488,16 +101489,6 @@
           "rules": [
             {
               "key": 0,
-              "fastQuery": true,
-              "anyMatches": [
-                "@View[text=null][clickable=true][childCount=0][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][childCount=0] <n FrameLayout[childCount>2][text=null][desc=null] >(n+6) [text*=\"第三方应用\" || text*=\"扭动手机\" || text*=\"点击或上滑\" || text*=\"省钱好物\" || text*=\"扭一扭\"][visibleToUser=true]",
-                "FrameLayout > FrameLayout[childCount>2][text=null][desc=null] > @View[text=null][clickable=true][childCount=0][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][childCount=0][visibleToUser=true]"
-              ],
-              "snapshotUrls": "https://i.gkd.li/i/13827755"
-            },
-            {
-              "key": 1,
-              "fastQuery": true,
               "matches": "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/16030619",
@@ -101506,18 +101497,30 @@
               ]
             },
             {
+              "key": 1,
+              "matches": "[vid=\"ms_skipView\"][visibleToUser=true][width<165]",
+              "snapshotUrls": "https://i.gkd.li/i/32683549"
+            },
+            {
               "key": 2,
-              "fastQuery": true,
               "matches": "@ImageView[clickable=true][visibleToUser=true] - [text=\"|\"]",
               "snapshotUrls": "https://i.gkd.li/i/16030413"
             },
             {
               "key": 3,
+              "anyMatches": [
+                "@View[text=null][clickable=true][childCount=0][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][childCount=0] <n FrameLayout[childCount>2][text=null][desc=null] >(n+6) [text*=\"第三方应用\" || text*=\"扭动手机\" || text*=\"点击或上滑\" || text*=\"省钱好物\" || text*=\"扭一扭\"][visibleToUser=true]",
+                "FrameLayout > FrameLayout[childCount>2][text=null][desc=null] > @View[text=null][clickable=true][childCount=0][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][childCount=0][visibleToUser=true]"
+              ],
+              "snapshotUrls": "https://i.gkd.li/i/13827755"
+            },
+            {
+              "key": 4,
               "matches": "@View <2 FrameLayout <2 FrameLayout < [vid=\"splash_container\"]",
               "snapshotUrls": "https://i.gkd.li/import/13827755"
             },
             {
-              "key": 4,
+              "key": 5,
               "fastQuery": true,
               "anyMatches": [
                 "@View[text=null][clickable=true][childCount=0][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][text=null] <n FrameLayout[childCount>2] >(7,8,9,10) [text*=\"第三方应用\" || text*=\"扭动手机\" || text*=\"点击或上滑\"][visibleToUser=true]",
@@ -101526,7 +101529,7 @@
               "snapshotUrls": "https://i.gkd.li/i/13827755"
             },
             {
-              "key": 5,
+              "key": 6,
               "fastQuery": true,
               "matches": "[text*=\"跳过\"][text.length<10][visibleToUser=true]",
               "snapshotUrls": [
@@ -101536,13 +101539,18 @@
               ]
             },
             {
-              "key": 6,
+              "key": 7,
+              "fastQuery": true,
+              "matches": "@ImageView[clickable=true][visibleToUser=true] - [text=\"|\"]",
+              "snapshotUrls": "https://i.gkd.li/i/16030413"
+            },
+            {
+              "key": 8,
               "matches": "@View <2 FrameLayout <2 FrameLayout < [vid=\"splash_container\"]",
               "snapshotUrls": "https://i.gkd.li/i/13827755"
             }
           ],
           "order": -10,
-          "fastQuery": true,
           "actionCdKey": 0
         },
         {

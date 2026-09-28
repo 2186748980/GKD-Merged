@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026092703,
+  "version": 2026092801,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -52038,11 +52038,12 @@
                 "duration": 200
               },
               "activityIds": "com.yxcorp.gifshow.HomeActivity",
-              "matches": "[vid=\"ad_detail_content_layout\" || vid=\"plc_tv_biz_text\" && (text=\"游戏\" || text=\"购物\" || text=\"购买\" || text=\"汽车\" || text=\"咨询\" || text=\"应用\" || text=\"品牌活动\" || text=\"一键出片\" || text=\"测一测\")][visibleToUser=true]",
+              "matches": "([vid=\"ad_detail_content_layout\"][visibleToUser=true]) || ([vid=\"plc_tv_biz_text\"][text=\"游戏\" || text=\"小游戏\" || text=\"购物\" || text=\"购买\" || text=\"汽车\" || text=\"咨询\" || text=\"应用\" || text=\"品牌活动\" || text=\"一键出片\" || text=\"测一测\"][visibleToUser=true])",
               "snapshotUrls": [
                 "https://i.gkd.li/i/29213590",
                 "https://i.gkd.li/i/29029850",
                 "https://i.gkd.li/i/29029852",
+                "https://i.gkd.li/i/32701451",
                 "https://i.gkd.li/i/29029853",
                 "https://i.gkd.li/i/29030087",
                 "https://i.gkd.li/i/29031982",
@@ -107365,8 +107366,11 @@
             {
               "fastQuery": true,
               "activityIds": ".MainActivity",
-              "matches": "[text=\"暂不\"] < @View[clickable=true] <3 View[getChild(0).text=\"保持后台下载\"] < View < View < View < ViewGroup < [id=\"android:id/content\"]",
-              "snapshotUrls": "https://i.gkd.li/i/32522962",
+              "matches": "[text=\"暂不\"] < @View[clickable=true] <(3,4) View[getChild(0).text=\"保持后台下载\"] < View < View < View < ViewGroup < [id=\"android:id/content\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/32522962",
+                "https://i.gkd.li/i/32700890"
+              ],
               "exampleUrls": "https://e.gkd.li/6fc05152-c83a-488b-b74d-2a4fe247ee58"
             }
           ]

@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026092901,
+  "version": 2026093001,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -37190,6 +37190,26 @@
       ]
     },
     {
+      "id": "com.fobwifi.transocks",
+      "name": "Transocks",
+      "groups": [
+        {
+          "key": 1,
+          "name": "全屏广告-VIP弹窗",
+          "desc": "点击[Finish]",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": ".ui.main.MainActivity",
+              "matches": "@[text=\"Finish\"] +n [visibleToUser=true] >(1,3) [text*=\"VIP\"]",
+              "snapshotUrls": "https://i.gkd.li/i/32761426",
+              "exampleUrls": "https://e.gkd.li/1c8008a7-bd3b-4c0d-a287-ef9ab4a10fb6"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "com.follow.clash",
       "name": "FlClash",
       "groups": [
@@ -53266,18 +53286,42 @@
           "key": 0,
           "name": "开屏广告",
           "fastQuery": true,
+          "matchRoot": true,
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
           "priorityTime": 10000,
           "rules": [
             {
-              "key": 0,
-              "matches": "@[clickable=true] > [text*=\"跳过\"][text.length<10][visibleToUser=true]",
+              "key": 1,
+              "matches": "[vid=\"adgain_splash_skip_ll\"]",
               "snapshotUrls": "https://i.gkd.li/i/30350919"
             }
           ],
           "order": -10
+        },
+        {
+          "key": 2,
+          "name": "其他-开屏误触兜底",
+          "desc": "误进广告页后自动退出",
+          "scopeKeys": [
+            0
+          ],
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "rules": [
+            {
+              "name": "按[返回键]",
+              "preKeys": [
+                1
+              ],
+              "fastQuery": true,
+              "action": "back",
+              "activityIds": "com.adgain.sdk.base.activity.AdActivity",
+              "matches": "[id=\"android:id/decor_content_parent\"]",
+              "snapshotUrls": "https://i.gkd.li/i/32742369"
+            }
+          ]
         }
       ]
     },
@@ -118319,11 +118363,13 @@
           "rules": [
             {
               "fastQuery": true,
+              "matchRoot": true,
               "activityIds": "com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity",
-              "matches": "@[text=\"取消\"] - [text=\"后将展示广告\"] <2 View < View < ComposeView < LinearLayout < RecyclerView < FrameLayout <n FrameLayout < [vid=\"video_container\"]",
+              "matches": "@[text=\"取消\"] - [visibleToUser=true][text=\"后将展示广告\"] <<n [vid=\"video_container\"]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/29379312",
-                "https://i.gkd.li/i/32741484"
+                "https://i.gkd.li/i/32741484",
+                "https://i.gkd.li/i/32783449"
               ],
               "exampleUrls": "https://e.gkd.li/2fed6260-9cd4-4546-a8ea-de89fce88b5d"
             }

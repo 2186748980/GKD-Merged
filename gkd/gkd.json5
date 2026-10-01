@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026093001,
+  "version": 2026100101,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -1708,12 +1708,13 @@
           "matches": [
             "[text*=\"内测\" || text*=\"测试版\" || text*=\"新版\" || text*=\"更新\" || text*=\"升级\" || text*=\"体验\" || text*=\"內測\" || text*=\"測試版\" || text*=\"升級\" || text*=\"體驗\" || text*=\"Update\" || text*=\"Upgrade\" || text*=\"Experience\"][text!*=\"自动\" && text!*=\"自動\" && text!*=\"成功\" && text!*=\"失败\" && text!*=\"失敗\" && text!*=\"检查更新\" && text!*=\"检测更新\" && text!*=\"卸载\" && name!$=\"EditText\"][childCount=0][visibleToUser=true]",
             "[text*=\"更新\" || text*=\"下载\" || text*=\"安装\" || text*=\"升级\" || text*=\"查看\" || text*=\"体验\" || text*=\"确定\" || text*=\"确认\" || text*=\"应用市场\"][text.length<6][childCount=0][visibleToUser=true]",
-            "([text*=\"不再提醒\" || text$=\"再说\" || text$=\"拒绝\" || text$=\"再想想\" || text*=\"再看看\" || text^=\"忽略\" || text^=\"暂不\" || text^=\"放弃\" || text^=\"取消\" || text$=\"不要\" || text$=\"再說\" || text$=\"暫不\" || text$=\"拒絕\" || text*=\"稍后\" || text^=\"关闭\" || text$=\"Later\" || text^=\"Ignore\" || text^=\"Not now\" || text^=\"Cancel\"][!(text*=\"取消\"&&text*=\"忽略\")][text.length<6][childCount=0][visibleToUser=true]) || ([vid=\"closeIv\" || vid=\"iv_close\" || vid=\"iv_cancel\" || vid=\"close\" || vid=\"Close\" || vid=\"img_close\" || vid=\"btn_close\" || vid=\"ivCancel\" || vid=\"tvCancel\" || vid=\"cancel\" || vid=\"Cancel\" || vid=\"ivClose\" || vid=\"imgClose\" || vid=\"iv_negative\" || vid=\"update_close_icon\" || vid=\"dialog_close\" || vid=\"im_dismiss\"][childCount=0][visibleToUser=true])"
+            "([text*=\"不再提醒\" || text$=\"再说\" || text$=\"拒绝\" || text$=\"再想想\" || text*=\"再看看\" || text^=\"忽略\" || text^=\"暂不\" || text^=\"放弃\" || text^=\"取消\" || text$=\"不要\" || text$=\"再說\" || text$=\"暫不\" || text$=\"拒絕\" || text*=\"稍后\" || text^=\"关闭\" || text$=\"Later\" || text^=\"Ignore\" || text^=\"Not now\" || text^=\"Cancel\"][!(text*=\"取消\"&&text*=\"忽略\")][text.length<6][childCount=0][visibleToUser=true]) || ([vid=\"closeIv\" || vid=\"iv_close\" || vid=\"iv_cancel\" || vid=\"close\" || vid=\"Close\" || vid=\"img_close\" || vid=\"btn_close\" || vid=\"ivCancel\" || vid=\"tvCancel\" || vid=\"cancel\" || vid=\"Cancel\" || vid=\"ivClose\" || vid=\"imgClose\" || vid=\"iv_negative\" || vid=\"update_close_icon\" || vid=\"btn_skip_update\" || vid=\"dialog_close\" || vid=\"im_dismiss\"][childCount=0][visibleToUser=true])"
           ],
           "snapshotUrls": [
             "https://i.gkd.li/i/24158267",
             "https://i.gkd.li/i/27428213",
             "https://i.gkd.li/i/27470927",
+            "https://i.gkd.li/i/32878161",
             "https://i.gkd.li/i/30968619"
           ],
           "excludeSnapshotUrls": [
@@ -53979,6 +53980,55 @@
       ]
     },
     {
+      "id": "com.limelight.unofficialA",
+      "name": "月光·阿西西",
+      "groups": [
+        {
+          "key": 1,
+          "name": "功能类-自动恢复串流",
+          "desc": "上次连接图标->恢复串流 直接进入画面",
+          "fastQuery": true,
+          "activityIds": "com.limelight.AppView",
+          "matchTime": 8000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "rules": [
+            {
+              "key": 0,
+              "name": "上次连接图标",
+              "matches": "GridView[vid=\"fragmentView\"] @[clickable=true] > [childCount=2] > [vid=\"grid_overlay\"]",
+              "snapshotUrls": "https://i.gkd.li/i/32876938",
+              "exampleUrls": "https://e.gkd.li/05212f5a-1cbc-4184-9752-06a40573483a"
+            },
+            {
+              "preKeys": [
+                0
+              ],
+              "name": "恢复串流",
+              "matches": "[vid=\"btn_app_actions_resume\"][clickable=true]",
+              "snapshotUrls": "https://i.gkd.li/i/32877047",
+              "exampleUrls": "https://e.gkd.li/b5152b35-a80b-4c8d-a466-278132e93086"
+            }
+          ]
+        },
+        {
+          "key": 2,
+          "name": "功能类-串流自动选择默认卡片",
+          "desc": "选择Disktop卡片连接",
+          "rules": [
+            {
+              "key": 2,
+              "fastQuery": true,
+              "activityIds": "com.limelight.AppView",
+              "matches": "GridView[vid=\"fragmentView\"] @[clickable=true][index=0] > * > [vid=\"grid_image\"]",
+              "snapshotUrls": "https://i.gkd.li/i/32877372",
+              "exampleUrls": "https://e.gkd.li/a03b46ea-df92-40dd-b30c-b3887f390db4"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "com.lingan.seeyou",
       "name": "美柚",
       "groups": [
@@ -80005,10 +80055,10 @@
           "actionMaximum": 1,
           "resetMatch": "app",
           "activityIds": [
-            ".main.MainActivity",
+            ".com.ss.android.ugc.aweme.main.MainActivity",
             ".detail.ui.DetailActivity",
             ".profile.ui.UserProfileActivity",
-            "com.ss.android.ugc.aweme.main.MainActivity",
+            ".com.ss.android.ugc.aweme.main.MainActivity",
             ".setting.serverpush.ui.PushSettingManagerActivity"
           ],
           "rules": [
@@ -80210,8 +80260,8 @@
           "fastQuery": true,
           "activityIds": [
             ".detail.ui.DetailActivity",
-            ".main.MainActivity",
-            "com.bytedance.ies.ugc.aweme.photos.detail.flow.page.FlowPageActivity",
+            ".com.ss.android.ugc.aweme.main.MainActivity",
+            ".com.bytedance.ies.ugc.aweme.photos.detail.flow.page.FlowPageActivity",
             ".searcharticle.detail.ArticleDetailActivity",
             ".search.activity.SearchResultActivity",
             ".detail.ultra.ui.UltraDetailActivity",
@@ -80237,8 +80287,8 @@
           "fastQuery": true,
           "activityIds": [
             ".detail.ui.DetailActivity",
-            ".main.MainActivity",
-            "com.bytedance.ies.ugc.aweme.photos.detail.flow.page.FlowPageActivity",
+            ".com.ss.android.ugc.aweme.main.MainActivity",
+            ".com.bytedance.ies.ugc.aweme.photos.detail.flow.page.FlowPageActivity",
             ".searcharticle.detail.ArticleDetailActivity",
             ".search.activity.SearchResultActivity",
             ".detail.ultra.ui.UltraDetailActivity",
@@ -84253,31 +84303,33 @@
           "actionMaximum": 1,
           "activityIds": [
             ".plugin.gallery.ui.AlbumPreviewUI",
-            ".plugin.gallery.ui.ImagePreviewUI"
+            ".plugin.gallery.ui.ImagePreviewUI",
+            ".plugin.picker.LocalMediaPickerUI"
           ],
           "rules": [
             {
               "key": 1,
               "fastQuery": true,
               "anyMatches": [
-                "@[desc^=\"未选中\" || desc^=\"未選定\" || desc^=\"Unselected\"][visibleToUser=true] + [text=\"原图\" || text=\"原圖\" || text=\"Full Image\"]",
+                "@[desc^=\"未选中\" || desc^=\"未選定\" || desc^=\"Unselected\" || (checkable=true && checked=false)] + [text=\"原图\" || text=\"原圖\" || text=\"Full Image\"][visibleToUser=true]",
                 "[desc^=\"未选中\" || desc^=\"未選定\" || desc^=\"Unselected\"][!(desc*=\"选择\")][text=null][visibleToUser=true]"
-              ],
-              "exampleUrls": [
-                "https://e.gkd.li/32dc0943-e85f-416d-bb01-6ed610d4bdd8",
-                "https://e.gkd.li/93d41161-ab69-4c2d-83bb-637d7292f5e6"
               ],
               "snapshotUrls": [
                 "https://i.gkd.li/i/16987145",
                 "https://i.gkd.li/i/16987144",
                 "https://i.gkd.li/i/27852612",
-                "https://i.gkd.li/i/19625049"
+                "https://i.gkd.li/i/19625049",
+                "https://i.gkd.li/i/32857934"
               ],
               "excludeSnapshotUrls": [
                 "https://i.gkd.li/i/16987141",
                 "https://i.gkd.li/i/16987147",
                 "https://i.gkd.li/i/27852606",
                 "https://i.gkd.li/i/29746331"
+              ],
+              "exampleUrls": [
+                "https://e.gkd.li/32dc0943-e85f-416d-bb01-6ed610d4bdd8",
+                "https://e.gkd.li/93d41161-ab69-4c2d-83bb-637d7292f5e6"
               ]
             },
             {
@@ -91639,6 +91691,26 @@
           "rules": [],
           "snapshotUrls": "https://i.gkd.li/i/13258215",
           "enable": false
+        }
+      ]
+    },
+    {
+      "id": "com.tmobile.tuesdays",
+      "name": "T-Life",
+      "groups": [
+        {
+          "key": 1,
+          "name": "全屏广告",
+          "rules": [
+            {
+              "key": 1,
+              "fastQuery": true,
+              "activityIds": "com.telekom.tworld.dashboard.DashboardActivity",
+              "matches": "Button[text=\"See full details\"][index=parent.childCount.minus(1)] <n View -n @[desc=\"Close\"][clickable=true] < [id=\"screen-offer\"] < WebView <<2 * - * >2 [vid=\"action_bar_root\"]",
+              "snapshotUrls": "https://i.gkd.li/i/32868780",
+              "exampleUrls": "https://e.gkd.li/3a0b5df5-dbaa-461a-a61d-bdb7b54dafc1"
+            }
+          ]
         }
       ]
     },

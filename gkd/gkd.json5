@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026100101,
+  "version": 2026100301,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -84420,7 +84420,8 @@
           "priorityTime": 10000,
           "activityIds": [
             ".plugin.appbrand.ui.AppBrandUI",
-            ".plugin.appbrand.launching.AppBrandLaunchProxyUI"
+            ".plugin.appbrand.launching.AppBrandLaunchProxyUI",
+            ".plugin.appbrand.ui.AppBrandPluginUI"
           ],
           "rules": [
             {
@@ -84434,7 +84435,8 @@
                 "https://i.gkd.li/i/12785183",
                 "https://i.gkd.li/i/13306883",
                 "https://i.gkd.li/i/13407275",
-                "https://i.gkd.li/i/15108441"
+                "https://i.gkd.li/i/15108441",
+                "https://i.gkd.li/i/32969391"
               ]
             },
             {

@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026100301,
+  "version": 2026100401,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -1645,6 +1645,10 @@
         },
         {
           "id": "com.yingyonghui.market",
+          "enable": false
+        },
+        {
+          "id": "com.bambulab.creator",
           "enable": false
         },
         {

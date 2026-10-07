@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026100601,
+  "version": 2026100701,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -58663,6 +58663,26 @@
           ],
           "rules": [],
           "enable": false
+        }
+      ]
+    },
+    {
+      "id": "com.microsoft.deviceintegrationservice",
+      "name": "Device Integration Service",
+      "groups": [
+        {
+          "key": 1,
+          "name": "功能类-自动[允许]连接至Windows",
+          "desc": "点击[允许]",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": "com.microsoft.deviceExperiences.permission.MediaProjectionPermissionActivity",
+              "matches": "[text*=\"连接至 Windows\"] +(1,2) [visibleToUser=true] > [text=\"允许\"]",
+              "snapshotUrls": "https://i.gkd.li/i/33084704",
+              "exampleUrls": "https://e.gkd.li/8a8e5daa-4d6c-4fe3-aba8-90364624a5e6"
+            }
+          ]
         }
       ]
     },

@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026100901,
+  "version": 2026101101,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -38311,10 +38311,11 @@
               "preKeys": [
                 7
               ],
-              "matches": "@[clickable=true] >(1,2) [vid=\"list_item_text\"][text=\"关闭\"]",
+              "matches": "@[clickable=true] >(1,2) [vid=\"list_item_text\"][text=\"关闭\" || text=\"Dismiss\"]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/23772979",
-                "https://i.gkd.li/i/25461885"
+                "https://i.gkd.li/i/25461885",
+                "https://i.gkd.li/i/33272478"
               ]
             }
           ]
@@ -65334,6 +65335,9 @@
               "name": "②5秒[上滑]1次",
               "actionCd": 4000,
               "actionDelay": 1000,
+              "versionCode": {
+                "maximum": 72932
+              },
               "swipeArg": {
                 "start": {
                   "x": "screenWidth/2",
@@ -65363,6 +65367,35 @@
                 "https://e.gkd.li/b70813b8-1377-4210-be6c-fe04f3c9c701",
                 "https://e.gkd.li/38c5c9d1-9962-4e07-a7de-49999d3ddf2b"
               ]
+            },
+            {
+              "key": 3,
+              "name": "③5秒[上滑]1次",
+              "actionCd": 4000,
+              "actionDelay": 1000,
+              "versionCode": {
+                "minimum": 72933
+              },
+              "swipeArg": {
+                "start": {
+                  "x": "screenWidth/2",
+                  "y": "screenHeight * 0.7"
+                },
+                "end": {
+                  "x": "screenWidth/2",
+                  "y": "screenHeight * 0.3"
+                },
+                "duration": 200
+              },
+              "excludeMatches": [
+                "([text=\"选集\"][visibleToUser=true]) || ([text*=\"剧备字\"][height>0])",
+                "@TextView[visibleToUser=false][width>2000][height>40] <8 [childCount=8] <<n [vid=\"fragment_container\"]"
+              ],
+              "matches": "[text=\"选集\"][visibleToUser=false]",
+              "excludeSnapshotUrls": [
+                "https://i.gkd.li/i/32683026",
+                "https://i.gkd.li/i/33289353"
+              ]
             }
           ]
         },
@@ -65374,13 +65407,13 @@
           "activityIds": "com.dragon.read.reader.ui.ReaderActivity",
           "rules": [
             {
-              "key": 3,
+              "key": 4,
               "actionDelay": 200,
               "matches": "ImageView < @ViewGroup <3 ViewGroup[childCount=5] <n * <n * <n * <n * <n * <n * <n * <n * <n * <n [id=\"com.phoenix.read:id/root_view\"]",
               "snapshotUrls": "https://i.gkd.li/i/27986281"
             },
             {
-              "preKeys": 3,
+              "preKeys": 4,
               "matches": "TextView[text=\"关闭此广告\"]",
               "snapshotUrls": "https://i.gkd.li/i/28024153"
             }

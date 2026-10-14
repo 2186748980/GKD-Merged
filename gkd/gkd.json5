@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026101301,
+  "version": 2026101401,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -29636,7 +29636,7 @@
           "rules": [
             {
               "key": 1507,
-              "matches": "@[(name$=\"ImageView\" || getChild(0).name$=\"ImageView\") && desc!=\"back_unfold\"][clickable=true][visibleToUser=true][width<102 && height<102] <n [childCount>1] >(2,3) [text*=\"查看\" || text$=\"优惠\" || text^=\"立即\" || text^=\"马上\" || text*=\"参与\" || text*=\"参加\" || text*=\"免费\" || (text*=\"领\" && text*=\"券\") || (text*=\"返\" && text*=\"金币\")][text!=\"查看下载\"][text.length<10]",
+              "matches": "@[(name$=\"ImageView\" || getChild(0).name$=\"ImageView\") && desc!=\"back_unfold\"][clickable=true][visibleToUser=true][width<102 && height<102] <n [childCount>1] >(2,3) [text*=\"查看\" || text$=\"优惠\" || text^=\"立即\" || text^=\"马上\" || text*=\"参与\" || text*=\"参加\" || text*=\"免费\" || text^=\"领\" || text$=\"金币\"][text!=\"查看下载\"][text.length<10]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/12908734",
                 "https://i.gkd.li/i/18138903",
@@ -49630,7 +49630,7 @@
             {
               "key": 8,
               "activityIds": "com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Activity_T",
-              "matches": "@ImageView < * - FrameLayout >(2,3) [text*=\"第三方应用\" || text*=\"扭动手机\" || text*=\"点击\" && text*=\"上滑\" || text*=\"省钱好物\" || text*=\"扭一扭\"]",
+              "matches": "@ImageView < * - FrameLayout >(2,3) [text*=\"第三方应用\" || text*=\"扭动手机\" || text*=\"点击\" || text*=\"上滑\" || text*=\"省钱好物\" || text*=\"扭一扭\"]",
               "snapshotUrls": "https://i.gkd.li/i/25935365",
               "exampleUrls": "https://e.gkd.li/029e1258-ef6c-4474-991b-7925d9e73e9e"
             },
@@ -49644,7 +49644,7 @@
             {
               "key": 4,
               "activityIds": "com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Activity_T",
-              "matches": "@ImageView[width<85] < FrameLayout <2 FrameLayout <2 FrameLayout <2 * - FrameLayout > [text*=\"第三方应用\" || text*=\"扭动\" || (text*=\"点击\" && text*=\"上滑\") || text*=\"省钱好物\" || text*=\"扭一扭\"]",
+              "matches": "@ImageView[width<85] < FrameLayout <2 FrameLayout <2 FrameLayout <2 * - FrameLayout > [text*=\"第三方应用\" || text*=\"扭动\" || text*=\"点击\" || text*=\"上滑\" || text*=\"省钱好物\" || text*=\"扭一扭\"]",
               "snapshotUrls": "https://i.gkd.li/i/25989677"
             },
             {
@@ -65218,14 +65218,16 @@
                 ".act.HomeNewActivity",
                 "com.qingxia.common.homework.ui.HomeworkRecord4Activity",
                 "net.liucong.camera.ext.ScanningQrActivity",
-                "com.qingxia.common.book.ui.Collection2Activity"
+                "com.qingxia.common.book.ui.Collection2Activity",
+                "com.qingxia.common.search.ui.Search2Activity"
               ],
               "matches": "[vid=\"ad_close\"][clickable=true]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/17265140",
                 "https://i.gkd.li/i/33297507",
                 "https://i.gkd.li/i/33297555",
-                "https://i.gkd.li/i/33315721"
+                "https://i.gkd.li/i/33315721",
+                "https://i.gkd.li/i/33372920"
               ],
               "exampleUrls": "https://e.gkd.li/b83aa566-8105-4877-abcd-800abfe7634e"
             },
@@ -70694,7 +70696,7 @@
     },
     {
       "id": "com.sec.android.app.samsungapps",
-      "name": "应用商店",
+      "name": "(三星)应用商店",
       "groups": [
         {
           "key": 0,
@@ -70728,18 +70730,23 @@
         },
         {
           "key": 1,
-          "name": "其他-[您是否年满 18 岁？]弹窗",
+          "name": "其他-[是否年满18岁]弹窗",
           "desc": "点击[是]",
           "rules": [
             {
               "fastQuery": true,
-              "activityIds": ".SearchResultActivity",
-              "matches": "[text=\"您是否年满 18 岁？\"] +4 @[clickable=true] > [text=\"是\"]",
-              "exampleUrls": "https://m.gkd.li/57941037/cee78493-fbe1-46a0-8dcf-a8b1f1f61f19",
-              "snapshotUrls": "https://i.gkd.li/i/14473690"
+              "activityIds": [
+                ".SearchResultActivity",
+                ".SamsungAppsMainActivity"
+              ],
+              "matches": "[text*=\"年满 18 岁\"] +4 [vid=\"positive\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/14473690",
+                "https://i.gkd.li/i/33385203"
+              ],
+              "exampleUrls": "https://e.gkd.li/1417cf6c-e06d-4565-ab2e-eae6a713f1f1"
             }
-          ],
-          "enable": false
+          ]
         },
         {
           "key": 2,
@@ -70772,6 +70779,21 @@
         },
         {
           "key": 4,
+          "name": "其他-[您是否年满 18 岁？]弹窗",
+          "desc": "点击[是]",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": "com.sec.android.app.samsungapps.SearchResultActivity",
+              "matches": "[text=\"您是否年满 18 岁？\"] +4 @[clickable=true] > [text=\"是\"]",
+              "exampleUrls": "https://m.gkd.li/57941037/cee78493-fbe1-46a0-8dcf-a8b1f1f61f19",
+              "snapshotUrls": "https://i.gkd.li/i/14473690"
+            }
+          ],
+          "enable": false
+        },
+        {
+          "key": 5,
           "name": "功能类-年满18岁",
           "desc": "点击【是】",
           "activityIds": "com.sec.android.app.samsungapps.SearchResultActivity",
@@ -77333,7 +77355,10 @@
           "name": "局部广告-直播间右下角浮窗",
           "desc": "点击x掉",
           "fastQuery": true,
-          "activityIds": ".live.LivePlayActivity",
+          "activityIds": [
+            ".live.LivePlayActivity",
+            ".detail.ui.DetailActivity"
+          ],
           "rules": [
             {
               "key": 28,
@@ -77348,9 +77373,12 @@
             },
             {
               "key": 29,
-              "name": "打开游戏",
-              "matches": "@[visibleToUser=true] <3 [childCount=5] >5 [text=\"打开游戏\"]",
-              "snapshotUrls": "https://i.gkd.li/i/30297510"
+              "name": "打开游戏/下载",
+              "matches": "@[visibleToUser=true][width<114 && height<114][top=parent.top] <3 [childCount>4] >5 [text=\"打开游戏\" || text=\"下载\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/30297510",
+                "https://i.gkd.li/i/33388572"
+              ]
             },
             {
               "key": 30,

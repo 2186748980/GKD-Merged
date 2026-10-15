@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026101401,
+  "version": 2026101501,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -27623,6 +27623,39 @@
             }
           ],
           "enable": false
+        }
+      ]
+    },
+    {
+      "id": "com.didiglobal.express.driver",
+      "name": "滴滴送货司机",
+      "groups": [
+        {
+          "key": 1,
+          "name": "权限提示-悬浮窗",
+          "desc": "点击[忽略]",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": ".v2.main.EDMainActivity",
+              "matches": "[text*=\"悬浮窗\"] +n @[clickable=true] > [text=\"忽略\"]",
+              "snapshotUrls": "https://i.gkd.li/i/33427414"
+            }
+          ]
+        },
+        {
+          "key": 2,
+          "name": "其他-附近有新商户",
+          "desc": "点击[忽略]",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": ".v2.main.EDMainActivity",
+              "matches": "[text*=\"有新商户\"] +n @[clickable=true] > [text=\"忽略\"]",
+              "snapshotUrls": "https://i.gkd.li/i/33427414",
+              "exampleUrls": "https://e.gkd.li/fbbd9498-9140-40fe-a772-ba4613bfa9a4"
+            }
+          ]
         }
       ]
     },
@@ -82684,16 +82717,14 @@
           "rules": [
             {
               "key": 143,
-              "versionCode": {
-                "maximum": 2979
-              },
               "activityIds": ".framework.app.UIPageFragmentActivity",
               "matches": "[vid=\"kinda_button_impl_wrapper\"][desc=\"完成\" || desc=\"返回商家\"]",
               "exampleUrls": "https://m.gkd.li/57941037/a5177d9d-6745-443f-baf5-af57153430d8",
               "snapshotUrls": [
                 "https://i.gkd.li/i/14662147",
                 "https://i.gkd.li/i/14399355",
-                "https://i.gkd.li/i/24157874"
+                "https://i.gkd.li/i/24157874",
+                "https://i.gkd.li/i/33430797"
               ],
               "excludeSnapshotUrls": "https://i.gkd.li/i/14532946"
             },
@@ -108185,6 +108216,30 @@
             },
             {
               "key": 13,
+              "fastQuery": true,
+              "activityIds": "com.baidu.mobads.sdk.api.MobRewardVideoActivity",
+              "matches": "@ImageView[clickable=true][visibleToUser=true][width<110 && height<110] + RelativeLayout >3 [text=\"反馈\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/33430048",
+                "https://i.gkd.li/i/33430738"
+              ]
+            },
+            {
+              "key": 14,
+              "fastQuery": true,
+              "activityIds": "com.baidu.mobads.sdk.api.MobRewardVideoActivity",
+              "matches": "@ImageView[clickable=true][visibleToUser=true] + ImageView[clickable=true] + [text=\"点击或滑动查看奖励\"]",
+              "snapshotUrls": "https://i.gkd.li/i/33430738"
+            },
+            {
+              "key": 15,
+              "fastQuery": true,
+              "activityIds": "com.baidu.mobads.sdk.api.MobRewardVideoActivity",
+              "matches": "@ImageView[clickable=true][visibleToUser=true][width<110 && height<110] - [text=\"反馈\"]",
+              "snapshotUrls": "https://i.gkd.li/i/33430746"
+            },
+            {
+              "key": 16,
               "name": "优量汇广告",
               "activityIds": [
                 "com.zjwh.android_wh_physicalfitness.activity.HomeActivity",
@@ -108198,7 +108253,7 @@
               ]
             },
             {
-              "key": 14,
+              "key": 17,
               "name": "腾讯SDK",
               "fastQuery": true,
               "activityIds": ".activity.HomeActivity",
@@ -108207,7 +108262,7 @@
               "snapshotUrls": "https://i.gkd.li/i/17355585"
             },
             {
-              "key": 15,
+              "key": 18,
               "name": "快手SDK",
               "fastQuery": true,
               "activityIds": [
@@ -108223,7 +108278,7 @@
               ]
             },
             {
-              "key": 16,
+              "key": 19,
               "name": "百度SDK",
               "fastQuery": true,
               "activityIds": "com.baidu.mobads.sdk.api.MobRewardVideoActivity",
@@ -108232,14 +108287,14 @@
               "snapshotUrls": "https://i.gkd.li/i/13554229"
             },
             {
-              "key": 17,
+              "key": 20,
               "name": "百青藤广告",
               "activityIds": "com.zjwh.android_wh_physicalfitness.activity.SplashActivity",
               "matches": "@[text=\"跳过\"][clickable=true] +3 RelativeLayout >2 [text=\"点击跳转至第三方页面\"]",
               "snapshotUrls": "https://i.gkd.li/i/12673349"
             },
             {
-              "key": 18,
+              "key": 21,
               "fastQuery": true,
               "activityIds": ".activity.HomeActivity",
               "matches": "@ImageView[childCount=0] < FrameLayout[childCount=1] <2 FrameLayout[childCount=2] <2 FrameLayout[childCount=2] <2 FrameLayout[childCount=2] - FrameLayout > [text^=\"扭动或点击\"]",
@@ -108247,7 +108302,7 @@
               "snapshotUrls": "https://i.gkd.li/i/17378546"
             },
             {
-              "key": 19,
+              "key": 22,
               "fastQuery": true,
               "activityIds": ".activity.HomeActivity",
               "matches": "@ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < FrameLayout[childCount=1][text=null][desc=null][id=null][parent.childCount>3] +n FrameLayout >(1,2) [text^=\"立即\" || text=\"查看详情\" || text=\"了解更多\" || text=\"去微信看看\" || text$=\"应用\" || text=\"进入小程序\" || text=\"领取优惠\" || text=\"跳转微信\"]",
@@ -108266,7 +108321,7 @@
           "activityIds": ".mvi.home.HomeActivity",
           "rules": [
             {
-              "key": 20,
+              "key": 23,
               "fastQuery": true,
               "matches": "ImageView[childCount=0] < @ViewGroup[clickable=true][childCount=1] <<n * >4 [text=\"广告\"]",
               "exampleUrls": "https://e.gkd.li/ca109fa3-5a7a-400d-911b-36dd8ac42656",
@@ -108278,13 +108333,13 @@
               ]
             },
             {
-              "key": 21,
+              "key": 24,
               "fastQuery": true,
               "matches": "@Image[childCount=0] < [childCount=1] <n * - * >3 [childCount=0][text=\"广告\"] <<n [vid=\"fl_native\"]",
               "snapshotUrls": "https://i.gkd.li/i/22585927"
             },
             {
-              "key": 22,
+              "key": 25,
               "fastQuery": true,
               "activityIds": ".mvi.home.HomeActivity",
               "matches": "[vid=\"ksad_ad_dislike\" || vid=\"tianmu_suspend_iv_close\"]",
@@ -108294,7 +108349,7 @@
               ]
             },
             {
-              "key": 23,
+              "key": 26,
               "fastQuery": true,
               "activityIds": ".mvi.home.HomeActivity",
               "matches": "@ImageView[width<70 && height<70][childCount=0] < FrameLayout[childCount=1] - * > TextView[childCount=0][text.length>0] <<n [vid=\"fl_native\"]",
@@ -108304,7 +108359,7 @@
               ]
             },
             {
-              "key": 24,
+              "key": 27,
               "fastQuery": true,
               "activityIds": ".mvi.home.HomeActivity",
               "matches": "@[id=\"com.kwad.dy.sdk:id/ksad_ad_dislike\"][clickable=true] - * >2 [text=\"广告\"]",
@@ -108319,7 +108374,7 @@
           "activityIds": ".mvi.home.HomeActivity",
           "rules": [
             {
-              "key": 25,
+              "key": 28,
               "fastQuery": true,
               "matches": "@Image[childCount=0][width<70&&height<70][id=null][text=\"\"][desc=null] < View[childCount=1][parent.childCount!=2] <n View <n View >n [childCount=0][text=\"广告\"] <<n [vid=\"fl_native\"]",
               "snapshotUrls": [
@@ -108329,7 +108384,7 @@
               ]
             },
             {
-              "key": 26,
+              "key": 29,
               "fastQuery": true,
               "matches": "@TextView[text=\"···\"][visibleToUser=true] <n * >3 [childCount=0][text=\"广告\"] <<n [vid=\"fl_native\"]",
               "snapshotUrls": [
@@ -108339,8 +108394,8 @@
             },
             {
               "preKeys": [
-                25,
-                26
+                28,
+                29
               ],
               "fastQuery": true,
               "matches": "@[clickable=true] >(1,2) [text=\"不感兴趣\"][visibleToUser=true]",
@@ -108359,7 +108414,7 @@
           "resetMatch": "app",
           "rules": [
             {
-              "key": 27,
+              "key": 30,
               "activityIds": [
                 ".mvi.home.HomeActivity",
                 ".mvi.splash.AdActivity"
@@ -108371,7 +108426,7 @@
               ]
             },
             {
-              "key": 28,
+              "key": 31,
               "fastQuery": true,
               "activityIds": ".mvi.home.HomeActivity",
               "matches": "[vid=\"iv\"] + [vid=\"iv_cancel\"]",
@@ -108385,7 +108440,7 @@
           "desc": "点击[暂不开启，继续跑步]",
           "rules": [
             {
-              "key": 29,
+              "key": 32,
               "fastQuery": true,
               "activityIds": ".mvi.home.HomeActivity",
               "matches": [
@@ -108477,12 +108532,12 @@
           ],
           "rules": [
             {
-              "key": 30,
+              "key": 33,
               "matches": "[id=\"com.kwad.dy.sdk:id/ksad_splash_root_container\"] >n ViewGroup > [text=\"跳过\"]",
               "snapshotUrls": "https://i.gkd.li/import/12673495"
             },
             {
-              "key": 31,
+              "key": 34,
               "matches": "[id=\"com.kwad.dy.sdk:id/ksad_tk_view\"] >n ViewGroup > @ViewGroup[clickable=true] > ImageView",
               "snapshotUrls": [
                 "https://i.gkd.li/import/12826112",
@@ -108490,7 +108545,7 @@
               ]
             },
             {
-              "key": 32,
+              "key": 35,
               "matches": "[id=\"com.zjwh.android_wh_physicalfitness:id/ksad_tk_view\"] >n ViewGroup > @ViewGroup[childCount=1] > ImageView",
               "snapshotUrls": [
                 "https://i.gkd.li/import/13228216",
@@ -108567,12 +108622,12 @@
           ],
           "rules": [
             {
-              "key": 33,
+              "key": 36,
               "matches": "[id=\"com.kwad.dy.sdk:id/ksad_splash_root_container\"] >n ViewGroup > [text=\"跳过\"]",
               "snapshotUrls": "https://i.gkd.li/i/12673495"
             },
             {
-              "key": 34,
+              "key": 37,
               "matches": "[id=\"com.kwad.dy.sdk:id/ksad_tk_view\"] >n ViewGroup > @ViewGroup[clickable=true] > ImageView",
               "snapshotUrls": [
                 "https://i.gkd.li/i/12826112",
@@ -108580,7 +108635,7 @@
               ]
             },
             {
-              "key": 35,
+              "key": 38,
               "matches": "[id=\"com.zjwh.android_wh_physicalfitness:id/ksad_tk_view\"] >n ViewGroup > @ViewGroup[childCount=1] > ImageView",
               "snapshotUrls": [
                 "https://i.gkd.li/i/13228216",

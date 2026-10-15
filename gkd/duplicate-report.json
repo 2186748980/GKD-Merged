@@ -19400,9 +19400,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 33,
-      "keptRuleKey": 30,
-      "candidateRuleKey": 33,
+      "key": 36,
+      "keptRuleKey": 33,
+      "candidateRuleKey": 36,
       "matches": "[id=\"com.kwad.dy.sdk:id/ksad_splash_root_container\"] >n ViewGroup > [text=\"跳过\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -19417,9 +19417,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 34,
-      "keptRuleKey": 31,
-      "candidateRuleKey": 34,
+      "key": 37,
+      "keptRuleKey": 34,
+      "candidateRuleKey": 37,
       "matches": "[id=\"com.kwad.dy.sdk:id/ksad_tk_view\"] >n ViewGroup > @ViewGroup[clickable=true] > ImageView",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -19434,9 +19434,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 35,
-      "keptRuleKey": 32,
-      "candidateRuleKey": 35,
+      "key": 38,
+      "keptRuleKey": 35,
+      "candidateRuleKey": 38,
       "matches": "[id=\"com.zjwh.android_wh_physicalfitness:id/ksad_tk_view\"] >n ViewGroup > @ViewGroup[childCount=1] > ImageView",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -37351,30 +37351,6 @@
         "group": "局部广告-卡片广告",
         "rule": null,
         "oldKey": 0,
-        "newKey": 20
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.zjwh.android_wh_physicalfitness",
-        "group": "局部广告-卡片广告",
-        "rule": null,
-        "oldKey": 1,
-        "newKey": 21
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.zjwh.android_wh_physicalfitness",
-        "group": "局部广告-卡片广告",
-        "rule": null,
-        "oldKey": 2,
-        "newKey": 22
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.zjwh.android_wh_physicalfitness",
-        "group": "局部广告-卡片广告",
-        "rule": null,
-        "oldKey": 3,
         "newKey": 23
       },
       {
@@ -37382,53 +37358,53 @@
         "scope": "com.zjwh.android_wh_physicalfitness",
         "group": "局部广告-卡片广告",
         "rule": null,
-        "oldKey": 4,
+        "oldKey": 1,
         "newKey": 24
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.zjwh.android_wh_physicalfitness",
-        "group": "分段广告-卡片广告",
+        "group": "局部广告-卡片广告",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 2,
         "newKey": 25
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.zjwh.android_wh_physicalfitness",
-        "group": "分段广告-卡片广告",
+        "group": "局部广告-卡片广告",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 3,
         "newKey": 26
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.zjwh.android_wh_physicalfitness",
-        "group": "通知提示-公告",
+        "group": "局部广告-卡片广告",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 4,
         "newKey": 27
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.zjwh.android_wh_physicalfitness",
-        "group": "通知提示-公告",
+        "group": "分段广告-卡片广告",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 28
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.zjwh.android_wh_physicalfitness",
-        "group": "权限提示-不开启可选权限",
+        "group": "分段广告-卡片广告",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 1,
         "newKey": 29
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.zjwh.android_wh_physicalfitness",
-        "group": "全屏广告-快手广告",
+        "group": "通知提示-公告",
         "rule": null,
         "oldKey": 0,
         "newKey": 30
@@ -37436,7 +37412,7 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.zjwh.android_wh_physicalfitness",
-        "group": "全屏广告-快手广告",
+        "group": "通知提示-公告",
         "rule": null,
         "oldKey": 1,
         "newKey": 31
@@ -37444,15 +37420,15 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.zjwh.android_wh_physicalfitness",
-        "group": "全屏广告-快手广告",
+        "group": "权限提示-不开启可选权限",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 0,
         "newKey": 32
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.zjwh.android_wh_physicalfitness",
-        "group": "未分类-快手广告",
+        "group": "全屏广告-快手广告",
         "rule": null,
         "oldKey": 0,
         "newKey": 33
@@ -37460,7 +37436,7 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.zjwh.android_wh_physicalfitness",
-        "group": "未分类-快手广告",
+        "group": "全屏广告-快手广告",
         "rule": null,
         "oldKey": 1,
         "newKey": 34
@@ -37468,10 +37444,34 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.zjwh.android_wh_physicalfitness",
-        "group": "未分类-快手广告",
+        "group": "全屏广告-快手广告",
         "rule": null,
         "oldKey": 2,
         "newKey": 35
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.zjwh.android_wh_physicalfitness",
+        "group": "未分类-快手广告",
+        "rule": null,
+        "oldKey": 0,
+        "newKey": 36
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.zjwh.android_wh_physicalfitness",
+        "group": "未分类-快手广告",
+        "rule": null,
+        "oldKey": 1,
+        "newKey": 37
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.zjwh.android_wh_physicalfitness",
+        "group": "未分类-快手广告",
+        "rule": null,
+        "oldKey": 2,
+        "newKey": 38
       },
       {
         "type": "duplicateKeyReassigned",

@@ -17,7 +17,7 @@
     "enable_disabled_group": 943
   },
   "referenceRepairCounts": {
-    "duplicateKeyReassigned": 2234,
+    "duplicateKeyReassigned": 2235,
     "ambiguousCrossGroupReferenceResolvedToFirst": 19,
     "keptDanglingReference": 7
   },
@@ -13800,9 +13800,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 40,
+      "key": 41,
       "keptRuleKey": 6,
-      "candidateRuleKey": 40,
+      "candidateRuleKey": 41,
       "matches": "@[text=\"不感兴趣\"] - * [text*=\"也关注了\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -31004,17 +31004,17 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.ss.android.ugc.aweme",
-        "group": "其他-休息提醒",
+        "group": "功能类-自动勾选原图",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 2,
         "newKey": 8
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.ss.android.ugc.aweme",
-        "group": "全屏广告",
+        "group": "其他-休息提醒",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 1,
         "newKey": 9
       },
       {
@@ -31022,7 +31022,7 @@
         "scope": "com.ss.android.ugc.aweme",
         "group": "全屏广告",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 10
       },
       {
@@ -31030,15 +31030,15 @@
         "scope": "com.ss.android.ugc.aweme",
         "group": "全屏广告",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 1,
         "newKey": 11
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.ss.android.ugc.aweme",
-        "group": "青少年模式",
+        "group": "全屏广告",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 2,
         "newKey": 12
       },
       {
@@ -31046,8 +31046,16 @@
         "scope": "com.ss.android.ugc.aweme",
         "group": "青少年模式",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 13
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.ss.android.ugc.aweme",
+        "group": "青少年模式",
+        "rule": null,
+        "oldKey": 1,
+        "newKey": 14
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31055,7 +31063,7 @@
         "group": "权限提示-定位权限",
         "rule": "弹窗",
         "oldKey": 0,
-        "newKey": 14
+        "newKey": 15
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31063,7 +31071,7 @@
         "group": "权限提示-定位权限",
         "rule": "顶部横条",
         "oldKey": 1,
-        "newKey": 15
+        "newKey": 16
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31071,14 +31079,6 @@
         "group": "权限提示-定位权限",
         "rule": "弹窗",
         "oldKey": 2,
-        "newKey": 16
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.ss.android.ugc.aweme",
-        "group": "全屏广告-汽水音乐VIP",
-        "rule": null,
-        "oldKey": 0,
         "newKey": 17
       },
       {
@@ -31086,14 +31086,14 @@
         "scope": "com.ss.android.ugc.aweme",
         "group": "全屏广告-汽水音乐VIP",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 18
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.ss.android.ugc.aweme",
-        "group": "功能类-自动领取别人发的红包",
-        "rule": "①点击[抖音红包]",
+        "group": "全屏广告-汽水音乐VIP",
+        "rule": null,
         "oldKey": 1,
         "newKey": 19
       },
@@ -31101,9 +31101,33 @@
         "type": "duplicateKeyReassigned",
         "scope": "com.ss.android.ugc.aweme",
         "group": "功能类-自动领取别人发的红包",
+        "rule": "①点击[抖音红包]",
+        "oldKey": 1,
+        "newKey": 20
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.ss.android.ugc.aweme",
+        "group": "功能类-自动领取别人发的红包",
         "rule": "②红包弹窗-点击[开]",
         "oldKey": 2,
-        "newKey": 20
+        "newKey": 21
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.ss.android.ugc.aweme",
+        "group": "功能类-自动领取别人发的红包",
+        "rule": "③已领-点击[返回]",
+        "oldKey": 3,
+        "newKey": 22
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.ss.android.ugc.aweme",
+        "group": "功能类-自动领取别人发的红包",
+        "rule": "④已领完弹窗-x掉",
+        "oldKey": 4,
+        "newKey": 23
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31111,7 +31135,7 @@
         "group": "功能类-自动抢口令红包",
         "rule": "①点进口令红包",
         "oldKey": 1,
-        "newKey": 21
+        "newKey": 24
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31119,7 +31143,7 @@
         "group": "功能类-自动抢口令红包",
         "rule": "②弹窗-点击红包",
         "oldKey": 2,
-        "newKey": 22
+        "newKey": 25
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31127,61 +31151,37 @@
         "group": "功能类-自动抢口令红包",
         "rule": "③一键发口令",
         "oldKey": 3,
-        "newKey": 23
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.ss.android.ugc.aweme",
-        "group": "功能类-评论区-自动展开评论",
-        "rule": null,
-        "oldKey": 0,
-        "newKey": 24
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.ss.android.ugc.aweme",
-        "group": "功能类-评论区-自动展开评论",
-        "rule": null,
-        "oldKey": 1,
-        "newKey": 25
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.ss.android.ugc.aweme",
-        "group": "功能类-评论区-自动展开评论_全部",
-        "rule": null,
-        "oldKey": 1,
         "newKey": 26
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.ss.android.ugc.aweme",
-        "group": "功能类-评论区-自动展开评论_全部",
+        "group": "功能类-评论区-自动展开评论",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 0,
         "newKey": 27
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.ss.android.ugc.aweme",
-        "group": "局部广告-直播间右下角浮窗",
-        "rule": "购买",
-        "oldKey": 0,
+        "group": "功能类-评论区-自动展开评论",
+        "rule": null,
+        "oldKey": 1,
         "newKey": 28
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.ss.android.ugc.aweme",
-        "group": "局部广告-直播间右下角浮窗",
-        "rule": "打开游戏/下载",
+        "group": "功能类-评论区-自动展开评论_全部",
+        "rule": null,
         "oldKey": 1,
         "newKey": 29
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.ss.android.ugc.aweme",
-        "group": "局部广告-直播间右下角浮窗",
-        "rule": "全封装",
+        "group": "功能类-评论区-自动展开评论_全部",
+        "rule": null,
         "oldKey": 2,
         "newKey": 30
       },
@@ -31262,8 +31262,16 @@
         "scope": "com.ss.android.ugc.aweme",
         "group": "功能类-关闭用户推荐",
         "rule": null,
-        "oldKey": 6,
+        "oldKey": 5,
         "newKey": 40
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.ss.android.ugc.aweme",
+        "group": "功能类-关闭用户推荐",
+        "rule": null,
+        "oldKey": 6,
+        "newKey": 41
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31271,7 +31279,7 @@
         "group": "功能类-申请开启小组件弹窗",
         "rule": "搜索小组件",
         "oldKey": 0,
-        "newKey": 41
+        "newKey": 42
       },
       {
         "type": "duplicateKeyReassigned",
@@ -39296,7 +39304,7 @@
       }
     ]
   },
-  "referenceRepairsTotal": 2260,
+  "referenceRepairsTotal": 2261,
   "disabledGroupAudit": [
     {
       "app": "com.android.updater",

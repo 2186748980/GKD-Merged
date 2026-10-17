@@ -17,7 +17,7 @@
     "enable_disabled_group": 943
   },
   "referenceRepairCounts": {
-    "duplicateKeyReassigned": 2235,
+    "duplicateKeyReassigned": 2234,
     "ambiguousCrossGroupReferenceResolvedToFirst": 19,
     "keptDanglingReference": 7
   },
@@ -11406,9 +11406,9 @@
       "rule": "书架页面右侧悬浮广告",
       "ruleA": "书架页面右侧悬浮广告",
       "ruleB": "书架页面右侧悬浮广告",
-      "key": 13,
+      "key": 38,
       "keptRuleKey": 0,
-      "candidateRuleKey": 13,
+      "candidateRuleKey": 38,
       "matches": "[id=\"com.qidian.QDReader:id/ivAd\"] + [id=\"com.qidian.QDReader:id/ivAdClose\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -11423,9 +11423,9 @@
       "rule": "详情页右侧悬浮广告",
       "ruleA": "详情页右侧悬浮广告",
       "ruleB": "详情页右侧悬浮广告",
-      "key": 14,
-      "keptRuleKey": 7,
-      "candidateRuleKey": 14,
+      "key": 39,
+      "keptRuleKey": 33,
+      "candidateRuleKey": 39,
       "matches": "[id=\"com.qidian.QDReader:id/floatingView\"] + [id=\"com.qidian.QDReader:id/ivAdClose\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -29495,7 +29495,7 @@
         "group": "权限提示-通知权限",
         "rule": null,
         "oldKey": 1,
-        "newKey": 5
+        "newKey": 31
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29503,7 +29503,7 @@
         "group": "权限提示-通知权限",
         "rule": null,
         "oldKey": 2,
-        "newKey": 6
+        "newKey": 32
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29511,7 +29511,7 @@
         "group": "局部广告-悬浮广告",
         "rule": "详情页右侧悬浮广告",
         "oldKey": 1,
-        "newKey": 7
+        "newKey": 33
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29519,7 +29519,23 @@
         "group": "局部广告-悬浮广告",
         "rule": null,
         "oldKey": 2,
-        "newKey": 8
+        "newKey": 34
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.qidian.QDReader",
+        "group": "功能类-自动[展开]书籍简介",
+        "rule": null,
+        "oldKey": 1,
+        "newKey": 35
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.qidian.QDReader",
+        "group": "功能类-自动[展开]书籍简介",
+        "rule": null,
+        "oldKey": 2,
+        "newKey": 36
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29527,31 +29543,7 @@
         "group": "功能类-自动签到",
         "rule": "①点击[签到]",
         "oldKey": 0,
-        "newKey": 9
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.qidian.QDReader",
-        "group": "功能类-订阅至最新章后自动[返回]",
-        "rule": "①未订最新章-待后续",
-        "oldKey": 1,
-        "newKey": 10
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.qidian.QDReader",
-        "group": "功能类-订阅至最新章后自动[返回]",
-        "rule": "②已订最新章-返回键",
-        "oldKey": 2,
-        "newKey": 11
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.qidian.QDReader",
-        "group": "功能类-订阅至最新章后自动[返回]",
-        "rule": "③退出目录",
-        "oldKey": 3,
-        "newKey": 12
+        "newKey": 37
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29559,7 +29551,7 @@
         "group": "未分类-悬浮广告",
         "rule": "书架页面右侧悬浮广告",
         "oldKey": 0,
-        "newKey": 13
+        "newKey": 38
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29567,7 +29559,7 @@
         "group": "未分类-悬浮广告",
         "rule": "详情页右侧悬浮广告",
         "oldKey": 1,
-        "newKey": 14
+        "newKey": 39
       },
       {
         "type": "duplicateKeyReassigned",
@@ -39304,7 +39296,7 @@
       }
     ]
   },
-  "referenceRepairsTotal": 2261,
+  "referenceRepairsTotal": 2260,
   "disabledGroupAudit": [
     {
       "app": "com.android.updater",

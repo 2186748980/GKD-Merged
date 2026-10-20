@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026101701,
+  "version": 2026102001,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -5579,6 +5579,28 @@
             }
           ],
           "enable": false
+        }
+      ]
+    },
+    {
+      "id": "cc.forestapp",
+      "name": "Forest",
+      "groups": [
+        {
+          "key": 1,
+          "name": "全屏广告",
+          "desc": "结束一次种植后概率弹出",
+          "rules": [
+            {
+              "activityIds": "com.google.android.gms.ads.AdActivity",
+              "matches": "Button[clickable=true][desc=\"Skip\" || desc=\"Close\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/33598870",
+                "https://i.gkd.li/i/33598865"
+              ],
+              "exampleUrls": "https://e.gkd.li/fa5e8255-df84-4f36-b54f-c31a4331abdb"
+            }
+          ]
         }
       ]
     },
@@ -15570,11 +15592,12 @@
                 ".ui.cloudp2p.RichMediaActivity",
                 ".module.sharelink.ChainVerifyActivity"
               ],
-              "matches": "[text=\"立即更新\"] -2 [text=\"下次再说\"]",
+              "matches": "[text=\"立即更新\"] -(1,2) [text=\"下次再说\"]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/16118181",
                 "https://i.gkd.li/i/24834209",
-                "https://i.gkd.li/i/26574534"
+                "https://i.gkd.li/i/26574534",
+                "https://i.gkd.li/i/33673328"
               ]
             },
             {
@@ -23866,7 +23889,7 @@
               "actionCd": 300,
               "actionMaximum": 5,
               "excludeMatches": "[text*=\"搜索\"]",
-              "matches": "[!(vid=\"item_view\") && !(vid=\"card_view\")] > [text*=\"跳过\" || text*=\"Skip\"][text.length<10][width<500 && height<300][visibleToUser=true]",
+              "matches": "[text*=\"跳过\" || text*=\"Skip\"][!(vid=\"text_view\" || vid=\"title_view\")][text.length<10][width<500 && height<300][visibleToUser=true]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/12917990",
                 "https://i.gkd.li/i/13211392",
@@ -23877,7 +23900,8 @@
               "excludeSnapshotUrls": [
                 "https://i.gkd.li/i/13247733",
                 "https://i.gkd.li/i/13296816",
-                "https://i.gkd.li/i/18245546"
+                "https://i.gkd.li/i/18245546",
+                "https://i.gkd.li/i/33674023"
               ]
             },
             {
@@ -66375,12 +66399,13 @@
             {
               "fastQuery": true,
               "action": "clickCenter",
-              "matches": "([text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]) || ([vid=\"splash_skip_button\"][visibleToUser=true])",
+              "matches": "([text*=\"跳过\"][!(text=\"跳过福利激励视频\")][text.length<10][width<500 && height<300][visibleToUser=true]) || ([vid=\"splash_skip_button\"][visibleToUser=true])",
               "exampleUrls": "https://e.gkd.li/3e2357fd-dced-4929-85e0-a9a06ce5fea0",
               "snapshotUrls": [
                 "https://i.gkd.li/i/19580847",
                 "https://i.gkd.li/i/19633020"
-              ]
+              ],
+              "excludeSnapshotUrls": "https://i.gkd.li/i/33630317"
             },
             {
               "fastQuery": true,
@@ -77626,6 +77651,28 @@
           ]
         },
         {
+          "key": 39,
+          "name": "功能类-横屏直播时自动[关闭]弹幕",
+          "desc": "点击1次[关闭弹幕]图标",
+          "rules": [
+            {
+              "fastQuery": true,
+              "actionMaximum": 1,
+              "activityIds": [
+                ".live.LivePlayActivity",
+                ".detail.ui.DetailActivity"
+              ],
+              "matches": "@[desc=\"关闭弹幕\"] < [childCount=2] + * > [text=\"发弹幕说点什么…\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/33672005",
+                "https://i.gkd.li/i/33672759"
+              ],
+              "excludeSnapshotUrls": "https://i.gkd.li/i/33672707",
+              "exampleUrls": "https://e.gkd.li/27cd54c6-0398-4e01-8b42-9fd9b963c514"
+            }
+          ]
+        },
+        {
           "key": 2401,
           "name": "功能类-刷到游戏视频时[上滑]",
           "desc": "游戏类推广视频",
@@ -85050,24 +85097,32 @@
         {
           "key": 37,
           "name": "分段广告-QQ空间空友爱看",
-          "desc": "①点击[更多操作] ②点击[不感兴趣] ③选择原因 ④点击[提交]",
+          "desc": "①点击右侧折叠 ②[不感兴趣/关闭推荐] ③选择原因 ④点击[提交]",
           "fastQuery": true,
           "activityIds": "com.qzone.reborn.feedpro.activity.QzoneFriendFeedProActivity",
           "rules": [
             {
               "key": 129,
-              "name": "①更多操作",
-              "matches": "@[desc=\"更多操作\"][clickable=true][visibleToUser=true] <3 * +4 * >5 [text=\"空友爱看\"]",
-              "snapshotUrls": "https://i.gkd.li/i/32656065"
+              "name": "①点击右侧折叠",
+              "matches": "@[clickable=true][index=parent.childCount.minus(1)] -2 [text=\"空友爱看\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/32656065",
+                "https://i.gkd.li/i/33508601",
+                "https://i.gkd.li/i/33665642"
+              ]
             },
             {
               "key": 130,
               "preKeys": [
                 129
               ],
-              "name": "②不感兴趣",
-              "matches": "@[clickable=true] >2 [text=\"不感兴趣\"]",
-              "snapshotUrls": "https://i.gkd.li/i/32656067"
+              "name": "②不感兴趣/关闭推荐",
+              "matches": "@[clickable=true] >2 [text=\"不感兴趣\" || text=\"关闭推荐\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/32656067",
+                "https://i.gkd.li/i/33508604",
+                "https://i.gkd.li/i/33665763"
+              ]
             },
             {
               "key": 131,

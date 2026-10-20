@@ -32501,7 +32501,7 @@
         "type": "duplicateKeyReassigned",
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-QQ空间空友爱看",
-        "rule": "①更多操作",
+        "rule": "①点击右侧折叠",
         "oldKey": 0,
         "newKey": 129
       },
@@ -32509,7 +32509,7 @@
         "type": "duplicateKeyReassigned",
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-QQ空间空友爱看",
-        "rule": "②不感兴趣",
+        "rule": "②不感兴趣/关闭推荐",
         "oldKey": 1,
         "newKey": 130
       },

@@ -1,31 +1,31 @@
 {
   "safeRemovedCount": 0,
-  "reviewCount": 1005,
+  "reviewCount": 1009,
   "reviewBreakdown": {
-    "duplicate rule retained because preKeys diverge from kept copy (same group merge)": 37,
+    "duplicate rule retained because preKeys diverge from kept copy (same group merge)": 39,
     "upstream dangling reference preserved verbatim; after duplicate-key normalization the value uniquely resolves to a rule in the referrer group -- gate semantics most likely restored as upstream intended": 2,
     "upstream dangling reference preserved verbatim; after duplicate-key normalization the value uniquely resolves, but to a rule in ANOTHER group -- whether that matches the upstream gate is unverifiable; value retained as-is, manual review required": 2,
     "upstream reference to a missing rule key preserved unchanged (dropping it would open the rule gate)": 3,
     "duplicate rule retained because a group is enable:false (manual-enable semantics unverifiable)": 474,
     "duplicate rule retained because behavior-relevant group settings differ": 213,
     "duplicate rule has key dependency references": 140,
-    "duplicate rule requires review because preKeys are involved": 134
+    "duplicate rule requires review because preKeys are involved": 136
   },
   "reviewCategories": {
-    "dependency_difference": 55,
+    "dependency_difference": 57,
     "upstream_invalid_reference": 7,
-    "enable_disabled_group": 943
+    "enable_disabled_group": 945
   },
   "referenceRepairCounts": {
-    "duplicateKeyReassigned": 2234,
+    "duplicateKeyReassigned": 2236,
     "ambiguousCrossGroupReferenceResolvedToFirst": 19,
     "keptDanglingReference": 7
   },
   "optimization": {
-    "remapDuplicateSkipped": 2082,
+    "remapDuplicateSkipped": 2079,
     "remapEvidenceMerged": 295,
     "remapDisplayDedupe": 763,
-    "remapPreKeysGuard": 37,
+    "remapPreKeysGuard": 39,
     "remapPreKeysUnverifiable": 0,
     "danglingReferencesPreserved": 3,
     "danglingReferencesResolvedAfterRenumbering": 4,
@@ -529,6 +529,29 @@
       "reason": "duplicate rule retained because preKeys diverge from kept copy (same group merge)"
     },
     {
+      "app": "com.ruanmei.ithome",
+      "groupA": "分段广告-信息流广告",
+      "groupB": "分段广告-信息流广告",
+      "rule": null,
+      "ruleA": null,
+      "ruleB": null,
+      "key": 2,
+      "keptRuleKey": 2,
+      "candidateRuleKey": 2,
+      "rPreKeys": [
+        1
+      ],
+      "keptPreKeys": [
+        1
+      ],
+      "matches": "[vid=\"rl_dislike\"]",
+      "contextDiff": [],
+      "behaviorDiff": [],
+      "referrers": [],
+      "category": "dependency_difference",
+      "reason": "duplicate rule retained because preKeys diverge from kept copy (same group merge)"
+    },
+    {
       "app": "com.tencent.androidqqmail",
       "groupA": "分段广告-列表卡片广告",
       "groupB": "分段广告-列表卡片广告",
@@ -841,7 +864,7 @@
       "ruleA": null,
       "ruleB": null,
       "key": 1,
-      "keptRuleKey": 1,
+      "keptRuleKey": 3,
       "candidateRuleKey": 1,
       "rPreKeys": [
         0
@@ -850,6 +873,29 @@
         0
       ],
       "matches": "[text*=\"屏蔽\"]",
+      "contextDiff": [],
+      "behaviorDiff": [],
+      "referrers": [],
+      "category": "dependency_difference",
+      "reason": "duplicate rule retained because preKeys diverge from kept copy (same group merge)"
+    },
+    {
+      "app": "com.ruanmei.ithome",
+      "groupA": "分段广告-信息流广告",
+      "groupB": "分段广告-信息流广告",
+      "rule": null,
+      "ruleA": null,
+      "ruleB": null,
+      "key": 2,
+      "keptRuleKey": 4,
+      "candidateRuleKey": 2,
+      "rPreKeys": [
+        1
+      ],
+      "keptPreKeys": [
+        1
+      ],
+      "matches": "[vid=\"rl_dislike\"]",
       "contextDiff": [],
       "behaviorDiff": [],
       "referrers": [],
@@ -2605,9 +2651,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 141,
+      "key": 142,
       "keptRuleKey": 102,
-      "candidateRuleKey": 141,
+      "candidateRuleKey": 142,
       "matches": "@ImageView[clickable=true] -2 LinearLayout > [text^=\"打开通知\"]",
       "contextDiff": [
         "matchTime"
@@ -2626,9 +2672,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 142,
+      "key": 143,
       "keptRuleKey": 103,
-      "candidateRuleKey": 142,
+      "candidateRuleKey": 143,
       "matches": "TextView[text=\"开启消息推送\"] +2 TextView[text=\"不开启\"]",
       "contextDiff": [
         "matchTime"
@@ -2647,9 +2693,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 147,
+      "key": 148,
       "keptRuleKey": 114,
-      "candidateRuleKey": 147,
+      "candidateRuleKey": 148,
       "matches": "@ImageView[childCount=0][clickable=true][visibleToUser=true] < LinearLayout[childCount=1] <4 RelativeLayout +3 LinearLayout >4 [text=\"小游戏\"]",
       "contextDiff": [
         "activityIds",
@@ -2669,9 +2715,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 148,
+      "key": 149,
       "keptRuleKey": 115,
-      "candidateRuleKey": 148,
+      "candidateRuleKey": 149,
       "matches": "RelativeLayout[childCount=2] > @RelativeLayout[childCount=1][clickable=true] > ImageView",
       "contextDiff": [
         "activityIds"
@@ -2688,27 +2734,10 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 152,
-      "keptRuleKey": 141,
-      "candidateRuleKey": 152,
-      "matches": "@ImageView[clickable=true] -2 LinearLayout > [text^=\"打开通知\"]",
-      "contextDiff": [],
-      "behaviorDiff": [],
-      "referrers": [],
-      "category": "enable_disabled_group",
-      "reason": "duplicate rule retained because a group is enable:false (manual-enable semantics unverifiable)"
-    },
-    {
-      "app": "com.baidu.tieba",
-      "groupA": "全屏广告-申请消息提醒弹窗",
-      "groupB": "未分类-申请消息提醒弹窗",
-      "rule": null,
-      "ruleA": null,
-      "ruleB": null,
       "key": 153,
       "keptRuleKey": 142,
       "candidateRuleKey": 153,
-      "matches": "TextView[text=\"开启消息推送\"] +2 TextView[text=\"不开启\"]",
+      "matches": "@ImageView[clickable=true] -2 LinearLayout > [text^=\"打开通知\"]",
       "contextDiff": [],
       "behaviorDiff": [],
       "referrers": [],
@@ -2725,6 +2754,23 @@
       "key": 154,
       "keptRuleKey": 143,
       "candidateRuleKey": 154,
+      "matches": "TextView[text=\"开启消息推送\"] +2 TextView[text=\"不开启\"]",
+      "contextDiff": [],
+      "behaviorDiff": [],
+      "referrers": [],
+      "category": "enable_disabled_group",
+      "reason": "duplicate rule retained because a group is enable:false (manual-enable semantics unverifiable)"
+    },
+    {
+      "app": "com.baidu.tieba",
+      "groupA": "全屏广告-申请消息提醒弹窗",
+      "groupB": "未分类-申请消息提醒弹窗",
+      "rule": null,
+      "ruleA": null,
+      "ruleB": null,
+      "key": 155,
+      "keptRuleKey": 144,
+      "candidateRuleKey": 155,
       "matches": "[text=\"开启通知\"] - [text=\"暂不开启\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -2739,9 +2785,9 @@
       "rule": "点击广告【x】",
       "ruleA": "点击广告【x】",
       "ruleB": "点击广告【x】",
-      "key": 155,
-      "keptRuleKey": 144,
-      "candidateRuleKey": 155,
+      "key": 156,
+      "keptRuleKey": 145,
+      "candidateRuleKey": 156,
       "matches": [
         "RelativeLayout > TextView[text$=\"广告\"][clickable=true]",
         "LinearLayout[clickable=true][childCount=1] > @FrameLayout[clickable=true][childCount=1][desc=null] > ImageView"
@@ -2794,9 +2840,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 156,
+      "key": 157,
       "keptRuleKey": 115,
-      "candidateRuleKey": 156,
+      "candidateRuleKey": 157,
       "matches": "RelativeLayout[childCount=2] > @RelativeLayout[childCount=1][clickable=true] > ImageView",
       "contextDiff": [
         "activityIds"
@@ -2813,9 +2859,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 157,
-      "keptRuleKey": 149,
-      "candidateRuleKey": 157,
+      "key": 158,
+      "keptRuleKey": 150,
+      "candidateRuleKey": 158,
       "matches": "LinearLayout > RelativeLayout[id!=null][clickable=false] > ImageView[id=null][clickable=true]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -11406,9 +11452,9 @@
       "rule": "书架页面右侧悬浮广告",
       "ruleA": "书架页面右侧悬浮广告",
       "ruleB": "书架页面右侧悬浮广告",
-      "key": 38,
-      "keptRuleKey": 0,
-      "candidateRuleKey": 38,
+      "key": 40,
+      "keptRuleKey": 34,
+      "candidateRuleKey": 40,
       "matches": "[id=\"com.qidian.QDReader:id/ivAd\"] + [id=\"com.qidian.QDReader:id/ivAdClose\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -11423,9 +11469,9 @@
       "rule": "详情页右侧悬浮广告",
       "ruleA": "详情页右侧悬浮广告",
       "ruleB": "详情页右侧悬浮广告",
-      "key": 39,
-      "keptRuleKey": 33,
-      "candidateRuleKey": 39,
+      "key": 41,
+      "keptRuleKey": 35,
+      "candidateRuleKey": 41,
       "matches": "[id=\"com.qidian.QDReader:id/floatingView\"] + [id=\"com.qidian.QDReader:id/ivAdClose\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -11829,8 +11875,25 @@
       "ruleA": null,
       "ruleB": null,
       "key": 4,
-      "keptRuleKey": 6,
+      "keptRuleKey": 2,
       "candidateRuleKey": 4,
+      "matches": "[vid=\"rl_dislike\"]",
+      "contextDiff": [],
+      "behaviorDiff": [],
+      "referrers": [],
+      "category": "enable_disabled_group",
+      "reason": "duplicate rule requires review because preKeys are involved"
+    },
+    {
+      "app": "com.ruanmei.ithome",
+      "groupA": "分段广告-信息流广告",
+      "groupB": "分段广告-信息流广告",
+      "rule": null,
+      "ruleA": null,
+      "ruleB": null,
+      "key": 6,
+      "keptRuleKey": 3,
+      "candidateRuleKey": 6,
       "matches": "[text*=\"屏蔽\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -11843,6 +11906,23 @@
       ],
       "category": "enable_disabled_group",
       "reason": "duplicate rule has key dependency references"
+    },
+    {
+      "app": "com.ruanmei.ithome",
+      "groupA": "分段广告-信息流广告",
+      "groupB": "分段广告-信息流广告",
+      "rule": null,
+      "ruleA": null,
+      "ruleB": null,
+      "key": 7,
+      "keptRuleKey": 2,
+      "candidateRuleKey": 7,
+      "matches": "[vid=\"rl_dislike\"]",
+      "contextDiff": [],
+      "behaviorDiff": [],
+      "referrers": [],
+      "category": "enable_disabled_group",
+      "reason": "duplicate rule requires review because preKeys are involved"
     },
     {
       "app": "com.samsung.android.packageinstaller",
@@ -14415,9 +14495,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 149,
-      "keptRuleKey": 133,
-      "candidateRuleKey": 149,
+      "key": 148,
+      "keptRuleKey": 132,
+      "candidateRuleKey": 148,
       "matches": "TextView[text!=null] < LinearLayout + ImageView[desc=\"关闭\"]",
       "contextDiff": [
         "desc"
@@ -14434,9 +14514,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 151,
-      "keptRuleKey": 135,
-      "candidateRuleKey": 151,
+      "key": 150,
+      "keptRuleKey": 134,
+      "candidateRuleKey": 150,
       "matches": "ImageView + RelativeLayout[childCount=2] > TextView[text!=null] + ImageView",
       "contextDiff": [
         "desc"
@@ -14453,9 +14533,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 153,
-      "keptRuleKey": 136,
-      "candidateRuleKey": 153,
+      "key": 152,
+      "keptRuleKey": 135,
+      "candidateRuleKey": 152,
       "matches": "View[desc=\"广告\"] + ImageView[clickable=true]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -14491,9 +14571,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 155,
-      "keptRuleKey": 138,
-      "candidateRuleKey": 155,
+      "key": 154,
+      "keptRuleKey": 137,
+      "candidateRuleKey": 154,
       "matches": "@[clickable=true] > * > ImageView + [text=\"隐藏此条动态\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -14508,9 +14588,9 @@
       "rule": "右侧悬浮广告",
       "ruleA": "右侧悬浮广告",
       "ruleB": "右侧悬浮广告",
-      "key": 165,
+      "key": 164,
       "keptRuleKey": null,
-      "candidateRuleKey": 165,
+      "candidateRuleKey": 164,
       "matches": "FrameLayout[desc=\"发表帖子\"] - LinearLayout[id!=null] >3 ImageView[id!=null][clickable=false] - View[id!=null][clickable=true]",
       "contextDiff": [
         "activityIds"
@@ -14529,9 +14609,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 166,
-      "keptRuleKey": 142,
-      "candidateRuleKey": 166,
+      "key": 165,
+      "keptRuleKey": 141,
+      "candidateRuleKey": 165,
       "matches": "RelativeLayout[childCount=5] > @LinearLayout[clickable=true][childCount=2][id!=null] > TextView[text=\"广告\"][id!=null]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -14574,9 +14654,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 170,
-      "keptRuleKey": 146,
-      "candidateRuleKey": 170,
+      "key": 169,
+      "keptRuleKey": 145,
+      "candidateRuleKey": 169,
       "matches": "ViewGroup[childCount=6] > [text=\"广告\"]",
       "contextDiff": [
         "activityIds"
@@ -14595,9 +14675,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 171,
-      "keptRuleKey": 147,
-      "candidateRuleKey": 171,
+      "key": 170,
+      "keptRuleKey": 146,
+      "candidateRuleKey": 170,
       "matches": "@LinearLayout > [text=\"关闭此条广告\"]",
       "contextDiff": [
         "activityIds"
@@ -14616,9 +14696,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 179,
-      "keptRuleKey": 177,
-      "candidateRuleKey": 179,
+      "key": 178,
+      "keptRuleKey": 176,
+      "candidateRuleKey": 178,
       "matches": "View < @ViewGroup[clickable=true][visibleToUser=true] - ViewGroup > ViewGroup[childCount=6] > ViewGroup[childCount=2]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -14633,9 +14713,9 @@
       "rule": "好友动态详情页广告",
       "ruleA": "好友动态详情页广告",
       "ruleB": "好友动态详情页广告",
-      "key": 185,
+      "key": 184,
       "keptRuleKey": 0,
-      "candidateRuleKey": 185,
+      "candidateRuleKey": 184,
       "matches": "@[desc=\"关闭广告\"][visibleToUser=true] <4 RelativeLayout <2 LinearLayout <2 LinearLayout < FrameLayout <n RecyclerView < FrameLayout - FrameLayout >2 [text=\"详情\"]",
       "contextDiff": [
         "enable"
@@ -14654,9 +14734,9 @@
       "rule": "推荐你试试这些玩法",
       "ruleA": "推荐你试试这些玩法",
       "ruleB": "推荐你试试这些玩法",
-      "key": 186,
+      "key": 185,
       "keptRuleKey": 1,
-      "candidateRuleKey": 186,
+      "candidateRuleKey": 185,
       "matches": "@[desc=\"关闭\"] - [text=\"推荐你试试这些玩法\"]",
       "contextDiff": [
         "enable"
@@ -14675,9 +14755,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 187,
-      "keptRuleKey": 136,
-      "candidateRuleKey": 187,
+      "key": 186,
+      "keptRuleKey": 135,
+      "candidateRuleKey": 186,
       "matches": "View[desc=\"广告\"] + ImageView[clickable=true]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -14713,9 +14793,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 190,
-      "keptRuleKey": 138,
-      "candidateRuleKey": 190,
+      "key": 189,
+      "keptRuleKey": 137,
+      "candidateRuleKey": 189,
       "matches": "@[clickable=true] > * > ImageView + [text=\"隐藏此条动态\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -14730,9 +14810,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 191,
-      "keptRuleKey": 183,
-      "candidateRuleKey": 191,
+      "key": 190,
+      "keptRuleKey": 182,
+      "candidateRuleKey": 190,
       "matches": "@ImageView[clickable=true] - [text=\"广告\"]",
       "contextDiff": [
         "desc"
@@ -14749,9 +14829,9 @@
       "rule": "点击同意",
       "ruleA": "点击同意",
       "ruleB": "点击同意",
-      "key": 196,
-      "keptRuleKey": 106,
-      "candidateRuleKey": 196,
+      "key": 195,
+      "keptRuleKey": 105,
+      "candidateRuleKey": 195,
       "matches": "Button[text=\"同意\"][clickable=true][visibleToUser=true]",
       "contextDiff": [
         "actionMaximum",
@@ -14777,9 +14857,9 @@
       "rule": "点击确认",
       "ruleA": "点击确认",
       "ruleB": "点击确认",
-      "key": 197,
+      "key": 196,
       "keptRuleKey": 4,
-      "candidateRuleKey": 197,
+      "candidateRuleKey": 196,
       "matches": "Button[text=\"确认\"]",
       "contextDiff": [
         "actionMaximum",
@@ -14799,9 +14879,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 198,
-      "keptRuleKey": 142,
-      "candidateRuleKey": 198,
+      "key": 197,
+      "keptRuleKey": 141,
+      "candidateRuleKey": 197,
       "matches": "RelativeLayout[childCount=5] > @LinearLayout[clickable=true][childCount=2][id!=null] > TextView[text=\"广告\"][id!=null]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -14844,9 +14924,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 199,
-      "keptRuleKey": 143,
-      "candidateRuleKey": 199,
+      "key": 198,
+      "keptRuleKey": 142,
+      "candidateRuleKey": 198,
       "matches": "@ImageView[clickable=true] - [text=\"为你推荐\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -14872,9 +14952,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 200,
-      "keptRuleKey": 144,
-      "candidateRuleKey": 200,
+      "key": 199,
+      "keptRuleKey": 143,
+      "candidateRuleKey": 199,
       "matches": "@LinearLayout[id!=null][clickable=true] > LinearLayout > [text=\"减少此类推荐\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -14889,9 +14969,9 @@
       "rule": "现金瓜分弹窗",
       "ruleA": "现金瓜分弹窗",
       "ruleB": "现金瓜分弹窗",
-      "key": 203,
-      "keptRuleKey": 173,
-      "candidateRuleKey": 203,
+      "key": 202,
+      "keptRuleKey": 172,
+      "candidateRuleKey": 202,
       "matches": "RelativeLayout >5 ViewGroup[childCount=6] > ViewGroup[index=2][clickable=true]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -22405,9 +22485,17 @@
         "type": "duplicateKeyReassigned",
         "scope": "com.baidu.tieba",
         "group": "全屏广告-弹窗广告",
+        "rule": null,
+        "oldKey": 0,
+        "newKey": 118
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.baidu.tieba",
+        "group": "全屏广告-弹窗广告",
         "rule": "点击正下方x关闭",
         "oldKey": 1,
-        "newKey": 118
+        "newKey": 119
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22415,7 +22503,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": null,
         "oldKey": 2,
-        "newKey": 119
+        "newKey": 120
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22423,7 +22511,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": "点击正下方x关闭",
         "oldKey": 3,
-        "newKey": 120
+        "newKey": 121
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22431,7 +22519,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": null,
         "oldKey": 4,
-        "newKey": 121
+        "newKey": 122
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22439,7 +22527,7 @@
         "group": "局部广告-悬浮小广告",
         "rule": "悬浮广告1",
         "oldKey": 0,
-        "newKey": 122
+        "newKey": 123
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22447,7 +22535,7 @@
         "group": "局部广告-悬浮小广告",
         "rule": "悬浮广告2",
         "oldKey": 1,
-        "newKey": 123
+        "newKey": 124
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22455,7 +22543,7 @@
         "group": "局部广告-悬浮小广告",
         "rule": "评论区左侧悬浮广告",
         "oldKey": 2,
-        "newKey": 124
+        "newKey": 125
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22463,7 +22551,7 @@
         "group": "局部广告-悬浮小广告",
         "rule": "首页右侧悬浮广告",
         "oldKey": 3,
-        "newKey": 125
+        "newKey": 126
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22471,14 +22559,6 @@
         "group": "局部广告-悬浮小广告",
         "rule": "评论区左侧悬浮广告",
         "oldKey": 4,
-        "newKey": 126
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.baidu.tieba",
-        "group": "局部广告-悬浮小广告",
-        "rule": null,
-        "oldKey": 5,
         "newKey": 127
       },
       {
@@ -22486,8 +22566,16 @@
         "scope": "com.baidu.tieba",
         "group": "局部广告-悬浮小广告",
         "rule": null,
-        "oldKey": 6,
+        "oldKey": 5,
         "newKey": 128
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.baidu.tieba",
+        "group": "局部广告-悬浮小广告",
+        "rule": null,
+        "oldKey": 6,
+        "newKey": 129
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22495,7 +22583,7 @@
         "group": "局部广告-悬浮小广告",
         "rule": "首页右侧悬浮广告-2",
         "oldKey": 7,
-        "newKey": 129
+        "newKey": 130
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22503,14 +22591,6 @@
         "group": "局部广告-悬浮小广告",
         "rule": "评论区左侧悬浮广告",
         "oldKey": 8,
-        "newKey": 130
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.baidu.tieba",
-        "group": "局部广告-[帖子内/吧内]底部悬浮窗",
-        "rule": null,
-        "oldKey": 0,
         "newKey": 131
       },
       {
@@ -22518,8 +22598,16 @@
         "scope": "com.baidu.tieba",
         "group": "局部广告-[帖子内/吧内]底部悬浮窗",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 132
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.baidu.tieba",
+        "group": "局部广告-[帖子内/吧内]底部悬浮窗",
+        "rule": null,
+        "oldKey": 1,
+        "newKey": 133
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22527,7 +22615,7 @@
         "group": "功能类-贴吧内签到并关闭弹窗",
         "rule": "贴吧页签到",
         "oldKey": 0,
-        "newKey": 133
+        "newKey": 134
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22535,7 +22623,7 @@
         "group": "功能类-贴吧内签到并关闭弹窗",
         "rule": "关闭签到成功弹窗",
         "oldKey": 1,
-        "newKey": 134
+        "newKey": 135
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22543,7 +22631,7 @@
         "group": "功能类-贴吧内签到并关闭弹窗",
         "rule": "贴吧页签到",
         "oldKey": 2,
-        "newKey": 135
+        "newKey": 136
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22551,14 +22639,6 @@
         "group": "功能类-贴吧内签到并关闭弹窗",
         "rule": "签到成功-弹窗",
         "oldKey": 3,
-        "newKey": 136
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.baidu.tieba",
-        "group": "功能类-贴吧内签到并关闭弹窗",
-        "rule": "贴吧页签到",
-        "oldKey": 4,
         "newKey": 137
       },
       {
@@ -22566,8 +22646,16 @@
         "scope": "com.baidu.tieba",
         "group": "功能类-贴吧内签到并关闭弹窗",
         "rule": "贴吧页签到",
-        "oldKey": 5,
+        "oldKey": 4,
         "newKey": 138
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.baidu.tieba",
+        "group": "功能类-贴吧内签到并关闭弹窗",
+        "rule": "贴吧页签到",
+        "oldKey": 5,
+        "newKey": 139
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22575,7 +22663,7 @@
         "group": "功能类-贴吧内签到并关闭弹窗",
         "rule": "关闭签到成功弹窗",
         "oldKey": 6,
-        "newKey": 139
+        "newKey": 140
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22583,14 +22671,6 @@
         "group": "局部广告-感兴趣的吧推广",
         "rule": null,
         "oldKey": 1,
-        "newKey": 140
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.baidu.tieba",
-        "group": "全屏广告-申请消息提醒弹窗",
-        "rule": null,
-        "oldKey": 0,
         "newKey": 141
       },
       {
@@ -22598,7 +22678,7 @@
         "scope": "com.baidu.tieba",
         "group": "全屏广告-申请消息提醒弹窗",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 142
       },
       {
@@ -22606,8 +22686,16 @@
         "scope": "com.baidu.tieba",
         "group": "全屏广告-申请消息提醒弹窗",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 1,
         "newKey": 143
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.baidu.tieba",
+        "group": "全屏广告-申请消息提醒弹窗",
+        "rule": null,
+        "oldKey": 2,
+        "newKey": 144
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22615,14 +22703,6 @@
         "group": "局部广告-信息流广告",
         "rule": "点击广告【x】",
         "oldKey": 0,
-        "newKey": 144
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.baidu.tieba",
-        "group": "局部广告-信息流广告",
-        "rule": null,
-        "oldKey": 1,
         "newKey": 145
       },
       {
@@ -22630,7 +22710,7 @@
         "scope": "com.baidu.tieba",
         "group": "局部广告-信息流广告",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 1,
         "newKey": 146
       },
       {
@@ -22638,8 +22718,16 @@
         "scope": "com.baidu.tieba",
         "group": "局部广告-信息流广告",
         "rule": null,
-        "oldKey": 3,
+        "oldKey": 2,
         "newKey": 147
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.baidu.tieba",
+        "group": "局部广告-信息流广告",
+        "rule": null,
+        "oldKey": 3,
+        "newKey": 148
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22647,7 +22735,7 @@
         "group": "局部广告-首页-推荐-列表顶部卡片式广告",
         "rule": null,
         "oldKey": 1,
-        "newKey": 148
+        "newKey": 149
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22655,7 +22743,7 @@
         "group": "局部广告-帖子底部内容推荐卡片",
         "rule": null,
         "oldKey": 0,
-        "newKey": 149
+        "newKey": 150
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22663,7 +22751,7 @@
         "group": "全屏广告-广告弹窗",
         "rule": "点击右上角x关闭",
         "oldKey": 0,
-        "newKey": 150
+        "newKey": 151
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22671,14 +22759,6 @@
         "group": "全屏广告-广告弹窗",
         "rule": "点击正下方x关闭",
         "oldKey": 1,
-        "newKey": 151
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.baidu.tieba",
-        "group": "未分类-申请消息提醒弹窗",
-        "rule": null,
-        "oldKey": 0,
         "newKey": 152
       },
       {
@@ -22686,7 +22766,7 @@
         "scope": "com.baidu.tieba",
         "group": "未分类-申请消息提醒弹窗",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 153
       },
       {
@@ -22694,8 +22774,16 @@
         "scope": "com.baidu.tieba",
         "group": "未分类-申请消息提醒弹窗",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 1,
         "newKey": 154
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.baidu.tieba",
+        "group": "未分类-申请消息提醒弹窗",
+        "rule": null,
+        "oldKey": 2,
+        "newKey": 155
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22703,7 +22791,7 @@
         "group": "未分类-信息流广告",
         "rule": "点击广告【x】",
         "oldKey": 0,
-        "newKey": 155
+        "newKey": 156
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22711,7 +22799,7 @@
         "group": "局部广告-首页、推荐列表顶部卡片式广告",
         "rule": null,
         "oldKey": 1,
-        "newKey": 156
+        "newKey": 157
       },
       {
         "type": "duplicateKeyReassigned",
@@ -22719,7 +22807,7 @@
         "group": "未分类-帖子底部内容推荐卡片",
         "rule": null,
         "oldKey": 0,
-        "newKey": 157
+        "newKey": 158
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29492,7 +29580,7 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.qidian.QDReader",
-        "group": "权限提示-通知权限",
+        "group": "更新提示",
         "rule": null,
         "oldKey": 1,
         "newKey": 31
@@ -29502,8 +29590,24 @@
         "scope": "com.qidian.QDReader",
         "group": "权限提示-通知权限",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 1,
         "newKey": 32
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.qidian.QDReader",
+        "group": "权限提示-通知权限",
+        "rule": null,
+        "oldKey": 2,
+        "newKey": 33
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.qidian.QDReader",
+        "group": "局部广告-悬浮广告",
+        "rule": "书架页面右侧悬浮广告",
+        "oldKey": 0,
+        "newKey": 34
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29511,28 +29615,12 @@
         "group": "局部广告-悬浮广告",
         "rule": "详情页右侧悬浮广告",
         "oldKey": 1,
-        "newKey": 33
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.qidian.QDReader",
-        "group": "局部广告-悬浮广告",
-        "rule": null,
-        "oldKey": 2,
-        "newKey": 34
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.qidian.QDReader",
-        "group": "功能类-自动[展开]书籍简介",
-        "rule": null,
-        "oldKey": 1,
         "newKey": 35
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.qidian.QDReader",
-        "group": "功能类-自动[展开]书籍简介",
+        "group": "局部广告-悬浮广告",
         "rule": null,
         "oldKey": 2,
         "newKey": 36
@@ -29540,10 +29628,26 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.qidian.QDReader",
+        "group": "功能类-自动[展开]书籍简介",
+        "rule": null,
+        "oldKey": 1,
+        "newKey": 37
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.qidian.QDReader",
+        "group": "功能类-自动[展开]书籍简介",
+        "rule": null,
+        "oldKey": 2,
+        "newKey": 38
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.qidian.QDReader",
         "group": "功能类-自动签到",
         "rule": "①点击[签到]",
         "oldKey": 0,
-        "newKey": 37
+        "newKey": 39
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29551,7 +29655,7 @@
         "group": "未分类-悬浮广告",
         "rule": "书架页面右侧悬浮广告",
         "oldKey": 0,
-        "newKey": 38
+        "newKey": 40
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29559,7 +29663,7 @@
         "group": "未分类-悬浮广告",
         "rule": "详情页右侧悬浮广告",
         "oldKey": 1,
-        "newKey": 39
+        "newKey": 41
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29679,7 +29783,7 @@
         "group": "分段广告-信息流广告",
         "rule": null,
         "oldKey": 0,
-        "newKey": 5
+        "newKey": 8
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29687,7 +29791,7 @@
         "group": "分段广告-信息流广告",
         "rule": null,
         "oldKey": 1,
-        "newKey": 6
+        "newKey": 9
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32285,17 +32389,9 @@
         "type": "duplicateKeyReassigned",
         "scope": "com.tencent.mobileqq",
         "group": "分段广告",
-        "rule": null,
+        "rule": "①点击[更多]",
         "oldKey": 1,
         "newKey": 102
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.tencent.mobileqq",
-        "group": "分段广告",
-        "rule": null,
-        "oldKey": 2,
-        "newKey": 103
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32303,7 +32399,7 @@
         "group": "功能类-登录授权",
         "rule": null,
         "oldKey": 1,
-        "newKey": 104
+        "newKey": 103
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32311,7 +32407,7 @@
         "group": "功能类-登录授权",
         "rule": "点击登录",
         "oldKey": 2,
-        "newKey": 105
+        "newKey": 104
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32319,12 +32415,20 @@
         "group": "功能类-登录授权",
         "rule": "点击同意",
         "oldKey": 3,
-        "newKey": 106
+        "newKey": 105
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.tencent.mobileqq",
         "group": "开屏广告-QQ小程序开屏广告",
+        "rule": null,
+        "oldKey": 0,
+        "newKey": 106
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.tencent.mobileqq",
+        "group": "更新提示",
         "rule": null,
         "oldKey": 0,
         "newKey": 107
@@ -32334,7 +32438,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "更新提示",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 1,
         "newKey": 108
       },
       {
@@ -32342,7 +32446,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "更新提示",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 2,
         "newKey": 109
       },
       {
@@ -32350,7 +32454,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "更新提示",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 3,
         "newKey": 110
       },
       {
@@ -32358,15 +32462,15 @@
         "scope": "com.tencent.mobileqq",
         "group": "更新提示",
         "rule": null,
-        "oldKey": 3,
+        "oldKey": 4,
         "newKey": 111
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.tencent.mobileqq",
-        "group": "更新提示",
+        "group": "更新提示-消息页面-顶部",
         "rule": null,
-        "oldKey": 4,
+        "oldKey": 0,
         "newKey": 112
       },
       {
@@ -32374,7 +32478,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "更新提示-消息页面-顶部",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 1,
         "newKey": 113
       },
       {
@@ -32382,7 +32486,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "更新提示-消息页面-顶部",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 2,
         "newKey": 114
       },
       {
@@ -32390,7 +32494,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "更新提示-消息页面-顶部",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 3,
         "newKey": 115
       },
       {
@@ -32398,16 +32502,8 @@
         "scope": "com.tencent.mobileqq",
         "group": "更新提示-消息页面-顶部",
         "rule": null,
-        "oldKey": 3,
-        "newKey": 116
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.tencent.mobileqq",
-        "group": "更新提示-消息页面-顶部",
-        "rule": null,
         "oldKey": 4,
-        "newKey": 117
+        "newKey": 116
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32415,7 +32511,7 @@
         "group": "局部广告-聊天页面广告",
         "rule": "关键词广告",
         "oldKey": 1,
-        "newKey": 118
+        "newKey": 117
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32423,6 +32519,14 @@
         "group": "局部广告-聊天页面广告",
         "rule": "集福卡活动卡片",
         "oldKey": 2,
+        "newKey": 118
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.tencent.mobileqq",
+        "group": "功能类-自动领取群聊红包",
+        "rule": null,
+        "oldKey": 0,
         "newKey": 119
       },
       {
@@ -32430,7 +32534,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "功能类-自动领取群聊红包",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 1,
         "newKey": 120
       },
       {
@@ -32438,7 +32542,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "功能类-自动领取群聊红包",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 2,
         "newKey": 121
       },
       {
@@ -32446,7 +32550,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "功能类-自动领取群聊红包",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 3,
         "newKey": 122
       },
       {
@@ -32454,16 +32558,8 @@
         "scope": "com.tencent.mobileqq",
         "group": "功能类-自动领取群聊红包",
         "rule": null,
-        "oldKey": 3,
-        "newKey": 123
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.tencent.mobileqq",
-        "group": "功能类-自动领取群聊红包",
-        "rule": null,
         "oldKey": 4,
-        "newKey": 124
+        "newKey": 123
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32471,7 +32567,7 @@
         "group": "功能类-不看或隐藏[官方Qzone]的动态",
         "rule": "①点击右边三个点",
         "oldKey": 0,
-        "newKey": 125
+        "newKey": 124
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32479,7 +32575,7 @@
         "group": "功能类-不看或隐藏[官方Qzone]的动态",
         "rule": "②不看or隐藏此条动态",
         "oldKey": 1,
-        "newKey": 126
+        "newKey": 125
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32487,7 +32583,7 @@
         "group": "功能类-不看或隐藏[官方Qzone]的动态",
         "rule": "③确定",
         "oldKey": 2,
-        "newKey": 127
+        "newKey": 126
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32495,7 +32591,7 @@
         "group": "功能类-不看或隐藏[官方Qzone]的动态",
         "rule": "④确定",
         "oldKey": 3,
-        "newKey": 128
+        "newKey": 127
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32503,7 +32599,7 @@
         "group": "分段广告-QQ空间空友爱看",
         "rule": "①点击右侧折叠",
         "oldKey": 0,
-        "newKey": 129
+        "newKey": 128
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32511,7 +32607,7 @@
         "group": "分段广告-QQ空间空友爱看",
         "rule": "②不感兴趣/关闭推荐",
         "oldKey": 1,
-        "newKey": 130
+        "newKey": 129
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32519,7 +32615,7 @@
         "group": "分段广告-QQ空间空友爱看",
         "rule": "③选择原因",
         "oldKey": 2,
-        "newKey": 131
+        "newKey": 130
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32527,7 +32623,7 @@
         "group": "分段广告-QQ空间空友爱看",
         "rule": "④提交",
         "oldKey": 3,
-        "newKey": 132
+        "newKey": 131
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32535,7 +32631,7 @@
         "group": "局部广告-消息页面-顶部广告",
         "rule": null,
         "oldKey": 0,
-        "newKey": 133
+        "newKey": 132
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32543,7 +32639,7 @@
         "group": "局部广告-消息页面-顶部广告",
         "rule": "局部广告-消息页面-顶部惊喜礼包",
         "oldKey": 1,
-        "newKey": 134
+        "newKey": 133
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32551,7 +32647,7 @@
         "group": "局部广告-消息页面-顶部广告",
         "rule": null,
         "oldKey": 2,
-        "newKey": 135
+        "newKey": 134
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32559,6 +32655,14 @@
         "group": "分段广告-好友动态-广告卡片",
         "rule": null,
         "oldKey": 0,
+        "newKey": 135
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.tencent.mobileqq",
+        "group": "分段广告-好友动态-广告卡片",
+        "rule": null,
+        "oldKey": 1,
         "newKey": 136
       },
       {
@@ -32566,7 +32670,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-好友动态-广告卡片",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 2,
         "newKey": 137
       },
       {
@@ -32574,16 +32678,8 @@
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-好友动态-广告卡片",
         "rule": null,
-        "oldKey": 2,
-        "newKey": 138
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.tencent.mobileqq",
-        "group": "分段广告-好友动态-广告卡片",
-        "rule": null,
         "oldKey": 3,
-        "newKey": 139
+        "newKey": 138
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32591,7 +32687,7 @@
         "group": "功能类-扫一扫-登录确认",
         "rule": "PC 登录确认",
         "oldKey": 1,
-        "newKey": 140
+        "newKey": 139
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32599,12 +32695,20 @@
         "group": "功能类-扫一扫-登录确认",
         "rule": "QQ 互联登录确认",
         "oldKey": 2,
-        "newKey": 141
+        "newKey": 140
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.tencent.mobileqq",
         "group": "局部广告-QQ小世界评论区广告",
+        "rule": null,
+        "oldKey": 0,
+        "newKey": 141
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.tencent.mobileqq",
+        "group": "局部广告-好友动态-为你推荐",
         "rule": null,
         "oldKey": 0,
         "newKey": 142
@@ -32614,21 +32718,21 @@
         "scope": "com.tencent.mobileqq",
         "group": "局部广告-好友动态-为你推荐",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 1,
         "newKey": 143
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.tencent.mobileqq",
-        "group": "局部广告-好友动态-为你推荐",
+        "group": "全屏广告-内测邀请弹窗",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 144
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.tencent.mobileqq",
-        "group": "全屏广告-内测邀请弹窗",
+        "group": "全屏广告-钱包-卡片广告",
         "rule": null,
         "oldKey": 0,
         "newKey": 145
@@ -32638,16 +32742,8 @@
         "scope": "com.tencent.mobileqq",
         "group": "全屏广告-钱包-卡片广告",
         "rule": null,
-        "oldKey": 0,
-        "newKey": 146
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.tencent.mobileqq",
-        "group": "全屏广告-钱包-卡片广告",
-        "rule": null,
         "oldKey": 1,
-        "newKey": 147
+        "newKey": 146
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32655,7 +32751,7 @@
         "group": "全屏广告-首页广告弹窗",
         "rule": "元梦之星广告弹窗",
         "oldKey": 0,
-        "newKey": 148
+        "newKey": 147
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32663,7 +32759,7 @@
         "group": "局部广告-消息页面顶部横幅广告",
         "rule": null,
         "oldKey": 0,
-        "newKey": 149
+        "newKey": 148
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32671,7 +32767,7 @@
         "group": "局部广告-消息页面顶部横幅广告",
         "rule": "消息页面-顶部惊喜礼包",
         "oldKey": 1,
-        "newKey": 150
+        "newKey": 149
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32679,7 +32775,7 @@
         "group": "局部广告-消息页面顶部横幅广告",
         "rule": null,
         "oldKey": 2,
-        "newKey": 151
+        "newKey": 150
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32687,6 +32783,14 @@
         "group": "局部广告-消息页面顶部横幅广告",
         "rule": "稀有龙鹅卡掉落/瓜分现金",
         "oldKey": 3,
+        "newKey": 151
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.tencent.mobileqq",
+        "group": "分段广告-好友动态-卡片广告",
+        "rule": null,
+        "oldKey": 0,
         "newKey": 152
       },
       {
@@ -32694,7 +32798,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-好友动态-卡片广告",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 1,
         "newKey": 153
       },
       {
@@ -32702,7 +32806,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-好友动态-卡片广告",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 2,
         "newKey": 154
       },
       {
@@ -32710,16 +32814,8 @@
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-好友动态-卡片广告",
         "rule": null,
-        "oldKey": 2,
-        "newKey": 155
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.tencent.mobileqq",
-        "group": "分段广告-好友动态-卡片广告",
-        "rule": null,
         "oldKey": 4,
-        "newKey": 156
+        "newKey": 155
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32727,7 +32823,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": null,
         "oldKey": 0,
-        "newKey": 157
+        "newKey": 156
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32735,7 +32831,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": "钱包页面弹窗广告",
         "oldKey": 2,
-        "newKey": 158
+        "newKey": 157
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32743,7 +32839,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": "黄钻页面弹窗广告",
         "oldKey": 3,
-        "newKey": 159
+        "newKey": 158
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32751,7 +32847,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": null,
         "oldKey": 4,
-        "newKey": 160
+        "newKey": 159
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32759,6 +32855,14 @@
         "group": "全屏广告-弹窗广告",
         "rule": null,
         "oldKey": 5,
+        "newKey": 160
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.tencent.mobileqq",
+        "group": "分段广告-动态页[好友热播/为你推荐]",
+        "rule": null,
+        "oldKey": 0,
         "newKey": 161
       },
       {
@@ -32766,16 +32870,8 @@
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-动态页[好友热播/为你推荐]",
         "rule": null,
-        "oldKey": 0,
-        "newKey": 162
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.tencent.mobileqq",
-        "group": "分段广告-动态页[好友热播/为你推荐]",
-        "rule": null,
         "oldKey": 1,
-        "newKey": 163
+        "newKey": 162
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32783,7 +32879,7 @@
         "group": "局部广告-浮窗广告",
         "rule": null,
         "oldKey": 0,
-        "newKey": 164
+        "newKey": 163
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32791,12 +32887,20 @@
         "group": "局部广告-浮窗广告",
         "rule": "右侧悬浮广告",
         "oldKey": 1,
-        "newKey": 165
+        "newKey": 164
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-QQ小世界评论区广告",
+        "rule": null,
+        "oldKey": 0,
+        "newKey": 165
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.tencent.mobileqq",
+        "group": "分段广告-钱包页卡片广告",
         "rule": null,
         "oldKey": 0,
         "newKey": 166
@@ -32806,7 +32910,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-钱包页卡片广告",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 1,
         "newKey": 167
       },
       {
@@ -32814,7 +32918,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-钱包页卡片广告",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 2,
         "newKey": 168
       },
       {
@@ -32822,7 +32926,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-钱包页卡片广告",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 3,
         "newKey": 169
       },
       {
@@ -32830,16 +32934,8 @@
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-钱包页卡片广告",
         "rule": null,
-        "oldKey": 3,
-        "newKey": 170
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.tencent.mobileqq",
-        "group": "分段广告-钱包页卡片广告",
-        "rule": null,
         "oldKey": 4,
-        "newKey": 171
+        "newKey": 170
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32847,7 +32943,7 @@
         "group": "全屏广告-首页弹窗广告",
         "rule": "元梦之星弹窗广告",
         "oldKey": 0,
-        "newKey": 172
+        "newKey": 171
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32855,6 +32951,14 @@
         "group": "全屏广告-首页弹窗广告",
         "rule": "现金瓜分弹窗",
         "oldKey": 1,
+        "newKey": 172
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.tencent.mobileqq",
+        "group": "分段广告-天气页卡片广告",
+        "rule": null,
+        "oldKey": 0,
         "newKey": 173
       },
       {
@@ -32862,7 +32966,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-天气页卡片广告",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 1,
         "newKey": 174
       },
       {
@@ -32870,7 +32974,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-天气页卡片广告",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 2,
         "newKey": 175
       },
       {
@@ -32878,7 +32982,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-天气页卡片广告",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 3,
         "newKey": 176
       },
       {
@@ -32886,7 +32990,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-天气页卡片广告",
         "rule": null,
-        "oldKey": 3,
+        "oldKey": 4,
         "newKey": 177
       },
       {
@@ -32894,16 +32998,8 @@
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-天气页卡片广告",
         "rule": null,
-        "oldKey": 4,
-        "newKey": 178
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.tencent.mobileqq",
-        "group": "分段广告-天气页卡片广告",
-        "rule": null,
         "oldKey": 5,
-        "newKey": 179
+        "newKey": 178
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32911,7 +33007,7 @@
         "group": "全屏广告-个人主页广告",
         "rule": "迷你窝弹窗",
         "oldKey": 0,
-        "newKey": 180
+        "newKey": 179
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32919,6 +33015,14 @@
         "group": "全屏广告-个人主页广告",
         "rule": "个性装扮弹窗",
         "oldKey": 1,
+        "newKey": 180
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.tencent.mobileqq",
+        "group": "局部广告-动态页-卡片广告",
+        "rule": null,
+        "oldKey": 0,
         "newKey": 181
       },
       {
@@ -32926,7 +33030,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "局部广告-动态页-卡片广告",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 1,
         "newKey": 182
       },
       {
@@ -32934,16 +33038,8 @@
         "scope": "com.tencent.mobileqq",
         "group": "局部广告-动态页-卡片广告",
         "rule": null,
-        "oldKey": 1,
-        "newKey": 183
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.tencent.mobileqq",
-        "group": "局部广告-动态页-卡片广告",
-        "rule": null,
         "oldKey": 2,
-        "newKey": 184
+        "newKey": 183
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32951,7 +33047,7 @@
         "group": "局部广告-动态页-卡片广告",
         "rule": "好友动态详情页广告",
         "oldKey": 3,
-        "newKey": 185
+        "newKey": 184
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32959,6 +33055,14 @@
         "group": "局部广告-动态页-卡片广告",
         "rule": "推荐你试试这些玩法",
         "oldKey": 4,
+        "newKey": 185
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.tencent.mobileqq",
+        "group": "综合广告-好友动态-广告卡片",
+        "rule": null,
+        "oldKey": 0,
         "newKey": 186
       },
       {
@@ -32966,7 +33070,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "综合广告-好友动态-广告卡片",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 4,
         "newKey": 187
       },
       {
@@ -32974,7 +33078,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "综合广告-好友动态-广告卡片",
         "rule": null,
-        "oldKey": 4,
+        "oldKey": 1,
         "newKey": 188
       },
       {
@@ -32982,7 +33086,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "综合广告-好友动态-广告卡片",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 2,
         "newKey": 189
       },
       {
@@ -32990,7 +33094,7 @@
         "scope": "com.tencent.mobileqq",
         "group": "综合广告-好友动态-广告卡片",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 3,
         "newKey": 190
       },
       {
@@ -32998,16 +33102,8 @@
         "scope": "com.tencent.mobileqq",
         "group": "综合广告-好友动态-广告卡片",
         "rule": null,
-        "oldKey": 3,
-        "newKey": 191
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.tencent.mobileqq",
-        "group": "综合广告-好友动态-广告卡片",
-        "rule": null,
         "oldKey": 5,
-        "newKey": 192
+        "newKey": 191
       },
       {
         "type": "duplicateKeyReassigned",
@@ -33015,7 +33111,7 @@
         "group": "分段广告-动态页-好友热播",
         "rule": "点击 [好友热播] 卡片右上角菜单按钮",
         "oldKey": 0,
-        "newKey": 193
+        "newKey": 192
       },
       {
         "type": "duplicateKeyReassigned",
@@ -33023,7 +33119,7 @@
         "group": "分段广告-动态页-好友热播",
         "rule": "点击[减少好友热播]",
         "oldKey": 1,
-        "newKey": 194
+        "newKey": 193
       },
       {
         "type": "duplicateKeyReassigned",
@@ -33031,7 +33127,7 @@
         "group": "功能类-扫一扫登录确认",
         "rule": "点击登录",
         "oldKey": 1,
-        "newKey": 195
+        "newKey": 194
       },
       {
         "type": "duplicateKeyReassigned",
@@ -33039,7 +33135,7 @@
         "group": "功能类-扫一扫登录确认",
         "rule": "点击同意",
         "oldKey": 2,
-        "newKey": 196
+        "newKey": 195
       },
       {
         "type": "duplicateKeyReassigned",
@@ -33047,12 +33143,20 @@
         "group": "功能类-扫一扫登录确认",
         "rule": "点击确认",
         "oldKey": 3,
-        "newKey": 197
+        "newKey": 196
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-小世界评论区广告",
+        "rule": null,
+        "oldKey": 0,
+        "newKey": 197
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.tencent.mobileqq",
+        "group": "分段广告-好友动态-为你推荐",
         "rule": null,
         "oldKey": 0,
         "newKey": 198
@@ -33062,16 +33166,8 @@
         "scope": "com.tencent.mobileqq",
         "group": "分段广告-好友动态-为你推荐",
         "rule": null,
-        "oldKey": 0,
-        "newKey": 199
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.tencent.mobileqq",
-        "group": "分段广告-好友动态-为你推荐",
-        "rule": null,
         "oldKey": 1,
-        "newKey": 200
+        "newKey": 199
       },
       {
         "type": "duplicateKeyReassigned",
@@ -33079,7 +33175,7 @@
         "group": "更新提示-内测邀请弹窗",
         "rule": null,
         "oldKey": 0,
-        "newKey": 201
+        "newKey": 200
       },
       {
         "type": "duplicateKeyReassigned",
@@ -33087,7 +33183,7 @@
         "group": "全屏广告-广告弹窗",
         "rule": "元梦之星广告弹窗",
         "oldKey": 0,
-        "newKey": 202
+        "newKey": 201
       },
       {
         "type": "duplicateKeyReassigned",
@@ -33095,7 +33191,7 @@
         "group": "全屏广告-广告弹窗",
         "rule": "现金瓜分弹窗",
         "oldKey": 1,
-        "newKey": 203
+        "newKey": 202
       },
       {
         "type": "duplicateKeyReassigned",
@@ -33103,7 +33199,7 @@
         "group": "局部广告-聊天页-顶部活动浮窗",
         "rule": null,
         "oldKey": 0,
-        "newKey": 204
+        "newKey": 203
       },
       {
         "type": "duplicateKeyReassigned",
@@ -39296,7 +39392,7 @@
       }
     ]
   },
-  "referenceRepairsTotal": 2260,
+  "referenceRepairsTotal": 2262,
   "disabledGroupAudit": [
     {
       "app": "com.android.updater",

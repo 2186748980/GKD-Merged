@@ -17,7 +17,7 @@
     "enable_disabled_group": 945
   },
   "referenceRepairCounts": {
-    "duplicateKeyReassigned": 2236,
+    "duplicateKeyReassigned": 2237,
     "ambiguousCrossGroupReferenceResolvedToFirst": 19,
     "keptDanglingReference": 7
   },
@@ -5439,9 +5439,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 1534,
+      "key": 1535,
       "keptRuleKey": 1506,
-      "candidateRuleKey": 1534,
+      "candidateRuleKey": 1535,
       "matches": "@ImageView +2 FrameLayout >3 [text=\"关注\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -24436,10 +24436,18 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.dragon.read",
+        "group": "权限提示-通知权限",
+        "rule": null,
+        "oldKey": 2,
+        "newKey": 1514
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.dragon.read",
         "group": "功能类-看广告自动领奖励",
         "rule": "①隔10秒点击右上角x掉",
         "oldKey": 0,
-        "newKey": 1514
+        "newKey": 1515
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24447,7 +24455,7 @@
         "group": "功能类-看广告自动领奖励",
         "rule": "②已得奖励-点击x掉",
         "oldKey": 1,
-        "newKey": 1515
+        "newKey": 1516
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24455,7 +24463,7 @@
         "group": "功能类-观看广告自动静音",
         "rule": "刚退出直播间-不点击[静音]",
         "oldKey": 0,
-        "newKey": 1516
+        "newKey": 1517
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24463,7 +24471,7 @@
         "group": "功能类-观看广告自动静音",
         "rule": "①点击[静音]",
         "oldKey": 1,
-        "newKey": 1517
+        "newKey": 1518
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24471,7 +24479,7 @@
         "group": "功能类-观看广告自动静音",
         "rule": "②坐标点击[静音]",
         "oldKey": 2,
-        "newKey": 1518
+        "newKey": 1519
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24479,7 +24487,7 @@
         "group": "局部广告-阅读-卡片广告",
         "rule": "底部卡片广告",
         "oldKey": 1,
-        "newKey": 1519
+        "newKey": 1520
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24487,7 +24495,7 @@
         "group": "全屏广告-阅读-视频广告",
         "rule": "点击【关闭】",
         "oldKey": 1,
-        "newKey": 1520
+        "newKey": 1521
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24495,7 +24503,7 @@
         "group": "全屏广告-阅读-视频广告",
         "rule": "点击【反馈】",
         "oldKey": 2,
-        "newKey": 1521
+        "newKey": 1522
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24503,14 +24511,6 @@
         "group": "全屏广告-阅读-视频广告",
         "rule": "点击【不感兴趣】",
         "oldKey": 3,
-        "newKey": 1522
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.dragon.read",
-        "group": "局部广告-阅读页面广告",
-        "rule": null,
-        "oldKey": 1,
         "newKey": 1523
       },
       {
@@ -24518,7 +24518,7 @@
         "scope": "com.dragon.read",
         "group": "局部广告-阅读页面广告",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 1,
         "newKey": 1524
       },
       {
@@ -24526,7 +24526,7 @@
         "scope": "com.dragon.read",
         "group": "局部广告-阅读页面广告",
         "rule": null,
-        "oldKey": 3,
+        "oldKey": 2,
         "newKey": 1525
       },
       {
@@ -24534,7 +24534,7 @@
         "scope": "com.dragon.read",
         "group": "局部广告-阅读页面广告",
         "rule": null,
-        "oldKey": 4,
+        "oldKey": 3,
         "newKey": 1526
       },
       {
@@ -24542,7 +24542,7 @@
         "scope": "com.dragon.read",
         "group": "局部广告-阅读页面广告",
         "rule": null,
-        "oldKey": 5,
+        "oldKey": 4,
         "newKey": 1527
       },
       {
@@ -24550,7 +24550,7 @@
         "scope": "com.dragon.read",
         "group": "局部广告-阅读页面广告",
         "rule": null,
-        "oldKey": 6,
+        "oldKey": 5,
         "newKey": 1528
       },
       {
@@ -24558,8 +24558,16 @@
         "scope": "com.dragon.read",
         "group": "局部广告-阅读页面广告",
         "rule": null,
-        "oldKey": 7,
+        "oldKey": 6,
         "newKey": 1529
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.dragon.read",
+        "group": "局部广告-阅读页面广告",
+        "rule": null,
+        "oldKey": 7,
+        "newKey": 1530
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24567,7 +24575,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": "电商惊喜券",
         "oldKey": 0,
-        "newKey": 1530
+        "newKey": 1531
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24575,7 +24583,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": "爆款好物一分购",
         "oldKey": 1,
-        "newKey": 1531
+        "newKey": 1532
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24583,7 +24591,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": "抽奖赢好礼",
         "oldKey": 2,
-        "newKey": 1532
+        "newKey": 1533
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24591,7 +24599,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": "签到弹窗",
         "oldKey": 3,
-        "newKey": 1533
+        "newKey": 1534
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24599,7 +24607,7 @@
         "group": "功能类-阅读页面-关注作者",
         "rule": null,
         "oldKey": 0,
-        "newKey": 1534
+        "newKey": 1535
       },
       {
         "type": "duplicateKeyReassigned",
@@ -39392,7 +39400,7 @@
       }
     ]
   },
-  "referenceRepairsTotal": 2262,
+  "referenceRepairsTotal": 2263,
   "disabledGroupAudit": [
     {
       "app": "com.android.updater",

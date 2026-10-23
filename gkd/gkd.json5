@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026102201,
+  "version": 2026102301,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -10366,6 +10366,21 @@
                 "https://i.gkd.li/i/32636972"
               ],
               "exampleUrls": "https://e.gkd.li/5c650324-bf22-4d9f-9fe0-2c0b738040c4"
+            }
+          ]
+        },
+        {
+          "key": 4,
+          "name": "更新提示",
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": ".MainActivity",
+              "matches": "@ImageView[clickable=true][width<96] - [text*=\"新版本\"]",
+              "snapshotUrls": "https://i.gkd.li/i/33833127"
             }
           ]
         }
@@ -29875,6 +29890,10 @@
           "name": "权限提示-通知权限",
           "desc": "点击\"取消\"",
           "fastQuery": true,
+          "activityIds": [
+            ".widget.ConfirmDialogBuilder",
+            ".pages.main.MainFragmentActivity"
+          ],
           "rules": [
             {
               "key": 1512,
@@ -29882,10 +29901,6 @@
               "matchTime": 10000,
               "actionMaximum": 1,
               "resetMatch": "app",
-              "activityIds": [
-                ".widget.ConfirmDialogBuilder",
-                ".pages.main.MainFragmentActivity"
-              ],
               "matches": [
                 "[text=\"开启推送提醒\"][visibleToUser=true]",
                 "[text=\"取消\"][visibleToUser=true]"
@@ -29904,6 +29919,11 @@
                 "[text=\"取消\"][visibleToUser=true]"
               ],
               "snapshotUrls": "https://i.gkd.li/i/27190449"
+            },
+            {
+              "key": 1514,
+              "matches": "TextView[text=\"暂不开启\"] < @[clickable=true] <n View < View < ComposeView < * < * < [id=\"android:id/content\"]",
+              "snapshotUrls": "https://i.gkd.li/i/33832486"
             },
             {
               "activityIds": ".widget.ConfirmDialogBuilder",
@@ -29946,7 +29966,7 @@
           "activityIds": "com.ss.android.excitingvideo.ExcitingVideoActivity",
           "rules": [
             {
-              "key": 1514,
+              "key": 1515,
               "name": "①隔10秒点击右上角x掉",
               "actionDelay": 10000,
               "matches": "@ImageView[width<40 && height<40] <n ViewGroup <(4,5) ViewGroup < FrameLayout < FrameLayout < FrameLayout < FrameLayout < FrameLayout < [id=\"android:id/content\"]",
@@ -29959,7 +29979,7 @@
               ]
             },
             {
-              "key": 1515,
+              "key": 1516,
               "name": "②已得奖励-点击x掉",
               "matches": "@ImageView < ViewGroup[desc*=\"关闭\" && desc!*=\"秒\"]",
               "position": {
@@ -29976,8 +29996,8 @@
             {
               "key": 20,
               "preKeys": [
-                1514,
-                1515
+                1515,
+                1516
               ],
               "name": "③坐标点击[继续观看]",
               "actionDelay": 500,
@@ -30026,14 +30046,14 @@
           "fastQuery": true,
           "actionDelay": 300,
           "actionMaximum": 1,
-          "actionMaximumKey": 1516,
+          "actionMaximumKey": 1517,
           "scopeKeys": [
             15
           ],
           "activityIds": "com.ss.android.excitingvideo.ExcitingVideoActivity",
           "rules": [
             {
-              "key": 1516,
+              "key": 1517,
               "preKeys": [
                 1501,
                 1502
@@ -30043,13 +30063,13 @@
               "matches": "[parent=null]"
             },
             {
-              "key": 1517,
+              "key": 1518,
               "name": "①点击[静音]",
               "matches": "@ImageView[visibleToUser=true][width>20 && width<93 && height>20 && height<108][right<prev.width.div(3)][bottom<prev.height.div(10)] <<n [id=\"android:id/content\"]",
               "snapshotUrls": "https://i.gkd.li/i/28907595"
             },
             {
-              "key": 1518,
+              "key": 1519,
               "name": "②坐标点击[静音]",
               "position": {
                 "left": "width * 0.5",
@@ -30223,7 +30243,7 @@
               ]
             },
             {
-              "key": 1519,
+              "key": 1520,
               "name": "底部卡片广告",
               "anyMatches": [
                 "@ImageView - LinearLayout <n * <n * <n * <n * <n * <n * <n * <n * <n * <n [id=\"com.dragon.read:id/root_view\"]",
@@ -30240,7 +30260,7 @@
               ]
             },
             {
-              "preKeys": 1519,
+              "preKeys": 1520,
               "matches": "TextView[text=\"关闭此广告\"||text=\"关闭此条广告\"]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/17928194",
@@ -30284,13 +30304,13 @@
           ],
           "rules": [
             {
-              "key": 1520,
+              "key": 1521,
               "name": "点击【关闭】",
               "matches": "@[text=\"关闭\"] - [text=\"反馈\"]",
               "snapshotUrls": "https://i.gkd.li/import/13191156"
             },
             {
-              "key": 1521,
+              "key": 1522,
               "name": "点击【反馈】",
               "matchRoot": true,
               "matches": "[text=\"反馈\"][visibleToUser=true]",
@@ -30311,8 +30331,8 @@
               ]
             },
             {
-              "preKeys": 1521,
-              "key": 1522,
+              "preKeys": 1522,
+              "key": 1523,
               "name": "点击【不感兴趣】",
               "actionDelay": 100,
               "matches": "@TextView[text=\"不感兴趣\"]",
@@ -30409,7 +30429,7 @@
           ],
           "rules": [
             {
-              "key": 1523,
+              "key": 1524,
               "fastQuery": true,
               "matches": "@ImageView[childCount=0][clickable=true][visibleToUser=true] - LinearLayout >(2,3) [text=\"广告\" || text=\"立享优惠\" || text*=\"查看\"][text.length<5]",
               "snapshotUrls": [
@@ -30419,7 +30439,7 @@
               ]
             },
             {
-              "key": 1524,
+              "key": 1525,
               "fastQuery": true,
               "activityIds": ".reader.ui.ReaderActivity",
               "matches": "[id=\"com.dragon.read:id/close_button\"][visibleToUser=true]",
@@ -30427,14 +30447,14 @@
               "snapshotUrls": "https://i.gkd.li/i/13520314"
             },
             {
-              "key": 1525,
+              "key": 1526,
               "fastQuery": true,
               "matches": "[text=\"关闭此条广告\"]",
               "exampleUrls": "https://m.gkd.li/57941037/cf9d0574-dc89-4f03-ba01-eb9bcc97925f",
               "snapshotUrls": "https://i.gkd.li/i/14540281"
             },
             {
-              "key": 1526,
+              "key": 1527,
               "matches": "HorizontalAndVerticalScrollView > FrameLayout[childCount>=13] >(7,8,9) @FrameLayout[index=2][clickable=true] > ImageView",
               "exampleUrls": [
                 "https://m.gkd.li/57941037/0129e5a7-ead1-4b92-a008-708632e5a927",
@@ -30448,7 +30468,7 @@
               ]
             },
             {
-              "key": 1527,
+              "key": 1528,
               "fastQuery": true,
               "activityIds": ".reader.ui.ReaderActivity",
               "matches": "@[clickable=true] >(1,2) [text=\"继续阅读下一页\"][visibleToUser=true]",
@@ -30459,12 +30479,12 @@
               ]
             },
             {
-              "key": 1528,
+              "key": 1529,
               "matches": "@ImageView - LinearLayout TextView[text=\"广告\"]",
               "snapshotUrls": "https://i.gkd.li/i/12908734"
             },
             {
-              "key": 1529,
+              "key": 1530,
               "matches": "HorizontalAndVerticalScrollView > FrameLayout[childCount=14] > [index=9] >5 ImageView[clickable=true]",
               "exampleUrls": "https://m.gkd.li/57941037/d2f7c62c-be88-4668-b276-68bb53edfaad",
               "snapshotUrls": [
@@ -30481,7 +30501,7 @@
           "name": "全屏广告-弹窗广告",
           "rules": [
             {
-              "key": 1530,
+              "key": 1531,
               "name": "电商惊喜券",
               "activityIds": "com.dragon.read.pages.main.MainFragmentActivity",
               "fastQuery": true,
@@ -30489,7 +30509,7 @@
               "snapshotUrls": "https://i.gkd.li/i/12910159"
             },
             {
-              "key": 1531,
+              "key": 1532,
               "name": "爆款好物一分购",
               "fastQuery": true,
               "activityIds": "com.dragon.read.pages.main.MainFragmentActivity",
@@ -30497,7 +30517,7 @@
               "snapshotUrls": "https://i.gkd.li/i/12878266"
             },
             {
-              "key": 1532,
+              "key": 1533,
               "name": "抽奖赢好礼",
               "fastQuery": true,
               "activityIds": "com.dragon.read.pages.main.MainFragmentActivity",
@@ -30506,7 +30526,7 @@
               "snapshotUrls": "https://i.gkd.li/i/14292475"
             },
             {
-              "key": 1533,
+              "key": 1534,
               "name": "签到弹窗",
               "fastQuery": true,
               "activityIds": "com.dragon.read.pages.main.MainFragmentActivity",
@@ -30549,7 +30569,7 @@
           "fastQuery": true,
           "rules": [
             {
-              "key": 1534,
+              "key": 1535,
               "activityIds": "com.dragon.read.reader.ui.ReaderActivity",
               "matches": "@ImageView +2 FrameLayout >3 [text=\"关注\"]",
               "snapshotUrls": "https://i.gkd.li/i/13399505"
@@ -66463,7 +66483,7 @@
               "key": 2,
               "activityIds": "com.tencent.upgrade.ui.UpgradeDialogActivity",
               "matches": "[vid=\"upgrade_dialog_close_btn\"]",
-              "snapshotUrls": "https://i.gkd.li/i/13116821"
+              "snapshotUrls": "https://i.gkd.li/i/33833374"
             },
             {
               "matches": "[text$=\"新版本\"] +2 * >2 [id=\"com.qidian.QDReader:id/cancel\"]",
@@ -71351,6 +71371,41 @@
             }
           ],
           "enable": false
+        }
+      ]
+    },
+    {
+      "id": "com.sfexpress.knight",
+      "name": "顺丰同城骑士",
+      "groups": [
+        {
+          "key": 1,
+          "name": "功能类-重复[刷新]导航",
+          "desc": "每隔1秒点击[导航-取]上方刷新",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": ".home.HomeActivity",
+              "matches": "@[vid=\"locationFl\"] + [vid=\"recordFl\"] >2 [text=\"导航-取\"]",
+              "snapshotUrls": "https://i.gkd.li/i/33796598",
+              "exampleUrls": "https://e.gkd.li/abae860f-12d0-4e01-92a4-6331adfd8cba"
+            }
+          ]
+        },
+        {
+          "key": 2,
+          "name": "功能类-自动[刷新]任务列表",
+          "desc": "每隔5秒点击1次[刷新列表]",
+          "rules": [
+            {
+              "fastQuery": true,
+              "actionCd": 5000,
+              "activityIds": ".home.HomeActivity",
+              "matches": "@[vid=\"llRefresh\"][clickable=true] >2 [text=\"刷新列表\"]",
+              "snapshotUrls": "https://i.gkd.li/i/33797305",
+              "exampleUrls": "https://e.gkd.li/b381ce15-5a3d-43b2-9834-76ef62887a35"
+            }
+          ]
         }
       ]
     },

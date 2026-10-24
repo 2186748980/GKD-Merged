@@ -1,16 +1,16 @@
 {
   "ok": true,
-  "time": 1792790904,
-  "version": 2026102301,
-  "contentHash": "168cbb2131d749c5f97d0cd84447f7de503c675569b3965c2c2e223318f6e030",
+  "time": 1792817019,
+  "version": 2026102401,
+  "contentHash": "235a5018e1c37e6a946175e93aaf980e47759dc9b813701334f9582debc7eafa",
   "sources": [
     {
       "id": "linarm",
       "name": "Lin-arm",
       "download": "ok",
-      "bytes": 1350369,
+      "bytes": 1351981,
       "parse": "ok",
-      "sourceVersion": 615
+      "sourceVersion": 616
     },
     {
       "id": "ganlinte",
@@ -39,17 +39,17 @@
   ],
   "apps": 1061,
   "globalGroups": 3,
-  "appRuleGroups": 4331,
-  "gkdDisplayedRuleCount": 4331,
+  "appRuleGroups": 4336,
+  "gkdDisplayedRuleCount": 4336,
   "globalRuleObjects": 15,
-  "appRuleObjects": 7561,
-  "ruleObjects": 7576,
+  "appRuleObjects": 7566,
+  "ruleObjects": 7581,
   "safeDuplicateRemovals": 0,
-  "duplicateReviewItems": 1009,
+  "duplicateReviewItems": 1010,
   "duplicateReviewCategories": {
     "dependency_difference": 57,
     "upstream_invalid_reference": 7,
-    "enable_disabled_group": 945
+    "enable_disabled_group": 946
   },
   "duplicateReviewBreakdown": {
     "duplicate rule retained because preKeys diverge from kept copy (same group merge)": 39,
@@ -57,7 +57,7 @@
     "upstream dangling reference preserved verbatim; after duplicate-key normalization the value uniquely resolves, but to a rule in ANOTHER group -- whether that matches the upstream gate is unverifiable; value retained as-is, manual review required": 2,
     "upstream reference to a missing rule key preserved unchanged (dropping it would open the rule gate)": 3,
     "duplicate rule retained because a group is enable:false (manual-enable semantics unverifiable)": 474,
-    "duplicate rule retained because behavior-relevant group settings differ": 213,
+    "duplicate rule retained because behavior-relevant group settings differ": 214,
     "duplicate rule has key dependency references": 140,
     "duplicate rule requires review because preKeys are involved": 136
   },
@@ -67,9 +67,9 @@
     "keptDanglingReference": 7
   },
   "optimization": {
-    "remapDuplicateSkipped": 2079,
+    "remapDuplicateSkipped": 2078,
     "remapEvidenceMerged": 295,
-    "remapDisplayDedupe": 763,
+    "remapDisplayDedupe": 762,
     "remapPreKeysGuard": 39,
     "remapPreKeysUnverifiable": 0,
     "danglingReferencesPreserved": 3,
@@ -81,7 +81,7 @@
     "groupDisplayContextDedupe": 0,
     "upstreamEvidenceUrlDedup": 18,
     "disabledGroupsRetained": 3352,
-    "disabledGroupsFullyCoveredRetirementCandidates": 7,
+    "disabledGroupsFullyCoveredRetirementCandidates": 8,
     "disabledGroupsAutoRetired": 0
   },
   "validation": {

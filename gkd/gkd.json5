@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026102301,
+  "version": 2026102401,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -27714,6 +27714,20 @@
               "exampleUrls": "https://e.gkd.li/fbbd9498-9140-40fe-a772-ba4613bfa9a4"
             }
           ]
+        },
+        {
+          "key": 3,
+          "name": "其他-开启自动接单?",
+          "desc": "点击[忽略]",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": ".v2.main.EDMainActivity",
+              "matches": "[text*=\"开启\"][text*=\"自动接单\"] +n @[clickable=true] > [text=\"忽略\"]",
+              "snapshotUrls": "https://i.gkd.li/i/33851087",
+              "exampleUrls": "https://e.gkd.li/f3a0d6e2-8b2e-4b68-847d-6f6a6692ae08"
+            }
+          ]
         }
       ]
     },
@@ -50509,10 +50523,24 @@
     },
     {
       "id": "com.kuaiduizuoye.scan",
-      "name": "快对",
+      "name": "快对AI",
       "groups": [
         {
           "key": 1,
+          "name": "局部广告",
+          "desc": "点击[关闭]",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": ".activity.manyquestionsearch.activity.PicManySearchActivity",
+              "matches": "[width>700][height<300] >3 [text=\"关闭\"][clickable=true]",
+              "snapshotUrls": "https://i.gkd.li/i/33854308",
+              "exampleUrls": "https://e.gkd.li/e81f7bbd-a5ce-4b57-b09a-185bd9529c9d"
+            }
+          ]
+        },
+        {
+          "key": 2,
           "name": "全屏广告-首页广告弹窗",
           "activityIds": "com.hihonor.android.launcher.drawer.DrawerLauncher",
           "rules": [],
@@ -50520,7 +50548,7 @@
           "enable": false
         },
         {
-          "key": 2,
+          "key": 3,
           "name": "未分类-首页广告弹窗",
           "activityIds": "com.hihonor.android.launcher.drawer.DrawerLauncher",
           "rules": [],
@@ -51428,6 +51456,7 @@
             {
               "key": 0,
               "fastQuery": true,
+              "action": "clickCenter",
               "matches": "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
               "exampleUrls": "https://e.gkd.li/94c7fc27-891f-4206-b933-f26661041b99",
               "snapshotUrls": "https://i.gkd.li/i/21451911"
@@ -61995,8 +62024,24 @@
           "enable": false
         },
         {
-          "enable": false,
           "key": 17,
+          "name": "其他-分享时[取消勾选]得现金",
+          "desc": "仅点击1次",
+          "rules": [
+            {
+              "fastQuery": true,
+              "actionMaximum": 1,
+              "resetMatch": "match",
+              "activityIds": ".music.biz.rn.activity.MainProcessLayerReactNativeActivity",
+              "matches": "@[clickable=true] > ImageView + [text*=\"勾选后分享到\"]",
+              "snapshotUrls": "https://i.gkd.li/i/33880660",
+              "exampleUrls": "https://e.gkd.li/61178688-ca5c-4d21-96a2-8d8382665433"
+            }
+          ]
+        },
+        {
+          "enable": false,
+          "key": 18,
           "name": "分段广告",
           "desc": "有二次确认弹窗",
           "fastQuery": true,
@@ -62067,7 +62112,7 @@
           ]
         },
         {
-          "key": 18,
+          "key": 19,
           "name": "局部广告-我的页面-中间滚动广告",
           "fastQuery": true,
           "activityIds": [
@@ -62080,7 +62125,7 @@
           "enable": false
         },
         {
-          "key": 19,
+          "key": 20,
           "name": "功能类-主页-免费听歌",
           "fastQuery": true,
           "activityIds": [
@@ -62094,7 +62139,7 @@
         },
         {
           "enable": false,
-          "key": 20,
+          "key": 21,
           "name": "全屏广告-VIP 弹窗",
           "fastQuery": true,
           "matchTime": 10000,
@@ -62142,7 +62187,7 @@
         },
         {
           "enable": false,
-          "key": 21,
+          "key": 22,
           "name": "局部广告-播放界面广告",
           "desc": "右上角VIP小悬浮、巨幅卡片式广告",
           "fastQuery": true,
@@ -62210,7 +62255,7 @@
           ]
         },
         {
-          "key": 22,
+          "key": 23,
           "name": "局部广告-发现-顶部视频广告",
           "desc": "自动点击跳过。",
           "fastQuery": true,
@@ -62224,7 +62269,7 @@
           "enable": false
         },
         {
-          "key": 23,
+          "key": 24,
           "name": "功能类-免费听弹窗",
           "actionMaximum": 1,
           "resetMatch": "app",
@@ -62235,7 +62280,7 @@
           "enable": false
         },
         {
-          "key": 24,
+          "key": 25,
           "name": "全屏广告-功能升级弹窗",
           "rules": [
             {
@@ -62256,7 +62301,7 @@
           "enable": false
         },
         {
-          "key": 25,
+          "key": 26,
           "fastQuery": true,
           "name": "全屏广告-播放页赞赏好音乐弹窗",
           "desc": "点击X",
@@ -62270,7 +62315,7 @@
           "enable": false
         },
         {
-          "key": 26,
+          "key": 27,
           "name": "局部广告-发现页顶部视频广告",
           "desc": "自动点击跳过。",
           "fastQuery": true,
@@ -62284,7 +62329,7 @@
           "enable": false
         },
         {
-          "key": 27,
+          "key": 28,
           "name": "分段广告-评论区广告",
           "desc": "点击[关闭]-点击[不感兴趣]",
           "fastQuery": true,
@@ -62336,7 +62381,7 @@
           "enable": false
         },
         {
-          "key": 28,
+          "key": 29,
           "name": "全屏广告-[获得新徽章]弹窗",
           "desc": "点击关闭",
           "matchTime": 10000,
@@ -62370,7 +62415,7 @@
           "enable": false
         },
         {
-          "key": 29,
+          "key": 30,
           "name": "功能类-功能升级弹窗",
           "rules": [
             {
@@ -70943,12 +70988,14 @@
               "fastQuery": true,
               "activityIds": [
                 ".SearchResultActivity",
-                ".SamsungAppsMainActivity"
+                ".SamsungAppsMainActivity",
+                ".updatelist.UpdateListActivity"
               ],
               "matches": "[text*=\"年满 18 岁\"] +4 [vid=\"positive\"]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/14473690",
-                "https://i.gkd.li/i/33385203"
+                "https://i.gkd.li/i/33385203",
+                "https://i.gkd.li/i/33868896"
               ],
               "exampleUrls": "https://e.gkd.li/1417cf6c-e06d-4565-ab2e-eae6a713f1f1"
             }
@@ -71400,6 +71447,7 @@
             {
               "fastQuery": true,
               "actionCd": 5000,
+              "action": "clickCenter",
               "activityIds": ".home.HomeActivity",
               "matches": "@[vid=\"llRefresh\"][clickable=true] >2 [text=\"刷新列表\"]",
               "snapshotUrls": "https://i.gkd.li/i/33797305",
@@ -84735,8 +84783,23 @@
           "enable": false
         },
         {
+          "key": 8,
+          "name": "功能类-自动[勾选]同意协议",
+          "desc": "✅已阅读并同意服务协议和隐私政策",
+          "rules": [
+            {
+              "fastQuery": true,
+              "actionMaximum": 1,
+              "activityIds": ".activity.LoginPublicFragmentActivity",
+              "matches": "@CheckBox[checked=false] + [text=\"已阅读并同意服务协议和隐私政策\"]",
+              "snapshotUrls": "https://i.gkd.li/i/33854572",
+              "exampleUrls": "https://e.gkd.li/e38854d8-4cd5-41c0-9396-b2c95ef9a788"
+            }
+          ]
+        },
+        {
           "key": 10,
-          "name": "功能类-自动勾选原图",
+          "name": "功能类-自动[勾选]原图",
           "desc": "发送图片时自动勾选原图，可手动取消勾选",
           "actionMaximum": 1,
           "rules": [
@@ -84755,20 +84818,7 @@
                 "https://i.gkd.li/i/13476247"
               ]
             }
-          ],
-          "enable": false,
-          "activityIds": [
-            "com.tencent.mobileqq.activity.SplashActivity",
-            "com.tencent.qqnt.qbasealbum.WinkHomeActivity",
-            "com.tencent.mobileqq.activity.photo.album.NewPhotoListActivity"
-          ],
-          "snapshotUrls": [
-            "https://i.gkd.li/import/12705556",
-            "https://i.gkd.li/import/12705559",
-            "https://i.gkd.li/import/13295142",
-            "https://i.gkd.li/import/13476247"
-          ],
-          "fastQuery": true
+          ]
         },
         {
           "key": 11,
@@ -85531,6 +85581,42 @@
         {
           "enable": false,
           "key": 48,
+          "name": "功能类-自动勾选原图",
+          "desc": "发送图片时自动勾选原图",
+          "activityIds": [
+            "com.tencent.mobileqq.activity.SplashActivity",
+            "com.tencent.qqnt.qbasealbum.WinkHomeActivity",
+            "com.tencent.mobileqq.activity.photo.album.NewPhotoListActivity"
+          ],
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": [
+                "com.tencent.mobileqq.activity.SplashActivity",
+                "com.tencent.qqnt.qbasealbum.WinkHomeActivity",
+                "com.tencent.mobileqq.activity.photo.album.NewPhotoListActivity"
+              ],
+              "matches": "@CheckBox[checked=false] + [text=\"原图\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/12705556",
+                "https://i.gkd.li/i/12705559",
+                "https://i.gkd.li/i/13295142",
+                "https://i.gkd.li/i/13476247"
+              ]
+            }
+          ],
+          "snapshotUrls": [
+            "https://i.gkd.li/import/12705556",
+            "https://i.gkd.li/import/12705559",
+            "https://i.gkd.li/import/13295142",
+            "https://i.gkd.li/import/13476247"
+          ],
+          "actionMaximum": 1,
+          "fastQuery": true
+        },
+        {
+          "enable": false,
+          "key": 49,
           "name": "功能类-自动查看原图",
           "desc": "查看图片时自动点击原图",
           "activityIds": "com.tencent.richframework.gallery.QQGalleryActivity",
@@ -85549,7 +85635,7 @@
         },
         {
           "enable": false,
-          "key": 49,
+          "key": 50,
           "name": "局部广告-QQ小世界评论区广告",
           "desc": "点击广告-弹出原因框-关闭此条广告",
           "activityIds": [
@@ -85570,7 +85656,7 @@
           ]
         },
         {
-          "key": 50,
+          "key": 51,
           "name": "全屏广告-QQ小程序开屏广告",
           "desc": "点击右下角跳过",
           "activityIds": [
@@ -85589,7 +85675,7 @@
           "enable": false
         },
         {
-          "key": 51,
+          "key": 52,
           "name": "全屏广告-黄钻-弹窗广告",
           "activityIds": "com.tencent.mobileqq.activity.QQBrowserActivity",
           "rules": [],
@@ -85601,7 +85687,7 @@
         },
         {
           "enable": false,
-          "key": 52,
+          "key": 53,
           "name": "局部广告-好友动态-为你推荐",
           "fastQuery": true,
           "activityIds": [
@@ -85630,7 +85716,7 @@
         },
         {
           "enable": false,
-          "key": 53,
+          "key": 54,
           "name": "全屏广告-内测邀请弹窗",
           "fastQuery": true,
           "activityIds": "com.tencent.mobileqq.activity.SplashActivity",
@@ -85644,7 +85730,7 @@
         },
         {
           "enable": false,
-          "key": 54,
+          "key": 55,
           "name": "全屏广告-钱包-卡片广告",
           "fastQuery": true,
           "activityIds": "com.tencent.mobileqq.activity.SplashActivity",
@@ -85667,7 +85753,7 @@
           ]
         },
         {
-          "key": 55,
+          "key": 56,
           "name": "全屏广告-首页广告弹窗",
           "rules": [
             {
@@ -85681,7 +85767,7 @@
           "enable": false
         },
         {
-          "key": 56,
+          "key": 57,
           "name": "局部广告-消息页面顶部横幅广告",
           "desc": "点击关闭",
           "activityIds": "com.tencent.mobileqq.activity.SplashActivity",
@@ -85721,7 +85807,7 @@
           "enable": false
         },
         {
-          "key": 57,
+          "key": 58,
           "name": "分段广告-好友动态-卡片广告",
           "rules": [
             {
@@ -85781,7 +85867,7 @@
           "enable": false
         },
         {
-          "key": 58,
+          "key": 59,
           "name": "全屏广告-弹窗广告",
           "rules": [
             {
@@ -85835,7 +85921,7 @@
           "enable": false
         },
         {
-          "key": 59,
+          "key": 60,
           "name": "分段广告-动态页[好友热播/为你推荐]",
           "fastQuery": true,
           "activityIds": [
@@ -85870,7 +85956,7 @@
           "enable": false
         },
         {
-          "key": 60,
+          "key": 61,
           "name": "局部广告-浮窗广告",
           "activityIds": "com.tencent.mobileqq.activity.QQBrowserActivity",
           "rules": [
@@ -85890,7 +85976,7 @@
           "enable": false
         },
         {
-          "key": 61,
+          "key": 62,
           "name": "分段广告-QQ小世界评论区广告",
           "desc": "点击广告-弹出原因框-关闭此条广告",
           "activityIds": [
@@ -85914,7 +86000,7 @@
           "enable": false
         },
         {
-          "key": 62,
+          "key": 63,
           "name": "分段广告-钱包页卡片广告",
           "rules": [
             {
@@ -85971,7 +86057,7 @@
           ]
         },
         {
-          "key": 63,
+          "key": 64,
           "name": "全屏广告-首页弹窗广告",
           "activityIds": "com.tencent.mobileqq.activity.QPublicTransFragmentActivity",
           "rules": [
@@ -85992,7 +86078,7 @@
           "enable": false
         },
         {
-          "key": 64,
+          "key": 65,
           "name": "分段广告-天气页卡片广告",
           "desc": "点击关闭-点击关闭此条广告",
           "rules": [
@@ -86053,7 +86139,7 @@
           "enable": false
         },
         {
-          "key": 65,
+          "key": 66,
           "name": "全屏广告-新春回馈礼弹窗",
           "desc": "点击关闭",
           "rules": [
@@ -86072,7 +86158,7 @@
           "enable": false
         },
         {
-          "key": 66,
+          "key": 67,
           "name": "全屏广告-个人主页广告",
           "desc": "点击关闭",
           "rules": [
@@ -86097,7 +86183,7 @@
           "enable": false
         },
         {
-          "key": 67,
+          "key": 68,
           "name": "全屏广告-腾讯文档页面-\"使用App\"弹窗",
           "desc": "点击关闭",
           "rules": [
@@ -86119,7 +86205,7 @@
           "enable": false
         },
         {
-          "key": 68,
+          "key": 69,
           "name": "全屏广告-账号信息页面-新人SVIP领取弹窗",
           "rules": [
             {
@@ -86134,7 +86220,7 @@
           "enable": false
         },
         {
-          "key": 69,
+          "key": 70,
           "name": "局部广告-动态页-卡片广告",
           "desc": "点击关闭",
           "rules": [
@@ -86205,7 +86291,7 @@
           "enable": false
         },
         {
-          "key": 70,
+          "key": 71,
           "name": "综合广告-好友动态-广告卡片",
           "rules": [
             {
@@ -86288,7 +86374,7 @@
           "enable": false
         },
         {
-          "key": 71,
+          "key": 72,
           "name": "分段广告-动态页-好友热播",
           "desc": "好友动态中的好友热播，自动选择“减少好友热播” - 默认关闭",
           "fastQuery": true,
@@ -86322,7 +86408,7 @@
           "enable": false
         },
         {
-          "key": 72,
+          "key": 73,
           "name": "功能类-扫一扫登录确认",
           "desc": "自动点击登录。包括 PC 登录确认、QQ 互联登录确认。",
           "fastQuery": true,
@@ -86364,7 +86450,7 @@
           "enable": false
         },
         {
-          "key": 73,
+          "key": 74,
           "name": "功能类-消息页面顶部-无法接收新消息通知",
           "desc": "消息界面-搜索框和消息记录之间的通知卡片,点击关闭右侧x",
           "activityIds": "com.tencent.mobileqq.activity.SplashActivity",
@@ -86373,7 +86459,7 @@
           "enable": false
         },
         {
-          "key": 74,
+          "key": 75,
           "name": "分段广告-小世界评论区广告",
           "desc": "点击广告-弹出原因框-关闭此条广告",
           "activityIds": [
@@ -86395,7 +86481,7 @@
           "enable": false
         },
         {
-          "key": 75,
+          "key": 76,
           "name": "分段广告-好友动态-为你推荐",
           "fastQuery": true,
           "activityIds": [
@@ -86424,7 +86510,7 @@
           "enable": false
         },
         {
-          "key": 76,
+          "key": 77,
           "name": "更新提示-内测邀请弹窗",
           "fastQuery": true,
           "matchTime": 10000,
@@ -86441,7 +86527,7 @@
           "order": -9
         },
         {
-          "key": 77,
+          "key": 78,
           "name": "全屏广告-广告弹窗",
           "activityIds": "com.tencent.mobileqq.activity.QPublicTransFragmentActivity",
           "rules": [
@@ -86462,7 +86548,7 @@
           "enable": false
         },
         {
-          "key": 78,
+          "key": 79,
           "name": "局部广告-聊天页-顶部活动浮窗",
           "activityIds": "com.tencent.mobileqq.activity.SplashActivity",
           "rules": [

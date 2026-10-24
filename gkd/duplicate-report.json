@@ -1,20 +1,20 @@
 {
   "safeRemovedCount": 0,
-  "reviewCount": 1009,
+  "reviewCount": 1010,
   "reviewBreakdown": {
     "duplicate rule retained because preKeys diverge from kept copy (same group merge)": 39,
     "upstream dangling reference preserved verbatim; after duplicate-key normalization the value uniquely resolves to a rule in the referrer group -- gate semantics most likely restored as upstream intended": 2,
     "upstream dangling reference preserved verbatim; after duplicate-key normalization the value uniquely resolves, but to a rule in ANOTHER group -- whether that matches the upstream gate is unverifiable; value retained as-is, manual review required": 2,
     "upstream reference to a missing rule key preserved unchanged (dropping it would open the rule gate)": 3,
     "duplicate rule retained because a group is enable:false (manual-enable semantics unverifiable)": 474,
-    "duplicate rule retained because behavior-relevant group settings differ": 213,
+    "duplicate rule retained because behavior-relevant group settings differ": 214,
     "duplicate rule has key dependency references": 140,
     "duplicate rule requires review because preKeys are involved": 136
   },
   "reviewCategories": {
     "dependency_difference": 57,
     "upstream_invalid_reference": 7,
-    "enable_disabled_group": 945
+    "enable_disabled_group": 946
   },
   "referenceRepairCounts": {
     "duplicateKeyReassigned": 2237,
@@ -22,9 +22,9 @@
     "keptDanglingReference": 7
   },
   "optimization": {
-    "remapDuplicateSkipped": 2079,
+    "remapDuplicateSkipped": 2078,
     "remapEvidenceMerged": 295,
-    "remapDisplayDedupe": 763,
+    "remapDisplayDedupe": 762,
     "remapPreKeysGuard": 39,
     "remapPreKeysUnverifiable": 0,
     "danglingReferencesPreserved": 3,
@@ -36,7 +36,7 @@
     "groupDisplayContextDedupe": 0,
     "upstreamEvidenceUrlDedup": 18,
     "disabledGroupsRetained": 3352,
-    "disabledGroupsFullyCoveredRetirementCandidates": 7,
+    "disabledGroupsFullyCoveredRetirementCandidates": 8,
     "disabledGroupsAutoRetired": 0
   },
   "safeRemoved": [],
@@ -14487,6 +14487,33 @@
       "referrers": [],
       "category": "enable_disabled_group",
       "reason": "duplicate rule requires review because preKeys are involved"
+    },
+    {
+      "app": "com.tencent.mobileqq",
+      "groupA": "功能类-自动[勾选]原图",
+      "groupB": "功能类-自动勾选原图",
+      "rule": null,
+      "ruleA": null,
+      "ruleB": null,
+      "key": null,
+      "keptRuleKey": null,
+      "candidateRuleKey": null,
+      "matches": "@CheckBox[checked=false] + [text=\"原图\"]",
+      "contextDiff": [
+        "activityIds",
+        "desc",
+        "enable",
+        "fastQuery",
+        "snapshotUrls"
+      ],
+      "behaviorDiff": [
+        "activityIds",
+        "enable",
+        "fastQuery"
+      ],
+      "referrers": [],
+      "category": "enable_disabled_group",
+      "reason": "duplicate rule retained because behavior-relevant group settings differ"
     },
     {
       "app": "com.tencent.mobileqq",
@@ -39457,6 +39484,18 @@
       "ruleCount": 1,
       "coveredBy": [
         "功能类-[签到成功]弹窗"
+      ],
+      "hasDependency": false,
+      "userManualEnableRisk": "unverifiable: GKD persists per-group enable state; a user who manually enabled this disabled group would lose behavior if it were removed",
+      "action": "retained-review-only"
+    },
+    {
+      "app": "com.tencent.mobileqq",
+      "group": "功能类-自动勾选原图",
+      "groupKey": 48,
+      "ruleCount": 1,
+      "coveredBy": [
+        "功能类-自动[勾选]原图"
       ],
       "hasDependency": false,
       "userManualEnableRisk": "unverifiable: GKD persists per-group enable state; a user who manually enabled this disabled group would lose behavior if it were removed",

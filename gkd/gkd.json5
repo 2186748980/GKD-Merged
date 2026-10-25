@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026102401,
+  "version": 2026102501,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -10770,6 +10770,29 @@
             "https://i.gkd.li/i/13797285"
           ],
           "enable": false
+        }
+      ]
+    },
+    {
+      "id": "com.achievo.vipshop",
+      "name": "唯品会",
+      "groups": [
+        {
+          "key": 1,
+          "name": "全屏广告-优惠券弹窗",
+          "desc": "点击右上角x掉",
+          "fastQuery": true,
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "rules": [
+            {
+              "activityIds": ".activity.LodingActivity",
+              "matches": "@[vid=\"iv_close\"][visibleToUser=true] + [vid=\"coupon_la_container\"]",
+              "snapshotUrls": "https://i.gkd.li/i/33897647",
+              "exampleUrls": "https://e.gkd.li/ff0541e8-5e5a-48e3-9c48-23693d76b91e"
+            }
+          ]
         }
       ]
     },
@@ -64412,6 +64435,25 @@
         },
         {
           "key": 3,
+          "name": "功能类-自动[勾选]已知悉风险",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": [
+                ".model.guide.ui.InstallGuideActivity",
+                ".modelv2.parsing.PackageParsingV2Activity"
+              ],
+              "matches": "[text^=\"已知悉\"][text*=\"风险\"][checkable=true][checked=false]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/22377327",
+                "https://i.gkd.li/i/33898132"
+              ],
+              "exampleUrls": "https://e.gkd.li/509a2a45-c9bd-4b7e-9496-ced36ebdaaf6"
+            }
+          ]
+        },
+        {
+          "key": 4,
           "name": "功能类-自动安装",
           "rules": [
             {
@@ -90519,11 +90561,14 @@
           "name": "分段广告-信息流广告",
           "desc": "更多-举报Ad-展示太频繁",
           "fastQuery": true,
-          "activityIds": ".communityhubs.CommunityHubActivity",
+          "activityIds": [
+            ".communityhubs.CommunityHubActivity",
+            ".premium.onboarding.PremiumOnboardingActivity"
+          ],
           "rules": [
             {
               "key": 0,
-              "name": "点击菜单",
+              "name": "①点击[更多]",
               "matches": "ViewGroup > @[desc=\"更多\"][clickable=true] -(1,2) [text^=\"赞助\"][visibleToUser=true]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/25996699",
@@ -90533,21 +90578,35 @@
             },
             {
               "key": 1,
+              "name": "①点击[菜单]",
+              "matches": "[vid=\"ad_dropdown_menu_button\"][clickable=true]",
+              "snapshotUrls": "https://i.gkd.li/i/33899457"
+            },
+            {
+              "key": 20,
               "preKeys": [
-                0
+                0,
+                1
               ],
-              "name": "点击举报广告",
-              "matches": "@[clickable=true] > [vid=\"menu_option_title\"][text=\"举报广告\"][visibleToUser=true]",
-              "snapshotUrls": "https://i.gkd.li/i/25996711",
+              "name": "②[举报广告]",
+              "matches": "@[clickable=true] > [text=\"举报广告\"][visibleToUser=true]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/25996711",
+                "https://i.gkd.li/i/33899499"
+              ],
               "exampleUrls": "https://e.gkd.li/09561a19-92af-476b-a2fd-825fc0c822d9"
             },
             {
+              "key": 30,
               "preKeys": [
-                1
+                20
               ],
-              "name": "点击此广告出现得过于频繁",
-              "matches": "@[clickable=true] > [vid=\"menu_option_title\"][text=\"此广告出现得过于频繁\"][visibleToUser=true]",
-              "snapshotUrls": "https://i.gkd.li/i/25996722",
+              "name": "③此广告出现得过于频繁",
+              "matches": "@[clickable=true] > [text=\"此广告出现得过于频繁\"][visibleToUser=true]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/25996722",
+                "https://i.gkd.li/i/33899505"
+              ],
               "exampleUrls": "https://e.gkd.li/ef99a82e-811c-4206-8cda-593a7291049c"
             }
           ]

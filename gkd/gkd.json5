@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026102501,
+  "version": 2026102601,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -27751,6 +27751,49 @@
               "exampleUrls": "https://e.gkd.li/f3a0d6e2-8b2e-4b68-847d-6f6a6692ae08"
             }
           ]
+        },
+        {
+          "key": 4,
+          "name": "功能类-重复[刷新]导航",
+          "desc": "每隔3秒点击[刷新路线]",
+          "rules": [
+            {
+              "fastQuery": true,
+              "actionCd": 3000,
+              "activityIds": ".v2.main.EDMainActivity",
+              "matches": "@[clickable=true] > [text=\"刷新路线\"]",
+              "snapshotUrls": "https://i.gkd.li/i/33917313",
+              "exampleUrls": "https://e.gkd.li/684b4a64-1d41-4744-9b0c-0fe61dfbafe8"
+            }
+          ]
+        },
+        {
+          "key": 5,
+          "name": "局部广告-小悬浮窗",
+          "desc": "x掉",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": ".v2.main.EDMainActivity",
+              "matches": "ImageView[width<86] < * < @[clickable=true] <2 [childCount=2][width<350] < ViewGroup < ViewGroup < FrameLayout < FrameLayout < FrameLayout < FrameLayout < [id=\"android:id/content\"]",
+              "snapshotUrls": "https://i.gkd.li/i/33917243",
+              "exampleUrls": "https://e.gkd.li/dfc8c4b0-23bd-4163-8255-6f3e09c64fda"
+            }
+          ]
+        },
+        {
+          "key": 6,
+          "name": "通知提示-顶部横幅消息",
+          "desc": "x掉",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": ".v2.main.EDMainActivity",
+              "matches": "ImageView < * < @[clickable=true] < [childCount>5][desc.length>20] <3 [childCount>10] < FrameLayout < FrameLayout < FrameLayout < FrameLayout < [id=\"android:id/content\"]",
+              "snapshotUrls": "https://i.gkd.li/i/33917290",
+              "exampleUrls": "https://e.gkd.li/2381785a-ccc8-4fb8-9061-e0f1c559c4e9"
+            }
+          ]
         }
       ]
     },
@@ -34914,9 +34957,12 @@
             {
               "fastQuery": true,
               "activityIds": "com.fanli.android.module.webview.ui.activity.TransparentBrowserInnerActivity",
-              "matches": "@[desc=\"closewv\"][visibleToUser=true] <<n [vid=\"webviewContainer\"]",
-              "exampleUrls": "https://e.gkd.li/7e013a50-4f55-4f49-8024-7dd749e8d53d",
-              "snapshotUrls": "https://i.gkd.li/i/13245808"
+              "matches": "@View[clickable=true][width<158 && height<158] <n View[childCount=4] < View < WebView < * < [vid=\"webviewContainer\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/13245808",
+                "https://i.gkd.li/i/33924810"
+              ],
+              "exampleUrls": "https://e.gkd.li/47c6d3bf-7cff-4462-9288-1be6d2368f99"
             },
             {
               "fastQuery": true,
@@ -34930,6 +34976,32 @@
         },
         {
           "key": 2,
+          "name": "权限提示-通知",
+          "fastQuery": true,
+          "activityIds": "com.fanli.android.module.main.activity.PanoMainActivity",
+          "rules": [
+            {
+              "matches": "ImageView[vid=null][width<68 && height<68] < @FrameLayout[childCount=1] < * - RelativeLayout > [text=\"开启提醒\"][visibleToUser=true]",
+              "snapshotUrls": "https://i.gkd.li/i/33924577",
+              "exampleUrls": "https://e.gkd.li/061779d2-fb8c-43a1-80ac-11e36deaab83"
+            }
+          ]
+        },
+        {
+          "key": 3,
+          "name": "局部广告-小悬浮窗",
+          "desc": "x掉",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": "com.fanli.android.module.main.activity.PanoMainActivity",
+              "matches": "@ImageView[width<76 && width<76][visibleToUser=true] <n [childCount>1] < * < * < [vid=\"float_container\"]",
+              "snapshotUrls": "https://i.gkd.li/i/33924577"
+            }
+          ]
+        },
+        {
+          "key": 4,
           "name": "全屏广告-应用内弹窗",
           "activityIds": "com.fanli.android.module.webview.ui.activity.TransparentBrowserInnerActivity",
           "rules": [],
@@ -34937,7 +35009,7 @@
           "enable": false
         },
         {
-          "key": 3,
+          "key": 5,
           "name": "未分类-应用内弹窗",
           "activityIds": "com.fanli.android.module.webview.ui.activity.TransparentBrowserInnerActivity",
           "rules": [],
@@ -50797,9 +50869,14 @@
                 "duration": 200
               },
               "activityIds": "com.yxcorp.gifshow.HomeActivity",
-              "matches": "([vid=\"ad_detail_content_layout\"][visibleToUser=true]) || ([vid=\"plc_tv_biz_text\"][text=\"游戏\" || text=\"小游戏\" || text=\"购物\" || text=\"购买\" || text=\"汽车\" || text=\"咨询\" || text=\"应用\" || text=\"品牌活动\" || text=\"一键出片\" || text=\"测一测\"][visibleToUser=true])",
+              "anyMatches": [
+                "[vid=\"ad_detail_content_layout\"][visibleToUser=true]",
+                "[vid=\"plc_tv_tag_label\"][text$=\"元\"][visibleToUser=true]",
+                "[vid=\"plc_tv_biz_text\"][text=\"游戏\" || text=\"小游戏\" || text=\"购物\" || text=\"购买\" || text=\"汽车\" || text=\"咨询\" || text=\"应用\" || text=\"品牌活动\" || text=\"一键出片\" || text=\"测一测\"][visibleToUser=true]"
+              ],
               "snapshotUrls": [
                 "https://i.gkd.li/i/29213590",
+                "https://i.gkd.li/i/33927176",
                 "https://i.gkd.li/i/29029850",
                 "https://i.gkd.li/i/29029852",
                 "https://i.gkd.li/i/32701451",
@@ -65612,6 +65689,24 @@
         },
         {
           "key": 2,
+          "name": "权限提示-通知权限",
+          "desc": "点击[取消]",
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "rules": [
+            {
+              "fastQuery": true,
+              "matches": [
+                "[text*=\"开启\"][text*=\"提醒\" || text*=\"通知\"]",
+                "[text=\"取消\"]"
+              ],
+              "snapshotUrls": "https://i.gkd.li/i/33926663"
+            }
+          ]
+        },
+        {
+          "key": 3,
           "name": "局部广告-阅读-底部卡片广告",
           "desc": "点击X",
           "fastQuery": true,
@@ -65632,7 +65727,7 @@
           "enable": false
         },
         {
-          "key": 3,
+          "key": 4,
           "name": "全屏广告-阅读-视频广告",
           "desc": "滑动翻页",
           "fastQuery": true,
@@ -68303,6 +68398,11 @@
             },
             {
               "key": 2,
+              "matches": "@View[clickable=true][width<170 && height<170] - FrameLayout[height=getPrev(1).height] <2 [childCount=3] < [vid=\"splash_container\"]",
+              "snapshotUrls": "https://i.gkd.li/i/33926416"
+            },
+            {
+              "key": 3,
               "matches": "@ImageView[width<140 && height<140][visibleToUser=true][vid=null][text=null] < * < ViewGroup +n ViewGroup[index=parent.childCount.minus(1)] >2 [text=\"广告\"]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/32437199",
@@ -68310,7 +68410,7 @@
               ]
             },
             {
-              "key": 3,
+              "key": 4,
               "matches": "FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][visibleToUser=true] + TextView[text=null] <<n [id=\"android:id/content\"]",
               "snapshotUrls": "https://i.gkd.li/i/14978239"
             }
@@ -68874,13 +68974,23 @@
         {
           "key": 3,
           "name": "权限提示-定位权限",
-          "desc": "底部横幅, 点击x掉",
+          "desc": "底部横幅/全屏, 点击x掉",
+          "fastQuery": true,
+          "activityIds": ".MainActivity",
           "rules": [
             {
-              "fastQuery": true,
-              "activityIds": ".MainActivity",
+              "key": 4,
+              "name": "横幅",
               "matches": "[vid=\"location_layout\"] > [vid=\"iv_close\"][clickable=true]",
-              "snapshotUrls": "https://i.gkd.li/i/31689754"
+              "snapshotUrls": "https://i.gkd.li/i/31689754",
+              "exampleUrls": "https://e.gkd.li/6dd4b544-85b4-455d-9f27-0b83a95305de"
+            },
+            {
+              "key": 5,
+              "name": "全屏弹窗",
+              "matches": "[vid=\"tvTitle\"] + [vid=\"tvMessage\"][text^=\"APP需要您的同意\"][text*=\"访问您的位置\"] + [childCount=2] > [vid=\"tvNegative\"][clickable=true]",
+              "snapshotUrls": "https://i.gkd.li/i/33924001",
+              "exampleUrls": "https://e.gkd.li/a068a642-d226-43f5-8eb7-43e6351e0d24"
             }
           ]
         },
@@ -68907,7 +69017,7 @@
           "resetMatch": "app",
           "rules": [
             {
-              "key": 4,
+              "key": 6,
               "fastQuery": true,
               "matches": "[text^=\"跳过\"][text.length<=10]",
               "snapshotUrls": [
@@ -68947,7 +69057,7 @@
           "name": "未分类-弹窗广告",
           "rules": [
             {
-              "key": 5,
+              "key": 7,
               "activityIds": "com.realtech.xiaocan.MainActivity",
               "matches": "View[childCount=3] > View + ImageView + ImageView[clickable=true][childCount=0]",
               "snapshotUrls": "https://i.gkd.li/i/13694864"
@@ -71470,13 +71580,19 @@
         {
           "key": 1,
           "name": "功能类-重复[刷新]导航",
-          "desc": "每隔1秒点击[导航-取]上方刷新",
+          "desc": "每隔1秒点击[导航-取/送]上方刷新",
           "rules": [
             {
               "fastQuery": true,
-              "activityIds": ".home.HomeActivity",
-              "matches": "@[vid=\"locationFl\"] + [vid=\"recordFl\"] >2 [text=\"导航-取\"]",
-              "snapshotUrls": "https://i.gkd.li/i/33796598",
+              "activityIds": [
+                ".home.HomeActivity",
+                ".redesign.detail.activity.ReOrderDetailActivity"
+              ],
+              "matches": "@[vid=\"locationFl\"] + [vid=\"recordFl\"] >2 [text=\"导航-取\" || text=\"导航-送\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/33796598",
+                "https://i.gkd.li/i/33917309"
+              ],
               "exampleUrls": "https://e.gkd.li/abae860f-12d0-4e01-92a4-6331adfd8cba"
             }
           ]

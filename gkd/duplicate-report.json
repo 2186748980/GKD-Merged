@@ -17,7 +17,7 @@
     "enable_disabled_group": 946
   },
   "referenceRepairCounts": {
-    "duplicateKeyReassigned": 2237,
+    "duplicateKeyReassigned": 2239,
     "ambiguousCrossGroupReferenceResolvedToFirst": 19,
     "keptDanglingReference": 7
   },
@@ -11685,9 +11685,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 5,
+      "key": 7,
       "keptRuleKey": 1,
-      "candidateRuleKey": 5,
+      "candidateRuleKey": 7,
       "matches": "View[childCount=3] > View + ImageView + ImageView[clickable=true][childCount=0]",
       "contextDiff": [
         "actionMaximum",
@@ -29791,10 +29791,26 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.realtech.xiaocan",
+        "group": "权限提示-定位权限",
+        "rule": "横幅",
+        "oldKey": 0,
+        "newKey": 4
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.realtech.xiaocan",
+        "group": "权限提示-定位权限",
+        "rule": "全屏弹窗",
+        "oldKey": 1,
+        "newKey": 5
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.realtech.xiaocan",
         "group": "开屏广告",
         "rule": null,
         "oldKey": 1,
-        "newKey": 4
+        "newKey": 6
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29802,7 +29818,7 @@
         "group": "未分类-弹窗广告",
         "rule": null,
         "oldKey": 0,
-        "newKey": 5
+        "newKey": 7
       },
       {
         "type": "duplicateKeyReassigned",
@@ -39427,7 +39443,7 @@
       }
     ]
   },
-  "referenceRepairsTotal": 2263,
+  "referenceRepairsTotal": 2265,
   "disabledGroupAudit": [
     {
       "app": "com.android.updater",

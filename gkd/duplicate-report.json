@@ -17,14 +17,14 @@
     "enable_disabled_group": 946
   },
   "referenceRepairCounts": {
-    "duplicateKeyReassigned": 2242,
+    "duplicateKeyReassigned": 2243,
     "ambiguousCrossGroupReferenceResolvedToFirst": 19,
     "keptDanglingReference": 7
   },
   "optimization": {
-    "remapDuplicateSkipped": 2078,
+    "remapDuplicateSkipped": 2077,
     "remapEvidenceMerged": 295,
-    "remapDisplayDedupe": 762,
+    "remapDisplayDedupe": 761,
     "remapPreKeysGuard": 39,
     "remapPreKeysUnverifiable": 0,
     "danglingReferencesPreserved": 3,
@@ -11685,17 +11685,21 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 7,
-      "keptRuleKey": 1,
-      "candidateRuleKey": 7,
+      "key": 8,
+      "keptRuleKey": 2,
+      "candidateRuleKey": 8,
       "matches": "View[childCount=3] > View + ImageView + ImageView[clickable=true][childCount=0]",
       "contextDiff": [
+        "actionCd",
         "actionMaximum",
+        "activityIds",
         "matchTime",
         "resetMatch"
       ],
       "behaviorDiff": [
+        "actionCd",
         "actionMaximum",
+        "activityIds",
         "matchTime",
         "resetMatch"
       ],
@@ -29815,10 +29819,18 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.realtech.xiaocan",
+        "group": "开屏广告",
+        "rule": null,
+        "oldKey": 2,
+        "newKey": 7
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.realtech.xiaocan",
         "group": "未分类-弹窗广告",
         "rule": null,
         "oldKey": 0,
-        "newKey": 7
+        "newKey": 8
       },
       {
         "type": "duplicateKeyReassigned",
@@ -39467,7 +39479,7 @@
       }
     ]
   },
-  "referenceRepairsTotal": 2268,
+  "referenceRepairsTotal": 2269,
   "disabledGroupAudit": [
     {
       "app": "com.android.updater",

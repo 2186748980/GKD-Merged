@@ -1,12 +1,12 @@
 {
   "safeRemovedCount": 0,
-  "reviewCount": 1010,
+  "reviewCount": 1009,
   "reviewBreakdown": {
     "duplicate rule retained because preKeys diverge from kept copy (same group merge)": 39,
     "upstream dangling reference preserved verbatim; after duplicate-key normalization the value uniquely resolves to a rule in the referrer group -- gate semantics most likely restored as upstream intended": 2,
     "upstream dangling reference preserved verbatim; after duplicate-key normalization the value uniquely resolves, but to a rule in ANOTHER group -- whether that matches the upstream gate is unverifiable; value retained as-is, manual review required": 2,
     "upstream reference to a missing rule key preserved unchanged (dropping it would open the rule gate)": 3,
-    "duplicate rule retained because a group is enable:false (manual-enable semantics unverifiable)": 474,
+    "duplicate rule retained because a group is enable:false (manual-enable semantics unverifiable)": 473,
     "duplicate rule retained because behavior-relevant group settings differ": 214,
     "duplicate rule has key dependency references": 140,
     "duplicate rule requires review because preKeys are involved": 136
@@ -14,7 +14,7 @@
   "reviewCategories": {
     "dependency_difference": 57,
     "upstream_invalid_reference": 7,
-    "enable_disabled_group": 946
+    "enable_disabled_group": 945
   },
   "referenceRepairCounts": {
     "duplicateKeyReassigned": 2243,
@@ -22,7 +22,7 @@
     "keptDanglingReference": 7
   },
   "optimization": {
-    "remapDuplicateSkipped": 2077,
+    "remapDuplicateSkipped": 2076,
     "remapEvidenceMerged": 295,
     "remapDisplayDedupe": 761,
     "remapPreKeysGuard": 39,
@@ -36,7 +36,7 @@
     "groupDisplayContextDedupe": 0,
     "upstreamEvidenceUrlDedup": 18,
     "disabledGroupsRetained": 3352,
-    "disabledGroupsFullyCoveredRetirementCandidates": 8,
+    "disabledGroupsFullyCoveredRetirementCandidates": 7,
     "disabledGroupsAutoRetired": 0
   },
   "safeRemoved": [],
@@ -2138,30 +2138,6 @@
       "reason": "duplicate rule requires review because preKeys are involved"
     },
     {
-      "app": "com.android.updater",
-      "groupA": "功能类-不开启自动更新",
-      "groupB": "更新提示-智能更新弹窗",
-      "rule": null,
-      "ruleA": null,
-      "ruleB": null,
-      "key": null,
-      "keptRuleKey": null,
-      "candidateRuleKey": null,
-      "matches": [
-        "[vid=\"alertTitle\"][text=\"开启智能更新\" || text=\"Install automatically?\"]",
-        "[id=\"android:id/button2\"][text=\"暂不开启\" || text=\"No\"]"
-      ],
-      "contextDiff": [
-        "enable"
-      ],
-      "behaviorDiff": [
-        "enable"
-      ],
-      "referrers": [],
-      "category": "enable_disabled_group",
-      "reason": "duplicate rule retained because behavior-relevant group settings differ"
-    },
-    {
       "app": "com.ants360.yicamera",
       "groupA": "全屏广告-弹窗广告",
       "groupB": "未分类-弹窗广告",
@@ -3482,16 +3458,23 @@
       "candidateRuleKey": null,
       "matches": "[id=\"com.byyoung.setting:id/tv_name\"][text*=\"忽略授权\"]",
       "contextDiff": [
-        "activityIds"
+        "actionMaximum",
+        "desc",
+        "matchTime",
+        "resetMatch"
       ],
-      "behaviorDiff": [],
+      "behaviorDiff": [
+        "actionMaximum",
+        "matchTime",
+        "resetMatch"
+      ],
       "referrers": [],
       "category": "enable_disabled_group",
-      "reason": "duplicate rule retained because a group is enable:false (manual-enable semantics unverifiable)"
+      "reason": "duplicate rule retained because behavior-relevant group settings differ"
     },
     {
       "app": "com.byyoung.setting",
-      "groupA": "功能类-忽略授权提示",
+      "groupA": "权限提示-忽略授权提示",
       "groupB": "未分类-忽略授权提示",
       "rule": null,
       "ruleA": null,
@@ -3500,9 +3483,7 @@
       "keptRuleKey": null,
       "candidateRuleKey": null,
       "matches": "[id=\"com.byyoung.setting:id/tv_name\"][text*=\"忽略授权\"]",
-      "contextDiff": [
-        "activityIds"
-      ],
+      "contextDiff": [],
       "behaviorDiff": [],
       "referrers": [],
       "category": "enable_disabled_group",
@@ -36598,7 +36579,7 @@
         "group": "功能类-打开应用自动进入部落",
         "rule": "点击[我的部落]",
         "oldKey": 1,
-        "newKey": 28
+        "newKey": 30
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36606,22 +36587,6 @@
         "group": "功能类-打开应用自动进入部落",
         "rule": "点击[已通过]",
         "oldKey": 2,
-        "newKey": 29
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.xyhui",
-        "group": "开屏广告",
-        "rule": null,
-        "oldKey": 0,
-        "newKey": 30
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.xyhui",
-        "group": "开屏广告",
-        "rule": null,
-        "oldKey": 1,
         "newKey": 31
       },
       {
@@ -36629,8 +36594,24 @@
         "scope": "com.xyhui",
         "group": "开屏广告",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 0,
         "newKey": 32
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.xyhui",
+        "group": "开屏广告",
+        "rule": null,
+        "oldKey": 1,
+        "newKey": 33
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.xyhui",
+        "group": "开屏广告",
+        "rule": null,
+        "oldKey": 2,
+        "newKey": 34
       },
       {
         "type": "duplicateKeyReassigned",
@@ -39481,18 +39462,6 @@
   },
   "referenceRepairsTotal": 2269,
   "disabledGroupAudit": [
-    {
-      "app": "com.android.updater",
-      "group": "更新提示-智能更新弹窗",
-      "groupKey": 4,
-      "ruleCount": 1,
-      "coveredBy": [
-        "功能类-不开启自动更新"
-      ],
-      "hasDependency": false,
-      "userManualEnableRisk": "unverifiable: GKD persists per-group enable state; a user who manually enabled this disabled group would lose behavior if it were removed",
-      "action": "retained-review-only"
-    },
     {
       "app": "com.duoduo.cimoc.su",
       "group": "局部广告-\"我的\"页面卡片广告",

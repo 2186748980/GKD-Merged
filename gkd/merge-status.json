@@ -1,16 +1,16 @@
 {
   "ok": true,
-  "time": 1793314145,
-  "version": 2026102801,
-  "contentHash": "1a48e87d3595fc77bb25bec589ad97a0155b14e60aa548b9e57157642f4cc266",
+  "time": 1793339755,
+  "version": 2026103001,
+  "contentHash": "ab29e8b8b940354119dd1dc9d71789e9b95fb977dfae48b1f627508240b6e826",
   "sources": [
     {
       "id": "linarm",
       "name": "Lin-arm",
       "download": "ok",
-      "bytes": 1359840,
+      "bytes": 1366223,
       "parse": "ok",
-      "sourceVersion": 620
+      "sourceVersion": 621
     },
     {
       "id": "ganlinte",
@@ -37,26 +37,26 @@
       "sourceVersion": 90
     }
   ],
-  "apps": 1066,
+  "apps": 1071,
   "globalGroups": 3,
-  "appRuleGroups": 4352,
-  "gkdDisplayedRuleCount": 4352,
+  "appRuleGroups": 4365,
+  "gkdDisplayedRuleCount": 4365,
   "globalRuleObjects": 15,
-  "appRuleObjects": 7588,
-  "ruleObjects": 7603,
+  "appRuleObjects": 7605,
+  "ruleObjects": 7620,
   "safeDuplicateRemovals": 0,
-  "duplicateReviewItems": 1010,
+  "duplicateReviewItems": 1009,
   "duplicateReviewCategories": {
     "dependency_difference": 57,
     "upstream_invalid_reference": 7,
-    "enable_disabled_group": 946
+    "enable_disabled_group": 945
   },
   "duplicateReviewBreakdown": {
     "duplicate rule retained because preKeys diverge from kept copy (same group merge)": 39,
     "upstream dangling reference preserved verbatim; after duplicate-key normalization the value uniquely resolves to a rule in the referrer group -- gate semantics most likely restored as upstream intended": 2,
     "upstream dangling reference preserved verbatim; after duplicate-key normalization the value uniquely resolves, but to a rule in ANOTHER group -- whether that matches the upstream gate is unverifiable; value retained as-is, manual review required": 2,
     "upstream reference to a missing rule key preserved unchanged (dropping it would open the rule gate)": 3,
-    "duplicate rule retained because a group is enable:false (manual-enable semantics unverifiable)": 474,
+    "duplicate rule retained because a group is enable:false (manual-enable semantics unverifiable)": 473,
     "duplicate rule retained because behavior-relevant group settings differ": 214,
     "duplicate rule has key dependency references": 140,
     "duplicate rule requires review because preKeys are involved": 136
@@ -67,7 +67,7 @@
     "keptDanglingReference": 7
   },
   "optimization": {
-    "remapDuplicateSkipped": 2077,
+    "remapDuplicateSkipped": 2076,
     "remapEvidenceMerged": 295,
     "remapDisplayDedupe": 761,
     "remapPreKeysGuard": 39,
@@ -81,7 +81,7 @@
     "groupDisplayContextDedupe": 0,
     "upstreamEvidenceUrlDedup": 18,
     "disabledGroupsRetained": 3352,
-    "disabledGroupsFullyCoveredRetirementCandidates": 8,
+    "disabledGroupsFullyCoveredRetirementCandidates": 7,
     "disabledGroupsAutoRetired": 0
   },
   "validation": {

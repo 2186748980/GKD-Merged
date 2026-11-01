@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026103101,
+  "version": 2026110101,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -23905,8 +23905,11 @@
           "resetMatch": "app",
           "rules": [
             {
-              "matches": "@[text=\"取消\"] < [vid=\"buttonPanel\"] > [text=\"更新\"]",
-              "snapshotUrls": "https://i.gkd.li/i/13194979"
+              "matches": "@[text=\"取消\"] <<(1,2) [vid=\"buttonPanel\"] >(1,2) [text=\"更新\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/13194979",
+                "https://i.gkd.li/i/34210785"
+              ]
             },
             {
               "matches": "@[text=\"取消\"] < [id=\"com.coloros.phonemanager:id/buttonPanel\"] > [text=\"更新\"]",
@@ -28660,7 +28663,9 @@
           "name": "开屏广告",
           "desc": "⚠️[跳过]广告前可能有多次无效点击,属于正常现象",
           "fastQuery": true,
+          "matchRoot": true,
           "matchTime": 10000,
+          "actionMaximum": 2,
           "resetMatch": "app",
           "priorityTime": 10000,
           "rules": [
@@ -28686,8 +28691,11 @@
             },
             {
               "key": 3,
-              "matches": "@View[width<130 && height<130] <3 FrameLayout <2 FrameLayout < [vid=\"sdk_view\"]",
-              "snapshotUrls": "https://i.gkd.li/i/29440951"
+              "matches": "@View[width<170 && height<170] <3 FrameLayout <2 FrameLayout < [vid=\"sdk_view\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/29440951",
+                "https://i.gkd.li/i/34211578"
+              ]
             },
             {
               "key": 10,
@@ -28696,7 +28704,10 @@
                 "left": "width * 0.875",
                 "top": "width * 0.10"
               },
-              "matches": "[vid=\"ad_view\" || vid=\"sdk_view\"][visibleToUser=true][width>=720][childCount!=0]",
+              "anyMatches": [
+                "[vid=\"ad_view\"][visibleToUser=true][width>=720][childCount!=0]",
+                "[vid=\"sdk_view\"] >n [vid=\"animation_view\"][visibleToUser=true][width>=720]"
+              ],
               "snapshotUrls": "https://i.gkd.li/i/23283060",
               "excludeSnapshotUrls": "https://i.gkd.li/i/29440952"
             },
@@ -28710,7 +28721,10 @@
                 "left": "width * 0.875",
                 "top": "width * 0.135"
               },
-              "matches": "[vid=\"ad_view\" || vid=\"sdk_view\"][visibleToUser=true][width>=720][childCount!=0]",
+              "anyMatches": [
+                "[vid=\"ad_view\"][visibleToUser=true][width>=720][childCount!=0]",
+                "[vid=\"sdk_view\"] >n [vid=\"animation_view\"][visibleToUser=true][width>=720]"
+              ],
               "snapshotUrls": [
                 "https://i.gkd.li/i/13575257",
                 "https://i.gkd.li/i/18423724",
@@ -28728,7 +28742,10 @@
                 "left": "width * 0.875",
                 "top": "width * 0.17"
               },
-              "matches": "[vid=\"ad_view\" || vid=\"sdk_view\"][visibleToUser=true][width>=720][childCount!=0]",
+              "anyMatches": [
+                "[vid=\"ad_view\"][visibleToUser=true][width>=720][childCount!=0]",
+                "[vid=\"sdk_view\"] >n [vid=\"animation_view\"][visibleToUser=true][width>=720]"
+              ],
               "snapshotUrls": [
                 "https://i.gkd.li/i/13601755",
                 "https://i.gkd.li/i/23324118",
@@ -28748,7 +28765,10 @@
                 "left": "width * 0.875",
                 "top": "width * 0.20"
               },
-              "matches": "[vid=\"ad_view\" || vid=\"sdk_view\"][visibleToUser=true][width>=720][childCount!=0]",
+              "anyMatches": [
+                "[vid=\"ad_view\"][visibleToUser=true][width>=720][childCount!=0]",
+                "[vid=\"sdk_view\"] >n [vid=\"animation_view\"][visibleToUser=true][width>=720]"
+              ],
               "snapshotUrls": "https://i.gkd.li/i/16054268"
             },
             {
@@ -28795,7 +28815,6 @@
             }
           ],
           "order": -10,
-          "actionMaximum": 1,
           "actionMaximumKey": 0
         },
         {
@@ -52190,11 +52209,12 @@
             {
               "key": 7,
               "name": "①点击签到",
-              "matches": "[childCount=1][getChild(0).getChild(1).text=\"《鸣潮》每日签到工具\"] +(2,3) View >3 @View[childCount=3][getChild(2).width<150][visibleToUser=true] + View[childCount=2]",
+              "matches": "[childCount=1][getChild(0).getChild(1).text=\"《鸣潮》每日签到工具\"] +(2,3) View >3 @View[childCount=3][height>250][getChild(2).width<150][visibleToUser=true]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/15632005",
                 "https://i.gkd.li/i/32262391",
-                "https://i.gkd.li/i/34076762"
+                "https://i.gkd.li/i/34076762",
+                "https://i.gkd.li/i/34198526"
               ],
               "excludeSnapshotUrls": "https://i.gkd.li/i/15632902"
             },
@@ -57999,6 +58019,87 @@
           "activityIds": ".web2.MiHoYoWebActivity",
           "rules": [
             {
+              "key": 6,
+              "name": "点击签到",
+              "excludeMatches": "[text^=\"请在此绑定你的\"][visibleToUser=true]",
+              "anyMatches": [
+                "[getChild(0).getChild(1).text*=\"签到\"] + View >2 View[childCount=11] > @View[childCount=3][visibleToUser=true] > Image[index=0][text!=null]",
+                "[getChild(0).getChild(1).text*=\"签到\"] + View >2 View[childCount=10] > View + TextView[childCount=0][visibleToUser=true]"
+              ],
+              "exampleUrls": "https://e.gkd.li/53d22dc7-b368-46c0-85d2-fe132b0832a9",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/17601269",
+                "https://i.gkd.li/i/17601338",
+                "https://i.gkd.li/i/17611619",
+                "https://i.gkd.li/i/17611613",
+                "https://i.gkd.li/i/14967627",
+                "https://i.gkd.li/i/19586048",
+                "https://i.gkd.li/i/19586142",
+                "https://i.gkd.li/i/34215019"
+              ],
+              "excludeSnapshotUrls": [
+                "https://i.gkd.li/i/17601295",
+                "https://i.gkd.li/i/17601347",
+                "https://i.gkd.li/i/17611621",
+                "https://i.gkd.li/i/19581359",
+                "https://i.gkd.li/i/17611617",
+                "https://i.gkd.li/i/19586048",
+                "https://i.gkd.li/i/19586142",
+                "https://i.gkd.li/i/19587714"
+              ]
+            },
+            {
+              "preKeys": [
+                6
+              ],
+              "key": 7,
+              "name": "关闭签到后的弹窗",
+              "matches": "@TextView[visibleToUser=true][text=\"\"] - View[childCount=2] >2 [text*=\"签到成功\"]",
+              "exampleUrls": "https://e.gkd.li/ef30277a-bd5d-444a-a9d5-ce63406d1269",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/17601273",
+                "https://i.gkd.li/i/17601340",
+                "https://i.gkd.li/i/17611620",
+                "https://i.gkd.li/i/17611616",
+                "https://i.gkd.li/i/14967631"
+              ]
+            },
+            {
+              "preKeys": [
+                7
+              ],
+              "key": 2,
+              "name": "关闭签到提醒",
+              "matches": "[text=\"不用了\"][visibleToUser=true]",
+              "exampleUrls": "https://e.gkd.li/56299b94-01fb-4d83-9796-ec9bd6bbae64",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/17601283",
+                "https://i.gkd.li/i/17601345"
+              ]
+            },
+            {
+              "preKeys": [
+                7,
+                2
+              ],
+              "key": 3,
+              "name": "从签到页返回",
+              "excludeMatches": "[text=\"不用了\"][visibleToUser=true]",
+              "matches": "WebView[text*=\"签到\"] > View >3 View[index=0][childCount=1] > TextView[childCount=0][text=\"\"][visibleToUser=true]",
+              "exampleUrls": "https://e.gkd.li/cc68f623-5dc7-4703-9768-28826c4f16f6",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/17601295",
+                "https://i.gkd.li/i/17601347",
+                "https://i.gkd.li/i/17611621",
+                "https://i.gkd.li/i/17611617",
+                "https://i.gkd.li/i/17629453"
+              ],
+              "excludeSnapshotUrls": [
+                "https://i.gkd.li/i/17601283",
+                "https://i.gkd.li/i/17601345"
+              ]
+            },
+            {
               "key": 4,
               "name": "点击签到",
               "excludeMatches": "[text^=\"请在此绑定你的\"][visibleToUser=true]",
@@ -58029,7 +58130,7 @@
             },
             {
               "preKeys": [
-                4
+                6
               ],
               "key": 5,
               "name": "关闭签到后的弹窗",
@@ -58041,41 +58142,6 @@
                 "https://i.gkd.li/i/17611620",
                 "https://i.gkd.li/i/17611616",
                 "https://i.gkd.li/i/14967631"
-              ]
-            },
-            {
-              "preKeys": [
-                5
-              ],
-              "key": 2,
-              "name": "关闭签到提醒",
-              "matches": "[text=\"不用了\"][visibleToUser=true]",
-              "exampleUrls": "https://e.gkd.li/56299b94-01fb-4d83-9796-ec9bd6bbae64",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/17601283",
-                "https://i.gkd.li/i/17601345"
-              ]
-            },
-            {
-              "preKeys": [
-                5,
-                2
-              ],
-              "key": 3,
-              "name": "从签到页返回",
-              "excludeMatches": "[text=\"不用了\"][visibleToUser=true]",
-              "matches": "WebView[text*=\"签到\"] > View >3 View[index=0][childCount=1] > TextView[childCount=0][text=\"\"][visibleToUser=true]",
-              "exampleUrls": "https://e.gkd.li/cc68f623-5dc7-4703-9768-28826c4f16f6",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/17601295",
-                "https://i.gkd.li/i/17601347",
-                "https://i.gkd.li/i/17611621",
-                "https://i.gkd.li/i/17611617",
-                "https://i.gkd.li/i/17629453"
-              ],
-              "excludeSnapshotUrls": [
-                "https://i.gkd.li/i/17601283",
-                "https://i.gkd.li/i/17601345"
               ]
             }
           ],
@@ -58141,7 +58207,7 @@
           "activityIds": "com.mihoyo.hyperion.web2.MiHoYoWebActivity",
           "rules": [
             {
-              "key": 6,
+              "key": 8,
               "name": "点击签到",
               "matches": "[text=\"米游社原神每日签到\"] >4 View[childCount=11] > @View[childCount=3] > Image[index=0]",
               "exampleUrls": "https://m.gkd.li/57941037/6654679e-58a9-4d6c-85a3-11bd2f82c15e",
@@ -58151,16 +58217,16 @@
               ]
             },
             {
-              "preKeys": 6,
-              "key": 7,
+              "preKeys": 8,
+              "key": 9,
               "name": "关闭签到后的弹窗",
               "matches": "[text=\"米游社原神每日签到\"] >3 TextView[index=2][clickable=true]",
               "exampleUrls": "https://m.gkd.li/57941037/b02eca70-f7d3-4169-99d6-9906c534392a",
               "snapshotUrls": "https://i.gkd.li/i/14371439"
             },
             {
-              "preKeys": 7,
-              "key": 8,
+              "preKeys": 9,
+              "key": 10,
               "name": "返回上一个页面",
               "matches": "[text=\"米游社原神每日签到\"] - View > TextView[clickable=true]",
               "exampleUrls": "https://m.gkd.li/57941037/c232ba4c-d50e-4887-85ab-91739928119e",
@@ -58177,23 +58243,23 @@
           "activityIds": "com.mihoyo.hyperion.web2.MiHoYoWebActivity",
           "rules": [
             {
-              "key": 9,
+              "key": 11,
               "name": "点击签到",
               "matches": "[text=\"《崩坏：星穹铁道》签到福利\"] >4 View[childCount=10] > View + TextView",
               "exampleUrls": "https://m.gkd.li/57941037/a9f426c4-3184-4525-b283-ad77d6f83d02",
               "snapshotUrls": "https://i.gkd.li/i/14376296"
             },
             {
-              "preKeys": 9,
-              "key": 10,
+              "preKeys": 11,
+              "key": 12,
               "name": "关闭签到后的弹窗",
               "matches": "[text=\"《崩坏：星穹铁道》签到福利\"] >3 TextView[index=1]",
               "exampleUrls": "https://m.gkd.li/57941037/3babb231-30a7-4891-9c4a-c11946838741",
               "snapshotUrls": "https://i.gkd.li/i/14967631"
             },
             {
-              "preKeys": 10,
-              "key": 11,
+              "preKeys": 12,
+              "key": 13,
               "name": "返回上一个页面",
               "matches": "[text=\"《崩坏：星穹铁道》签到福利\"] > View > View[index=0] >3 TextView[clickable=true]",
               "exampleUrls": "https://m.gkd.li/57941037/d8031907-105b-4d37-8542-b71e854b3b8a",
@@ -65966,7 +66032,7 @@
       "groups": [
         {
           "key": 1,
-          "name": "功能类-自动[上滑]继续看短剧",
+          "name": "功能类-[上滑]继续看短剧",
           "desc": "①读秒结束后[上滑] ②未显示[选集]时,每5秒[上滑]1次",
           "fastQuery": true,
           "activityIds": [
@@ -65999,47 +66065,6 @@
               "name": "②5秒[上滑]1次",
               "actionCd": 4000,
               "actionDelay": 1000,
-              "versionCode": {
-                "maximum": 72932
-              },
-              "swipeArg": {
-                "start": {
-                  "x": "screenWidth/2",
-                  "y": "screenHeight * 0.7"
-                },
-                "end": {
-                  "x": "screenWidth/2",
-                  "y": "screenHeight * 0.3"
-                },
-                "duration": 200
-              },
-              "excludeMatches": "([text=\"选集\"][visibleToUser=true]) || ([text*=\"剧备字\"][height>0])",
-              "matches": "[text=\"选集\"][visibleToUser=false]",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/32429827",
-                "https://i.gkd.li/i/32429877",
-                "https://i.gkd.li/i/32429830"
-              ],
-              "excludeSnapshotUrls": [
-                "https://i.gkd.li/i/32430107",
-                "https://i.gkd.li/i/32434872",
-                "https://i.gkd.li/i/32683026",
-                "https://i.gkd.li/i/33193929"
-              ],
-              "exampleUrls": [
-                "https://e.gkd.li/0128820c-4e8d-44ed-9ebc-ef2d5a062e26",
-                "https://e.gkd.li/b70813b8-1377-4210-be6c-fe04f3c9c701",
-                "https://e.gkd.li/38c5c9d1-9962-4e07-a7de-49999d3ddf2b"
-              ]
-            },
-            {
-              "key": 3,
-              "name": "③5秒[上滑]1次",
-              "actionCd": 4000,
-              "actionDelay": 1000,
-              "versionCode": {
-                "minimum": 72933
-              },
               "swipeArg": {
                 "start": {
                   "x": "screenWidth/2",
@@ -66052,13 +66077,29 @@
                 "duration": 200
               },
               "excludeMatches": [
-                "([text=\"选集\"][visibleToUser=true]) || ([text*=\"剧备字\"][height>0])",
-                "@TextView[visibleToUser=false][width>2000][height>40] <8 [childCount=8] <<n [vid=\"fragment_container\"]"
+                "[text=\"选集\" || text*=\"剧评\"][visibleToUser=true]",
+                "[text*=\"剧备字\" || text=\"全屏观看\"][height>0]",
+                "TextView[text$=\"%\"][text.length<5][height>-50 && height<1]"
               ],
               "matches": "[text=\"选集\"][visibleToUser=false]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/32429827",
+                "https://i.gkd.li/i/32429877",
+                "https://i.gkd.li/i/32429830"
+              ],
               "excludeSnapshotUrls": [
+                "https://i.gkd.li/i/32430107",
+                "https://i.gkd.li/i/34210794",
+                "https://i.gkd.li/i/32434872",
+                "https://i.gkd.li/i/33193929",
                 "https://i.gkd.li/i/32683026",
-                "https://i.gkd.li/i/33289353"
+                "https://i.gkd.li/i/33289353",
+                "https://i.gkd.li/i/34212237"
+              ],
+              "exampleUrls": [
+                "https://e.gkd.li/0128820c-4e8d-44ed-9ebc-ef2d5a062e26",
+                "https://e.gkd.li/b70813b8-1377-4210-be6c-fe04f3c9c701",
+                "https://e.gkd.li/38c5c9d1-9962-4e07-a7de-49999d3ddf2b"
               ]
             }
           ]
@@ -66089,13 +66130,13 @@
           "activityIds": "com.dragon.read.reader.ui.ReaderActivity",
           "rules": [
             {
-              "key": 4,
+              "key": 3,
               "actionDelay": 200,
               "matches": "ImageView < @ViewGroup <3 ViewGroup[childCount=5] <n * <n * <n * <n * <n * <n * <n * <n * <n * <n [id=\"com.phoenix.read:id/root_view\"]",
               "snapshotUrls": "https://i.gkd.li/i/27986281"
             },
             {
-              "preKeys": 4,
+              "preKeys": 3,
               "matches": "TextView[text=\"关闭此广告\"]",
               "snapshotUrls": "https://i.gkd.li/i/28024153"
             }
@@ -66134,6 +66175,47 @@
             }
           ],
           "enable": false
+        }
+      ]
+    },
+    {
+      "id": "com.phoenix.read.oversea.gp",
+      "name": "红果短剧",
+      "groups": [
+        {
+          "key": 1,
+          "name": "权限提示-通知权限",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": "com.dragon.read.pages.main.MainFragmentActivity",
+              "matches": "@[clickable=true] > [visibleToUser=true][text=\"暂不开启\"] <<n [vid=\"push_permission_bottom_v2_compose_view\"]",
+              "snapshotUrls": "https://i.gkd.li/i/34212912"
+            }
+          ]
+        },
+        {
+          "key": 2,
+          "name": "全屏广告",
+          "rules": [
+            {
+              "fastQuery": true,
+              "swipeArg": {
+                "start": {
+                  "x": "screenWidth * 0.5",
+                  "y": "screenHeight * 0.7"
+                },
+                "end": {
+                  "x": "screenWidth * 0.5",
+                  "y": "screenHeight * 0.3"
+                },
+                "duration": 300
+              },
+              "activityIds": "com.dragon.read.pages.main.MainFragmentActivity",
+              "matches": "[vid=\"ad_source\"][visibleToUser=true]",
+              "snapshotUrls": "https://i.gkd.li/i/34213154"
+            }
+          ]
         }
       ]
     },
@@ -91155,6 +91237,43 @@
                 "https://i.gkd.li/i/33899505"
               ],
               "exampleUrls": "https://e.gkd.li/ef99a82e-811c-4206-8cda-593a7291049c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "com.tuya.smartlifeiot",
+      "name": "(涂鸦)智能生活",
+      "groups": [
+        {
+          "key": 1,
+          "name": "局部广告-轮播图",
+          "desc": "x掉",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": "com.thingclips.smart.hometab.activity.FamilyHomeActivity",
+              "matches": "[vid=\"imv_ad_close\"]",
+              "snapshotUrls": "https://i.gkd.li/i/34208175",
+              "exampleUrls": "https://e.gkd.li/96d00f2a-7518-4fe2-aee1-7564a76a7d60"
+            }
+          ]
+        },
+        {
+          "key": 2,
+          "name": "功能类-自动允许通断电",
+          "desc": "点击[确认]",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": "com.gzl.smart.gzlminiapp.core.view.GZLActivity",
+              "matches": "@[text=\"确认\"] < View -2 [index=0][text$=\"允许通电\" || text$=\"允许断电\"] <<n [vid=\"swipe_layout_container\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/34208401",
+                "https://i.gkd.li/i/34208399"
+              ],
+              "exampleUrls": "https://e.gkd.li/a6f4f034-cd17-4aa2-8321-96c704d46869"
             }
           ]
         }

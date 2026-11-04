@@ -1,16 +1,16 @@
 {
   "ok": true,
-  "time": 1793748465,
-  "version": 2026110101,
-  "contentHash": "86e81048ac554b965cabcb0ef5a63d2adcfdaff77f78bb0396e91d07a1219fdd",
+  "time": 1793774056,
+  "version": 2026110401,
+  "contentHash": "9d91732508702ff0c2524528e08e9e1cb7b2f7ed10b4a669289a473567c1ccc2",
   "sources": [
     {
       "id": "linarm",
       "name": "Lin-arm",
       "download": "ok",
-      "bytes": 1370574,
+      "bytes": 1372175,
       "parse": "ok",
-      "sourceVersion": 623
+      "sourceVersion": 624
     },
     {
       "id": "ganlinte",
@@ -37,19 +37,19 @@
       "sourceVersion": 90
     }
   ],
-  "apps": 1073,
+  "apps": 1074,
   "globalGroups": 3,
-  "appRuleGroups": 4370,
-  "gkdDisplayedRuleCount": 4370,
+  "appRuleGroups": 4373,
+  "gkdDisplayedRuleCount": 4373,
   "globalRuleObjects": 15,
-  "appRuleObjects": 7619,
-  "ruleObjects": 7634,
+  "appRuleObjects": 7624,
+  "ruleObjects": 7639,
   "safeDuplicateRemovals": 0,
-  "duplicateReviewItems": 1011,
+  "duplicateReviewItems": 1010,
   "duplicateReviewCategories": {
     "dependency_difference": 58,
     "upstream_invalid_reference": 7,
-    "enable_disabled_group": 946
+    "enable_disabled_group": 945
   },
   "duplicateReviewBreakdown": {
     "duplicate rule retained because preKeys diverge from kept copy (same group merge)": 40,
@@ -57,12 +57,12 @@
     "upstream dangling reference preserved verbatim; after duplicate-key normalization the value uniquely resolves, but to a rule in ANOTHER group -- whether that matches the upstream gate is unverifiable; value retained as-is, manual review required": 2,
     "upstream reference to a missing rule key preserved unchanged (dropping it would open the rule gate)": 3,
     "duplicate rule retained because a group is enable:false (manual-enable semantics unverifiable)": 473,
-    "duplicate rule retained because behavior-relevant group settings differ": 214,
+    "duplicate rule retained because behavior-relevant group settings differ": 213,
     "duplicate rule has key dependency references": 141,
     "duplicate rule requires review because preKeys are involved": 136
   },
   "referenceRepairs": {
-    "duplicateKeyReassigned": 2248,
+    "duplicateKeyReassigned": 2251,
     "ambiguousCrossGroupReferenceResolvedToFirst": 19,
     "keptDanglingReference": 7
   },

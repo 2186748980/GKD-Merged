@@ -1,22 +1,22 @@
 {
   "ok": true,
-  "time": 1793821840,
-  "version": 2026110401,
-  "contentHash": "9d91732508702ff0c2524528e08e9e1cb7b2f7ed10b4a669289a473567c1ccc2",
+  "time": 1793861748,
+  "version": 2026110501,
+  "contentHash": "24f10a8ba2ba40bcc1eeec32ff785bc3e172017eb6a681bcebb12fb4f436bbf5",
   "sources": [
     {
       "id": "linarm",
       "name": "Lin-arm",
       "download": "ok",
-      "bytes": 1372175,
+      "bytes": 1374757,
       "parse": "ok",
-      "sourceVersion": 624
+      "sourceVersion": 625
     },
     {
       "id": "ganlinte",
       "name": "ganlinte",
-      "download": "cache",
-      "error": "<HTTPError 503: 'between bytes timeout'>",
+      "download": "ok",
+      "bytes": 609706,
       "parse": "ok",
       "sourceVersion": 72
     },
@@ -39,11 +39,11 @@
   ],
   "apps": 1074,
   "globalGroups": 3,
-  "appRuleGroups": 4373,
-  "gkdDisplayedRuleCount": 4373,
+  "appRuleGroups": 4376,
+  "gkdDisplayedRuleCount": 4376,
   "globalRuleObjects": 15,
-  "appRuleObjects": 7624,
-  "ruleObjects": 7639,
+  "appRuleObjects": 7630,
+  "ruleObjects": 7645,
   "safeDuplicateRemovals": 0,
   "duplicateReviewItems": 1010,
   "duplicateReviewCategories": {
@@ -62,7 +62,7 @@
     "duplicate rule requires review because preKeys are involved": 136
   },
   "referenceRepairs": {
-    "duplicateKeyReassigned": 2251,
+    "duplicateKeyReassigned": 2255,
     "ambiguousCrossGroupReferenceResolvedToFirst": 19,
     "keptDanglingReference": 7
   },

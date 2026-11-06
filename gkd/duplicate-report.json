@@ -17,7 +17,7 @@
     "enable_disabled_group": 945
   },
   "referenceRepairCounts": {
-    "duplicateKeyReassigned": 2255,
+    "duplicateKeyReassigned": 2262,
     "ambiguousCrossGroupReferenceResolvedToFirst": 19,
     "keptDanglingReference": 7
   },
@@ -5422,9 +5422,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 1536,
+      "key": 1538,
       "keptRuleKey": 1506,
-      "candidateRuleKey": 1536,
+      "candidateRuleKey": 1538,
       "matches": "@ImageView +2 FrameLayout >3 [text=\"关注\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -13758,9 +13758,9 @@
       "rule": "搜索快捷方式",
       "ruleA": "搜索快捷方式",
       "ruleB": "搜索快捷方式",
-      "key": 34,
+      "key": 37,
       "keptRuleKey": null,
-      "candidateRuleKey": 34,
+      "candidateRuleKey": 37,
       "matches": "ViewGroup[desc=\"添加搜索到桌面\"]",
       "contextDiff": [
         "desc"
@@ -13804,9 +13804,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 35,
+      "key": 38,
       "keptRuleKey": null,
-      "candidateRuleKey": 35,
+      "candidateRuleKey": 38,
       "matches": "[text=\"换一个\"] - FrameLayout[clickable=true] > ImageView[clickable=true]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -13827,9 +13827,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 36,
+      "key": 39,
       "keptRuleKey": null,
-      "candidateRuleKey": 36,
+      "candidateRuleKey": 39,
       "matches": "[id=\"com.ss.android.ugc.aweme:id/desc\"][text=\"减少此类推荐\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -13844,9 +13844,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 37,
+      "key": 40,
       "keptRuleKey": null,
-      "candidateRuleKey": 37,
+      "candidateRuleKey": 40,
       "matches": "[text=\"你可能感兴趣\"] < LinearLayout + [text=\"隐藏\"][clickable=true]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -13861,9 +13861,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 38,
+      "key": 41,
       "keptRuleKey": null,
-      "candidateRuleKey": 38,
+      "candidateRuleKey": 41,
       "matches": "[text=\"朋友推荐\"] +(2) @FrameLayout > [desc=\"不感兴趣\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -13878,9 +13878,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 39,
+      "key": 42,
       "keptRuleKey": null,
-      "candidateRuleKey": 39,
+      "candidateRuleKey": 42,
       "matches": "[text=\"朋友推荐\"] < LinearLayout + FrameLayout > [desc=\"关闭\"][clickable=true]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -13895,9 +13895,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 41,
+      "key": 44,
       "keptRuleKey": 6,
-      "candidateRuleKey": 41,
+      "candidateRuleKey": 44,
       "matches": "@[text=\"不感兴趣\"] - * [text*=\"也关注了\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -13946,9 +13946,9 @@
       "rule": "【首页商城】体验邀请弹窗",
       "ruleA": "【首页商城】体验邀请弹窗",
       "ruleB": "【首页商城】体验邀请弹窗",
-      "key": 27,
-      "keptRuleKey": 26,
-      "candidateRuleKey": 27,
+      "key": 29,
+      "keptRuleKey": 28,
+      "candidateRuleKey": 29,
       "matches": "[text=\"不再提示\"] + @ECCustomUiImage[clickable=true] +n LynxFlattenUI[text^=\"立即体验\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -24540,10 +24540,26 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.dragon.read",
+        "group": "功能类-刷短剧时半自动[不喜听书]",
+        "rule": "①点击[不感兴趣]",
+        "oldKey": 0,
+        "newKey": 1521
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.dragon.read",
+        "group": "功能类-刷短剧时半自动[不喜听书]",
+        "rule": "②点击[不喜欢听书]",
+        "oldKey": 1,
+        "newKey": 1522
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.dragon.read",
         "group": "局部广告-阅读-卡片广告",
         "rule": "底部卡片广告",
         "oldKey": 1,
-        "newKey": 1521
+        "newKey": 1523
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24551,7 +24567,7 @@
         "group": "全屏广告-阅读-视频广告",
         "rule": "点击【关闭】",
         "oldKey": 1,
-        "newKey": 1522
+        "newKey": 1524
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24559,7 +24575,7 @@
         "group": "全屏广告-阅读-视频广告",
         "rule": "点击【反馈】",
         "oldKey": 2,
-        "newKey": 1523
+        "newKey": 1525
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24567,22 +24583,6 @@
         "group": "全屏广告-阅读-视频广告",
         "rule": "点击【不感兴趣】",
         "oldKey": 3,
-        "newKey": 1524
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.dragon.read",
-        "group": "局部广告-阅读页面广告",
-        "rule": null,
-        "oldKey": 1,
-        "newKey": 1525
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.dragon.read",
-        "group": "局部广告-阅读页面广告",
-        "rule": null,
-        "oldKey": 2,
         "newKey": 1526
       },
       {
@@ -24590,7 +24590,7 @@
         "scope": "com.dragon.read",
         "group": "局部广告-阅读页面广告",
         "rule": null,
-        "oldKey": 3,
+        "oldKey": 1,
         "newKey": 1527
       },
       {
@@ -24598,7 +24598,7 @@
         "scope": "com.dragon.read",
         "group": "局部广告-阅读页面广告",
         "rule": null,
-        "oldKey": 4,
+        "oldKey": 2,
         "newKey": 1528
       },
       {
@@ -24606,7 +24606,7 @@
         "scope": "com.dragon.read",
         "group": "局部广告-阅读页面广告",
         "rule": null,
-        "oldKey": 5,
+        "oldKey": 3,
         "newKey": 1529
       },
       {
@@ -24614,7 +24614,7 @@
         "scope": "com.dragon.read",
         "group": "局部广告-阅读页面广告",
         "rule": null,
-        "oldKey": 6,
+        "oldKey": 4,
         "newKey": 1530
       },
       {
@@ -24622,8 +24622,24 @@
         "scope": "com.dragon.read",
         "group": "局部广告-阅读页面广告",
         "rule": null,
-        "oldKey": 7,
+        "oldKey": 5,
         "newKey": 1531
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.dragon.read",
+        "group": "局部广告-阅读页面广告",
+        "rule": null,
+        "oldKey": 6,
+        "newKey": 1532
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.dragon.read",
+        "group": "局部广告-阅读页面广告",
+        "rule": null,
+        "oldKey": 7,
+        "newKey": 1533
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24631,7 +24647,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": "电商惊喜券",
         "oldKey": 0,
-        "newKey": 1532
+        "newKey": 1534
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24639,7 +24655,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": "爆款好物一分购",
         "oldKey": 1,
-        "newKey": 1533
+        "newKey": 1535
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24647,7 +24663,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": "抽奖赢好礼",
         "oldKey": 2,
-        "newKey": 1534
+        "newKey": 1536
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24655,7 +24671,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": "签到弹窗",
         "oldKey": 3,
-        "newKey": 1535
+        "newKey": 1537
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24663,7 +24679,7 @@
         "group": "功能类-阅读页面-关注作者",
         "rule": null,
         "oldKey": 0,
-        "newKey": 1536
+        "newKey": 1538
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31404,24 +31420,24 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.ss.android.ugc.aweme",
-        "group": "功能类-[添加快捷方式到桌面]弹窗",
-        "rule": "商城快捷方式",
+        "group": "功能类-自动开启[自动连播]",
+        "rule": "①[长按]视频",
         "oldKey": 1,
         "newKey": 31
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.ss.android.ugc.aweme",
-        "group": "功能类-[添加快捷方式到桌面]弹窗",
-        "rule": "搜索组件",
+        "group": "功能类-自动开启[自动连播]",
+        "rule": "②开启[自动联播]",
         "oldKey": 2,
         "newKey": 32
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.ss.android.ugc.aweme",
-        "group": "功能类-[添加快捷方式到桌面]弹窗",
-        "rule": "火花桌面小组件",
+        "group": "功能类-自动开启[自动连播]",
+        "rule": "③已开-按[返回键]",
         "oldKey": 3,
         "newKey": 33
       },
@@ -31429,32 +31445,32 @@
         "type": "duplicateKeyReassigned",
         "scope": "com.ss.android.ugc.aweme",
         "group": "功能类-[添加快捷方式到桌面]弹窗",
-        "rule": "搜索快捷方式",
-        "oldKey": 4,
+        "rule": "商城快捷方式",
+        "oldKey": 1,
         "newKey": 34
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.ss.android.ugc.aweme",
-        "group": "功能类-关闭用户推荐",
-        "rule": null,
-        "oldKey": 0,
+        "group": "功能类-[添加快捷方式到桌面]弹窗",
+        "rule": "搜索组件",
+        "oldKey": 2,
         "newKey": 35
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.ss.android.ugc.aweme",
-        "group": "功能类-关闭用户推荐",
-        "rule": null,
-        "oldKey": 1,
+        "group": "功能类-[添加快捷方式到桌面]弹窗",
+        "rule": "火花桌面小组件",
+        "oldKey": 3,
         "newKey": 36
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.ss.android.ugc.aweme",
-        "group": "功能类-关闭用户推荐",
-        "rule": null,
-        "oldKey": 2,
+        "group": "功能类-[添加快捷方式到桌面]弹窗",
+        "rule": "搜索快捷方式",
+        "oldKey": 4,
         "newKey": 37
       },
       {
@@ -31462,7 +31478,7 @@
         "scope": "com.ss.android.ugc.aweme",
         "group": "功能类-关闭用户推荐",
         "rule": null,
-        "oldKey": 3,
+        "oldKey": 0,
         "newKey": 38
       },
       {
@@ -31470,7 +31486,7 @@
         "scope": "com.ss.android.ugc.aweme",
         "group": "功能类-关闭用户推荐",
         "rule": null,
-        "oldKey": 4,
+        "oldKey": 1,
         "newKey": 39
       },
       {
@@ -31478,7 +31494,7 @@
         "scope": "com.ss.android.ugc.aweme",
         "group": "功能类-关闭用户推荐",
         "rule": null,
-        "oldKey": 5,
+        "oldKey": 2,
         "newKey": 40
       },
       {
@@ -31486,8 +31502,32 @@
         "scope": "com.ss.android.ugc.aweme",
         "group": "功能类-关闭用户推荐",
         "rule": null,
-        "oldKey": 6,
+        "oldKey": 3,
         "newKey": 41
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.ss.android.ugc.aweme",
+        "group": "功能类-关闭用户推荐",
+        "rule": null,
+        "oldKey": 4,
+        "newKey": 42
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.ss.android.ugc.aweme",
+        "group": "功能类-关闭用户推荐",
+        "rule": null,
+        "oldKey": 5,
+        "newKey": 43
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.ss.android.ugc.aweme",
+        "group": "功能类-关闭用户推荐",
+        "rule": null,
+        "oldKey": 6,
+        "newKey": 44
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31495,7 +31535,7 @@
         "group": "功能类-申请开启小组件弹窗",
         "rule": "搜索小组件",
         "oldKey": 0,
-        "newKey": 42
+        "newKey": 45
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31532,10 +31572,26 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.ss.android.ugc.aweme.lite",
+        "group": "功能类-自动开启[自动连播]",
+        "rule": "①[长按]视频",
+        "oldKey": 1,
+        "newKey": 25
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.ss.android.ugc.aweme.lite",
+        "group": "功能类-自动开启[自动连播]",
+        "rule": "②开启[自动联播]",
+        "oldKey": 2,
+        "newKey": 26
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.ss.android.ugc.aweme.lite",
         "group": "青少年模式",
         "rule": null,
         "oldKey": 0,
-        "newKey": 25
+        "newKey": 27
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31543,7 +31599,7 @@
         "group": "全屏广告-功能体验邀请弹窗",
         "rule": "【首页商城】体验邀请弹窗",
         "oldKey": 0,
-        "newKey": 26
+        "newKey": 28
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31551,7 +31607,7 @@
         "group": "未分类-功能体验邀请弹窗",
         "rule": "【首页商城】体验邀请弹窗",
         "oldKey": 0,
-        "newKey": 27
+        "newKey": 29
       },
       {
         "type": "duplicateKeyReassigned",
@@ -39584,7 +39640,7 @@
       }
     ]
   },
-  "referenceRepairsTotal": 2281,
+  "referenceRepairsTotal": 2288,
   "disabledGroupAudit": [
     {
       "app": "com.duoduo.cimoc.su",

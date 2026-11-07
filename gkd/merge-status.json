@@ -1,16 +1,16 @@
 {
   "ok": true,
-  "time": 1793993315,
-  "version": 2026110601,
-  "contentHash": "6d5bb68e16d7687c290c40e40b579dadc1d55cdc9fe079cec05325f19094ae94",
+  "time": 1794031573,
+  "version": 2026110701,
+  "contentHash": "ef33b5ef90971a5b4699617260b257f42517de326c490c2f5b3b0fabf85aa326",
   "sources": [
     {
       "id": "linarm",
       "name": "Lin-arm",
       "download": "ok",
-      "bytes": 1377852,
+      "bytes": 1378226,
       "parse": "ok",
-      "sourceVersion": 626
+      "sourceVersion": 627
     },
     {
       "id": "ganlinte",
@@ -39,11 +39,11 @@
   ],
   "apps": 1074,
   "globalGroups": 3,
-  "appRuleGroups": 4380,
-  "gkdDisplayedRuleCount": 4380,
+  "appRuleGroups": 4381,
+  "gkdDisplayedRuleCount": 4381,
   "globalRuleObjects": 15,
-  "appRuleObjects": 7639,
-  "ruleObjects": 7654,
+  "appRuleObjects": 7640,
+  "ruleObjects": 7655,
   "safeDuplicateRemovals": 0,
   "duplicateReviewItems": 1010,
   "duplicateReviewCategories": {

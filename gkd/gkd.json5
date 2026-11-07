@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026110601,
+  "version": 2026110701,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -114458,6 +114458,20 @@
               "matches": "[vid=\"downloadLocationButton\"]",
               "snapshotUrls": "https://i.gkd.li/i/34135770",
               "exampleUrls": "https://e.gkd.li/c6a867d4-c234-4412-be73-7900aadbdca4"
+            }
+          ]
+        },
+        {
+          "key": 6,
+          "name": "功能类-下载完自动[打开]文件",
+          "desc": "点击[打开]",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": "org.chromium.chrome.browser.ChromeTabbedActivity",
+              "matches": "@[text=\"打开\"] < FrameLayout - [visibleToUser=true] > [text$=\"文件已下载完毕\"]",
+              "snapshotUrls": "https://i.gkd.li/i/34482455",
+              "exampleUrls": "https://e.gkd.li/e83bcee8-2540-4b99-8077-fe18378f5ac5"
             }
           ]
         }

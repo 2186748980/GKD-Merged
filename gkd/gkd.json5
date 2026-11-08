@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026110701,
+  "version": 2026110801,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -7841,11 +7841,12 @@
             },
             {
               "key": 16,
-              "matches": "ImageView[width>parent.width.minus(120)] - @ImageView[clickable=true][width<91 && height<91] -(1,2) TextView[text.length>9] <(1,2,3) FrameLayout[childCount>4][visibleToUser=true]",
+              "matches": "[width>parent.width.minus(120)] - @ImageView[clickable=true][width<91 && height<91] -(1,2) TextView[text.length>6] <(1,2,3) FrameLayout[childCount>4][visibleToUser=true]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/32418084",
                 "https://i.gkd.li/i/32418087",
-                "https://i.gkd.li/i/32418478"
+                "https://i.gkd.li/i/32418478",
+                "https://i.gkd.li/i/34518515"
               ]
             }
           ]
@@ -16870,17 +16871,19 @@
           "actionMaximum": 1,
           "activityIds": [
             ".pb.pb.main.PbActivity",
-            ".tblauncher.MainTabActivity"
+            ".tblauncher.MainTabActivity",
+            ".forum.ForumActivity"
           ],
           "rules": [
             {
               "key": 124,
               "fastQuery": true,
               "name": "悬浮广告1",
-              "matches": "@ImageView[clickable=true][visibleToUser=true][width<77] - [text=\"广告\"]",
+              "matches": "@[clickable=true][width<108] <2 [width<350][childCount=2] > [text=\"广告\"]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/16622395",
-                "https://i.gkd.li/i/16632851"
+                "https://i.gkd.li/i/16632851",
+                "https://i.gkd.li/i/34523272"
               ],
               "excludeSnapshotUrls": "https://i.gkd.li/i/13327933"
             },
@@ -28754,6 +28757,14 @@
               ]
             },
             {
+              "key": 4,
+              "matches": "@View[width<170 && height<170] <3 FrameLayout[childCount=3] < [vid=\"sdk_view\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/34494192",
+                "https://i.gkd.li/i/34514159"
+              ]
+            },
+            {
               "key": 10,
               "name": "点击坐标①",
               "position": {
@@ -28922,7 +28933,7 @@
               ]
             },
             {
-              "key": 4,
+              "key": 24,
               "activityIds": ".group.activity.GroupTopicActivity",
               "matches": "[vid=\"ad_not_interest\" || vid=\"group_ad_not_interest\"][clickable=true]",
               "snapshotUrls": [
@@ -28959,7 +28970,7 @@
                 21,
                 22,
                 23,
-                4,
+                24,
                 5,
                 6,
                 7
@@ -29034,7 +29045,7 @@
           "fastQuery": true,
           "rules": [
             {
-              "key": 24,
+              "key": 25,
               "activityIds": [
                 ".group.activity.GroupTopicActivity",
                 ".search.activity.NewSearchActivity"
@@ -29047,40 +29058,40 @@
               ]
             },
             {
-              "key": 25,
+              "key": 26,
               "activityIds": ".group.activity.GroupTopicActivity",
               "matches": "@ImageView[childCount=0][visibleToUser=true] < FrameLayout[childCount=1] <3 FrameLayout +2 FrameLayout >2 [text^=\"立即\" || text^=\"了解\" || text*=\"查看\" || text*=\"下载\" || text*=\"领取\" || text$=\"应用\" || text$=\"详情\" || text$=\"小程序\"][text.length<6]",
               "exampleUrls": "https://e.gkd.li/735decb0-7f08-4c7d-8199-a38faf213f77",
               "snapshotUrls": "https://i.gkd.li/i/18424859"
             },
             {
-              "key": 26,
+              "key": 27,
               "activityIds": ".activity.SplashActivity",
               "matches": "[vid=\"venue_close\"][visibleToUser=true]",
               "exampleUrls": "https://e.gkd.li/86f2589d-87eb-4b9a-83aa-4248b905f7b2",
               "snapshotUrls": "https://i.gkd.li/i/18717693"
             },
             {
-              "key": 27,
+              "key": 28,
               "name": "点击【广告】",
               "matches": "@View[clickable=true] > Image - TextView[text=\"广告\"][visibleToUser=true]",
               "snapshotUrls": "https://i.gkd.li/import/12548131"
             },
             {
-              "preKeys": 24,
+              "preKeys": 25,
               "name": "点击【不感兴趣】",
               "matches": "[text=\"广告\"] < * + * > [text=\"不感兴趣\"][visibleToUser=true]",
               "snapshotUrls": "https://i.gkd.li/import/12548116"
             },
             {
-              "key": 28,
+              "key": 29,
               "fastQuery": true,
               "activityIds": ".group.activity.GroupTopicActivity",
               "matches": "@ImageView[childCount=0][visibleToUser=true] < FrameLayout[childCount=1] - LinearLayout[childCount=2] > [text=\"下载应用\" || text=\"立即下载\" || text=\"查看详情\" || text=\"领取优惠\" || text=\"进入小程序\" || text=\"了解更多\"][visibleToUser=true]",
               "snapshotUrls": "https://i.gkd.li/i/18424415"
             },
             {
-              "key": 29,
+              "key": 30,
               "fastQuery": true,
               "activityIds": ".group.activity.GroupTopicActivity",
               "matches": "@ImageView[childCount=0][visibleToUser=true] < FrameLayout[childCount=1] <3 FrameLayout +2 FrameLayout >2 [text=\"下载应用\" || text=\"立即下载\" || text=\"查看详情\" || text=\"领取优惠\" || text=\"进入小程序\" || text=\"了解更多\"]",
@@ -29088,7 +29099,7 @@
               "snapshotUrls": "https://i.gkd.li/i/18424859"
             },
             {
-              "key": 30,
+              "key": 31,
               "fastQuery": true,
               "activityIds": ".activity.SplashActivity",
               "matches": "[vid=\"venue_close\"][visibleToUser=true]",
@@ -29108,27 +29119,27 @@
           "desc": "点击关闭",
           "rules": [
             {
-              "key": 31,
+              "key": 32,
               "fastQuery": true,
               "activityIds": ".subject.structure.activity.MovieActivity",
               "matches": "@ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < FrameLayout[childCount=1][text=null][desc=null][id=null][parent.childCount>3] <n FrameLayout >(2,3) [text^=\"立即\" || text$=\"详情\" || text^=\"了解\" || text=\"去微信看看\" || text$=\"应用\" || text=\"进入小程序\" || text=\"领取优惠\" || text=\"跳转微信\"]",
               "snapshotUrls": "https://i.gkd.li/i/13195565"
             },
             {
-              "key": 32,
+              "key": 33,
               "fastQuery": true,
               "matches": "@ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < FrameLayout[childCount=1][text=null][desc=null][id=null] <2 FrameLayout[childCount=5] + FrameLayout[childCount=2] > [text^=\"立即\" || text$=\"详情\" || text^=\"了解\" || text=\"去逛逛\" || text=\"去微信看看\" || text$=\"应用\" || text=\"进入小程序\" || text=\"领取优惠\" || text=\"跳转微信\"]",
               "snapshotUrls": "https://i.gkd.li/i/13328126"
             },
             {
-              "key": 33,
+              "key": 34,
               "fastQuery": true,
               "matches": "@ImageView[childCount=0][text=null][visibleToUser=true] < FrameLayout[childCount=1] <3 FrameLayout[childCount=3] < FrameLayout[childCount=2] +5 FrameLayout[childCount=4] > [text^=\"扭动或点击\"]",
               "exampleUrls": "https://e.gkd.li/f8b1e031-3ec1-422c-9214-8350195642cd",
               "snapshotUrls": "https://i.gkd.li/i/13328126"
             },
             {
-              "key": 34,
+              "key": 35,
               "fastQuery": true,
               "activityIds": ".subject.structure.activity.MovieActivity",
               "matches": [
@@ -29139,7 +29150,7 @@
               "snapshotUrls": "https://i.gkd.li/i/18631520"
             },
             {
-              "key": 35,
+              "key": 36,
               "fastQuery": true,
               "activityIds": ".subject.structure.activity.MovieActivity",
               "matches": [
@@ -29150,14 +29161,14 @@
               "snapshotUrls": "https://i.gkd.li/i/18717771"
             },
             {
-              "key": 36,
+              "key": 37,
               "name": "腾讯广告-1",
               "activityIds": "com.douban.frodo.subject.structure.activity.MovieActivity",
               "matches": "ImageView - FrameLayout[childCount=5] > FrameLayout[childCount=1] > ImageView",
               "snapshotUrls": "https://i.gkd.li/import/13195565"
             },
             {
-              "key": 37,
+              "key": 38,
               "name": "腾讯广告-2",
               "matches": "ImageView -n FrameLayout[childCount=2] > FrameLayout > FrameLayout > ImageView",
               "snapshotUrls": [
@@ -29166,7 +29177,7 @@
               ]
             },
             {
-              "key": 38,
+              "key": 39,
               "fastQuery": true,
               "activityIds": "com.douban.frodo.subject.structure.activity.MovieActivity",
               "matches": "@ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < FrameLayout[childCount=1][text=null][desc=null][id=null][parent.childCount>3] +n FrameLayout >(1,2) [text^=\"立即\" || text=\"查看详情\" || text=\"了解更多\" || text=\"去微信看看\" || text$=\"应用\" || text=\"进入小程序\" || text=\"领取优惠\" || text=\"跳转微信\"]",
@@ -29190,7 +29201,7 @@
           "resetMatch": "app",
           "rules": [
             {
-              "key": 39,
+              "key": 40,
               "activityIds": [
                 ".activity.BetaApkDialogActivity",
                 ".activity.SplashActivity"
@@ -29205,7 +29216,7 @@
               ]
             },
             {
-              "key": 40,
+              "key": 41,
               "activityIds": [
                 "com.douban.frodo.activity.BetaApkDialogActivity",
                 "com.douban.frodo.activity.SplashActivity"
@@ -29250,7 +29261,7 @@
           "activityIds": "com.douban.frodo.subject.activity.RatingActivity",
           "rules": [
             {
-              "key": 41,
+              "key": 42,
               "name": "不分享到微信、微博",
               "matches": "@LinearLayout > [id=\"com.douban.frodo:id/check_weibo_wechat\"][visibleToUser=true][checked=true]",
               "snapshotUrls": [
@@ -29258,7 +29269,7 @@
               ]
             },
             {
-              "key": 42,
+              "key": 43,
               "name": "不同步到动态",
               "matches": "@LinearLayout > [id=\"com.douban.frodo:id/check_status\"][visibleToUser=true][checked=true]",
               "snapshotUrls": [
@@ -29302,7 +29313,7 @@
           ],
           "rules": [
             {
-              "key": 43,
+              "key": 44,
               "name": "首页-动态-信息流广告",
               "activityIds": [
                 "com.douban.frodo.activity.SplashActivity",
@@ -29316,7 +29327,7 @@
               ]
             },
             {
-              "key": 44,
+              "key": 45,
               "name": "小组-帖子列表信息流广告",
               "activityIds": [
                 "com.douban.frodo.group.activity.GroupDetailActivity",
@@ -29335,14 +29346,14 @@
               ]
             },
             {
-              "key": 45,
+              "key": 46,
               "name": "回复-信息流广告",
               "activityIds": ".group.activity.GroupTopicActivity",
               "matches": "@ImageView[id=\"com.douban.frodo:id/menu_item\"] <n ViewGroup[id=\"com.douban.frodo:id/ad_header_new\"] < LinearLayout[id=\"com.douban.frodo:id/sdk_ad_item\"]",
               "snapshotUrls": "https://i.gkd.li/i/19160529"
             },
             {
-              "key": 46,
+              "key": 47,
               "name": "搜索-信息流广告",
               "activityIds": ".search.activity.NewSearchActivity",
               "matches": "@ImageView[id=\"com.douban.frodo:id/menu_item\"] <n ViewGroup < LinearLayout[id=\"com.douban.frodo:id/sdk_ad_item\"]",
@@ -29351,10 +29362,10 @@
             {
               "name": "点击不感兴趣",
               "preKeys": [
-                43,
                 44,
                 45,
-                46
+                46,
+                47
               ],
               "matches": "@LinearLayout[clickable=true] > [id=\"com.douban.frodo:id/mainText\"][text=\"不感兴趣\"]",
               "snapshotUrls": [
@@ -29386,7 +29397,7 @@
           "resetMatch": "activity",
           "rules": [
             {
-              "key": 47,
+              "key": 48,
               "name": "点击【x】关闭型",
               "activityIds": [
                 "com.douban.frodo.group.activity.GroupTopicActivity"
@@ -29402,7 +29413,7 @@
               ]
             },
             {
-              "key": 48,
+              "key": 49,
               "name": "点击【广告】选原因型",
               "matches": "[text=\"广告\"][id$=\"ad_not_interest\"]",
               "activityIds": [
@@ -29422,7 +29433,7 @@
             },
             {
               "name": "点击【不感兴趣】",
-              "preKeys": 48,
+              "preKeys": 49,
               "matches": "@LinearLayout[clickable=true] > [id=\"com.douban.frodo:id/mainText\"][text=\"不感兴趣\"]",
               "snapshotUrls": [
                 "https://i.gkd.li/import/12548016",
@@ -29454,7 +29465,7 @@
           "fastQuery": true,
           "rules": [
             {
-              "key": 49,
+              "key": 50,
               "activityIds": [
                 ".activity.SplashActivity",
                 ".subject.structure.activity.MovieActivity",
@@ -29470,7 +29481,7 @@
               ]
             },
             {
-              "key": 50,
+              "key": 51,
               "activityIds": [
                 ".group.activity.GroupDetailActivity",
                 ".group.activity.GroupTopicActivity"
@@ -29485,14 +29496,14 @@
               "excludeSnapshotUrls": "https://i.gkd.li/i/18422533"
             },
             {
-              "key": 51,
+              "key": 52,
               "actionMaximum": 1,
               "activityIds": ".group.activity.GroupTopicActivity",
               "matches": "@Image[childCount=0][visibleToUser=true][text=\"\"] < View[childCount=1] -2 View >2 [childCount=0][text=\"广告\"] <<n [vid=\"structure_header_container\"]",
               "snapshotUrls": "https://i.gkd.li/i/18424747"
             },
             {
-              "key": 52,
+              "key": 53,
               "activityIds": ".group.activity.GroupTopicActivity",
               "matches": "@View[clickable=true][childCount=0][visibleToUser=true] < FrameLayout[desc^=\"dislike\"] -2 FrameLayout >2 [text=\"广告\"]",
               "exampleUrls": "https://e.gkd.li/11d3ea75-c640-4b91-942e-3bf83b2e5f5e",
@@ -29500,10 +29511,10 @@
             },
             {
               "preKeys": [
-                49,
                 50,
                 51,
-                52
+                52,
+                53
               ],
               "activityIds": [
                 ".activity.SplashActivity",
@@ -29536,7 +29547,7 @@
           "activityIds": "com.douban.frodo.subject.activity.RatingActivity",
           "rules": [
             {
-              "key": 53,
+              "key": 54,
               "name": "不分享到微信、微博",
               "matches": "@LinearLayout > [id=\"com.douban.frodo:id/check_weibo_wechat\"][visibleToUser=true][checked=true]",
               "snapshotUrls": [
@@ -29544,7 +29555,7 @@
               ]
             },
             {
-              "key": 54,
+              "key": 55,
               "name": "不同步到动态",
               "matches": "@LinearLayout > [id=\"com.douban.frodo:id/check_status\"][visibleToUser=true][checked=true]",
               "snapshotUrls": [
@@ -29585,7 +29596,7 @@
           ],
           "rules": [
             {
-              "key": 55,
+              "key": 56,
               "name": "首页-动态-信息流广告",
               "activityIds": [
                 "com.douban.frodo.activity.SplashActivity",
@@ -29599,7 +29610,7 @@
               ]
             },
             {
-              "key": 56,
+              "key": 57,
               "name": "小组-帖子列表信息流广告",
               "activityIds": [
                 "com.douban.frodo.group.activity.GroupDetailActivity",
@@ -29614,8 +29625,8 @@
             {
               "name": "点击不感兴趣",
               "preKeys": [
-                55,
-                56
+                56,
+                57
               ],
               "matches": "@LinearLayout[clickable=true] > [id=\"com.douban.frodo:id/mainText\"][text=\"不感兴趣\"]",
               "snapshotUrls": [
@@ -29636,13 +29647,13 @@
           "activityIds": "com.douban.frodo.activity.SplashActivity",
           "rules": [
             {
-              "key": 57,
+              "key": 58,
               "name": "点击【广告】",
               "matches": "@View[clickable=true] > Image - TextView[text=\"广告\"][visibleToUser=true]",
               "snapshotUrls": "https://i.gkd.li/i/12548131"
             },
             {
-              "preKeys": 57,
+              "preKeys": 58,
               "name": "点击【不感兴趣】",
               "matches": "[text=\"广告\"] < * + * > [text=\"不感兴趣\"][visibleToUser=true]",
               "snapshotUrls": "https://i.gkd.li/i/12548116"
@@ -29671,7 +29682,7 @@
           "resetMatch": "activity",
           "rules": [
             {
-              "key": 58,
+              "key": 59,
               "name": "点击【x】关闭型",
               "activityIds": [
                 "com.douban.frodo.group.activity.GroupTopicActivity"
@@ -29687,7 +29698,7 @@
               ]
             },
             {
-              "key": 59,
+              "key": 60,
               "name": "点击【广告】选原因型",
               "matches": "[text=\"广告\"][id$=\"ad_not_interest\"]",
               "activityIds": [
@@ -29707,7 +29718,7 @@
             },
             {
               "name": "点击【不感兴趣】",
-              "preKeys": 59,
+              "preKeys": 60,
               "matches": "@LinearLayout[clickable=true] > [id=\"com.douban.frodo:id/mainText\"][text=\"不感兴趣\"]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/12548016",
@@ -29738,14 +29749,14 @@
           "desc": "浏览详情时弹窗广告,点击右上角x",
           "rules": [
             {
-              "key": 60,
+              "key": 61,
               "name": "腾讯广告-1",
               "activityIds": "com.douban.frodo.subject.structure.activity.MovieActivity",
               "matches": "ImageView - FrameLayout[childCount=5] > FrameLayout[childCount=1] > ImageView",
               "snapshotUrls": "https://i.gkd.li/i/13195565"
             },
             {
-              "key": 61,
+              "key": 62,
               "name": "腾讯广告-2",
               "matches": "ImageView -n FrameLayout[childCount=2] > FrameLayout > FrameLayout > ImageView",
               "snapshotUrls": [
@@ -29765,7 +29776,7 @@
           "resetMatch": "app",
           "rules": [
             {
-              "key": 62,
+              "key": 63,
               "activityIds": [
                 "com.douban.frodo.activity.BetaApkDialogActivity",
                 "com.douban.frodo.activity.SplashActivity"

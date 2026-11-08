@@ -17,7 +17,7 @@
     "enable_disabled_group": 945
   },
   "referenceRepairCounts": {
-    "duplicateKeyReassigned": 2262,
+    "duplicateKeyReassigned": 2263,
     "ambiguousCrossGroupReferenceResolvedToFirst": 19,
     "keptDanglingReference": 7
   },
@@ -5064,9 +5064,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 52,
+      "key": 53,
       "keptRuleKey": 5,
-      "candidateRuleKey": 52,
+      "candidateRuleKey": 53,
       "matches": "@View[clickable=true][childCount=0][visibleToUser=true] < FrameLayout[desc^=\"dislike\"] -2 FrameLayout >2 [text=\"广告\"]",
       "contextDiff": [
         "desc",
@@ -5092,9 +5092,9 @@
       "rule": "不分享到微信、微博",
       "ruleA": "不分享到微信、微博",
       "ruleB": "不分享到微信、微博",
-      "key": 53,
-      "keptRuleKey": 41,
-      "candidateRuleKey": 53,
+      "key": 54,
+      "keptRuleKey": 42,
+      "candidateRuleKey": 54,
       "matches": "@LinearLayout > [id=\"com.douban.frodo:id/check_weibo_wechat\"][visibleToUser=true][checked=true]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -5109,9 +5109,9 @@
       "rule": "不同步到动态",
       "ruleA": "不同步到动态",
       "ruleB": "不同步到动态",
-      "key": 54,
-      "keptRuleKey": 42,
-      "candidateRuleKey": 54,
+      "key": 55,
+      "keptRuleKey": 43,
+      "candidateRuleKey": 55,
       "matches": "@LinearLayout > [id=\"com.douban.frodo:id/check_status\"][visibleToUser=true][checked=true]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -5168,9 +5168,9 @@
       "rule": "首页-动态-信息流广告",
       "ruleA": "首页-动态-信息流广告",
       "ruleB": "首页-动态-信息流广告",
-      "key": 55,
-      "keptRuleKey": 43,
-      "candidateRuleKey": 55,
+      "key": 56,
+      "keptRuleKey": 44,
+      "candidateRuleKey": 56,
       "matches": "ImageView[id=\"com.douban.frodo:id/avatar\"][index=0] +n ImageView[id=\"com.douban.frodo:id/menu_item\"]",
       "contextDiff": [
         "activityIds"
@@ -5216,9 +5216,9 @@
       "rule": "点击【广告】",
       "ruleA": "点击【广告】",
       "ruleB": "点击【广告】",
-      "key": 57,
-      "keptRuleKey": 27,
-      "candidateRuleKey": 57,
+      "key": 58,
+      "keptRuleKey": 28,
+      "candidateRuleKey": 58,
       "matches": "@View[clickable=true] > Image - TextView[text=\"广告\"][visibleToUser=true]",
       "contextDiff": [
         "actionMaximum",
@@ -5285,9 +5285,9 @@
       "rule": "点击【x】关闭型",
       "ruleA": "点击【x】关闭型",
       "ruleB": "点击【x】关闭型",
-      "key": 58,
-      "keptRuleKey": 47,
-      "candidateRuleKey": 58,
+      "key": 59,
+      "keptRuleKey": 48,
+      "candidateRuleKey": 59,
       "matches": "ImageView[id=null] +(n) LinearLayout[childCount<=2] + FrameLayout[childCount=1] > ImageView[id=null][visibleToUser=true][top>250]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -5302,9 +5302,9 @@
       "rule": "点击【广告】选原因型",
       "ruleA": "点击【广告】选原因型",
       "ruleB": "点击【广告】选原因型",
-      "key": 59,
-      "keptRuleKey": 48,
-      "candidateRuleKey": 59,
+      "key": 60,
+      "keptRuleKey": 49,
+      "candidateRuleKey": 60,
       "matches": "[text=\"广告\"][id$=\"ad_not_interest\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -5364,9 +5364,9 @@
       "rule": "腾讯广告-1",
       "ruleA": "腾讯广告-1",
       "ruleB": "腾讯广告-1",
-      "key": 60,
-      "keptRuleKey": 36,
-      "candidateRuleKey": 60,
+      "key": 61,
+      "keptRuleKey": 37,
+      "candidateRuleKey": 61,
       "matches": "ImageView - FrameLayout[childCount=5] > FrameLayout[childCount=1] > ImageView",
       "contextDiff": [
         "desc"
@@ -5383,9 +5383,9 @@
       "rule": "腾讯广告-2",
       "ruleA": "腾讯广告-2",
       "ruleB": "腾讯广告-2",
-      "key": 61,
-      "keptRuleKey": 37,
-      "candidateRuleKey": 61,
+      "key": 62,
+      "keptRuleKey": 38,
+      "candidateRuleKey": 62,
       "matches": "ImageView -n FrameLayout[childCount=2] > FrameLayout > FrameLayout > ImageView",
       "contextDiff": [
         "desc"
@@ -5402,9 +5402,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 62,
-      "keptRuleKey": 40,
-      "candidateRuleKey": 62,
+      "key": 63,
+      "keptRuleKey": 41,
+      "candidateRuleKey": 63,
       "matches": [
         "[text=\"新版试用邀请\"]",
         "@[text=\"取消\"] + [text=\"下载\"]"
@@ -24084,9 +24084,9 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.douban.frodo",
-        "group": "局部广告-卡片广告",
+        "group": "分段广告",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 4,
         "newKey": 24
       },
       {
@@ -24094,7 +24094,7 @@
         "scope": "com.douban.frodo",
         "group": "局部广告-卡片广告",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 25
       },
       {
@@ -24102,8 +24102,16 @@
         "scope": "com.douban.frodo",
         "group": "局部广告-卡片广告",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 1,
         "newKey": 26
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.douban.frodo",
+        "group": "局部广告-卡片广告",
+        "rule": null,
+        "oldKey": 2,
+        "newKey": 27
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24111,14 +24119,6 @@
         "group": "局部广告-卡片广告",
         "rule": "点击【广告】",
         "oldKey": 3,
-        "newKey": 27
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.douban.frodo",
-        "group": "局部广告-卡片广告",
-        "rule": null,
-        "oldKey": 4,
         "newKey": 28
       },
       {
@@ -24126,7 +24126,7 @@
         "scope": "com.douban.frodo",
         "group": "局部广告-卡片广告",
         "rule": null,
-        "oldKey": 5,
+        "oldKey": 4,
         "newKey": 29
       },
       {
@@ -24134,15 +24134,15 @@
         "scope": "com.douban.frodo",
         "group": "局部广告-卡片广告",
         "rule": null,
-        "oldKey": 6,
+        "oldKey": 5,
         "newKey": 30
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.douban.frodo",
-        "group": "全屏广告-弹窗广告",
+        "group": "局部广告-卡片广告",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 6,
         "newKey": 31
       },
       {
@@ -24150,7 +24150,7 @@
         "scope": "com.douban.frodo",
         "group": "全屏广告-弹窗广告",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 32
       },
       {
@@ -24158,7 +24158,7 @@
         "scope": "com.douban.frodo",
         "group": "全屏广告-弹窗广告",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 1,
         "newKey": 33
       },
       {
@@ -24166,7 +24166,7 @@
         "scope": "com.douban.frodo",
         "group": "全屏广告-弹窗广告",
         "rule": null,
-        "oldKey": 3,
+        "oldKey": 2,
         "newKey": 34
       },
       {
@@ -24174,8 +24174,16 @@
         "scope": "com.douban.frodo",
         "group": "全屏广告-弹窗广告",
         "rule": null,
-        "oldKey": 4,
+        "oldKey": 3,
         "newKey": 35
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.douban.frodo",
+        "group": "全屏广告-弹窗广告",
+        "rule": null,
+        "oldKey": 4,
+        "newKey": 36
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24183,7 +24191,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": "腾讯广告-1",
         "oldKey": 5,
-        "newKey": 36
+        "newKey": 37
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24191,7 +24199,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": "腾讯广告-2",
         "oldKey": 6,
-        "newKey": 37
+        "newKey": 38
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24199,14 +24207,6 @@
         "group": "全屏广告-弹窗广告",
         "rule": null,
         "oldKey": 7,
-        "newKey": 38
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.douban.frodo",
-        "group": "更新提示",
-        "rule": null,
-        "oldKey": 0,
         "newKey": 39
       },
       {
@@ -24214,8 +24214,16 @@
         "scope": "com.douban.frodo",
         "group": "更新提示",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 40
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.douban.frodo",
+        "group": "更新提示",
+        "rule": null,
+        "oldKey": 1,
+        "newKey": 41
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24223,7 +24231,7 @@
         "group": "功能类-不分享/同步作品短评",
         "rule": "不分享到微信、微博",
         "oldKey": 0,
-        "newKey": 41
+        "newKey": 42
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24231,7 +24239,7 @@
         "group": "功能类-不分享/同步作品短评",
         "rule": "不同步到动态",
         "oldKey": 1,
-        "newKey": 42
+        "newKey": 43
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24239,7 +24247,7 @@
         "group": "局部广告-信息流广告",
         "rule": "首页-动态-信息流广告",
         "oldKey": 1,
-        "newKey": 43
+        "newKey": 44
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24247,7 +24255,7 @@
         "group": "局部广告-信息流广告",
         "rule": "小组-帖子列表信息流广告",
         "oldKey": 2,
-        "newKey": 44
+        "newKey": 45
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24255,7 +24263,7 @@
         "group": "局部广告-信息流广告",
         "rule": "回复-信息流广告",
         "oldKey": 3,
-        "newKey": 45
+        "newKey": 46
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24263,7 +24271,7 @@
         "group": "局部广告-信息流广告",
         "rule": "搜索-信息流广告",
         "oldKey": 4,
-        "newKey": 46
+        "newKey": 47
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24271,21 +24279,13 @@
         "group": "局部广告-搜索页/帖子内容与评论区中间的卡片式广告",
         "rule": "点击【x】关闭型",
         "oldKey": 0,
-        "newKey": 47
+        "newKey": 48
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.douban.frodo",
         "group": "局部广告-搜索页/帖子内容与评论区中间的卡片式广告",
         "rule": "点击【广告】选原因型",
-        "oldKey": 1,
-        "newKey": 48
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.douban.frodo",
-        "group": "分段广告-信息流广告",
-        "rule": null,
         "oldKey": 1,
         "newKey": 49
       },
@@ -24294,7 +24294,7 @@
         "scope": "com.douban.frodo",
         "group": "分段广告-信息流广告",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 1,
         "newKey": 50
       },
       {
@@ -24302,7 +24302,7 @@
         "scope": "com.douban.frodo",
         "group": "分段广告-信息流广告",
         "rule": null,
-        "oldKey": 3,
+        "oldKey": 2,
         "newKey": 51
       },
       {
@@ -24310,8 +24310,16 @@
         "scope": "com.douban.frodo",
         "group": "分段广告-信息流广告",
         "rule": null,
-        "oldKey": 4,
+        "oldKey": 3,
         "newKey": 52
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.douban.frodo",
+        "group": "分段广告-信息流广告",
+        "rule": null,
+        "oldKey": 4,
+        "newKey": 53
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24319,7 +24327,7 @@
         "group": "未分类-不分享/同步作品短评",
         "rule": "不分享到微信、微博",
         "oldKey": 0,
-        "newKey": 53
+        "newKey": 54
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24327,7 +24335,7 @@
         "group": "未分类-不分享/同步作品短评",
         "rule": "不同步到动态",
         "oldKey": 1,
-        "newKey": 54
+        "newKey": 55
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24335,7 +24343,7 @@
         "group": "未分类-信息流广告",
         "rule": "首页-动态-信息流广告",
         "oldKey": 1,
-        "newKey": 55
+        "newKey": 56
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24343,7 +24351,7 @@
         "group": "未分类-信息流广告",
         "rule": "小组-帖子列表信息流广告",
         "oldKey": 2,
-        "newKey": 56
+        "newKey": 57
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24351,7 +24359,7 @@
         "group": "未分类-卡片广告",
         "rule": "点击【广告】",
         "oldKey": 0,
-        "newKey": 57
+        "newKey": 58
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24359,7 +24367,7 @@
         "group": "未分类-搜索页/帖子内容与评论区中间的卡片式广告",
         "rule": "点击【x】关闭型",
         "oldKey": 0,
-        "newKey": 58
+        "newKey": 59
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24367,7 +24375,7 @@
         "group": "未分类-搜索页/帖子内容与评论区中间的卡片式广告",
         "rule": "点击【广告】选原因型",
         "oldKey": 1,
-        "newKey": 59
+        "newKey": 60
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24375,7 +24383,7 @@
         "group": "未分类-弹窗广告",
         "rule": "腾讯广告-1",
         "oldKey": 0,
-        "newKey": 60
+        "newKey": 61
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24383,7 +24391,7 @@
         "group": "未分类-弹窗广告",
         "rule": "腾讯广告-2",
         "oldKey": 1,
-        "newKey": 61
+        "newKey": 62
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24391,7 +24399,7 @@
         "group": "未分类-版本更新",
         "rule": null,
         "oldKey": 0,
-        "newKey": 62
+        "newKey": 63
       },
       {
         "type": "duplicateKeyReassigned",
@@ -39640,7 +39648,7 @@
       }
     ]
   },
-  "referenceRepairsTotal": 2288,
+  "referenceRepairsTotal": 2289,
   "disabledGroupAudit": [
     {
       "app": "com.duoduo.cimoc.su",

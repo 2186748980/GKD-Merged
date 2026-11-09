@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026110801,
+  "version": 2026110901,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -36734,14 +36734,20 @@
           "matchTime": 5000,
           "actionMaximum": 1,
           "resetMatch": "app",
+          "activityIds": ".MainActivity",
           "rules": [
             {
-              "activityIds": ".MainActivity",
+              "key": 0,
               "matches": "@Button[clickable=true] -4 * > [desc=\"代理\"]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/26210674",
                 "https://i.gkd.li/i/29658034"
               ]
+            },
+            {
+              "key": 1,
+              "matches": "[desc=\"代理\"] + [visibleToUser=true] > [desc=\"延迟测试\"][clickable=true]",
+              "snapshotUrls": "https://i.gkd.li/i/34530552"
             }
           ]
         }
@@ -78250,7 +78256,7 @@
           "rules": [
             {
               "fastQuery": true,
-              "actionCd": 300,
+              "actionCd": 1200,
               "actionDelay": 200,
               "swipeArg": {
                 "start": {
@@ -78291,7 +78297,6 @@
           "rules": [
             {
               "fastQuery": true,
-              "actionCd": 300,
               "actionDelay": 200,
               "swipeArg": {
                 "start": {
@@ -78690,7 +78695,6 @@
           "rules": [
             {
               "fastQuery": true,
-              "actionCd": 300,
               "actionDelay": 200,
               "swipeArg": {
                 "start": {

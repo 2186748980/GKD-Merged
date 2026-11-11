@@ -1,16 +1,16 @@
 {
   "ok": true,
-  "time": 1794340120,
-  "version": 2026111001,
-  "contentHash": "3dedc7e2e3f0c21995b443de1739720dab5ed69f1cf222b2a90386cc7ab1b0d9",
+  "time": 1794378926,
+  "version": 2026111101,
+  "contentHash": "c9a5cbd02c6e296f365357df6a7bf312e5fe00510c50406348481b9df78c5573",
   "sources": [
     {
       "id": "linarm",
       "name": "Lin-arm",
       "download": "ok",
-      "bytes": 1378873,
+      "bytes": 1380814,
       "parse": "ok",
-      "sourceVersion": 630
+      "sourceVersion": 631
     },
     {
       "id": "ganlinte",
@@ -37,13 +37,13 @@
       "sourceVersion": 90
     }
   ],
-  "apps": 1074,
+  "apps": 1077,
   "globalGroups": 3,
-  "appRuleGroups": 4382,
-  "gkdDisplayedRuleCount": 4382,
+  "appRuleGroups": 4386,
+  "gkdDisplayedRuleCount": 4386,
   "globalRuleObjects": 15,
-  "appRuleObjects": 7644,
-  "ruleObjects": 7659,
+  "appRuleObjects": 7650,
+  "ruleObjects": 7665,
   "safeDuplicateRemovals": 0,
   "duplicateReviewItems": 1010,
   "duplicateReviewCategories": {
@@ -67,7 +67,7 @@
     "keptDanglingReference": 7
   },
   "optimization": {
-    "remapDuplicateSkipped": 2069,
+    "remapDuplicateSkipped": 2068,
     "remapEvidenceMerged": 295,
     "remapDisplayDedupe": 761,
     "remapPreKeysGuard": 40,

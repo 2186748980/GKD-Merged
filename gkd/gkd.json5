@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026111001,
+  "version": 2026111101,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -12969,6 +12969,25 @@
               ],
               "snapshotUrls": "https://i.gkd.li/i/34431696",
               "activityIds": ".PackageInstallerActivity"
+            }
+          ]
+        },
+        {
+          "key": 7,
+          "name": "功能类-[开启安全模式]提示弹窗",
+          "desc": "点击[取消]",
+          "matchTime": 10000,
+          "resetMatch": "app",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": ".InstallSuccess",
+              "matches": [
+                "TextView[text*=\"开启安全模式\"]",
+                "Button[text=\"取消\"]"
+              ],
+              "snapshotUrls": "https://i.gkd.li/i/34540653",
+              "exampleUrls": "https://e.gkd.li/0f96ada2-22a5-4220-9e8a-54a5d43df254"
             }
           ]
         }
@@ -41878,6 +41897,32 @@
       ]
     },
     {
+      "id": "com.hihonor.gamecenter",
+      "name": "(荣耀)游戏中心",
+      "groups": [
+        {
+          "key": 1,
+          "name": "权限提示-通知权限",
+          "desc": "点击[禁止]",
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": ".module.newmain.XMainActivity",
+              "matches": [
+                "[text*=\"开启\"][text*=\"通知\"]",
+                "[text=\"禁止\"][clickable=true]"
+              ],
+              "snapshotUrls": "https://i.gkd.li/i/34632910",
+              "exampleUrls": "https://e.gkd.li/310eb4ad-8855-4a98-9400-44de387b84f0"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "com.hihonor.health",
       "name": "荣耀运动健康",
       "groups": [
@@ -42181,6 +42226,29 @@
           "exampleUrls": "https://m.gkd.li/101449500/3e41e790-2206-4780-bdc3-6a8f152c2622",
           "snapshotUrls": "https://i.gkd.li/i/14887872",
           "enable": false
+        }
+      ]
+    },
+    {
+      "id": "com.hihonor.systemmanager",
+      "name": "(荣耀)系统管家服务",
+      "groups": [
+        {
+          "key": 1,
+          "name": "功能类-自动禁止应用跳转",
+          "desc": "点击[拒绝]",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": "com.hihonor.securitycenter.appads.AppSplashAdvertiseActivity",
+              "matches": [
+                "[text*=\"想要打开\"]",
+                "[text=\"拒绝\"]"
+              ],
+              "snapshotUrls": "https://i.gkd.li/i/34633109",
+              "exampleUrls": "https://e.gkd.li/55fafe6d-6c33-4ef3-be49-8f6ad70ea8d2"
+            }
+          ]
         }
       ]
     },
@@ -44879,10 +44947,29 @@
           "key": 2,
           "name": "全屏广告-弹窗广告",
           "desc": "点击关闭",
-          "matchTime": 10000,
           "actionMaximum": 1,
-          "resetMatch": "app",
+          "resetMatch": "match",
+          "activityIds": "com.huaxiaozhu.sdk.app.MainActivity",
           "rules": [
+            {
+              "key": 0,
+              "fastQuery": true,
+              "matches": "[vid=\"popClose\"]",
+              "snapshotUrls": "https://i.gkd.li/i/14233488"
+            },
+            {
+              "key": 1,
+              "name": "坐标点击x掉",
+              "actionCd": 3000,
+              "actionDelay": 300,
+              "position": {
+                "left": "width/2",
+                "top": "height*0.794"
+              },
+              "matches": "@FrameLayout[vid=\"webview_layout\"][visibleToUser=true] >n [id=\"animation-container-content\"] >2 Image[visibleToUser=true][width>700][height>1100]",
+              "snapshotUrls": "https://i.gkd.li/i/34613080",
+              "exampleUrls": "https://e.gkd.li/59049b44-eb7e-4659-94f1-f33c35aeeb4c"
+            },
             {
               "fastQuery": true,
               "activityIds": "com.huaxiaozhu.sdk.app.MainActivity",
@@ -44891,6 +44978,7 @@
               "snapshotUrls": "https://i.gkd.li/i/14233488"
             }
           ],
+          "matchTime": 10000,
           "enable": false
         }
       ]
@@ -64702,6 +64790,33 @@
             }
           ],
           "enable": false
+        }
+      ]
+    },
+    {
+      "id": "com.onelap.bls.dear",
+      "name": "顽鹿运动",
+      "groups": [
+        {
+          "key": 0,
+          "name": "开屏广告",
+          "desc": "延迟1s点击跳过,避免太早点击被误判异常互动而锁满 5s",
+          "fastQuery": true,
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "priorityTime": 10000,
+          "rules": [
+            {
+              "key": 0,
+              "actionDelay": 1000,
+              "matches": "[vid=\"ll_skip_advertisement_splash\"][clickable=true]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/34618778"
+              ]
+            }
+          ],
+          "order": -10
         }
       ]
     },
@@ -85542,6 +85657,7 @@
             },
             {
               "key": 4,
+              "actionDelay": 500,
               "activityIds": ".activity.QPublicFragmentActivity",
               "matches": "ImageView[width<62] < [visibleToUser=true][desc=\"关闭广告\"]",
               "snapshotUrls": "https://i.gkd.li/i/33948809"

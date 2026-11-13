@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026111101,
+  "version": 2026111301,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -20955,7 +20955,8 @@
               "fastQuery": true,
               "activityIds": [
                 ".notify.ui.NoticeBodyActivity",
-                ".webapp.ui.WebAppCommonViewer"
+                ".webapp.ui.WebAppCommonViewer",
+                ".group.ui.TopicBodyActivity"
               ],
               "matches": [
                 "[text*=\"剪贴板内容已更新\"][visibleToUser=true]",
@@ -20963,7 +20964,8 @@
               ],
               "snapshotUrls": [
                 "https://i.gkd.li/i/33947533",
-                "https://i.gkd.li/i/34332781"
+                "https://i.gkd.li/i/34332781",
+                "https://i.gkd.li/i/34748077"
               ],
               "exampleUrls": "https://e.gkd.li/c5a068c5-33ee-4911-a1a8-238b73097f53"
             }
@@ -21030,15 +21032,39 @@
               "fastQuery": true,
               "action": "back",
               "actionDelay": 300,
-              "activityIds": ".webapp.ui.WebAppViewerActivity",
+              "activityIds": [
+                ".webapp.ui.WebAppViewerActivity",
+                ".webapp.ui.WebAppCommonViewer"
+              ],
               "matches": "@[text=\"签到成功\"] <2 WebView < WebView <2 [vid=\"web_view_fragment_refresh_layout\"]",
-              "snapshotUrls": "https://i.gkd.li/i/33947532",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/33947532",
+                "https://i.gkd.li/i/34723724"
+              ],
               "exampleUrls": "https://e.gkd.li/3705832f-59e5-44f2-b39a-cf4878be6f4f"
             }
           ]
         },
         {
           "key": 14,
+          "name": "功能类-签到失败后弹窗",
+          "desc": "点击[知道了]",
+          "rules": [
+            {
+              "fastQuery": true,
+              "actionDelay": 300,
+              "activityIds": [
+                ".webapp.ui.WebAppViewerActivity",
+                ".webapp.ui.WebAppCommonViewer"
+              ],
+              "matches": "@[text=\"知道了\"] < ListView < View - [text*=\"签到失败\"] < View <3 WebView < WebView <2 [vid=\"web_view_fragment_refresh_layout\"]",
+              "snapshotUrls": "https://i.gkd.li/i/34723729",
+              "exampleUrls": "https://e.gkd.li/e6f3eb7a-3890-4c98-95a6-c09262a2b071"
+            }
+          ]
+        },
+        {
+          "key": 15,
           "name": "权限提示-开启消息通知",
           "desc": "自动点击关闭",
           "enable": false,
@@ -21048,7 +21074,7 @@
           "snapshotUrls": "https://i.gkd.li/import/13197374"
         },
         {
-          "key": 15,
+          "key": 16,
           "name": "未分类-开启消息通知",
           "desc": "自动点击关闭",
           "fastQuery": true,
@@ -23567,9 +23593,8 @@
         },
         {
           "key": 6,
-          "name": "局部广告-卡片广告",
+          "name": "局部广告",
           "fastQuery": true,
-          "matchTime": 10000,
           "rules": [
             {
               "key": 0,
@@ -23595,10 +23620,26 @@
             {
               "key": 2,
               "name": "横幅式2",
-              "activityIds": ".smarthome.control.view.CameraControlActivity",
-              "matches": "[vid=\"iv_item_banner_close\"][clickable=true]",
-              "snapshotUrls": "https://i.gkd.li/i/25209084"
-            },
+              "activityIds": [
+                ".smarthome.control.view.CameraControlActivity",
+                ".smarthome.control.view.NewCameraControlActivity"
+              ],
+              "matches": "[vid=\"iv_item_banner_close\" || vid=\"iv_close\"][clickable=true]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/25209084",
+                "https://i.gkd.li/i/34723502"
+              ]
+            }
+          ]
+        },
+        {
+          "key": 7,
+          "name": "局部广告-卡片广告",
+          "fastQuery": true,
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "activityIds": "com.cmri.universalapp.SmartMainProxyActivity",
+          "rules": [
             {
               "key": 3,
               "name": "横幅式",
@@ -23612,8 +23653,6 @@
               "snapshotUrls": "https://i.gkd.li/i/17872961"
             }
           ],
-          "actionMaximum": 1,
-          "activityIds": "com.cmri.universalapp.SmartMainProxyActivity",
           "enable": false
         }
       ]
@@ -65105,16 +65144,33 @@
         {
           "key": 1,
           "name": "功能类-自动安装应用",
-          "desc": "点击 ①继续安装 ②完成",
+          "desc": "点击 ①已知悉风险 ②[仍然安装] ③[继续安装] ④[完成]",
           "fastQuery": true,
+          "activityIds": [
+            ".model.guide.ui.InstallGuideActivity",
+            ".modelv2.parsing.PackageParsingV2Activity"
+          ],
           "rules": [
             {
-              "key": 0,
-              "name": "点击[继续安装]",
-              "activityIds": [
-                ".model.guide.ui.InstallGuideActivity",
-                ".modelv2.parsing.PackageParsingV2Activity"
+              "key": 10,
+              "name": "①[勾选]已知悉风险",
+              "matches": "[text^=\"已知悉\"][text*=\"风险\"][checkable=true][checked=false]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/22377327",
+                "https://i.gkd.li/i/33898132"
               ],
+              "exampleUrls": "https://e.gkd.li/509a2a45-c9bd-4b7e-9496-ced36ebdaaf6"
+            },
+            {
+              "key": 20,
+              "name": "②点击[仍然安装]",
+              "excludeMatches": "[text^=\"已知悉\"][text*=\"风险\"][checked=false]",
+              "matches": "[text=\"仍然安装\"][clickable=true]",
+              "snapshotUrls": "https://i.gkd.li/i/34736203"
+            },
+            {
+              "key": 30,
+              "name": "③点击[继续安装]",
               "excludeMatches": "[vid=\"view_scanning_and_tip_view_tv_title\"][text^=\"正在扫描\"]",
               "matches": "[vid=\"view_bottom_guide_continue_install_btn\" || text=\"继续安装\"]",
               "snapshotUrls": [
@@ -65126,8 +65182,18 @@
               "excludeSnapshotUrls": "https://i.gkd.li/i/13038560"
             },
             {
-              "key": 1,
-              "name": "点击[完成]",
+              "key": 31,
+              "name": "③坐标点击[继续安装]",
+              "position": {
+                "left": "width * 0.6078",
+                "top": "height * 0.7742"
+              },
+              "matches": "[text$=\"继续安装\"][text*=\"未通过\"][visibleToUser=true]",
+              "snapshotUrls": "https://i.gkd.li/i/34736192"
+            },
+            {
+              "key": 40,
+              "name": "④点击[完成]",
               "activityIds": ".model.finish.InstallFinishActivity",
               "matches": "[text=\"完成\"]",
               "snapshotUrls": [
@@ -65136,7 +65202,7 @@
               ]
             },
             {
-              "key": 2,
+              "key": 41,
               "name": "点击【继续安装】",
               "activityIds": "com.oplus.appdetail.model.guide.ui.InstallGuideActivity",
               "matches": "[id=\"com.oplus.appdetail:id/view_bottom_guide_continue_install_btn\"]",
@@ -65148,21 +65214,21 @@
               ]
             },
             {
-              "key": 3,
+              "key": 42,
               "name": "点击【完成】",
               "activityIds": "com.oplus.appdetail.model.finish.InstallFinishActivity",
               "matches": "[id=\"com.oplus.appdetail:id/launch_button\"][text=\"完成\"]",
               "snapshotUrls": "https://i.gkd.li/import/13038664"
             },
             {
-              "key": 4,
+              "key": 43,
               "name": "点击【完成】2",
               "activityIds": "com.oplus.appdetail.model.finish.InstallFinishActivity",
               "matches": "[id=\"com.oplus.appdetail:id/done_button\"][text=\"完成\"]",
               "snapshotUrls": "https://i.gkd.li/import/13054849"
             },
             {
-              "key": 5,
+              "key": 44,
               "name": "点击[继续安装]",
               "activityIds": "com.oplus.appdetail.model.guide.ui.InstallGuideActivity",
               "excludeMatches": "[id=\"com.oplus.appdetail:id/view_scanning_and_tip_view_tv_title\"][text^=\"正在扫描\"]",
@@ -65171,6 +65237,16 @@
                 "https://i.gkd.li/i/13038560",
                 "https://i.gkd.li/i/13054204",
                 "https://i.gkd.li/i/13038570"
+              ]
+            },
+            {
+              "key": 45,
+              "name": "点击[完成]",
+              "activityIds": "com.oplus.appdetail.model.finish.InstallFinishActivity",
+              "matches": "[text=\"完成\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/13038664",
+                "https://i.gkd.li/i/13054849"
               ]
             }
           ],
@@ -65183,7 +65259,7 @@
           "activityIds": ".model.guide.ui.InstallGuideActivity",
           "rules": [
             {
-              "key": 6,
+              "key": 0,
               "position": {
                 "left": "width * 0.726",
                 "top": "height * 0.5"
@@ -65194,16 +65270,16 @@
             },
             {
               "preKeys": [
-                6
+                0
               ],
-              "key": 7,
+              "key": 1,
               "matches": "[text=\"已知悉应用风险\"][checked=false]",
               "exampleUrls": "https://e.gkd.li/45246cef-1ef5-49bf-8b7f-09377bde823a",
               "snapshotUrls": "https://i.gkd.li/i/22377327"
             },
             {
               "preKeys": [
-                7
+                1
               ],
               "matches": "[text=\"仍然安装\"]",
               "exampleUrls": "https://e.gkd.li/45246cef-1ef5-49bf-8b7f-09377bde823a",
@@ -65213,29 +65289,10 @@
         },
         {
           "key": 3,
-          "name": "功能类-自动[勾选]已知悉风险",
-          "rules": [
-            {
-              "fastQuery": true,
-              "activityIds": [
-                ".model.guide.ui.InstallGuideActivity",
-                ".modelv2.parsing.PackageParsingV2Activity"
-              ],
-              "matches": "[text^=\"已知悉\"][text*=\"风险\"][checkable=true][checked=false]",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/22377327",
-                "https://i.gkd.li/i/33898132"
-              ],
-              "exampleUrls": "https://e.gkd.li/509a2a45-c9bd-4b7e-9496-ced36ebdaaf6"
-            }
-          ]
-        },
-        {
-          "key": 4,
           "name": "功能类-自动安装",
           "rules": [
             {
-              "key": 8,
+              "key": 46,
               "name": "点击【继续安装】",
               "activityIds": "com.oplus.appdetail.model.guide.ui.InstallGuideActivity",
               "matches": "[id=\"com.oplus.appdetail:id/view_bottom_guide_continue_install_btn\"]",
@@ -65247,7 +65304,7 @@
               ]
             },
             {
-              "key": 9,
+              "key": 47,
               "name": "点击【完成】",
               "activityIds": "com.oplus.appdetail.model.finish.InstallFinishActivity",
               "matches": "[text=\"完成\"]",
@@ -116958,7 +117015,8 @@
                 "https://i.gkd.li/i/24015674",
                 "https://i.gkd.li/i/23933925",
                 "https://i.gkd.li/i/17675894",
-                "https://i.gkd.li/i/18306858"
+                "https://i.gkd.li/i/18306858",
+                "https://i.gkd.li/i/34722511"
               ],
               "exampleUrls": "https://e.gkd.li/f7a90a07-6c8e-4986-8306-f64db4412e36"
             },
@@ -116985,9 +117043,24 @@
               ]
             },
             {
+              "key": 51,
+              "preKeys": [
+                94,
+                95
+              ],
+              "name": "②点击[不感兴趣]2",
+              "actionCdKey": 96,
+              "actionMaximumKey": 96,
+              "matches": "@[clickable=true] > [visibleToUser=true][text*=\"不感兴趣\" || text=\"相似内容过多\" || text*=\"不想看\" || text$=\"质量差\" || text=\"减少直播推荐\" || text=\"和当前视频无关\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/34722513"
+              ]
+            },
+            {
               "key": 97,
               "preKeys": [
-                96
+                96,
+                51
               ],
               "name": "③点击[关闭]",
               "anyMatches": [

@@ -22,9 +22,9 @@
     "keptDanglingReference": 7
   },
   "optimization": {
-    "remapDuplicateSkipped": 2068,
+    "remapDuplicateSkipped": 2067,
     "remapEvidenceMerged": 295,
-    "remapDisplayDedupe": 761,
+    "remapDisplayDedupe": 760,
     "remapPreKeysGuard": 40,
     "remapPreKeysUnverifiable": 0,
     "danglingReferencesPreserved": 3,
@@ -11182,15 +11182,17 @@
       "rule": "点击【继续安装】",
       "ruleA": "点击【继续安装】",
       "ruleB": "点击【继续安装】",
-      "key": 8,
-      "keptRuleKey": 2,
-      "candidateRuleKey": 8,
+      "key": 46,
+      "keptRuleKey": 41,
+      "candidateRuleKey": 46,
       "matches": "[id=\"com.oplus.appdetail:id/view_bottom_guide_continue_install_btn\"]",
       "contextDiff": [
+        "activityIds",
         "desc",
         "fastQuery"
       ],
       "behaviorDiff": [
+        "activityIds",
         "fastQuery"
       ],
       "referrers": [],
@@ -23371,6 +23373,22 @@
       },
       {
         "type": "duplicateKeyReassigned",
+        "scope": "com.cmri.universalapp",
+        "group": "局部广告-卡片广告",
+        "rule": "横幅式",
+        "oldKey": 0,
+        "newKey": 3
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.cmri.universalapp",
+        "group": "局部广告-卡片广告",
+        "rule": "卡片信息流式",
+        "oldKey": 1,
+        "newKey": 4
+      },
+      {
+        "type": "duplicateKeyReassigned",
         "scope": "com.coolapk.market",
         "group": "分段广告-信息流广告",
         "rule": null,
@@ -29468,26 +29486,10 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.oplus.appdetail",
-        "group": "功能类-安装中高风险应用",
-        "rule": null,
-        "oldKey": 0,
-        "newKey": 6
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.oplus.appdetail",
-        "group": "功能类-安装中高风险应用",
-        "rule": null,
-        "oldKey": 1,
-        "newKey": 7
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.oplus.appdetail",
         "group": "功能类-自动安装",
         "rule": "点击【继续安装】",
         "oldKey": 0,
-        "newKey": 8
+        "newKey": 46
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29495,7 +29497,7 @@
         "group": "功能类-自动安装",
         "rule": "点击【完成】",
         "oldKey": 1,
-        "newKey": 9
+        "newKey": 47
       },
       {
         "type": "duplicateKeyReassigned",

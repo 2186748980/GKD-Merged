@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026111301,
+  "version": 2026111401,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -18325,11 +18325,24 @@
         {
           "key": 2,
           "name": "通知提示-网络代理提示弹窗",
-          "desc": "点击[继续使用]",
+          "desc": "点击[继续使用/取消]",
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
           "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": ".activity.MainActivity",
+              "matches": [
+                "[text*=\"使用网络代理\"][visibleToUser=true]",
+                "[text=\"继续使用\" || text=\"取消\"]"
+              ],
+              "snapshotUrls": [
+                "https://i.gkd.li/i/19652606",
+                "https://i.gkd.li/i/34805751"
+              ],
+              "exampleUrls": "https://e.gkd.li/22674cc8-5a46-49a0-9654-e77c0f13823e"
+            },
             {
               "fastQuery": true,
               "activityIds": ".activity.MainActivity",
@@ -30168,11 +30181,15 @@
                 "left": "width * 0.77",
                 "top": "height * 0.64"
               },
-              "matches": "@ViewGroup[visibleToUser=true][height<150][width=prev.width] < [childCount=2] <(2,3) FrameLayout[childCount<4] >7 [vid=\"ttlive_player_render_view\"]",
+              "anyMatches": [
+                "@ViewGroup[visibleToUser=true][height<150][width=prev.width] < [childCount=2] <(2,3) FrameLayout[childCount<4] >7 [vid=\"ttlive_player_render_view\"]",
+                "@ViewGroup[visibleToUser=true][height<150][width=prev.width] -2 [index=0] < FrameLayout[childCount<5] >7 [vid=\"ttlive_player_render_view\"]"
+              ],
               "snapshotUrls": [
                 "https://i.gkd.li/i/27706770",
                 "https://i.gkd.li/i/28834344",
-                "https://i.gkd.li/i/32435385"
+                "https://i.gkd.li/i/32435385",
+                "https://i.gkd.li/i/34807130"
               ],
               "exampleUrls": "https://e.gkd.li/aef38288-d84b-4e13-8161-ebebc27b822b"
             },
@@ -33428,11 +33445,12 @@
             {
               "key": 48,
               "name": "①点击[跳过]",
-              "matches": "@View[id=null][text=null][childCount=0][visibleToUser=true] < ViewGroup[id=null][text=null][childCount=1][index=parent.childCount.minus(1)] <(7,8) ViewGroup <2 ViewGroup < ViewGroup < LinearLayout < RelativeLayout <(1,2) [id=\"android:id/content\"]",
+              "matches": "@View[id=null][text=null][childCount=0][visibleToUser=true] < ViewGroup[id=null][text=null][childCount=1][index=parent.childCount.minus(1)] <(5+n) ViewGroup <2 ViewGroup < ViewGroup < LinearLayout < RelativeLayout <(1,2) [id=\"android:id/content\"]",
               "exampleUrls": "https://e.gkd.li/a243e31f-f1b5-4689-8d1a-c53250be651e",
               "snapshotUrls": [
                 "https://i.gkd.li/i/17141999",
-                "https://i.gkd.li/i/28130319"
+                "https://i.gkd.li/i/28130319",
+                "https://i.gkd.li/i/34788907"
               ]
             },
             {
@@ -42173,6 +42191,28 @@
       "name": "我的荣耀",
       "groups": [
         {
+          "key": 0,
+          "name": "开屏广告",
+          "fastQuery": true,
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "priorityTime": 10000,
+          "rules": [
+            {
+              "key": 0,
+              "matches": "[text*=\"跳过\"][clickable=true][text.length<10]",
+              "snapshotUrls": "https://i.gkd.li/i/34807611"
+            },
+            {
+              "activityIds": "com.hihonor.phoneservice.OpenScreenAdActivity",
+              "matches": "TextView[id=\"com.hihonor.phoneservice:id/start_skip_count_down\"]",
+              "snapshotUrls": "https://i.gkd.li/import/14896804"
+            }
+          ],
+          "order": -10
+        },
+        {
           "key": 1,
           "name": "全屏广告-弹窗广告",
           "desc": "点击关闭",
@@ -42212,23 +42252,8 @@
           "snapshotUrls": "https://i.gkd.li/i/12783134"
         },
         {
-          "key": 11,
-          "name": "开屏广告",
-          "fastQuery": true,
-          "matchTime": 10000,
-          "actionMaximum": 1,
-          "rules": [
-            {
-              "activityIds": "com.hihonor.phoneservice.OpenScreenAdActivity",
-              "matches": "TextView[id=\"com.hihonor.phoneservice:id/start_skip_count_down\"]",
-              "snapshotUrls": "https://i.gkd.li/import/14896804"
-            }
-          ],
-          "order": -10
-        },
-        {
           "enable": false,
-          "key": 12,
+          "key": 11,
           "name": "全屏广告-请求位置权限提示信息",
           "activityIds": "com.hihonor.phoneservice.main.MainActivity",
           "rules": [],
@@ -91897,12 +91922,13 @@
             {
               "key": 2,
               "activityIds": "com.x.android.main.MainActivity",
-              "matches": "[text=\"Ad\" || getChild(0).text$=\"推广\"] +(1,4) [name$=\"ImageView\" || name$=\"Button\"][visibleToUser=true][desc=\"发帖选项\"]",
+              "matches": "[text^=\"Ad\" || getChild(0).text$=\"推广\"] <n [childCount>5] > [visibleToUser=true][desc=\"发帖选项\"]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/29085434",
-                "https://i.gkd.li/i/34428571",
+                "https://i.gkd.li/i/34775442",
                 "https://i.gkd.li/i/32325884",
-                "https://i.gkd.li/i/34022771"
+                "https://i.gkd.li/i/34022771",
+                "https://i.gkd.li/i/34775454"
               ]
             },
             {
@@ -116689,11 +116715,12 @@
                 50
               ],
               "key": 70,
-              "matches": "@FrameLayout[clickable=true] > [text=\"此类内容过多\" || text=\"相似内容过多\"][visibleToUser=true]",
+              "matches": "@[clickable=true] > [text$=\"内容过多\" || text=\"不喜欢此商品\" || text^=\"不想看\"][visibleToUser=true]",
               "exampleUrls": "https://e.gkd.li/2aba6082-1047-464e-959c-82ee62e492aa",
               "snapshotUrls": [
                 "https://i.gkd.li/i/20718890",
-                "https://i.gkd.li/i/20720187"
+                "https://i.gkd.li/i/20720187",
+                "https://i.gkd.li/i/34799465"
               ]
             },
             {
@@ -116848,16 +116875,17 @@
                 ".MainActivityV2",
                 "com.bilibili.vip.web.VipWebActivity"
               ],
-              "matches": "ComposeView > View[childCount=7] > @View[clickable=true][childCount=0] <<n [vid=\"vip_panel\"]",
-              "exampleUrls": "https://m.gkd.li/57941037/a78a7719-b148-4df2-a225-f7a24be0c413",
+              "matches": "@View[clickable=true][right>getPrev(1).right.minus(20)] -(1,2) [index=0][text*=\"套餐\"] <<n [vid=\"vip_panel\"][height>500]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/15523975",
-                "https://i.gkd.li/i/15814146"
-              ]
+                "https://i.gkd.li/i/15814146",
+                "https://i.gkd.li/i/34776793"
+              ],
+              "excludeSnapshotUrls": "https://i.gkd.li/i/34777480",
+              "exampleUrls": "https://e.gkd.li/41a7f3ae-c01d-4f1e-a90a-5fefa4606393"
             },
             {
               "key": 91,
-              "fastQuery": true,
               "activityIds": "com.bilibili.vip.web.VipWebActivity",
               "matches": "@TextView[width<130 && height<130] - TextView[childCount=0][id=\"dialog-canvas\"] <<n [vid=\"webview\"]",
               "snapshotUrls": "https://i.gkd.li/i/23385023"
@@ -116886,6 +116914,19 @@
                 "tv.danmaku.bili.MainActivityV2",
                 "com.bilibili.vip.web.VipWebActivity"
               ],
+              "matches": "ComposeView > View[childCount=7] > @View[clickable=true][childCount=0] <<n [vid=\"vip_panel\"]",
+              "exampleUrls": "https://m.gkd.li/57941037/a78a7719-b148-4df2-a225-f7a24be0c413",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/15523975",
+                "https://i.gkd.li/i/15814146"
+              ]
+            },
+            {
+              "key": 8,
+              "activityIds": [
+                "tv.danmaku.bili.MainActivityV2",
+                "com.bilibili.vip.web.VipWebActivity"
+              ],
               "matches": "WebView[text=\"会员中心\"] >4 [text=\"大会员服务协议\"] +2 * >2 @TextView[visibleToUser=true][index=parent.childCount.minus(1)] <<n [vid=\"webview\"]",
               "exampleUrls": "https://m.gkd.li/57941037/60eee9aa-8799-4097-8ddf-2783afd49586",
               "snapshotUrls": [
@@ -116895,14 +116936,14 @@
               ]
             },
             {
-              "key": 8,
+              "key": 9,
               "activityIds": "com.bilibili.vip.web.VipWebActivity",
               "matches": "WebView[text=\"大会员\"] >3 View[childCount=4] >3 View[childCount=1] > View[childCount=1] > @Image[visibleToUser=true][childCount=0][text=\"\"] <<n [vid=\"webview\"]",
               "exampleUrls": "https://m.gkd.li/57941037/f56c6392-c473-4988-af41-00adedbf3905",
               "snapshotUrls": "https://i.gkd.li/i/15328394"
             },
             {
-              "key": 9,
+              "key": 10,
               "activityIds": "tv.danmaku.bili.MainActivityV2",
               "matches": "[text=\"会员中心\"] >3 View > View[childCount=2] > View[childCount=1] > @TextView[clickable=true] <<n [vid=\"webview\"]",
               "exampleUrls": "https://m.gkd.li/57941037/4384e301-8a79-427e-88d6-7fb8e422c6e8",

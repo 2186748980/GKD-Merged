@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026111401,
+  "version": 2026111501,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -30482,8 +30482,12 @@
             {
               "key": 1519,
               "name": "①点击[静音]",
-              "matches": "@ImageView[visibleToUser=true][width>20 && width<93 && height>20 && height<108][right<prev.width.div(3)][bottom<prev.height.div(10)] <<n [id=\"android:id/content\"]",
-              "snapshotUrls": "https://i.gkd.li/i/28907595"
+              "matches": "@ImageView[visibleToUser=true][width>20 && width<93 && height>20 && height<130][right<prev.width.div(3)][bottom<prev.height.div(10)] <<n [id=\"android:id/content\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/28907595",
+                "https://i.gkd.li/i/34841008",
+                "https://i.gkd.li/i/34840554"
+              ]
             },
             {
               "key": 1520,
@@ -30494,7 +30498,7 @@
               },
               "matches": "@ImageView[width>20 && width<93 && height<0][right<prev.width.div(3)][bottom<prev.height.div(10)] <<n [id=\"android:id/content\"]",
               "exampleUrls": "https://e.gkd.li/d8949efa-e2f7-49d2-a8d7-4837ed349aef",
-              "snapshotUrls": "https://i.gkd.li/i/26528931"
+              "snapshotUrls": "https://i.gkd.li/i/34847712"
             }
           ]
         },
@@ -41474,6 +41478,32 @@
           "rules": [],
           "snapshotUrls": "https://i.gkd.li/i/14099393",
           "enable": false
+        }
+      ]
+    },
+    {
+      "id": "com.hihonor.android.launcher",
+      "name": "荣耀桌面",
+      "groups": [
+        {
+          "key": 1,
+          "name": "功能类-[不]添加小部件到桌面",
+          "desc": "弹窗, 点击[取消]",
+          "rules": [
+            {
+              "fastQuery": true,
+              "matchTime": 5000,
+              "actionMaximum": 1,
+              "resetMatch": "app",
+              "activityIds": ".dragndrop.AddItemActivity",
+              "matches": [
+                "[text=\"添加到主屏幕\"][visibleToUser=true]",
+                "[text=\"取消\"][clickable=true]"
+              ],
+              "snapshotUrls": "https://i.gkd.li/i/34847270",
+              "exampleUrls": "https://e.gkd.li/ed73cb4e-4985-4960-a653-d7df9d473f4e"
+            }
+          ]
         }
       ]
     },
@@ -62878,14 +62908,58 @@
           ]
         },
         {
-          "enable": false,
           "key": 18,
+          "name": "功能类-自动领取VIP成长值",
+          "desc": "自动点击[一键领取]领取VIP成长值",
+          "rules": [
+            {
+              "fastQuery": true,
+              "actionMaximum": 1,
+              "resetMatch": "app",
+              "activityIds": ".music.biz.rn.activity.MainProcessRNActivity",
+              "matches": "@[clickable=true] >2 [text^=\"一键领取\"]",
+              "snapshotUrls": "https://i.gkd.li/i/34813013",
+              "exampleUrls": "https://e.gkd.li/69bfc2ea-b438-4fb4-9682-a641a35ada9b"
+            }
+          ]
+        },
+        {
+          "key": 19,
+          "name": "功能类-自动打卡并关闭黑胶乐签",
+          "desc": "①点击[打卡] ②关闭黑胶乐签弹窗",
+          "fastQuery": true,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "rules": [
+            {
+              "key": 126,
+              "name": "①点击[打卡]",
+              "activityIds": ".music.biz.rn.activity.MainProcessRNActivity",
+              "matches": "@[clickable=true] >2 [text=\"打卡\"]",
+              "snapshotUrls": "https://i.gkd.li/i/34813013",
+              "exampleUrls": "https://e.gkd.li/69bfc2ea-b438-4fb4-9682-a641a35ada9b"
+            },
+            {
+              "key": 127,
+              "name": "②关闭黑胶乐签弹窗",
+              "preKeys": [
+                126
+              ],
+              "activityIds": ".music.biz.rn.activity.MainProcessLayerReactNativeActivity",
+              "matches": "@[clickable=true] - [text=\"黑胶乐签\"]",
+              "snapshotUrls": "https://i.gkd.li/i/34813443"
+            }
+          ]
+        },
+        {
+          "enable": false,
+          "key": 20,
           "name": "分段广告",
           "desc": "有二次确认弹窗",
           "fastQuery": true,
           "rules": [
             {
-              "key": 126,
+              "key": 128,
               "name": "卡片式广告",
               "activityIds": [
                 "com.netease.cloudmusic.activity.MainActivity",
@@ -62907,13 +62981,13 @@
               ]
             },
             {
-              "key": 127,
+              "key": 129,
               "activityIds": "com.netease.cloudmusic.activity.MainActivity",
               "matches": "[vid=\"tag_ad_banner\"]",
               "snapshotUrls": "https://i.gkd.li/import/13927753"
             },
             {
-              "key": 128,
+              "key": 130,
               "name": "信息流广告-评论区内容推荐",
               "activityIds": "com.netease.cloudmusic.music.biz.comment.activity.CommentActivity",
               "matches": "@ViewGroup[clickable=true][childCount=2] > ImageView - ViewGroup > TextView[text.length>0]",
@@ -62924,10 +62998,10 @@
             },
             {
               "preKeys": [
-                126,
-                127
+                128,
+                129
               ],
-              "key": 129,
+              "key": 131,
               "activityIds": [
                 "com.netease.cloudmusic.module.ad.feedback.AdFeedbackBottomSheet",
                 "com.netease.cloudmusic.music.biz.search.activity.SearchActivity",
@@ -62941,8 +63015,8 @@
               ]
             },
             {
-              "preKeys": 128,
-              "key": 130,
+              "preKeys": 130,
+              "key": 132,
               "activityIds": "com.netease.cloudmusic.music.biz.comment.activity.CommentActivity",
               "matches": "@[id=\"com.netease.cloudmusic:id/artist_container\"] > [text=\"不感兴趣\"]",
               "snapshotUrls": "https://i.gkd.li/import/13526712"
@@ -62950,7 +63024,7 @@
           ]
         },
         {
-          "key": 19,
+          "key": 21,
           "name": "局部广告-我的页面-中间滚动广告",
           "fastQuery": true,
           "activityIds": [
@@ -62963,7 +63037,7 @@
           "enable": false
         },
         {
-          "key": 20,
+          "key": 22,
           "name": "功能类-主页-免费听歌",
           "fastQuery": true,
           "activityIds": [
@@ -62977,7 +63051,7 @@
         },
         {
           "enable": false,
-          "key": 21,
+          "key": 23,
           "name": "全屏广告-VIP 弹窗",
           "fastQuery": true,
           "matchTime": 10000,
@@ -62985,7 +63059,7 @@
           "resetMatch": "app",
           "rules": [
             {
-              "key": 131,
+              "key": 133,
               "activityIds": "com.netease.cloudmusic.music.biz.rn.activity.MainProcessLayerReactNativeActivity",
               "matches": "ImageView < @ViewGroup[clickable=true] <2 ViewGroup < ViewGroup + ScrollView [text=\"会员套餐\"]",
               "snapshotUrls": [
@@ -62994,28 +63068,28 @@
               ]
             },
             {
-              "key": 132,
+              "key": 134,
               "name": "专属优惠-VIP续费弹窗",
               "activityIds": "com.netease.cloudmusic.activity.MainActivity",
               "matches": "@ImageView - ViewGroup > [text=\"解锁千万级会员曲库\"]",
               "snapshotUrls": "https://i.gkd.li/import/13228955"
             },
             {
-              "key": 133,
+              "key": 135,
               "name": "解锁更高音质",
               "activityIds": "com.netease.cloudmusic.activity.PlayerActivity",
               "matches": "@ImageView -2 ViewGroup [text=\"解锁更高音质\"]",
               "snapshotUrls": "https://i.gkd.li/import/13230603"
             },
             {
-              "key": 134,
+              "key": 136,
               "name": "黑胶过期-VIP续费弹窗",
               "activityIds": "com.netease.cloudmusic.music.biz.rn.activity.MainProcessLayerReactNativeActivity",
               "matches": "ImageView < @ViewGroup -3 ViewGroup [text=\"您的黑胶VIP已过期\"]",
               "snapshotUrls": "https://i.gkd.li/import/13230605"
             },
             {
-              "key": 135,
+              "key": 137,
               "name": "搭配会员音效-VIP支付弹窗",
               "activityIds": "com.netease.cloudmusic.activity.MainActivity",
               "matches": "[text*=\"搭配会员音效\"] + @ViewGroup[childCount=1] > ImageView",
@@ -63025,14 +63099,14 @@
         },
         {
           "enable": false,
-          "key": 22,
+          "key": 24,
           "name": "局部广告-播放界面广告",
           "desc": "右上角VIP小悬浮、巨幅卡片式广告",
           "fastQuery": true,
           "activityIds": "com.netease.cloudmusic.activity.PlayerActivity",
           "rules": [
             {
-              "key": 136,
+              "key": 138,
               "name": "右上角VIP小悬浮",
               "matches": "TextView[text!=null] + ImageView[id=\"com.netease.cloudmusic:id/close\"]",
               "snapshotUrls": [
@@ -63045,31 +63119,31 @@
               ]
             },
             {
-              "key": 137,
+              "key": 139,
               "name": "巨幅卡片式广告",
               "matches": "[text^=\"跳过广告\"][text.length<=10]",
               "snapshotUrls": "https://i.gkd.li/import/13527105"
             },
             {
-              "key": 138,
+              "key": 140,
               "name": "巨幅卡片广告1",
               "matches": "[text^=\"跳过广告\"][text.length<=10]",
               "snapshotUrls": "https://i.gkd.li/i/13527105"
             },
             {
-              "key": 139,
+              "key": 141,
               "name": "巨幅卡片广告2",
               "matches": "@TextView[text!=null][clickable=true][visibleToUser=true] - ViewGroup > [text*=\"广告\"]",
               "snapshotUrls": "https://i.gkd.li/i/14045424"
             },
             {
-              "key": 140,
+              "key": 142,
               "name": "巨幅卡片广告3",
               "matches": "[vid=\"iv_ad_close\"][clickable=true][visibleToUser=true][focusable=true]",
               "snapshotUrls": "https://i.gkd.li/i/15282417"
             },
             {
-              "key": 141,
+              "key": 143,
               "name": "右上角 VIP 小悬浮",
               "matches": "TextView[text!=null] + ImageView[id=\"com.netease.cloudmusic:id/close\"]",
               "snapshotUrls": [
@@ -63079,13 +63153,13 @@
               ]
             },
             {
-              "key": 142,
+              "key": 144,
               "name": "巨幅卡片式广告1",
               "matches": "[text^=\"跳过广告\"][text.length<=10]",
               "snapshotUrls": "https://i.gkd.li/i/13527105"
             },
             {
-              "key": 143,
+              "key": 145,
               "name": "巨幅卡片式广告2",
               "matches": "@TextView[index=2] <3 ViewGroup[childCount=3] <<n [id=\"com.netease.cloudmusic:id/container\"]",
               "snapshotUrls": "https://i.gkd.li/i/14045424"
@@ -63093,7 +63167,7 @@
           ]
         },
         {
-          "key": 23,
+          "key": 25,
           "name": "局部广告-发现-顶部视频广告",
           "desc": "自动点击跳过。",
           "fastQuery": true,
@@ -63107,7 +63181,7 @@
           "enable": false
         },
         {
-          "key": 24,
+          "key": 26,
           "name": "功能类-免费听弹窗",
           "actionMaximum": 1,
           "resetMatch": "app",
@@ -63118,18 +63192,18 @@
           "enable": false
         },
         {
-          "key": 25,
+          "key": 27,
           "name": "全屏广告-功能升级弹窗",
           "rules": [
             {
-              "key": 144,
+              "key": 146,
               "name": "【我的】升级-下次再说",
               "activityIds": "com.netease.cloudmusic.activity.MainActivity",
               "matches": "[text=\"下次再说\"] < ViewGroup",
               "snapshotUrls": "https://i.gkd.li/import/13804541"
             },
             {
-              "key": 145,
+              "key": 147,
               "name": "全屏广告-【社区广场】升级-点击右上角x",
               "activityIds": "com.netease.cloudmusic.music.biz.rn.activity.LayerReactNativeActivity",
               "matches": "[text=\"社区广场全新升级\"] + ViewGroup > ImageView",
@@ -63139,7 +63213,7 @@
           "enable": false
         },
         {
-          "key": 26,
+          "key": 28,
           "fastQuery": true,
           "name": "全屏广告-播放页赞赏好音乐弹窗",
           "desc": "点击X",
@@ -63153,7 +63227,7 @@
           "enable": false
         },
         {
-          "key": 27,
+          "key": 29,
           "name": "局部广告-发现页顶部视频广告",
           "desc": "自动点击跳过。",
           "fastQuery": true,
@@ -63167,7 +63241,7 @@
           "enable": false
         },
         {
-          "key": 28,
+          "key": 30,
           "name": "分段广告-评论区广告",
           "desc": "点击[关闭]-点击[不感兴趣]",
           "fastQuery": true,
@@ -63177,13 +63251,13 @@
           ],
           "rules": [
             {
-              "key": 146,
+              "key": 148,
               "name": "点击关闭-1",
               "matches": "[vid=\"commentVHRootId\"][visibleToUser=true] - [vid=\"commentVHRootId\"] [vid=\"closeAction\"][clickable=true]",
               "snapshotUrls": "https://i.gkd.li/i/14549836"
             },
             {
-              "key": 147,
+              "key": 149,
               "name": "点击关闭-2",
               "matches": "[vid=\"commentVHRootId\"][visibleToUser=true] - [vid=\"commentAdContainer\"] >n [vid=\"adTagView\"]",
               "snapshotUrls": [
@@ -63196,9 +63270,9 @@
             },
             {
               "preKeys": [
-                147
+                149
               ],
-              "key": 148,
+              "key": 150,
               "name": "点击[直接关闭]",
               "matches": "[text=\"直接关闭\"]",
               "snapshotUrls": [
@@ -63208,7 +63282,7 @@
             },
             {
               "preKeys": [
-                146
+                148
               ],
               "key": 99,
               "name": "点击[不感兴趣]",
@@ -63219,7 +63293,7 @@
           "enable": false
         },
         {
-          "key": 29,
+          "key": 31,
           "name": "全屏广告-[获得新徽章]弹窗",
           "desc": "点击关闭",
           "matchTime": 10000,
@@ -63227,7 +63301,7 @@
           "resetMatch": "app",
           "rules": [
             {
-              "key": 149,
+              "key": 151,
               "fastQuery": true,
               "activityIds": ".activity.MainActivity",
               "matches": "@ImageView[clickable=true] +7 [text=\"查看我的勋章\"]",
@@ -63235,7 +63309,7 @@
               "snapshotUrls": "https://i.gkd.li/i/14926750"
             },
             {
-              "key": 150,
+              "key": 152,
               "fastQuery": true,
               "activityIds": ".activity.MainActivity",
               "matches": "ImageView[visibleToUser=true][childCount=0] < @ViewGroup[clickable=true][childCount=1] + [text$=\"获得该徽章\"]",
@@ -63253,18 +63327,18 @@
           "enable": false
         },
         {
-          "key": 30,
+          "key": 32,
           "name": "功能类-功能升级弹窗",
           "rules": [
             {
-              "key": 151,
+              "key": 153,
               "name": "\"我的\"升级-下次再说",
               "activityIds": "com.netease.cloudmusic.activity.MainActivity",
               "matches": "[text=\"下次再说\"] < ViewGroup",
               "snapshotUrls": "https://i.gkd.li/i/13804541"
             },
             {
-              "key": 152,
+              "key": 154,
               "name": "\"社区广场\"升级-点击右上角x",
               "activityIds": "com.netease.cloudmusic.music.biz.rn.activity.LayerReactNativeActivity",
               "matches": "[text=\"社区广场全新升级\"] + ViewGroup > ImageView",
@@ -116691,19 +116765,18 @@
                 88
               ],
               "key": 50,
-              "name": "点击[不感兴趣]/[相似内容过多]",
-              "matches": "@[clickable=true] > [text=\"此类内容过多\" || text=\"相似内容过多\" || text=\"不感兴趣\" || text=\"up主不感兴趣\" || text=\"对该up的直播不感兴趣\" || text=\"我不想看\" || text=\"引人不适\"]",
+              "name": "②点击[不感兴趣/内容过多]等",
+              "matches": "@[clickable=true] > [text=\"此类内容过多\" || text=\"相似内容过多\" || text=\"不感兴趣\" || text=\"up主不感兴趣\" || text=\"对该up的直播不感兴趣\" || text=\"我不想看\" || text=\"引人不适\" || text=\"不喜欢此商品\"]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/13625309",
                 "https://i.gkd.li/i/13742257",
                 "https://i.gkd.li/i/14155801",
-                "https://i.gkd.li/i/14155272",
-                "https://i.gkd.li/i/17428471",
                 "https://i.gkd.li/i/18274380",
                 "https://i.gkd.li/i/18292926",
                 "https://i.gkd.li/i/20710223",
                 "https://i.gkd.li/i/23687208",
-                "https://i.gkd.li/i/24836772"
+                "https://i.gkd.li/i/24836772",
+                "https://i.gkd.li/i/34849877"
               ],
               "excludeSnapshotUrls": [
                 "https://i.gkd.li/i/18292929",
@@ -116715,12 +116788,12 @@
                 50
               ],
               "key": 70,
-              "matches": "@[clickable=true] > [text$=\"内容过多\" || text=\"不喜欢此商品\" || text^=\"不想看\"][visibleToUser=true]",
+              "name": "③点击[xx内容过多]",
+              "matches": "@FrameLayout[clickable=true] > [text=\"此类内容过多\" || text=\"相似内容过多\"][visibleToUser=true]",
               "exampleUrls": "https://e.gkd.li/2aba6082-1047-464e-959c-82ee62e492aa",
               "snapshotUrls": [
                 "https://i.gkd.li/i/20718890",
-                "https://i.gkd.li/i/20720187",
-                "https://i.gkd.li/i/34799465"
+                "https://i.gkd.li/i/20720187"
               ]
             },
             {

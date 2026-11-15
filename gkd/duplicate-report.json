@@ -17,7 +17,7 @@
     "enable_disabled_group": 945
   },
   "referenceRepairCounts": {
-    "duplicateKeyReassigned": 2263,
+    "duplicateKeyReassigned": 2265,
     "ambiguousCrossGroupReferenceResolvedToFirst": 19,
     "keptDanglingReference": 7
   },
@@ -29030,16 +29030,16 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.netease.cloudmusic",
-        "group": "分段广告",
-        "rule": "卡片式广告",
+        "group": "功能类-自动打卡并关闭黑胶乐签",
+        "rule": "①点击[打卡]",
         "oldKey": 0,
         "newKey": 126
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.netease.cloudmusic",
-        "group": "分段广告",
-        "rule": null,
+        "group": "功能类-自动打卡并关闭黑胶乐签",
+        "rule": "②关闭黑胶乐签弹窗",
         "oldKey": 1,
         "newKey": 127
       },
@@ -29047,8 +29047,8 @@
         "type": "duplicateKeyReassigned",
         "scope": "com.netease.cloudmusic",
         "group": "分段广告",
-        "rule": "信息流广告-评论区内容推荐",
-        "oldKey": 2,
+        "rule": "卡片式广告",
+        "oldKey": 0,
         "newKey": 128
       },
       {
@@ -29056,8 +29056,24 @@
         "scope": "com.netease.cloudmusic",
         "group": "分段广告",
         "rule": null,
-        "oldKey": 90,
+        "oldKey": 1,
         "newKey": 129
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.netease.cloudmusic",
+        "group": "分段广告",
+        "rule": "信息流广告-评论区内容推荐",
+        "oldKey": 2,
+        "newKey": 130
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.netease.cloudmusic",
+        "group": "分段广告",
+        "rule": null,
+        "oldKey": 90,
+        "newKey": 131
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29065,7 +29081,7 @@
         "group": "分段广告",
         "rule": null,
         "oldKey": 91,
-        "newKey": 130
+        "newKey": 132
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29073,7 +29089,7 @@
         "group": "全屏广告-VIP 弹窗",
         "rule": null,
         "oldKey": 0,
-        "newKey": 131
+        "newKey": 133
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29081,7 +29097,7 @@
         "group": "全屏广告-VIP 弹窗",
         "rule": "专属优惠-VIP续费弹窗",
         "oldKey": 1,
-        "newKey": 132
+        "newKey": 134
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29089,7 +29105,7 @@
         "group": "全屏广告-VIP 弹窗",
         "rule": "解锁更高音质",
         "oldKey": 2,
-        "newKey": 133
+        "newKey": 135
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29097,7 +29113,7 @@
         "group": "全屏广告-VIP 弹窗",
         "rule": "黑胶过期-VIP续费弹窗",
         "oldKey": 3,
-        "newKey": 134
+        "newKey": 136
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29105,7 +29121,7 @@
         "group": "全屏广告-VIP 弹窗",
         "rule": "搭配会员音效-VIP支付弹窗",
         "oldKey": 4,
-        "newKey": 135
+        "newKey": 137
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29113,7 +29129,7 @@
         "group": "局部广告-播放界面广告",
         "rule": "右上角VIP小悬浮",
         "oldKey": 0,
-        "newKey": 136
+        "newKey": 138
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29121,7 +29137,7 @@
         "group": "局部广告-播放界面广告",
         "rule": "巨幅卡片式广告",
         "oldKey": 1,
-        "newKey": 137
+        "newKey": 139
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29129,7 +29145,7 @@
         "group": "局部广告-播放界面广告",
         "rule": "巨幅卡片广告1",
         "oldKey": 2,
-        "newKey": 138
+        "newKey": 140
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29137,7 +29153,7 @@
         "group": "局部广告-播放界面广告",
         "rule": "巨幅卡片广告2",
         "oldKey": 3,
-        "newKey": 139
+        "newKey": 141
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29145,7 +29161,7 @@
         "group": "局部广告-播放界面广告",
         "rule": "巨幅卡片广告3",
         "oldKey": 4,
-        "newKey": 140
+        "newKey": 142
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29153,7 +29169,7 @@
         "group": "局部广告-播放界面广告",
         "rule": "右上角 VIP 小悬浮",
         "oldKey": 5,
-        "newKey": 141
+        "newKey": 143
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29161,7 +29177,7 @@
         "group": "局部广告-播放界面广告",
         "rule": "巨幅卡片式广告1",
         "oldKey": 6,
-        "newKey": 142
+        "newKey": 144
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29169,7 +29185,7 @@
         "group": "局部广告-播放界面广告",
         "rule": "巨幅卡片式广告2",
         "oldKey": 7,
-        "newKey": 143
+        "newKey": 145
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29177,7 +29193,7 @@
         "group": "全屏广告-功能升级弹窗",
         "rule": "【我的】升级-下次再说",
         "oldKey": 0,
-        "newKey": 144
+        "newKey": 146
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29185,7 +29201,7 @@
         "group": "全屏广告-功能升级弹窗",
         "rule": "全屏广告-【社区广场】升级-点击右上角x",
         "oldKey": 1,
-        "newKey": 145
+        "newKey": 147
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29193,7 +29209,7 @@
         "group": "分段广告-评论区广告",
         "rule": "点击关闭-1",
         "oldKey": 0,
-        "newKey": 146
+        "newKey": 148
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29201,7 +29217,7 @@
         "group": "分段广告-评论区广告",
         "rule": "点击关闭-2",
         "oldKey": 2,
-        "newKey": 147
+        "newKey": 149
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29209,7 +29225,7 @@
         "group": "分段广告-评论区广告",
         "rule": "点击[直接关闭]",
         "oldKey": 98,
-        "newKey": 148
+        "newKey": 150
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29217,7 +29233,7 @@
         "group": "全屏广告-[获得新徽章]弹窗",
         "rule": null,
         "oldKey": 0,
-        "newKey": 149
+        "newKey": 151
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29225,7 +29241,7 @@
         "group": "全屏广告-[获得新徽章]弹窗",
         "rule": null,
         "oldKey": 1,
-        "newKey": 150
+        "newKey": 152
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29233,7 +29249,7 @@
         "group": "功能类-功能升级弹窗",
         "rule": "\"我的\"升级-下次再说",
         "oldKey": 0,
-        "newKey": 151
+        "newKey": 153
       },
       {
         "type": "duplicateKeyReassigned",
@@ -29241,7 +29257,7 @@
         "group": "功能类-功能升级弹窗",
         "rule": "\"社区广场\"升级-点击右上角x",
         "oldKey": 1,
-        "newKey": 152
+        "newKey": 154
       },
       {
         "type": "duplicateKeyReassigned",
@@ -39650,7 +39666,7 @@
       }
     ]
   },
-  "referenceRepairsTotal": 2289,
+  "referenceRepairsTotal": 2291,
   "disabledGroupAudit": [
     {
       "app": "com.duoduo.cimoc.su",

@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026111501,
+  "version": 2026111601,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -78305,12 +78305,14 @@
           "rules": [
             {
               "key": 10,
-              "matches": "@[clickable=true][text=\"不感兴趣\"] +(1,2) FlattenUIText[text=\"不感兴趣\"]",
+              "matches": "@[clickable=true][text=\"不感兴趣\"] +(1,2,5) FlattenUIText[text=\"不感兴趣\"]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/13800207",
                 "https://i.gkd.li/i/13996724",
-                "https://i.gkd.li/i/20035670"
-              ]
+                "https://i.gkd.li/i/20035670",
+                "https://i.gkd.li/i/34876101"
+              ],
+              "exampleUrls": "https://e.gkd.li/f967dcd3-2196-4095-b5f0-a2cae15bdf23"
             },
             {
               "key": 11,
@@ -81742,8 +81744,11 @@
               "name": "首页",
               "matchRoot": true,
               "activityIds": "com.taobao.tao.welcome.Welcome",
-              "matches": "[desc.length=4] < * + @[clickable=true] > [text=\"뉜\"]",
-              "snapshotUrls": "https://i.gkd.li/i/25658605",
+              "matches": "FrameLayout[childCount=4] > ImageView + LinearLayout[childCount=2] + [childCount=1] + @[clickable=true] > [text=\"뉜\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/25658605",
+                "https://i.gkd.li/i/34881835"
+              ],
               "exampleUrls": "https://e.gkd.li/97345886-418c-4a43-a5e2-014ee822b6a2"
             }
           ]
@@ -82152,8 +82157,33 @@
           ]
         },
         {
-          "enable": false,
           "key": 24,
+          "name": "功能类-删除订单直接确认",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": "com.taobao.tao.welcome.Welcome",
+              "matches": "@[desc=\"确定\"][clickable=true] <2 [childCount=2] -3 [desc=\"确认删除订单?\"][visibleToUser=true] < [childCount=4] <<(6-n) [id=\"android:id/content\"]",
+              "snapshotUrls": "https://i.gkd.li/i/34883506",
+              "exampleUrls": "https://e.gkd.li/144c8e02-239b-4a68-904b-5a923a6408dd"
+            }
+          ]
+        },
+        {
+          "key": 25,
+          "name": "评价提示-商品评论区评价满意度",
+          "desc": "评论插入满意度卡片 -> 关闭",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": "com.taobao.android.detail.alittdetail.TTDetailActivity",
+              "matches": "@Button[desc=\"关闭\"][clickable=true] - View[desc=\"你对看到的评价内容满意吗？\"] <n View[childCount>8] <<(5-n) View[childCount=3] <<(5-n) [vid=\"dialog_fragment_layout_container\"]"
+            }
+          ]
+        },
+        {
+          "enable": false,
+          "key": 26,
           "name": "全屏广告-限时福利弹窗",
           "rules": [
             {
@@ -82190,7 +82220,7 @@
           ]
         },
         {
-          "key": 25,
+          "key": 27,
           "name": "局部广告-消息页面-热门活动卡片",
           "activityIds": "com.taobao.tao.welcome.Welcome",
           "rules": [],
@@ -82203,7 +82233,7 @@
         },
         {
           "enable": false,
-          "key": 26,
+          "key": 28,
           "name": "全屏广告-开启系统通知提示",
           "desc": "自动点击关闭",
           "actionMaximum": 1,
@@ -82224,7 +82254,7 @@
         },
         {
           "enable": false,
-          "key": 27,
+          "key": 29,
           "name": "全屏广告-各级页面-添加到首页弹窗",
           "desc": "自动点击退出",
           "fastQuery": true,
@@ -82239,7 +82269,7 @@
           ]
         },
         {
-          "key": 28,
+          "key": 30,
           "name": "全屏广告-视频页面-活动弹窗",
           "activityIds": "com.taobao.tao.welcome.Welcome",
           "rules": [],
@@ -82248,7 +82278,7 @@
         },
         {
           "enable": false,
-          "key": 29,
+          "key": 31,
           "name": "功能类-视频页面-签到弹窗",
           "activityIds": "com.taobao.tao.welcome.Welcome",
           "rules": [],
@@ -82256,7 +82286,7 @@
         },
         {
           "enable": false,
-          "key": 30,
+          "key": 32,
           "name": "全屏广告-小额免密支付弹窗",
           "desc": "点击关闭",
           "fastQuery": true,
@@ -82266,7 +82296,7 @@
         },
         {
           "enable": false,
-          "key": 31,
+          "key": 33,
           "name": "全屏广告-将小组件添加到手机桌面",
           "desc": "点击取消",
           "activityIds": "com.alibaba.triver.container.TriverMainActivity",
@@ -82280,7 +82310,7 @@
         },
         {
           "enable": false,
-          "key": 32,
+          "key": 34,
           "name": "全屏广告-开启悬浮窗权限",
           "desc": "点击“否”",
           "activityIds": "com.taobao.android.detail2.core.framework.floatwindow.permission.PermissionActivity",
@@ -82299,7 +82329,7 @@
           "snapshotUrls": "https://i.gkd.li/import/13588165"
         },
         {
-          "key": 33,
+          "key": 35,
           "name": "全屏广告-花呗升级报送征信",
           "fastQuery": true,
           "matchTime": 10000,
@@ -82337,7 +82367,7 @@
           "enable": false
         },
         {
-          "key": 34,
+          "key": 36,
           "name": "全屏广告-首页-签到奖励",
           "desc": "点击 X",
           "fastQuery": true,
@@ -82352,7 +82382,7 @@
           "enable": false
         },
         {
-          "key": 35,
+          "key": 37,
           "name": "局部广告-消息页面热门活动卡片",
           "rules": [
             {
@@ -82368,7 +82398,7 @@
           "enable": false
         },
         {
-          "key": 36,
+          "key": 38,
           "name": "全屏广告-抢天降补贴弹窗",
           "desc": "点击X",
           "rules": [
@@ -82382,7 +82412,7 @@
           "enable": false
         },
         {
-          "key": 37,
+          "key": 39,
           "name": "全屏广告-[「0元下单」权益]弹窗",
           "desc": "点击关闭",
           "rules": [
@@ -82397,7 +82427,7 @@
           "enable": false
         },
         {
-          "key": 38,
+          "key": 40,
           "name": "功能类-关闭小额免密支付开关",
           "actionMaximum": 1,
           "fastQuery": true,
@@ -82408,7 +82438,7 @@
           "enable": false
         },
         {
-          "key": 39,
+          "key": 41,
           "name": "功能类-各级页面-添加到首页弹窗",
           "desc": "自动点击退出",
           "fastQuery": true,
@@ -82424,7 +82454,7 @@
           "enable": false
         },
         {
-          "key": 40,
+          "key": 42,
           "name": "功能类-小额免密支付弹窗",
           "desc": "点击关闭",
           "fastQuery": true,
@@ -82434,7 +82464,7 @@
           "enable": false
         },
         {
-          "key": 41,
+          "key": 43,
           "name": "功能类-搜索结果-自动点击反馈理由",
           "activityIds": "com.taobao.search.sf.MainSearchResultActivity",
           "rules": [],
@@ -99993,20 +100023,29 @@
           "desc": "适合观看细节场景需求",
           "fastQuery": true,
           "actionMaximum": 1,
-          "actionDelay": 3000,
           "activityIds": "com.xingin.matrix.detail.activity.DetailFeedActivity",
           "rules": [
             {
               "key": 13,
-              "matches": "[vid=\"layer_player\"][visibleToUser=true]",
+              "name": "长按视频",
+              "actionDelay": 1000,
+              "matches": [
+                "[vid=\"area_progress\"][visibleToUser=true][desc.get(4).toInt()=0 && desc.get(7)=\"秒\" && desc.get(6).toInt()<3]",
+                "[vid=\"layer_player\"][visibleToUser=true]"
+              ],
               "action": "longClick",
-              "snapshotUrls": "https://i.gkd.li/i/25854264",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/34879203",
+                "https://i.gkd.li/i/25854264",
+                "https://i.gkd.li/i/34880084"
+              ],
               "exampleUrls": "https://e.gkd.li/3d621ea3-af7b-49cf-95bb-4fd54fcc5b54"
             },
             {
               "preKeys": [
                 13
               ],
+              "name": "点\"倍速",
               "matches": "[vid=\"video_speed_setting_ll\"] > [vid=\"speed_selection_1\"][visibleToUser=true]",
               "snapshotUrls": "https://i.gkd.li/i/25854394",
               "exampleUrls": [
@@ -100022,26 +100061,24 @@
           "desc": "适合日常效率需求",
           "fastQuery": true,
           "actionMaximum": 1,
-          "actionDelay": 3000,
           "activityIds": "com.xingin.matrix.detail.activity.DetailFeedActivity",
           "rules": [
             {
               "key": 14,
-              "matches": "[vid=\"layer_player\"][visibleToUser=true]",
-              "action": "longClick",
-              "snapshotUrls": "https://i.gkd.li/i/25854264",
-              "exampleUrls": "https://e.gkd.li/3d621ea3-af7b-49cf-95bb-4fd54fcc5b54"
+              "name": "长按视频",
+              "actionDelay": 1000,
+              "matches": [
+                "[vid=\"area_progress\"][visibleToUser=true][desc.get(4).toInt()=0 && desc.get(7)=\"秒\" && desc.get(6).toInt()<3]",
+                "[vid=\"layer_player\"][visibleToUser=true]"
+              ],
+              "action": "longClick"
             },
             {
               "preKeys": [
                 14
               ],
-              "matches": "[vid=\"video_speed_setting_ll\"] > [vid=\"speed_selection_3\"][visibleToUser=true]",
-              "snapshotUrls": "https://i.gkd.li/i/25854394",
-              "exampleUrls": [
-                "https://e.gkd.li/3d621ea3-af7b-49cf-95bb-4fd54fcc5b54",
-                "https://e.gkd.li/65ae2f11-3412-4f0a-a255-ffa5916bd9d9"
-              ]
+              "name": "点\"倍速",
+              "matches": "[vid=\"video_speed_setting_ll\"] > [vid=\"speed_selection_3\"][visibleToUser=true]"
             }
           ]
         },
@@ -100050,26 +100087,24 @@
           "name": "功能类-自动倍速⏩x1.5⚠️五选一",
           "fastQuery": true,
           "actionMaximum": 1,
-          "actionDelay": 3000,
           "activityIds": "com.xingin.matrix.detail.activity.DetailFeedActivity",
           "rules": [
             {
               "key": 15,
-              "matches": "[vid=\"layer_player\"][visibleToUser=true]",
-              "action": "longClick",
-              "snapshotUrls": "https://i.gkd.li/i/25854264",
-              "exampleUrls": "https://e.gkd.li/3d621ea3-af7b-49cf-95bb-4fd54fcc5b54"
+              "name": "长按视频",
+              "actionDelay": 1000,
+              "matches": [
+                "[vid=\"area_progress\"][visibleToUser=true][desc.get(4).toInt()=0 && desc.get(7)=\"秒\" && desc.get(6).toInt()<3]",
+                "[vid=\"layer_player\"][visibleToUser=true]"
+              ],
+              "action": "longClick"
             },
             {
               "preKeys": [
                 15
               ],
-              "matches": "[vid=\"video_speed_setting_ll\"] > [vid=\"speed_selection_4\"][visibleToUser=true]",
-              "snapshotUrls": "https://i.gkd.li/i/25854394",
-              "exampleUrls": [
-                "https://e.gkd.li/3d621ea3-af7b-49cf-95bb-4fd54fcc5b54",
-                "https://e.gkd.li/65ae2f11-3412-4f0a-a255-ffa5916bd9d9"
-              ]
+              "name": "点\"倍速",
+              "matches": "[vid=\"video_speed_setting_ll\"] > [vid=\"speed_selection_4\"][visibleToUser=true]"
             }
           ]
         },
@@ -100078,26 +100113,24 @@
           "name": "功能类-自动倍速⏩x2.0⚠️五选一",
           "fastQuery": true,
           "actionMaximum": 1,
-          "actionDelay": 3000,
           "activityIds": "com.xingin.matrix.detail.activity.DetailFeedActivity",
           "rules": [
             {
               "key": 16,
-              "matches": "[vid=\"layer_player\"][visibleToUser=true]",
-              "action": "longClick",
-              "snapshotUrls": "https://i.gkd.li/i/25854264",
-              "exampleUrls": "https://e.gkd.li/3d621ea3-af7b-49cf-95bb-4fd54fcc5b54"
+              "name": "长按视频",
+              "actionDelay": 1000,
+              "matches": [
+                "[vid=\"area_progress\"][visibleToUser=true][desc.get(4).toInt()=0 && desc.get(7)=\"秒\" && desc.get(6).toInt()<3]",
+                "[vid=\"layer_player\"][visibleToUser=true]"
+              ],
+              "action": "longClick"
             },
             {
               "preKeys": [
                 16
               ],
-              "matches": "[vid=\"video_speed_setting_ll\"] > [vid=\"speed_selection_5\"][visibleToUser=true]",
-              "snapshotUrls": "https://i.gkd.li/i/25854394",
-              "exampleUrls": [
-                "https://e.gkd.li/3d621ea3-af7b-49cf-95bb-4fd54fcc5b54",
-                "https://e.gkd.li/65ae2f11-3412-4f0a-a255-ffa5916bd9d9"
-              ]
+              "name": "点\"倍速",
+              "matches": "[vid=\"video_speed_setting_ll\"] > [vid=\"speed_selection_5\"][visibleToUser=true]"
             }
           ]
         },
@@ -100107,26 +100140,24 @@
           "desc": "Max效率需求",
           "fastQuery": true,
           "actionMaximum": 1,
-          "actionDelay": 3000,
           "activityIds": "com.xingin.matrix.detail.activity.DetailFeedActivity",
           "rules": [
             {
               "key": 17,
-              "matches": "[vid=\"layer_player\"][visibleToUser=true]",
-              "action": "longClick",
-              "snapshotUrls": "https://i.gkd.li/i/25854264",
-              "exampleUrls": "https://e.gkd.li/3d621ea3-af7b-49cf-95bb-4fd54fcc5b54"
+              "name": "长按视频",
+              "actionDelay": 1000,
+              "matches": [
+                "[vid=\"area_progress\"][visibleToUser=true][desc.get(4).toInt()=0 && desc.get(7)=\"秒\" && desc.get(6).toInt()<3]",
+                "[vid=\"layer_player\"][visibleToUser=true]"
+              ],
+              "action": "longClick"
             },
             {
               "preKeys": [
                 17
               ],
-              "matches": "[vid=\"video_speed_setting_ll\"] >2 [vid=\"speed_selection_6\"][visibleToUser=true]",
-              "snapshotUrls": "https://i.gkd.li/i/25854394",
-              "exampleUrls": [
-                "https://e.gkd.li/3d621ea3-af7b-49cf-95bb-4fd54fcc5b54",
-                "https://e.gkd.li/65ae2f11-3412-4f0a-a255-ffa5916bd9d9"
-              ]
+              "name": "点\"倍速",
+              "matches": "[vid=\"video_speed_setting_ll\"] >2 [vid=\"speed_selection_6\"][visibleToUser=true]"
             }
           ]
         },
@@ -100192,6 +100223,23 @@
           ]
         },
         {
+          "key": 18,
+          "name": "功能类-评论自动翻译",
+          "desc": "⚠️有可能触发[回复评论]情况,新版app暂无问题",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": "com.xingin.matrix.notedetail.NoteDetailActivity",
+              "matches": "[vid=\"newTimePoiIpTransTv\"][text$=\"回复 翻译\"][visibleToUser=true]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/26643975",
+                "https://i.gkd.li/i/34877018"
+              ],
+              "exampleUrls": "https://e.gkd.li/fc8d70d4-f743-45df-a9d2-f343e419ccd9"
+            }
+          ]
+        },
+        {
           "key": 19,
           "name": "功能类-自动关闭截屏弹窗",
           "desc": "点击x掉",
@@ -100213,6 +100261,24 @@
         },
         {
           "key": 20,
+          "name": "权限提示-定位权限",
+          "fastQuery": true,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "rules": [
+            {
+              "key": 19,
+              "activityIds": [
+                ".index.v2.IndexActivityV2"
+              ],
+              "matches": "[vid=\"homepageNearbyPermissionTitle\"][visibleToUser=true] +3 [vid=\"homepageNearbyPermissionCancel\"][clickable=true]",
+              "snapshotUrls": "https://i.gkd.li/i/34877280",
+              "exampleUrls": "https://e.gkd.li/515fd995-ed06-4508-b1fb-a55cdd8c7888"
+            }
+          ]
+        },
+        {
+          "key": 21,
           "name": "全屏广告-通知权限弹窗",
           "fastQuery": true,
           "actionMaximum": 1,
@@ -100242,14 +100308,14 @@
         },
         {
           "enable": false,
-          "key": 21,
+          "key": 22,
           "name": "局部广告-信息流广告",
           "desc": "长按【赞助】/【广告】标识的卡片-点【不感兴趣】",
           "fastQuery": true,
           "activityIds": "com.xingin.xhs.index.v2.IndexActivityV2",
           "rules": [
             {
-              "key": 19,
+              "key": 20,
               "action": "longClick",
               "name": "长按【赞助】/【广告】卡片",
               "matches": "@FrameLayout[clickable=true] > LinearLayout TextView[text=\"赞助\"||text=\"广告\"]",
@@ -100259,7 +100325,7 @@
               ]
             },
             {
-              "preKeys": 19,
+              "preKeys": 20,
               "name": "点【不感兴趣】",
               "matches": "RecyclerView > @LinearLayout > TextView[text=\"不喜欢该内容\"]",
               "snapshotUrls": "https://i.gkd.li/import/13455500"
@@ -100267,7 +100333,7 @@
           ]
         },
         {
-          "key": 22,
+          "key": 23,
           "name": "评价提示",
           "desc": "返回关闭弹窗",
           "fastQuery": true,

@@ -17,7 +17,7 @@
     "enable_disabled_group": 945
   },
   "referenceRepairCounts": {
-    "duplicateKeyReassigned": 2265,
+    "duplicateKeyReassigned": 2266,
     "ambiguousCrossGroupReferenceResolvedToFirst": 19,
     "keptDanglingReference": 7
   },
@@ -17620,13 +17620,16 @@
       "app": "com.xingin.xhs",
       "groupA": "功能类-自动倍速⏩x0.75⚠️五选一",
       "groupB": "功能类-自动倍速⏩x1.25⚠️五选一",
-      "rule": null,
-      "ruleA": null,
-      "ruleB": null,
+      "rule": "长按视频",
+      "ruleA": "长按视频",
+      "ruleB": "长按视频",
       "key": 14,
       "keptRuleKey": 13,
       "candidateRuleKey": 14,
-      "matches": "[vid=\"layer_player\"][visibleToUser=true]",
+      "matches": [
+        "[vid=\"area_progress\"][visibleToUser=true][desc.get(4).toInt()=0 && desc.get(7)=\"秒\" && desc.get(6).toInt()<3]",
+        "[vid=\"layer_player\"][visibleToUser=true]"
+      ],
       "contextDiff": [
         "desc"
       ],
@@ -17634,12 +17637,12 @@
       "referrers": [
         {
           "group": "功能类-自动倍速⏩x1.25⚠️五选一",
-          "rule": null,
+          "rule": "点\"倍速",
           "field": "preKeys"
         },
         {
           "group": "功能类-自动倍速⏩x0.75⚠️五选一",
-          "rule": null,
+          "rule": "点\"倍速",
           "field": "preKeys"
         }
       ],
@@ -17650,13 +17653,16 @@
       "app": "com.xingin.xhs",
       "groupA": "功能类-自动倍速⏩x0.75⚠️五选一",
       "groupB": "功能类-自动倍速⏩x1.5⚠️五选一",
-      "rule": null,
-      "ruleA": null,
-      "ruleB": null,
+      "rule": "长按视频",
+      "ruleA": "长按视频",
+      "ruleB": "长按视频",
       "key": 15,
       "keptRuleKey": 13,
       "candidateRuleKey": 15,
-      "matches": "[vid=\"layer_player\"][visibleToUser=true]",
+      "matches": [
+        "[vid=\"area_progress\"][visibleToUser=true][desc.get(4).toInt()=0 && desc.get(7)=\"秒\" && desc.get(6).toInt()<3]",
+        "[vid=\"layer_player\"][visibleToUser=true]"
+      ],
       "contextDiff": [
         "desc"
       ],
@@ -17664,12 +17670,12 @@
       "referrers": [
         {
           "group": "功能类-自动倍速⏩x1.5⚠️五选一",
-          "rule": null,
+          "rule": "点\"倍速",
           "field": "preKeys"
         },
         {
           "group": "功能类-自动倍速⏩x0.75⚠️五选一",
-          "rule": null,
+          "rule": "点\"倍速",
           "field": "preKeys"
         }
       ],
@@ -17680,13 +17686,16 @@
       "app": "com.xingin.xhs",
       "groupA": "功能类-自动倍速⏩x0.75⚠️五选一",
       "groupB": "功能类-自动倍速⏩x2.0⚠️五选一",
-      "rule": null,
-      "ruleA": null,
-      "ruleB": null,
+      "rule": "长按视频",
+      "ruleA": "长按视频",
+      "ruleB": "长按视频",
       "key": 16,
       "keptRuleKey": 13,
       "candidateRuleKey": 16,
-      "matches": "[vid=\"layer_player\"][visibleToUser=true]",
+      "matches": [
+        "[vid=\"area_progress\"][visibleToUser=true][desc.get(4).toInt()=0 && desc.get(7)=\"秒\" && desc.get(6).toInt()<3]",
+        "[vid=\"layer_player\"][visibleToUser=true]"
+      ],
       "contextDiff": [
         "desc"
       ],
@@ -17694,12 +17703,12 @@
       "referrers": [
         {
           "group": "功能类-自动倍速⏩x2.0⚠️五选一",
-          "rule": null,
+          "rule": "点\"倍速",
           "field": "preKeys"
         },
         {
           "group": "功能类-自动倍速⏩x0.75⚠️五选一",
-          "rule": null,
+          "rule": "点\"倍速",
           "field": "preKeys"
         }
       ],
@@ -17710,13 +17719,16 @@
       "app": "com.xingin.xhs",
       "groupA": "功能类-自动倍速⏩x0.75⚠️五选一",
       "groupB": "功能类-自动倍速⏩x3.0⚠️五选一",
-      "rule": null,
-      "ruleA": null,
-      "ruleB": null,
+      "rule": "长按视频",
+      "ruleA": "长按视频",
+      "ruleB": "长按视频",
       "key": 17,
       "keptRuleKey": 13,
       "candidateRuleKey": 17,
-      "matches": "[vid=\"layer_player\"][visibleToUser=true]",
+      "matches": [
+        "[vid=\"area_progress\"][visibleToUser=true][desc.get(4).toInt()=0 && desc.get(7)=\"秒\" && desc.get(6).toInt()<3]",
+        "[vid=\"layer_player\"][visibleToUser=true]"
+      ],
       "contextDiff": [
         "desc"
       ],
@@ -17724,12 +17736,12 @@
       "referrers": [
         {
           "group": "功能类-自动倍速⏩x3.0⚠️五选一",
-          "rule": null,
+          "rule": "点\"倍速",
           "field": "preKeys"
         },
         {
           "group": "功能类-自动倍速⏩x0.75⚠️五选一",
-          "rule": null,
+          "rule": "点\"倍速",
           "field": "preKeys"
         }
       ],
@@ -35503,7 +35515,7 @@
         "type": "duplicateKeyReassigned",
         "scope": "com.xingin.xhs",
         "group": "功能类-自动倍速⏩x0.75⚠️五选一",
-        "rule": null,
+        "rule": "长按视频",
         "oldKey": 0,
         "newKey": 13
       },
@@ -35511,7 +35523,7 @@
         "type": "duplicateKeyReassigned",
         "scope": "com.xingin.xhs",
         "group": "功能类-自动倍速⏩x1.25⚠️五选一",
-        "rule": null,
+        "rule": "长按视频",
         "oldKey": 0,
         "newKey": 14
       },
@@ -35519,7 +35531,7 @@
         "type": "duplicateKeyReassigned",
         "scope": "com.xingin.xhs",
         "group": "功能类-自动倍速⏩x1.5⚠️五选一",
-        "rule": null,
+        "rule": "长按视频",
         "oldKey": 0,
         "newKey": 15
       },
@@ -35527,7 +35539,7 @@
         "type": "duplicateKeyReassigned",
         "scope": "com.xingin.xhs",
         "group": "功能类-自动倍速⏩x2.0⚠️五选一",
-        "rule": null,
+        "rule": "长按视频",
         "oldKey": 0,
         "newKey": 16
       },
@@ -35535,7 +35547,7 @@
         "type": "duplicateKeyReassigned",
         "scope": "com.xingin.xhs",
         "group": "功能类-自动倍速⏩x3.0⚠️五选一",
-        "rule": null,
+        "rule": "长按视频",
         "oldKey": 0,
         "newKey": 17
       },
@@ -35550,10 +35562,18 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.xingin.xhs",
+        "group": "权限提示-定位权限",
+        "rule": null,
+        "oldKey": 0,
+        "newKey": 19
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.xingin.xhs",
         "group": "局部广告-信息流广告",
         "rule": "长按【赞助】/【广告】卡片",
         "oldKey": 0,
-        "newKey": 19
+        "newKey": 20
       },
       {
         "type": "duplicateKeyReassigned",
@@ -39666,7 +39686,7 @@
       }
     ]
   },
-  "referenceRepairsTotal": 2291,
+  "referenceRepairsTotal": 2292,
   "disabledGroupAudit": [
     {
       "app": "com.duoduo.cimoc.su",

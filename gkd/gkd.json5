@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026111601,
+  "version": 2026111701,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -20966,11 +20966,6 @@
           "rules": [
             {
               "fastQuery": true,
-              "activityIds": [
-                ".notify.ui.NoticeBodyActivity",
-                ".webapp.ui.WebAppCommonViewer",
-                ".group.ui.TopicBodyActivity"
-              ],
               "matches": [
                 "[text*=\"剪贴板内容已更新\"][visibleToUser=true]",
                 "[text=\"知道了\"][clickable=true]"
@@ -20978,7 +20973,9 @@
               "snapshotUrls": [
                 "https://i.gkd.li/i/33947533",
                 "https://i.gkd.li/i/34332781",
-                "https://i.gkd.li/i/34748077"
+                "https://i.gkd.li/i/34748077",
+                "https://i.gkd.li/i/34897863",
+                "https://i.gkd.li/i/34901303"
               ],
               "exampleUrls": "https://e.gkd.li/c5a068c5-33ee-4911-a1a8-238b73097f53"
             }
@@ -21070,8 +21067,11 @@
                 ".webapp.ui.WebAppViewerActivity",
                 ".webapp.ui.WebAppCommonViewer"
               ],
-              "matches": "@[text=\"知道了\"] < ListView < View - [text*=\"签到失败\"] < View <3 WebView < WebView <2 [vid=\"web_view_fragment_refresh_layout\"]",
-              "snapshotUrls": "https://i.gkd.li/i/34723729",
+              "matches": "@[text=\"知道了\"] < ListView < View - [text*=\"签到失败\" || text*=\"已过期\"] < View <3 WebView < WebView <2 [vid=\"web_view_fragment_refresh_layout\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/34723729",
+                "https://i.gkd.li/i/34916325"
+              ],
               "exampleUrls": "https://e.gkd.li/e6f3eb7a-3890-4c98-95a6-c09262a2b071"
             }
           ]
@@ -42582,6 +42582,90 @@
       ]
     },
     {
+      "id": "com.hongjing.avmini",
+      "name": "Avmini",
+      "groups": [
+        {
+          "key": 0,
+          "name": "开屏广告",
+          "fastQuery": true,
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "priorityTime": 10000,
+          "rules": [
+            {
+              "matches": "@View[clickable=true] - LinearLayout[childCount=2] > [text=\"广告\"][visibleToUser=true]",
+              "snapshotUrls": "https://i.gkd.li/i/34912905",
+              "exampleUrls": "https://e.gkd.li/2eb70154-559d-4637-a451-07f82145430b"
+            }
+          ],
+          "order": -10
+        },
+        {
+          "key": 1,
+          "name": "全屏广告",
+          "fastQuery": true,
+          "activityIds": "com.zasko.modulemain.mvpdisplay.activity.X35MainActivity",
+          "rules": [
+            {
+              "key": 0,
+              "name": "腾讯SDK-1",
+              "matches": "@ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < FrameLayout[childCount=1][text=null][desc=null][id=null][parent.childCount>3] <n FrameLayout >(2,3) [text^=\"立即\" || text$=\"详情\" || text^=\"了解\" || text=\"去微信看看\" || text$=\"应用\" || text=\"进入小程序\" || text=\"领取优惠\" || text=\"跳转微信\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/34913673",
+                "https://i.gkd.li/i/34913869"
+              ],
+              "exampleUrls": "https://e.gkd.li/738128bb-4647-4d2e-9ccc-f7a33b39c74a"
+            },
+            {
+              "key": 1,
+              "name": "腾讯SDK-4",
+              "matches": "@ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < FrameLayout[childCount=1][text=null][desc=null][id=null] - FrameLayout[childCount>2] >3 [text^=\"立即\" || text^=\"立刻\" || text$=\"应用\" || text=\"了解更多\" || text=\"查看详情\"]",
+              "snapshotUrls": "https://i.gkd.li/i/34916377",
+              "exampleUrls": "https://e.gkd.li/bfd5e7bd-1c11-4017-ba55-d62906883f56"
+            }
+          ]
+        },
+        {
+          "key": 2,
+          "name": "局部广告",
+          "fastQuery": true,
+          "activityIds": [
+            "com.zasko.modulemain.mvpdisplay.activity.X35MainActivity",
+            "com.noah.adn.huichuan.view.HCCommonActivity"
+          ],
+          "rules": [
+            {
+              "key": 3,
+              "name": "腾讯卡片1",
+              "matches": "[vid=\"native_ad_close_iv\"][clickable=true][visibleToUser=true]",
+              "snapshotUrls": "https://i.gkd.li/i/34913988",
+              "exampleUrls": "https://e.gkd.li/3ed12958-11b6-4958-acb5-83ef35db2606"
+            },
+            {
+              "key": 4,
+              "name": "小米米盟",
+              "matches": "[text=\"✕\"][clickable=true][visibleToUser=true][vid$=\"_close\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/34914899",
+                "https://i.gkd.li/i/34914902",
+                "https://i.gkd.li/i/34914896"
+              ],
+              "exampleUrls": "https://e.gkd.li/dee6914b-9671-4085-ae8d-46b6328d356c"
+            },
+            {
+              "key": 2,
+              "name": "汇川",
+              "matches": "@[vid$=\"close_button\"][clickable=true] < * +n * > [text^=\"广告\"][visibleToUser=true]",
+              "snapshotUrls": "https://i.gkd.li/i/34915691",
+              "exampleUrls": "https://e.gkd.li/b5af4052-6dbd-4194-afb6-f15e943555ae"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "com.hose.ekuaibao",
       "name": "易快报",
       "groups": [
@@ -62242,10 +62326,30 @@
     },
     {
       "id": "com.netease.buff",
-      "name": "BUFF",
+      "name": "网易BUFF",
       "groups": [
         {
           "key": 1,
+          "name": "权限提示-通知权限",
+          "desc": "点击[取消]",
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": ".entry.MainActivity",
+              "matches": [
+                "[text*=\"通知\"][visibleToUser=true]",
+                "[text=\"取消\"][clickable=true]"
+              ],
+              "snapshotUrls": "https://i.gkd.li/i/34897764",
+              "exampleUrls": "https://e.gkd.li/04139a2c-6d43-49b8-be52-d7611d31df46"
+            }
+          ]
+        },
+        {
+          "key": 2,
           "name": "更新提示",
           "matchTime": 10000,
           "actionMaximum": 1,
@@ -78305,12 +78409,16 @@
           "rules": [
             {
               "key": 10,
-              "matches": "@[clickable=true][text=\"不感兴趣\"] +(1,2,5) FlattenUIText[text=\"不感兴趣\"]",
+              "anyMatches": [
+                "@[clickable=true][text=\"不感兴趣\"] +(1,2,5) FlattenUIText[text=\"不感兴趣\"]",
+                "@[clickable=true][width<580 && height<170] > TextView[text=\"不感兴趣\"][visibleToUser=true]"
+              ],
               "snapshotUrls": [
-                "https://i.gkd.li/i/13800207",
                 "https://i.gkd.li/i/13996724",
+                "https://i.gkd.li/i/13800207",
                 "https://i.gkd.li/i/20035670",
-                "https://i.gkd.li/i/34876101"
+                "https://i.gkd.li/i/34876101",
+                "https://i.gkd.li/i/34942616"
               ],
               "exampleUrls": "https://e.gkd.li/f967dcd3-2196-4095-b5f0-a2cae15bdf23"
             },
@@ -78568,9 +78676,10 @@
                 "duration": 200
               },
               "activityIds": ".main.MainActivity",
-              "matches": "([visibleToUser=true] > [text$=\"广告\" || text$=\"（推广）\"][vid=\"desc\" || desc=\"广告\"]) || ([text=\"应用\" || text=\"购物\" || text=\"咨询\" || text=\"服务\" || text=\"预约\" || text=\"子薇剧场\"][text.length<6][index=1][visibleToUser=true]) || (ViewGroup[childCount=5] > ImageView +3 [text^=\"已售\" || text^=\" 已售\"] - TextView - [text=\"讲解中 丨 \"][index=1][visibleToUser=true])",
+              "matches": "([visibleToUser=true] > [text*=\"广告\" || text$=\"（推广）\"][vid=\"desc\" || desc=\"广告\"]) || ([text=\"应用\" || text=\"购物\" || text=\"咨询\" || text=\"服务\" || text=\"预约\" || text=\"子薇剧场\"][text.length<6][index=1][visibleToUser=true]) || (ViewGroup[childCount=5] > ImageView +3 [text^=\"已售\" || text^=\" 已售\"] - TextView - [text=\"讲解中 丨 \"][index=1][visibleToUser=true])",
               "snapshotUrls": [
                 "https://i.gkd.li/i/21142063",
+                "https://i.gkd.li/i/34942307",
                 "https://i.gkd.li/i/29403811",
                 "https://i.gkd.li/i/29403704",
                 "https://i.gkd.li/i/29403301",

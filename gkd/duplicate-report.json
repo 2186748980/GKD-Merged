@@ -17,7 +17,7 @@
     "enable_disabled_group": 945
   },
   "referenceRepairCounts": {
-    "duplicateKeyReassigned": 2266,
+    "duplicateKeyReassigned": 2268,
     "ambiguousCrossGroupReferenceResolvedToFirst": 19,
     "keptDanglingReference": 7
   },
@@ -26225,6 +26225,22 @@
       },
       {
         "type": "duplicateKeyReassigned",
+        "scope": "com.hongjing.avmini",
+        "group": "局部广告",
+        "rule": "腾讯卡片1",
+        "oldKey": 0,
+        "newKey": 3
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.hongjing.avmini",
+        "group": "局部广告",
+        "rule": "小米米盟",
+        "oldKey": 1,
+        "newKey": 4
+      },
+      {
+        "type": "duplicateKeyReassigned",
         "scope": "com.huawei.android.thememanager",
         "group": "分段广告-卡片广告",
         "rule": null,
@@ -39686,7 +39702,7 @@
       }
     ]
   },
-  "referenceRepairsTotal": 2292,
+  "referenceRepairsTotal": 2294,
   "disabledGroupAudit": [
     {
       "app": "com.duoduo.cimoc.su",

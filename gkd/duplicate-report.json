@@ -17,12 +17,12 @@
     "enable_disabled_group": 945
   },
   "referenceRepairCounts": {
-    "duplicateKeyReassigned": 2268,
+    "duplicateKeyReassigned": 2269,
     "ambiguousCrossGroupReferenceResolvedToFirst": 19,
     "keptDanglingReference": 7
   },
   "optimization": {
-    "remapDuplicateSkipped": 2065,
+    "remapDuplicateSkipped": 2064,
     "remapEvidenceMerged": 295,
     "remapDisplayDedupe": 758,
     "remapPreKeysGuard": 40,
@@ -14430,41 +14430,10 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 187,
-      "keptRuleKey": 148,
-      "candidateRuleKey": 187,
-      "matches": "View > Button > View[desc$=\"推​荐​\"] > ImageView[index=1][clickable=true][visibleToUser=true]",
-      "contextDiff": [
-        "activityIds",
-        "desc"
-      ],
-      "behaviorDiff": [],
-      "referrers": [
-        {
-          "group": "分段广告-订阅号消息页面-推荐阅读",
-          "rule": null,
-          "field": "preKeys"
-        },
-        {
-          "group": "分段广告-订阅号消息-推荐阅读",
-          "rule": null,
-          "field": "preKeys"
-        }
-      ],
-      "category": "enable_disabled_group",
-      "reason": "duplicate rule has key dependency references"
-    },
-    {
-      "app": "com.tencent.mm",
-      "groupA": "分段广告-订阅号消息-推荐阅读",
-      "groupB": "分段广告-订阅号消息页面-推荐阅读",
-      "rule": null,
-      "ruleA": null,
-      "ruleB": null,
       "key": 188,
       "keptRuleKey": 149,
       "candidateRuleKey": 188,
-      "matches": "[desc=\"不看此类内容\"]",
+      "matches": "View > Button > View[desc$=\"推​荐​\"] > ImageView[index=1][clickable=true][visibleToUser=true]",
       "contextDiff": [
         "activityIds",
         "desc"
@@ -14495,6 +14464,37 @@
       "key": 189,
       "keptRuleKey": 150,
       "candidateRuleKey": 189,
+      "matches": "[desc=\"不看此类内容\"]",
+      "contextDiff": [
+        "activityIds",
+        "desc"
+      ],
+      "behaviorDiff": [],
+      "referrers": [
+        {
+          "group": "分段广告-订阅号消息页面-推荐阅读",
+          "rule": null,
+          "field": "preKeys"
+        },
+        {
+          "group": "分段广告-订阅号消息-推荐阅读",
+          "rule": null,
+          "field": "preKeys"
+        }
+      ],
+      "category": "enable_disabled_group",
+      "reason": "duplicate rule has key dependency references"
+    },
+    {
+      "app": "com.tencent.mm",
+      "groupA": "分段广告-订阅号消息-推荐阅读",
+      "groupB": "分段广告-订阅号消息页面-推荐阅读",
+      "rule": null,
+      "ruleA": null,
+      "ruleB": null,
+      "key": 190,
+      "keptRuleKey": 151,
+      "candidateRuleKey": 190,
       "matches": "[desc=\"确定\"]",
       "contextDiff": [
         "activityIds",
@@ -32114,9 +32114,9 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.tencent.mm",
-        "group": "开屏广告-微信小程序",
+        "group": "功能类-自动查看原图",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 2,
         "newKey": 131
       },
       {
@@ -32124,15 +32124,15 @@
         "scope": "com.tencent.mm",
         "group": "开屏广告-微信小程序",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 132
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.tencent.mm",
-        "group": "青少年模式",
+        "group": "开屏广告-微信小程序",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 1,
         "newKey": 133
       },
       {
@@ -32140,15 +32140,15 @@
         "scope": "com.tencent.mm",
         "group": "青少年模式",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 134
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.tencent.mm",
-        "group": "功能类-青少年模式自动点击验证密码",
+        "group": "青少年模式",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 1,
         "newKey": 135
       },
       {
@@ -32156,7 +32156,7 @@
         "scope": "com.tencent.mm",
         "group": "功能类-青少年模式自动点击验证密码",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 136
       },
       {
@@ -32164,7 +32164,7 @@
         "scope": "com.tencent.mm",
         "group": "功能类-青少年模式自动点击验证密码",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 1,
         "newKey": 137
       },
       {
@@ -32172,15 +32172,15 @@
         "scope": "com.tencent.mm",
         "group": "功能类-青少年模式自动点击验证密码",
         "rule": null,
-        "oldKey": 3,
+        "oldKey": 2,
         "newKey": 138
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.tencent.mm",
-        "group": "功能类-订阅号-展开更早的消息",
+        "group": "功能类-青少年模式自动点击验证密码",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 3,
         "newKey": 139
       },
       {
@@ -32188,8 +32188,16 @@
         "scope": "com.tencent.mm",
         "group": "功能类-订阅号-展开更早的消息",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 140
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.tencent.mm",
+        "group": "功能类-订阅号-展开更早的消息",
+        "rule": null,
+        "oldKey": 1,
+        "newKey": 141
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32197,7 +32205,7 @@
         "group": "功能类-订阅号-展开更早的消息",
         "rule": "8.0.44以下",
         "oldKey": 2,
-        "newKey": 141
+        "newKey": 142
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32205,14 +32213,6 @@
         "group": "功能类-订阅号-展开更早的消息",
         "rule": "8.0.44",
         "oldKey": 3,
-        "newKey": 142
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.tencent.mm",
-        "group": "功能类-付款后自动点击完成/返回商家",
-        "rule": null,
-        "oldKey": 0,
         "newKey": 143
       },
       {
@@ -32220,8 +32220,16 @@
         "scope": "com.tencent.mm",
         "group": "功能类-付款后自动点击完成/返回商家",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 144
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.tencent.mm",
+        "group": "功能类-付款后自动点击完成/返回商家",
+        "rule": null,
+        "oldKey": 1,
+        "newKey": 145
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32229,7 +32237,7 @@
         "group": "分段广告-订阅号消息-视频推荐",
         "rule": "点击[X]",
         "oldKey": 0,
-        "newKey": 145
+        "newKey": 146
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32237,7 +32245,7 @@
         "group": "分段广告-订阅号消息-视频推荐",
         "rule": "点击[不喜欢此类视频]",
         "oldKey": 1,
-        "newKey": 146
+        "newKey": 147
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32245,14 +32253,6 @@
         "group": "分段广告-订阅号消息-视频推荐",
         "rule": "点击[确定]",
         "oldKey": 2,
-        "newKey": 147
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.tencent.mm",
-        "group": "分段广告-订阅号消息-推荐阅读",
-        "rule": null,
-        "oldKey": 0,
         "newKey": 148
       },
       {
@@ -32260,7 +32260,7 @@
         "scope": "com.tencent.mm",
         "group": "分段广告-订阅号消息-推荐阅读",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 149
       },
       {
@@ -32268,15 +32268,15 @@
         "scope": "com.tencent.mm",
         "group": "分段广告-订阅号消息-推荐阅读",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 1,
         "newKey": 150
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.tencent.mm",
-        "group": "功能类-付款时自动点击[支付]",
+        "group": "分段广告-订阅号消息-推荐阅读",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 2,
         "newKey": 151
       },
       {
@@ -32284,7 +32284,7 @@
         "scope": "com.tencent.mm",
         "group": "功能类-付款时自动点击[支付]",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 152
       },
       {
@@ -32292,7 +32292,7 @@
         "scope": "com.tencent.mm",
         "group": "功能类-付款时自动点击[支付]",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 1,
         "newKey": 153
       },
       {
@@ -32300,15 +32300,15 @@
         "scope": "com.tencent.mm",
         "group": "功能类-付款时自动点击[支付]",
         "rule": null,
-        "oldKey": 3,
+        "oldKey": 2,
         "newKey": 154
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.tencent.mm",
-        "group": "分段广告-公众号文章内广告",
+        "group": "功能类-付款时自动点击[支付]",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 3,
         "newKey": 155
       },
       {
@@ -32316,7 +32316,7 @@
         "scope": "com.tencent.mm",
         "group": "分段广告-公众号文章内广告",
         "rule": null,
-        "oldKey": 25,
+        "oldKey": 0,
         "newKey": 156
       },
       {
@@ -32324,8 +32324,16 @@
         "scope": "com.tencent.mm",
         "group": "分段广告-公众号文章内广告",
         "rule": null,
-        "oldKey": 50,
+        "oldKey": 25,
         "newKey": 157
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.tencent.mm",
+        "group": "分段广告-公众号文章内广告",
+        "rule": null,
+        "oldKey": 50,
+        "newKey": 158
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32333,7 +32341,7 @@
         "group": "功能类-自动语音转文字",
         "rule": null,
         "oldKey": 0,
-        "newKey": 158
+        "newKey": 159
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32341,7 +32349,7 @@
         "group": "功能类-自动接龙",
         "rule": null,
         "oldKey": 0,
-        "newKey": 159
+        "newKey": 160
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32349,7 +32357,7 @@
         "group": "功能类-自动清缓存",
         "rule": "清理",
         "oldKey": 0,
-        "newKey": 160
+        "newKey": 161
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32357,7 +32365,7 @@
         "group": "功能类-自动清缓存",
         "rule": "确认清理",
         "oldKey": 1,
-        "newKey": 161
+        "newKey": 162
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32365,7 +32373,7 @@
         "group": "功能类-自动清缓存",
         "rule": "再次确认",
         "oldKey": 2,
-        "newKey": 162
+        "newKey": 163
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32373,7 +32381,7 @@
         "group": "分段广告-朋友圈广告[英文]",
         "rule": "点击广告卡片右上角[Sponsored]",
         "oldKey": 0,
-        "newKey": 163
+        "newKey": 164
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32381,7 +32389,7 @@
         "group": "分段广告-朋友圈广告[英文]",
         "rule": "Sponsored story-点击[Close the ad]",
         "oldKey": 1,
-        "newKey": 164
+        "newKey": 165
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32389,7 +32397,7 @@
         "group": "分段广告-朋友圈广告[英文]",
         "rule": "Reason for closing the ad - 点击[Close]",
         "oldKey": 2,
-        "newKey": 165
+        "newKey": 166
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32397,7 +32405,7 @@
         "group": "分段广告-朋友圈广告[繁体]",
         "rule": "点击广告卡片右上角[廣告]",
         "oldKey": 0,
-        "newKey": 166
+        "newKey": 167
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32405,7 +32413,7 @@
         "group": "分段广告-朋友圈广告[繁体]",
         "rule": "点击[關閉此廣告]",
         "oldKey": 1,
-        "newKey": 167
+        "newKey": 168
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32413,7 +32421,7 @@
         "group": "功能类-微信红包自动领取",
         "rule": "点击红包-开",
         "oldKey": 1,
-        "newKey": 168
+        "newKey": 169
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32421,7 +32429,7 @@
         "group": "功能类-微信红包自动领取",
         "rule": "点击别人发的红包",
         "oldKey": 2,
-        "newKey": 169
+        "newKey": 170
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32429,7 +32437,7 @@
         "group": "分段广告-订阅号文章广告",
         "rule": "广告类型1",
         "oldKey": 1,
-        "newKey": 170
+        "newKey": 171
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32437,14 +32445,6 @@
         "group": "分段广告-订阅号文章广告",
         "rule": "广告类型2",
         "oldKey": 2,
-        "newKey": 171
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.tencent.mm",
-        "group": "功能类-自动选中发送原图",
-        "rule": null,
-        "oldKey": 1,
         "newKey": 172
       },
       {
@@ -32452,8 +32452,16 @@
         "scope": "com.tencent.mm",
         "group": "功能类-自动选中发送原图",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 1,
         "newKey": 173
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.tencent.mm",
+        "group": "功能类-自动选中发送原图",
+        "rule": null,
+        "oldKey": 2,
+        "newKey": 174
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32461,7 +32469,7 @@
         "group": "分段广告-订阅号文章广告反馈",
         "rule": "点击不感兴趣",
         "oldKey": 1,
-        "newKey": 174
+        "newKey": 175
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32469,7 +32477,7 @@
         "group": "分段广告-订阅号文章广告反馈",
         "rule": "点击与我无关",
         "oldKey": 2,
-        "newKey": 175
+        "newKey": 176
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32477,14 +32485,6 @@
         "group": "分段广告-订阅号文章广告反馈",
         "rule": "点击关闭此广告",
         "oldKey": 3,
-        "newKey": 176
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.tencent.mm",
-        "group": "全屏广告-提瓦特助手小程序-弹窗广告",
-        "rule": null,
-        "oldKey": 0,
         "newKey": 177
       },
       {
@@ -32492,8 +32492,16 @@
         "scope": "com.tencent.mm",
         "group": "全屏广告-提瓦特助手小程序-弹窗广告",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 178
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.tencent.mm",
+        "group": "全屏广告-提瓦特助手小程序-弹窗广告",
+        "rule": null,
+        "oldKey": 1,
+        "newKey": 179
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32501,7 +32509,7 @@
         "group": "分段广告-小程序-内部广告",
         "rule": "【广告】0",
         "oldKey": 0,
-        "newKey": 179
+        "newKey": 180
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32509,7 +32517,7 @@
         "group": "分段广告-小程序-内部广告",
         "rule": "【广告】1",
         "oldKey": 1,
-        "newKey": 180
+        "newKey": 181
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32517,7 +32525,7 @@
         "group": "功能类-自动领取微信红包",
         "rule": "点击别人发的红包",
         "oldKey": 3,
-        "newKey": 181
+        "newKey": 182
       },
       {
         "type": "duplicateKeyReassigned",
@@ -32525,14 +32533,6 @@
         "group": "功能类-自动领取微信红包",
         "rule": "点击红包-开",
         "oldKey": 4,
-        "newKey": 182
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.tencent.mm",
-        "group": "分段广告-订阅号消息内容-广告",
-        "rule": null,
-        "oldKey": 0,
         "newKey": 183
       },
       {
@@ -32540,7 +32540,7 @@
         "scope": "com.tencent.mm",
         "group": "分段广告-订阅号消息内容-广告",
         "rule": null,
-        "oldKey": 20,
+        "oldKey": 0,
         "newKey": 184
       },
       {
@@ -32548,7 +32548,7 @@
         "scope": "com.tencent.mm",
         "group": "分段广告-订阅号消息内容-广告",
         "rule": null,
-        "oldKey": 25,
+        "oldKey": 20,
         "newKey": 185
       },
       {
@@ -32556,15 +32556,15 @@
         "scope": "com.tencent.mm",
         "group": "分段广告-订阅号消息内容-广告",
         "rule": null,
-        "oldKey": 50,
+        "oldKey": 25,
         "newKey": 186
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.tencent.mm",
-        "group": "分段广告-订阅号消息页面-推荐阅读",
+        "group": "分段广告-订阅号消息内容-广告",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 50,
         "newKey": 187
       },
       {
@@ -32572,7 +32572,7 @@
         "scope": "com.tencent.mm",
         "group": "分段广告-订阅号消息页面-推荐阅读",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 188
       },
       {
@@ -32580,21 +32580,21 @@
         "scope": "com.tencent.mm",
         "group": "分段广告-订阅号消息页面-推荐阅读",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 1,
         "newKey": 189
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.tencent.mm",
-        "group": "全屏广告-小程序-弹窗广告",
+        "group": "分段广告-订阅号消息页面-推荐阅读",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 2,
         "newKey": 190
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.tencent.mm",
-        "group": "分段广告-视频号-评论区广告",
+        "group": "全屏广告-小程序-弹窗广告",
         "rule": null,
         "oldKey": 0,
         "newKey": 191
@@ -32604,8 +32604,16 @@
         "scope": "com.tencent.mm",
         "group": "分段广告-视频号-评论区广告",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 192
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.tencent.mm",
+        "group": "分段广告-视频号-评论区广告",
+        "rule": null,
+        "oldKey": 1,
+        "newKey": 193
       },
       {
         "type": "duplicateKeyReassigned",
@@ -39702,7 +39710,7 @@
       }
     ]
   },
-  "referenceRepairsTotal": 2294,
+  "referenceRepairsTotal": 2295,
   "disabledGroupAudit": [
     {
       "app": "com.duoduo.cimoc.su",

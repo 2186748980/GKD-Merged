@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026111801,
+  "version": 2026111901,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -100352,16 +100352,31 @@
         },
         {
           "key": 18,
-          "name": "功能类-评论自动翻译",
-          "desc": "⚠️有可能触发[回复评论]情况,新版app暂无问题",
+          "name": "功能类-自动[翻译]评论",
+          "desc": "⚠️上滑太快可能有误触[收藏]情况",
           "rules": [
             {
               "fastQuery": true,
-              "activityIds": "com.xingin.matrix.notedetail.NoteDetailActivity",
-              "matches": "[vid=\"newTimePoiIpTransTv\"][text$=\"回复 翻译\"][visibleToUser=true]",
+              "actionCd": 500,
+              "actionDelay": 50,
+              "activityIds": [
+                "com.xingin.matrix.notedetail.NoteDetailActivity",
+                "com.xingin.matrix.detail.activity.DetailFeedActivity"
+              ],
+              "position": {
+                "left": "width * 0.9",
+                "top": "height * 0.5"
+              },
+              "matches": "ImageView[width<getPrev(1).height.plus(10)] < [childCount=2] - [text$=\"回复 翻译\"][visibleToUser=true]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/26643975",
-                "https://i.gkd.li/i/34877018"
+                "https://i.gkd.li/i/34877018",
+                "https://i.gkd.li/i/35009573",
+                "https://i.gkd.li/i/35010199"
+              ],
+              "excludeSnapshotUrls": [
+                "https://i.gkd.li/i/35009881",
+                "https://i.gkd.li/i/35010665"
               ],
               "exampleUrls": "https://e.gkd.li/fc8d70d4-f743-45df-a9d2-f343e419ccd9"
             }

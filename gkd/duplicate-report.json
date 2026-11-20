@@ -17,12 +17,12 @@
     "enable_disabled_group": 945
   },
   "referenceRepairCounts": {
-    "duplicateKeyReassigned": 2269,
+    "duplicateKeyReassigned": 2268,
     "ambiguousCrossGroupReferenceResolvedToFirst": 19,
     "keptDanglingReference": 7
   },
   "optimization": {
-    "remapDuplicateSkipped": 2064,
+    "remapDuplicateSkipped": 2062,
     "remapEvidenceMerged": 295,
     "remapDisplayDedupe": 758,
     "remapPreKeysGuard": 40,
@@ -13948,9 +13948,9 @@
       "rule": "【首页商城】体验邀请弹窗",
       "ruleA": "【首页商城】体验邀请弹窗",
       "ruleB": "【首页商城】体验邀请弹窗",
-      "key": 29,
-      "keptRuleKey": 28,
-      "candidateRuleKey": 29,
+      "key": 27,
+      "keptRuleKey": 26,
+      "candidateRuleKey": 27,
       "matches": "[text=\"不再提示\"] + @ECCustomUiImage[clickable=true] +n LynxFlattenUI[text^=\"立即体验\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -18785,9 +18785,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 57,
+      "key": 58,
       "keptRuleKey": null,
-      "candidateRuleKey": 57,
+      "candidateRuleKey": 58,
       "matches": "[text=\"百亿补贴\"] > View > View > @View[clickable=true] +n [text^=\"立即领取\"]",
       "contextDiff": [
         "desc",
@@ -18807,9 +18807,9 @@
       "rule": "在签到后关闭弹窗",
       "ruleA": "在签到后关闭弹窗",
       "ruleB": "在签到后关闭弹窗",
-      "key": 63,
-      "keptRuleKey": 45,
-      "candidateRuleKey": 63,
+      "key": 64,
+      "keptRuleKey": 44,
+      "candidateRuleKey": 64,
       "matches": "FrameLayout > TextView[text=\"明日继续来领\"]",
       "contextDiff": [
         "activityIds",
@@ -18827,9 +18827,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 64,
+      "key": 65,
       "keptRuleKey": null,
-      "candidateRuleKey": 64,
+      "candidateRuleKey": 65,
       "matches": [
         "TextView[text=\"正在直播\"]",
         "@ImageView[desc=\"返回\"] <4 ViewGroup <<3 FrameLayout[id=\"android:id/content\"]"
@@ -31610,26 +31610,10 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.ss.android.ugc.aweme.lite",
-        "group": "功能类-评论区-自动展开评论",
-        "rule": null,
-        "oldKey": 0,
-        "newKey": 23
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.ss.android.ugc.aweme.lite",
-        "group": "功能类-评论区-自动展开评论_全部",
-        "rule": null,
-        "oldKey": 0,
-        "newKey": 24
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.ss.android.ugc.aweme.lite",
         "group": "功能类-自动开启[自动连播]",
         "rule": "①[长按]视频",
         "oldKey": 1,
-        "newKey": 25
+        "newKey": 23
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31637,7 +31621,7 @@
         "group": "功能类-自动开启[自动连播]",
         "rule": "②开启[自动联播]",
         "oldKey": 2,
-        "newKey": 26
+        "newKey": 24
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31645,7 +31629,7 @@
         "group": "青少年模式",
         "rule": null,
         "oldKey": 0,
-        "newKey": 27
+        "newKey": 25
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31653,7 +31637,7 @@
         "group": "全屏广告-功能体验邀请弹窗",
         "rule": "【首页商城】体验邀请弹窗",
         "oldKey": 0,
-        "newKey": 28
+        "newKey": 26
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31661,7 +31645,7 @@
         "group": "未分类-功能体验邀请弹窗",
         "rule": "【首页商城】体验邀请弹窗",
         "oldKey": 0,
-        "newKey": 29
+        "newKey": 27
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36474,7 +36458,7 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.xunmeng.pinduoduo",
-        "group": "全屏广告-多多视频划到广告自动跳过",
+        "group": "功能类-[上滑]继续看视频",
         "rule": null,
         "oldKey": 0,
         "newKey": 24
@@ -36482,17 +36466,17 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.xunmeng.pinduoduo",
-        "group": "全屏广告-多多视频划到广告自动跳过",
+        "group": "全屏广告-下单后出现的弹窗",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 25
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.xunmeng.pinduoduo",
         "group": "全屏广告-下单后出现的弹窗",
-        "rule": null,
-        "oldKey": 0,
+        "rule": "邀请好友弹窗",
+        "oldKey": 1,
         "newKey": 26
       },
       {
@@ -36500,16 +36484,8 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "全屏广告-下单后出现的弹窗",
         "rule": "邀请好友弹窗",
-        "oldKey": 1,
-        "newKey": 27
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.xunmeng.pinduoduo",
-        "group": "全屏广告-下单后出现的弹窗",
-        "rule": "邀请好友弹窗",
         "oldKey": 2,
-        "newKey": 28
+        "newKey": 27
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36517,7 +36493,7 @@
         "group": "全屏广告-下单后出现的弹窗",
         "rule": "拼单返现弹窗",
         "oldKey": 3,
-        "newKey": 29
+        "newKey": 28
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36525,6 +36501,14 @@
         "group": "全屏广告-下单后出现的弹窗",
         "rule": null,
         "oldKey": 4,
+        "newKey": 29
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.xunmeng.pinduoduo",
+        "group": "权限提示-通知权限",
+        "rule": null,
+        "oldKey": 0,
         "newKey": 30
       },
       {
@@ -36532,7 +36516,7 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "权限提示-通知权限",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 1,
         "newKey": 31
       },
       {
@@ -36540,7 +36524,7 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "权限提示-通知权限",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 2,
         "newKey": 32
       },
       {
@@ -36548,16 +36532,8 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "权限提示-通知权限",
         "rule": null,
-        "oldKey": 2,
-        "newKey": 33
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.xunmeng.pinduoduo",
-        "group": "权限提示-通知权限",
-        "rule": null,
         "oldKey": 3,
-        "newKey": 34
+        "newKey": 33
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36565,7 +36541,7 @@
         "group": "功能类-自动处方流程",
         "rule": "点击已确诊的疾病",
         "oldKey": 0,
-        "newKey": 35
+        "newKey": 34
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36573,7 +36549,7 @@
         "group": "功能类-自动处方流程",
         "rule": "点击提交并开药",
         "oldKey": 1,
-        "newKey": 36
+        "newKey": 35
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36581,7 +36557,7 @@
         "group": "功能类-自动处方流程",
         "rule": "点击无需补充，立即开方",
         "oldKey": 2,
-        "newKey": 37
+        "newKey": 36
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36589,7 +36565,7 @@
         "group": "功能类-展开更多",
         "rule": "通用[展开]_fastQ",
         "oldKey": 0,
-        "newKey": 38
+        "newKey": 37
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36597,7 +36573,7 @@
         "group": "功能类-展开更多",
         "rule": "[查看更多订单信息]",
         "oldKey": 1,
-        "newKey": 39
+        "newKey": 38
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36605,7 +36581,7 @@
         "group": "功能类-展开更多",
         "rule": "订单页",
         "oldKey": 2,
-        "newKey": 40
+        "newKey": 39
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36613,6 +36589,14 @@
         "group": "功能类-展开更多",
         "rule": "商品评论",
         "oldKey": 3,
+        "newKey": 40
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.xunmeng.pinduoduo",
+        "group": "功能类-商品页视频自动静音",
+        "rule": null,
+        "oldKey": 0,
         "newKey": 41
       },
       {
@@ -36620,16 +36604,8 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "功能类-商品页视频自动静音",
         "rule": null,
-        "oldKey": 0,
-        "newKey": 42
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.xunmeng.pinduoduo",
-        "group": "功能类-商品页视频自动静音",
-        "rule": null,
         "oldKey": 1,
-        "newKey": 43
+        "newKey": 42
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36637,7 +36613,7 @@
         "group": "功能类-多多视频-每日自动签到",
         "rule": "自动签到",
         "oldKey": 0,
-        "newKey": 44
+        "newKey": 43
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36645,7 +36621,7 @@
         "group": "功能类-多多视频-每日自动签到",
         "rule": "在签到后关闭弹窗",
         "oldKey": 1,
-        "newKey": 45
+        "newKey": 44
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36653,7 +36629,7 @@
         "group": "全屏广告-首页弹窗广告",
         "rule": "首页弹窗1",
         "oldKey": 1,
-        "newKey": 46
+        "newKey": 45
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36661,7 +36637,7 @@
         "group": "全屏广告-首页弹窗广告",
         "rule": "首页弹窗2",
         "oldKey": 2,
-        "newKey": 47
+        "newKey": 46
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36669,12 +36645,20 @@
         "group": "全屏广告-首页弹窗广告",
         "rule": "首页弹窗3",
         "oldKey": 3,
+        "newKey": 47
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.xunmeng.pinduoduo",
+        "group": "全屏广告-多多视频划到广告自动跳过",
+        "rule": null,
+        "oldKey": 0,
         "newKey": 48
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.xunmeng.pinduoduo",
-        "group": "全屏广告-商品页弹窗",
+        "group": "全屏广告-多多视频划到广告自动跳过",
         "rule": null,
         "oldKey": 1,
         "newKey": 49
@@ -36682,7 +36666,7 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.xunmeng.pinduoduo",
-        "group": "全屏广告-多多视频弹窗",
+        "group": "全屏广告-商品页弹窗",
         "rule": null,
         "oldKey": 1,
         "newKey": 50
@@ -36690,9 +36674,9 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.xunmeng.pinduoduo",
-        "group": "全屏广告-首页优惠弹窗",
+        "group": "全屏广告-多多视频弹窗",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 1,
         "newKey": 51
       },
       {
@@ -36700,7 +36684,7 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "全屏广告-首页优惠弹窗",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 52
       },
       {
@@ -36708,7 +36692,7 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "全屏广告-首页优惠弹窗",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 1,
         "newKey": 53
       },
       {
@@ -36716,15 +36700,15 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "全屏广告-首页优惠弹窗",
         "rule": null,
-        "oldKey": 3,
+        "oldKey": 2,
         "newKey": 54
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.xunmeng.pinduoduo",
-        "group": "全屏广告-红包弹窗",
+        "group": "全屏广告-首页优惠弹窗",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 3,
         "newKey": 55
       },
       {
@@ -36732,7 +36716,7 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "全屏广告-红包弹窗",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 56
       },
       {
@@ -36740,7 +36724,7 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "全屏广告-红包弹窗",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 1,
         "newKey": 57
       },
       {
@@ -36748,8 +36732,16 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "全屏广告-红包弹窗",
         "rule": null,
-        "oldKey": 3,
+        "oldKey": 2,
         "newKey": 58
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.xunmeng.pinduoduo",
+        "group": "全屏广告-红包弹窗",
+        "rule": null,
+        "oldKey": 3,
+        "newKey": 59
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36757,14 +36749,6 @@
         "group": "全屏广告-红包弹窗",
         "rule": "刮奖弹窗",
         "oldKey": 4,
-        "newKey": 59
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.xunmeng.pinduoduo",
-        "group": "全屏广告-多多买菜弹窗",
-        "rule": null,
-        "oldKey": 0,
         "newKey": 60
       },
       {
@@ -36772,8 +36756,16 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "全屏广告-多多买菜弹窗",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 61
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.xunmeng.pinduoduo",
+        "group": "全屏广告-多多买菜弹窗",
+        "rule": null,
+        "oldKey": 1,
+        "newKey": 62
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36781,7 +36773,7 @@
         "group": "分段广告-多多视频每日自动签到",
         "rule": "自动签到",
         "oldKey": 0,
-        "newKey": 62
+        "newKey": 63
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36789,14 +36781,6 @@
         "group": "分段广告-多多视频每日自动签到",
         "rule": "在签到后关闭弹窗",
         "oldKey": 1,
-        "newKey": 63
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.xunmeng.pinduoduo",
-        "group": "局部广告-多多视频-划到广告自动跳过",
-        "rule": null,
-        "oldKey": 0,
         "newKey": 64
       },
       {
@@ -36804,7 +36788,7 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "局部广告-多多视频-划到广告自动跳过",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 65
       },
       {
@@ -36812,8 +36796,16 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "局部广告-多多视频-划到广告自动跳过",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 1,
         "newKey": 66
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.xunmeng.pinduoduo",
+        "group": "局部广告-多多视频-划到广告自动跳过",
+        "rule": null,
+        "oldKey": 2,
+        "newKey": 67
       },
       {
         "type": "duplicateKeyReassigned",
@@ -39587,7 +39579,7 @@
         "candidateGroups": [
           "局部广告-悬浮广告",
           "功能类-多多视频每日自动签到",
-          "全屏广告-多多视频划到广告自动跳过",
+          "功能类-[上滑]继续看视频",
           "全屏广告-下单后出现的弹窗",
           "权限提示-通知权限"
         ]
@@ -39710,7 +39702,7 @@
       }
     ]
   },
-  "referenceRepairsTotal": 2295,
+  "referenceRepairsTotal": 2294,
   "disabledGroupAudit": [
     {
       "app": "com.duoduo.cimoc.su",

@@ -17,12 +17,12 @@
     "enable_disabled_group": 945
   },
   "referenceRepairCounts": {
-    "duplicateKeyReassigned": 2268,
+    "duplicateKeyReassigned": 2272,
     "ambiguousCrossGroupReferenceResolvedToFirst": 19,
     "keptDanglingReference": 7
   },
   "optimization": {
-    "remapDuplicateSkipped": 2062,
+    "remapDuplicateSkipped": 2060,
     "remapEvidenceMerged": 295,
     "remapDisplayDedupe": 758,
     "remapPreKeysGuard": 40,
@@ -4216,7 +4216,7 @@
       "ruleA": null,
       "ruleB": null,
       "key": 3,
-      "keptRuleKey": 1,
+      "keptRuleKey": 5,
       "candidateRuleKey": 3,
       "matches": "@LinearLayout > [text=\"不感兴趣\"]",
       "contextDiff": [],
@@ -4232,9 +4232,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 5,
-      "keptRuleKey": 1,
-      "candidateRuleKey": 5,
+      "key": 7,
+      "keptRuleKey": 5,
+      "candidateRuleKey": 7,
       "matches": "@LinearLayout > [text=\"不感兴趣\"]",
       "contextDiff": [
         "activityIds"
@@ -4253,9 +4253,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 6,
+      "key": 8,
       "keptRuleKey": 2,
-      "candidateRuleKey": 6,
+      "candidateRuleKey": 8,
       "matches": "[id=\"com.danlan.xiaolan:id/img_close\"][clickable=true]",
       "contextDiff": [
         "activityIds"
@@ -4280,9 +4280,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 7,
-      "keptRuleKey": 1,
-      "candidateRuleKey": 7,
+      "key": 9,
+      "keptRuleKey": 5,
+      "candidateRuleKey": 9,
       "matches": "@LinearLayout > [text=\"不感兴趣\"]",
       "contextDiff": [
         "activityIds"
@@ -4301,9 +4301,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 8,
-      "keptRuleKey": 4,
-      "candidateRuleKey": 8,
+      "key": 10,
+      "keptRuleKey": 6,
+      "candidateRuleKey": 10,
       "matches": "[id=\"com.danlan.xiaolan:id/ad_container\"] >n [id=\"com.danlan.xiaolan:id/img_close\"][clickable=true]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -4329,9 +4329,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 9,
-      "keptRuleKey": 5,
-      "candidateRuleKey": 9,
+      "key": 11,
+      "keptRuleKey": 7,
+      "candidateRuleKey": 11,
       "matches": "@LinearLayout > [text=\"不感兴趣\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -4346,9 +4346,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 10,
-      "keptRuleKey": 6,
-      "candidateRuleKey": 10,
+      "key": 12,
+      "keptRuleKey": 8,
+      "candidateRuleKey": 12,
       "matches": "[id=\"com.danlan.xiaolan:id/img_close\"][clickable=true]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -4374,9 +4374,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 11,
-      "keptRuleKey": 7,
-      "candidateRuleKey": 11,
+      "key": 13,
+      "keptRuleKey": 9,
+      "candidateRuleKey": 13,
       "matches": "@LinearLayout > [text=\"不感兴趣\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -18785,9 +18785,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 58,
+      "key": 60,
       "keptRuleKey": null,
-      "candidateRuleKey": 58,
+      "candidateRuleKey": 60,
       "matches": "[text=\"百亿补贴\"] > View > View > @View[clickable=true] +n [text^=\"立即领取\"]",
       "contextDiff": [
         "desc",
@@ -18807,9 +18807,9 @@
       "rule": "在签到后关闭弹窗",
       "ruleA": "在签到后关闭弹窗",
       "ruleB": "在签到后关闭弹窗",
-      "key": 64,
-      "keptRuleKey": 44,
-      "candidateRuleKey": 64,
+      "key": 66,
+      "keptRuleKey": 46,
+      "candidateRuleKey": 66,
       "matches": "FrameLayout > TextView[text=\"明日继续来领\"]",
       "contextDiff": [
         "activityIds",
@@ -18827,9 +18827,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 65,
+      "key": 67,
       "keptRuleKey": null,
-      "candidateRuleKey": 65,
+      "candidateRuleKey": 67,
       "matches": [
         "TextView[text=\"正在直播\"]",
         "@ImageView[desc=\"返回\"] <4 ViewGroup <<3 FrameLayout[id=\"android:id/content\"]"
@@ -23738,7 +23738,7 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.danlan.xiaolan",
-        "group": "局部广告-附近的人-广告卡片",
+        "group": "分段广告-卡片广告",
         "rule": null,
         "oldKey": 0,
         "newKey": 4
@@ -23746,7 +23746,7 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.danlan.xiaolan",
-        "group": "局部广告-附近的人-广告卡片",
+        "group": "分段广告-卡片广告",
         "rule": null,
         "oldKey": 1,
         "newKey": 5
@@ -23754,7 +23754,7 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.danlan.xiaolan",
-        "group": "局部广告-来访-广告卡片",
+        "group": "局部广告-附近的人-广告卡片",
         "rule": null,
         "oldKey": 0,
         "newKey": 6
@@ -23762,7 +23762,7 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.danlan.xiaolan",
-        "group": "局部广告-来访-广告卡片",
+        "group": "局部广告-附近的人-广告卡片",
         "rule": null,
         "oldKey": 1,
         "newKey": 7
@@ -23770,7 +23770,7 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.danlan.xiaolan",
-        "group": "未分类-附近的人-广告卡片",
+        "group": "局部广告-来访-广告卡片",
         "rule": null,
         "oldKey": 0,
         "newKey": 8
@@ -23778,7 +23778,7 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.danlan.xiaolan",
-        "group": "未分类-附近的人-广告卡片",
+        "group": "局部广告-来访-广告卡片",
         "rule": null,
         "oldKey": 1,
         "newKey": 9
@@ -23786,7 +23786,7 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.danlan.xiaolan",
-        "group": "未分类-来访-广告卡片",
+        "group": "未分类-附近的人-广告卡片",
         "rule": null,
         "oldKey": 0,
         "newKey": 10
@@ -23794,10 +23794,26 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.danlan.xiaolan",
-        "group": "未分类-来访-广告卡片",
+        "group": "未分类-附近的人-广告卡片",
         "rule": null,
         "oldKey": 1,
         "newKey": 11
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.danlan.xiaolan",
+        "group": "未分类-来访-广告卡片",
+        "rule": null,
+        "oldKey": 0,
+        "newKey": 12
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.danlan.xiaolan",
+        "group": "未分类-来访-广告卡片",
+        "rule": null,
+        "oldKey": 1,
+        "newKey": 13
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36443,7 +36459,7 @@
         "type": "duplicateKeyReassigned",
         "scope": "com.xunmeng.pinduoduo",
         "group": "功能类-多多视频每日自动签到",
-        "rule": "自动签到",
+        "rule": "①自动签到",
         "oldKey": 0,
         "newKey": 22
       },
@@ -36451,9 +36467,25 @@
         "type": "duplicateKeyReassigned",
         "scope": "com.xunmeng.pinduoduo",
         "group": "功能类-多多视频每日自动签到",
-        "rule": "在签到后关闭弹窗",
+        "rule": "②签到后关闭弹窗",
         "oldKey": 1,
         "newKey": 23
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.xunmeng.pinduoduo",
+        "group": "功能类-多多视频每日自动签到",
+        "rule": "自动签到",
+        "oldKey": 2,
+        "newKey": 24
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.xunmeng.pinduoduo",
+        "group": "功能类-多多视频每日自动签到",
+        "rule": "在签到后关闭弹窗",
+        "oldKey": 3,
+        "newKey": 25
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36461,7 +36493,7 @@
         "group": "功能类-[上滑]继续看视频",
         "rule": null,
         "oldKey": 0,
-        "newKey": 24
+        "newKey": 26
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36469,7 +36501,7 @@
         "group": "全屏广告-下单后出现的弹窗",
         "rule": null,
         "oldKey": 0,
-        "newKey": 25
+        "newKey": 27
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36477,7 +36509,7 @@
         "group": "全屏广告-下单后出现的弹窗",
         "rule": "邀请好友弹窗",
         "oldKey": 1,
-        "newKey": 26
+        "newKey": 28
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36485,7 +36517,7 @@
         "group": "全屏广告-下单后出现的弹窗",
         "rule": "邀请好友弹窗",
         "oldKey": 2,
-        "newKey": 27
+        "newKey": 29
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36493,7 +36525,7 @@
         "group": "全屏广告-下单后出现的弹窗",
         "rule": "拼单返现弹窗",
         "oldKey": 3,
-        "newKey": 28
+        "newKey": 30
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36501,22 +36533,6 @@
         "group": "全屏广告-下单后出现的弹窗",
         "rule": null,
         "oldKey": 4,
-        "newKey": 29
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.xunmeng.pinduoduo",
-        "group": "权限提示-通知权限",
-        "rule": null,
-        "oldKey": 0,
-        "newKey": 30
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.xunmeng.pinduoduo",
-        "group": "权限提示-通知权限",
-        "rule": null,
-        "oldKey": 1,
         "newKey": 31
       },
       {
@@ -36524,7 +36540,7 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "权限提示-通知权限",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 0,
         "newKey": 32
       },
       {
@@ -36532,8 +36548,24 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "权限提示-通知权限",
         "rule": null,
-        "oldKey": 3,
+        "oldKey": 1,
         "newKey": 33
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.xunmeng.pinduoduo",
+        "group": "权限提示-通知权限",
+        "rule": null,
+        "oldKey": 2,
+        "newKey": 34
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.xunmeng.pinduoduo",
+        "group": "权限提示-通知权限",
+        "rule": null,
+        "oldKey": 3,
+        "newKey": 35
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36541,7 +36573,7 @@
         "group": "功能类-自动处方流程",
         "rule": "点击已确诊的疾病",
         "oldKey": 0,
-        "newKey": 34
+        "newKey": 36
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36549,7 +36581,7 @@
         "group": "功能类-自动处方流程",
         "rule": "点击提交并开药",
         "oldKey": 1,
-        "newKey": 35
+        "newKey": 37
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36557,7 +36589,7 @@
         "group": "功能类-自动处方流程",
         "rule": "点击无需补充，立即开方",
         "oldKey": 2,
-        "newKey": 36
+        "newKey": 38
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36565,7 +36597,7 @@
         "group": "功能类-展开更多",
         "rule": "通用[展开]_fastQ",
         "oldKey": 0,
-        "newKey": 37
+        "newKey": 39
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36573,7 +36605,7 @@
         "group": "功能类-展开更多",
         "rule": "[查看更多订单信息]",
         "oldKey": 1,
-        "newKey": 38
+        "newKey": 40
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36581,7 +36613,7 @@
         "group": "功能类-展开更多",
         "rule": "订单页",
         "oldKey": 2,
-        "newKey": 39
+        "newKey": 41
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36589,7 +36621,7 @@
         "group": "功能类-展开更多",
         "rule": "商品评论",
         "oldKey": 3,
-        "newKey": 40
+        "newKey": 42
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36597,7 +36629,7 @@
         "group": "功能类-商品页视频自动静音",
         "rule": null,
         "oldKey": 0,
-        "newKey": 41
+        "newKey": 43
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36605,7 +36637,7 @@
         "group": "功能类-商品页视频自动静音",
         "rule": null,
         "oldKey": 1,
-        "newKey": 42
+        "newKey": 44
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36613,7 +36645,7 @@
         "group": "功能类-多多视频-每日自动签到",
         "rule": "自动签到",
         "oldKey": 0,
-        "newKey": 43
+        "newKey": 45
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36621,7 +36653,7 @@
         "group": "功能类-多多视频-每日自动签到",
         "rule": "在签到后关闭弹窗",
         "oldKey": 1,
-        "newKey": 44
+        "newKey": 46
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36629,7 +36661,7 @@
         "group": "全屏广告-首页弹窗广告",
         "rule": "首页弹窗1",
         "oldKey": 1,
-        "newKey": 45
+        "newKey": 47
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36637,7 +36669,7 @@
         "group": "全屏广告-首页弹窗广告",
         "rule": "首页弹窗2",
         "oldKey": 2,
-        "newKey": 46
+        "newKey": 48
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36645,7 +36677,7 @@
         "group": "全屏广告-首页弹窗广告",
         "rule": "首页弹窗3",
         "oldKey": 3,
-        "newKey": 47
+        "newKey": 49
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36653,28 +36685,12 @@
         "group": "全屏广告-多多视频划到广告自动跳过",
         "rule": null,
         "oldKey": 0,
-        "newKey": 48
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.xunmeng.pinduoduo",
-        "group": "全屏广告-多多视频划到广告自动跳过",
-        "rule": null,
-        "oldKey": 1,
-        "newKey": 49
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.xunmeng.pinduoduo",
-        "group": "全屏广告-商品页弹窗",
-        "rule": null,
-        "oldKey": 1,
         "newKey": 50
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.xunmeng.pinduoduo",
-        "group": "全屏广告-多多视频弹窗",
+        "group": "全屏广告-多多视频划到广告自动跳过",
         "rule": null,
         "oldKey": 1,
         "newKey": 51
@@ -36682,15 +36698,15 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.xunmeng.pinduoduo",
-        "group": "全屏广告-首页优惠弹窗",
+        "group": "全屏广告-商品页弹窗",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 1,
         "newKey": 52
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.xunmeng.pinduoduo",
-        "group": "全屏广告-首页优惠弹窗",
+        "group": "全屏广告-多多视频弹窗",
         "rule": null,
         "oldKey": 1,
         "newKey": 53
@@ -36700,7 +36716,7 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "全屏广告-首页优惠弹窗",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 0,
         "newKey": 54
       },
       {
@@ -36708,23 +36724,23 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "全屏广告-首页优惠弹窗",
         "rule": null,
-        "oldKey": 3,
+        "oldKey": 1,
         "newKey": 55
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.xunmeng.pinduoduo",
-        "group": "全屏广告-红包弹窗",
+        "group": "全屏广告-首页优惠弹窗",
         "rule": null,
-        "oldKey": 0,
+        "oldKey": 2,
         "newKey": 56
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.xunmeng.pinduoduo",
-        "group": "全屏广告-红包弹窗",
+        "group": "全屏广告-首页优惠弹窗",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 3,
         "newKey": 57
       },
       {
@@ -36732,7 +36748,7 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "全屏广告-红包弹窗",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 0,
         "newKey": 58
       },
       {
@@ -36740,8 +36756,24 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "全屏广告-红包弹窗",
         "rule": null,
-        "oldKey": 3,
+        "oldKey": 1,
         "newKey": 59
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.xunmeng.pinduoduo",
+        "group": "全屏广告-红包弹窗",
+        "rule": null,
+        "oldKey": 2,
+        "newKey": 60
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.xunmeng.pinduoduo",
+        "group": "全屏广告-红包弹窗",
+        "rule": null,
+        "oldKey": 3,
+        "newKey": 61
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36749,7 +36781,7 @@
         "group": "全屏广告-红包弹窗",
         "rule": "刮奖弹窗",
         "oldKey": 4,
-        "newKey": 60
+        "newKey": 62
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36757,7 +36789,7 @@
         "group": "全屏广告-多多买菜弹窗",
         "rule": null,
         "oldKey": 0,
-        "newKey": 61
+        "newKey": 63
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36765,7 +36797,7 @@
         "group": "全屏广告-多多买菜弹窗",
         "rule": null,
         "oldKey": 1,
-        "newKey": 62
+        "newKey": 64
       },
       {
         "type": "duplicateKeyReassigned",
@@ -36773,29 +36805,13 @@
         "group": "分段广告-多多视频每日自动签到",
         "rule": "自动签到",
         "oldKey": 0,
-        "newKey": 63
+        "newKey": 65
       },
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.xunmeng.pinduoduo",
         "group": "分段广告-多多视频每日自动签到",
         "rule": "在签到后关闭弹窗",
-        "oldKey": 1,
-        "newKey": 64
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.xunmeng.pinduoduo",
-        "group": "局部广告-多多视频-划到广告自动跳过",
-        "rule": null,
-        "oldKey": 0,
-        "newKey": 65
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.xunmeng.pinduoduo",
-        "group": "局部广告-多多视频-划到广告自动跳过",
-        "rule": null,
         "oldKey": 1,
         "newKey": 66
       },
@@ -36804,8 +36820,24 @@
         "scope": "com.xunmeng.pinduoduo",
         "group": "局部广告-多多视频-划到广告自动跳过",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 0,
         "newKey": 67
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.xunmeng.pinduoduo",
+        "group": "局部广告-多多视频-划到广告自动跳过",
+        "rule": null,
+        "oldKey": 1,
+        "newKey": 68
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.xunmeng.pinduoduo",
+        "group": "局部广告-多多视频-划到广告自动跳过",
+        "rule": null,
+        "oldKey": 2,
+        "newKey": 69
       },
       {
         "type": "duplicateKeyReassigned",
@@ -39702,7 +39734,7 @@
       }
     ]
   },
-  "referenceRepairsTotal": 2294,
+  "referenceRepairsTotal": 2298,
   "disabledGroupAudit": [
     {
       "app": "com.duoduo.cimoc.su",

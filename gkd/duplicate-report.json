@@ -17,7 +17,7 @@
     "enable_disabled_group": 945
   },
   "referenceRepairCounts": {
-    "duplicateKeyReassigned": 2272,
+    "duplicateKeyReassigned": 2273,
     "ambiguousCrossGroupReferenceResolvedToFirst": 19,
     "keptDanglingReference": 7
   },
@@ -27290,7 +27290,7 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.kuaishou.nebula",
-        "group": "全屏广告-红包弹窗",
+        "group": "全屏广告",
         "rule": null,
         "oldKey": 0,
         "newKey": 4
@@ -27346,10 +27346,18 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.kuaishou.nebula",
-        "group": "局部广告-用户资料页广告",
-        "rule": "③选一个[理由]",
-        "oldKey": 3,
+        "group": "全屏广告-红包弹窗",
+        "rule": null,
+        "oldKey": 1,
         "newKey": 11
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.kuaishou.nebula",
+        "group": "全屏广告-红包弹窗",
+        "rule": null,
+        "oldKey": 2,
+        "newKey": 12
       },
       {
         "type": "duplicateKeyReassigned",
@@ -27357,7 +27365,7 @@
         "group": "功能类-朋友推荐弹窗",
         "rule": null,
         "oldKey": 0,
-        "newKey": 12
+        "newKey": 13
       },
       {
         "type": "duplicateKeyReassigned",
@@ -39734,7 +39742,7 @@
       }
     ]
   },
-  "referenceRepairsTotal": 2298,
+  "referenceRepairsTotal": 2299,
   "disabledGroupAudit": [
     {
       "app": "com.duoduo.cimoc.su",

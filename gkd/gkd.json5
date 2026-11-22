@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026112101,
+  "version": 2026112201,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -30574,7 +30574,9 @@
               "actionCd": 500,
               "activityIds": [
                 ".reader.ui.ReaderActivity",
-                ".pages.main.MainFragmentActivity"
+                ".pages.main.MainFragmentActivity",
+                ".ad.openingscreenad.OpeningScreenADActivity",
+                ".component.shortvideo.impl.ShortSeriesActivity"
               ],
               "matches": [
                 "[id=\"android:id/content\"][height>prev.height.plus(100)] >n [id=\"android:id/content\"][height>500]",
@@ -30583,7 +30585,9 @@
               "snapshotUrls": [
                 "https://i.gkd.li/i/35147917",
                 "https://i.gkd.li/i/35147919",
-                "https://i.gkd.li/i/35173217"
+                "https://i.gkd.li/i/35173217",
+                "https://i.gkd.li/i/35203330",
+                "https://i.gkd.li/i/35203316"
               ],
               "excludeSnapshotUrls": [
                 "https://i.gkd.li/i/35165101",
@@ -51458,16 +51462,16 @@
         },
         {
           "key": 3,
-          "name": "全屏广告-红包弹窗",
+          "name": "全屏广告",
           "fastQuery": true,
+          "activityIds": [
+            "com.yxcorp.gifshow.HomeActivity",
+            "com.yxcorp.plugin.search.SearchActivity"
+          ],
           "rules": [
             {
               "key": 4,
-              "activityIds": [
-                "com.yxcorp.gifshow.HomeActivity",
-                "com.yxcorp.plugin.search.SearchActivity"
-              ],
-              "matches": "@[clickable=true][width<128][index=parent.childCount.minus(1)] -(1,2) ViewGroup > [text=\"点击立得奖励\" || text^=\"邀请\" || text=\"红包\"]",
+              "matches": "@[clickable=true][width<128][index=parent.childCount.minus(1)] -(1,2) ViewGroup > [text=\"点击立得奖励\" || text^=\"邀请\" || text=\"红包\"][visibleToUser=true]",
               "exampleUrls": "https://m.gkd.li/101449500/f7bbd1db-f519-4ff9-96cb-4cb5b2f483a2",
               "snapshotUrls": [
                 "https://i.gkd.li/i/14879912",
@@ -51479,7 +51483,6 @@
             },
             {
               "key": 1,
-              "activityIds": "com.yxcorp.gifshow.HomeActivity",
               "matches": "@ImageView[clickable=true][width<107 && height<107][index=0] + TextView[text$=\"红包\"][text.length<10]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/26678562",
@@ -51488,27 +51491,15 @@
             },
             {
               "key": 2,
-              "fastQuery": true,
-              "activityIds": "com.yxcorp.gifshow.HomeActivity",
-              "matches": "@ImageView[clickable=true] <(2,3) ViewGroup >(1,4) [text*=\"红包\"]",
-              "exampleUrls": "https://m.gkd.li/101449500/f7bbd1db-f519-4ff9-96cb-4cb5b2f483a2",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/14879912",
-                "https://i.gkd.li/i/15061662"
-              ]
-            },
-            {
-              "key": 3,
-              "fastQuery": true,
-              "activityIds": "com.yxcorp.gifshow.HomeActivity",
-              "matches": "@ImageView[clickable=true] -n ViewGroup >2 [text~=\"[0-9]+.?[0-9]*\"] + ViewGroup > [text$=\"元\"]",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/14879912",
-                "https://i.gkd.li/i/15061662"
-              ]
+              "position": {
+                "left": "width * 1.0557",
+                "top": "height * -0.0569"
+              },
+              "matches": "[height=0] < @ViewGroup[childCount=4] >3 [text=\"口令已复制\"][visibleToUser=true]",
+              "snapshotUrls": "https://i.gkd.li/i/35203973",
+              "exampleUrls": "https://e.gkd.li/6030f5cb-9d9d-4b0c-81f6-8b3912f90842"
             }
-          ],
-          "enable": false
+          ]
         },
         {
           "key": 4,
@@ -51654,7 +51645,7 @@
               "exampleUrls": "https://e.gkd.li/640b5e7b-2960-4791-add6-a07d6cf84fea"
             },
             {
-              "key": 11,
+              "key": 3,
               "preKeys": [
                 10
               ],
@@ -51725,6 +51716,34 @@
         },
         {
           "key": 12,
+          "name": "全屏广告-红包弹窗",
+          "rules": [
+            {
+              "key": 11,
+              "fastQuery": true,
+              "activityIds": "com.yxcorp.gifshow.HomeActivity",
+              "matches": "@ImageView[clickable=true] <(2,3) ViewGroup >(1,4) [text*=\"红包\"]",
+              "exampleUrls": "https://m.gkd.li/101449500/f7bbd1db-f519-4ff9-96cb-4cb5b2f483a2",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/14879912",
+                "https://i.gkd.li/i/15061662"
+              ]
+            },
+            {
+              "key": 12,
+              "fastQuery": true,
+              "activityIds": "com.yxcorp.gifshow.HomeActivity",
+              "matches": "@ImageView[clickable=true] -n ViewGroup >2 [text~=\"[0-9]+.?[0-9]*\"] + ViewGroup > [text$=\"元\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/14879912",
+                "https://i.gkd.li/i/15061662"
+              ]
+            }
+          ],
+          "enable": false
+        },
+        {
+          "key": 13,
           "name": "局部广告-悬浮广告",
           "desc": "点击关闭",
           "rules": [
@@ -51739,13 +51758,13 @@
           "enable": false
         },
         {
-          "key": 13,
+          "key": 14,
           "name": "功能类-朋友推荐弹窗",
           "fastQuery": true,
           "activityIds": "com.yxcorp.gifshow.HomeActivity",
           "rules": [
             {
-              "key": 12,
+              "key": 13,
               "matches": "@[vid=\"close_btn\"] <n * > [text=\"朋友推荐\"]",
               "snapshotUrls": "https://i.gkd.li/i/15061832"
             }
@@ -64261,6 +64280,22 @@
                 "[text=\"以后再说\"][clickable=true]"
               ],
               "snapshotUrls": "https://i.gkd.li/i/23787454"
+            }
+          ]
+        },
+        {
+          "key": 2,
+          "name": "通知提示-更新提示",
+          "matchTime": 20000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": "com.remote.app.ui.activity.ComposeMainActivity",
+              "matches": "@View[getChild(0).text$=\"不更新\"][clickable=true][visibleToUser=true] -n TextView[text$=\"更新\"] < [childCount=4] < * <2 View < ComposeView < [id=\"android:id/content\"]",
+              "snapshotUrls": "https://i.gkd.li/i/35130030",
+              "exampleUrls": "https://e.gkd.li/427b504d-30f3-4e18-b525-5be6a6787801"
             }
           ]
         }
@@ -94477,6 +94512,25 @@
           "rules": [],
           "snapshotUrls": "https://i.gkd.li/i/12847431",
           "enable": false
+        }
+      ]
+    },
+    {
+      "id": "com.vivo.daemonService",
+      "name": "VIVO服务",
+      "groups": [
+        {
+          "key": 1,
+          "name": "功能类-自动关闭温度过低提示",
+          "desc": "温度过低... -> 点击确定",
+          "rules": [
+            {
+              "fastQuery": true,
+              "matches": "[getChild(0).text^=\"温度过低\"] < [id=\"android:id/topPanel\"][visibleToUser=true] +2 * > LinearLayout[index=parent.childCount.minus(1)][childCount=1] > Button[text=\"确定\"][clickable=true]",
+              "snapshotUrls": "https://i.gkd.li/i/35131038",
+              "exampleUrls": "https://e.gkd.li/124e048b-3ac5-4721-a357-b6bd2182c512"
+            }
+          ]
         }
       ]
     },

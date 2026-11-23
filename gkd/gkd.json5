@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026112201,
+  "version": 2026112301,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -18682,7 +18682,8 @@
       "groups": [
         {
           "key": 1,
-          "name": "通知提示-系统更新提示",
+          "name": "更新提示",
+          "desc": "按[返回键]",
           "rules": [
             {
               "fastQuery": true,
@@ -51368,6 +51369,19 @@
         },
         {
           "key": 2,
+          "name": "局部广告-讲解视频浮窗",
+          "desc": "x掉",
+          "rules": [
+            {
+              "activityIds": ".activity.manyquestionsearch.activity.PicManySearchActivity",
+              "matches": "@TextView[visibleToUser=true][width<126] - [childCount=3] > TextView + Image[text.length>50][width<143 && height>82]",
+              "snapshotUrls": "https://i.gkd.li/i/35228963",
+              "exampleUrls": "https://e.gkd.li/e37a46fe-9464-405e-9a93-608a865a519f"
+            }
+          ]
+        },
+        {
+          "key": 3,
           "name": "全屏广告-首页广告弹窗",
           "activityIds": "com.hihonor.android.launcher.drawer.DrawerLauncher",
           "rules": [],
@@ -51375,7 +51389,7 @@
           "enable": false
         },
         {
-          "key": 3,
+          "key": 4,
           "name": "未分类-首页广告弹窗",
           "activityIds": "com.hihonor.android.launcher.drawer.DrawerLauncher",
           "rules": [],
@@ -64285,7 +64299,8 @@
         },
         {
           "key": 2,
-          "name": "通知提示-更新提示",
+          "name": "更新提示",
+          "desc": "点击[暂不更新]",
           "matchTime": 20000,
           "actionMaximum": 1,
           "resetMatch": "app",
@@ -98876,6 +98891,29 @@
       ]
     },
     {
+      "id": "com.xiaomi.xmsf",
+      "name": "小米服务框架",
+      "groups": [
+        {
+          "key": 1,
+          "name": "权限提示-b站申请通知权限",
+          "desc": "(⚠️仅限哔哩哔哩app) 点击[拒绝]",
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": "com.xiaomi.xms.subscribe_remind.dialog.SubscribeDialogActivity",
+              "matches": "[text*=\"哔哩哔哩\"] + [text*=\"通知\"] +n [text=\"拒绝\"][clickable=true]",
+              "snapshotUrls": "https://i.gkd.li/i/35232368",
+              "exampleUrls": "https://e.gkd.li/d8b8754f-d66f-483a-b424-75951d782623"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "com.xiaomi.youpin",
       "name": "小米有品",
       "groups": [
@@ -118734,6 +118772,18 @@
           "actionMaximum": 1,
           "resetMatch": "app",
           "rules": [
+            {
+              "activityIds": [
+                ".MainActivity",
+                ".AppActivity"
+              ],
+              "matches": "View[desc=\"公告\"] +n @Button[desc=\"知道了\"][clickable=true][visibleToUser=true] <<n [id=\"android:id/content\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/14559882",
+                "https://i.gkd.li/i/35229398"
+              ],
+              "exampleUrls": "https://e.gkd.li/a3782695-5b94-4588-9c82-24989d4e04bd"
+            },
             {
               "activityIds": ".MainActivity",
               "matches": "@Button[desc=\"知道了\"][visibleToUser=true] <3 View < View < View < View < FrameLayout < [id=\"android:id/content\"]",

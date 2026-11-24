@@ -17,7 +17,7 @@
     "enable_disabled_group": 945
   },
   "referenceRepairCounts": {
-    "duplicateKeyReassigned": 2273,
+    "duplicateKeyReassigned": 2274,
     "ambiguousCrossGroupReferenceResolvedToFirst": 19,
     "keptDanglingReference": 7
   },
@@ -29730,10 +29730,18 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.phoenix.read",
-        "group": "局部广告-阅读-底部卡片广告",
+        "group": "权限提示-通知权限",
         "rule": null,
         "oldKey": 1,
         "newKey": 3
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.phoenix.read",
+        "group": "局部广告-阅读-底部卡片广告",
+        "rule": null,
+        "oldKey": 1,
+        "newKey": 4
       },
       {
         "type": "duplicateKeyReassigned",
@@ -39742,7 +39750,7 @@
       }
     ]
   },
-  "referenceRepairsTotal": 2299,
+  "referenceRepairsTotal": 2300,
   "disabledGroupAudit": [
     {
       "app": "com.duoduo.cimoc.su",

@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026112401,
+  "version": 2026112501,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -6807,7 +6807,7 @@
         {
           "key": 0,
           "name": "开屏广告",
-          "desc": "该规则需要在高级设置中开启[启用优化]才能生效",
+          "desc": "⚠️该规则需在工作模式中开启[触摸优化],点击才能生效",
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
@@ -31132,6 +31132,50 @@
           "exampleUrls": "https://m.gkd.li/101449500/0c6e8831-9cde-47f1-8e4b-25ecfa5b2881",
           "snapshotUrls": "https://i.gkd.li/i/14539504",
           "enable": false
+        }
+      ]
+    },
+    {
+      "id": "com.dragon.read.oversea.gp",
+      "name": "番茄小说",
+      "groups": [
+        {
+          "key": 1,
+          "name": "权限提示-通知权限",
+          "desc": "点击\"取消\"",
+          "fastQuery": true,
+          "activityIds": [
+            ".widget.ConfirmDialogBuilder",
+            ".pages.main.MainFragmentActivity",
+            "com.dragon.read.pages.main.MainFragmentActivity"
+          ],
+          "rules": [
+            {
+              "key": 0,
+              "name": "首页",
+              "matchTime": 10000,
+              "actionMaximum": 1,
+              "resetMatch": "app",
+              "matches": [
+                "[text=\"开启推送提醒\"][visibleToUser=true]",
+                "[text=\"取消\"][visibleToUser=true]"
+              ]
+            },
+            {
+              "key": 1,
+              "name": "小说阅读页",
+              "activityIds": ".reader.ui.ReaderActivity",
+              "matches": [
+                "[text=\"开启推送通知\"][visibleToUser=true]",
+                "[text=\"取消\"][visibleToUser=true]"
+              ]
+            },
+            {
+              "key": 2,
+              "matches": "TextView[text=\"暂不开启\"] < @[clickable=true] <n View < View < ComposeView < * < * < [id=\"android:id/content\"]",
+              "snapshotUrls": "https://i.gkd.li/i/35333111"
+            }
+          ]
         }
       ]
     },
@@ -59331,8 +59375,25 @@
           ]
         },
         {
-          "enable": false,
           "key": 20,
+          "name": "功能类-关闭[未验证应用]提示",
+          "desc": "点击[仍然安装]",
+          "fastQuery": true,
+          "activityIds": "com.miui.packageInstaller.NewInstallerPrepareActivity",
+          "rules": [
+            {
+              "matches": [
+                "[text=\"未验证应用提醒\"] + [text^=\"该应用未通过\"]",
+                "[text=\"仍然安装\"]"
+              ],
+              "snapshotUrls": "https://i.gkd.li/i/35331944",
+              "exampleUrls": "https://e.gkd.li/8838fcbd-1967-481b-9a1f-7bf3f8264c74"
+            }
+          ]
+        },
+        {
+          "enable": false,
+          "key": 21,
           "name": "功能类-自动第三方安装应用",
           "desc": "自动允许第三方应用调用安装，安装应用",
           "rules": [
@@ -59364,7 +59425,7 @@
         },
         {
           "enable": false,
-          "key": 21,
+          "key": 22,
           "name": "功能类-自动安装应用",
           "desc": "启用后安装高风险应用将自动完成，请自行评估风险决定是否启用",
           "rules": [
@@ -59523,7 +59584,7 @@
         },
         {
           "enable": false,
-          "key": 22,
+          "key": 23,
           "name": "功能类-自动更新应用",
           "rules": [
             {
@@ -59633,7 +59694,7 @@
           "fastQuery": true
         },
         {
-          "key": 23,
+          "key": 24,
           "name": "功能类-备案信息弹窗",
           "desc": "点击[继续安装]",
           "actionMaximum": 1,
@@ -59652,7 +59713,7 @@
           "enable": false
         },
         {
-          "key": 24,
+          "key": 25,
           "name": "功能类-澎湃-自动安装/更新",
           "desc": "启用后安装高风险应用将自动完成，请自行评估风险决定是否启用",
           "fastQuery": true,
@@ -81914,6 +81975,13 @@
             {
               "key": 6,
               "fastQuery": true,
+              "activityIds": "com.taobao.tao.welcome.Welcome",
+              "matches": "@Image[text*=\".jpg\"][width<150][visibleToUser=true] < [childCount=1][height<150] - [height>500] <<n [vid=\"poplayer_inner_view\"]",
+              "snapshotUrls": "https://i.gkd.li/i/35306359"
+            },
+            {
+              "key": 7,
+              "fastQuery": true,
               "activityIds": [
                 "com.taobao.tao.welcome.Welcome",
                 "com.taobao.tao.TBMainActivity",
@@ -81929,7 +81997,7 @@
               ]
             },
             {
-              "key": 7,
+              "key": 8,
               "fastQuery": true,
               "matchTime": 10000,
               "actionMaximum": 1,
@@ -81940,7 +82008,7 @@
               "snapshotUrls": "https://i.gkd.li/i/18218537"
             },
             {
-              "key": 8,
+              "key": 9,
               "fastQuery": true,
               "activityIds": [
                 "com.taobao.tao.welcome.Welcome",
@@ -81970,7 +82038,7 @@
           "fastQuery": true,
           "rules": [
             {
-              "key": 9,
+              "key": 10,
               "name": "消息页",
               "activityIds": [
                 "com.taobao.tao.welcome.Welcome",
@@ -81983,7 +82051,7 @@
               ]
             },
             {
-              "key": 10,
+              "key": 11,
               "name": "商品详情页",
               "activityIds": "com.taobao.android.detail.alittdetail.TTDetailActivity",
               "matches": "@FrameLayout[desc=\"关闭\"][clickable=true][visibleToUser=true] -3 ImageView <<3 [vid=\"bottom_float_dx\"]",
@@ -81991,7 +82059,7 @@
               "exampleUrls": "https://e.gkd.li/9bbe3e98-3a93-49d5-9b7a-74e039db0a36"
             },
             {
-              "key": 11,
+              "key": 12,
               "name": "订单页",
               "activityIds": "com.taobao.android.order.bundle.TBOrderListActivity",
               "matches": "@TextView[clickable=true][visibleToUser=true][text.length=1] -4 ImageView < LinearLayout[childCount=5] <<3 [vid=\"recycler_view\"]",
@@ -81999,7 +82067,7 @@
               "exampleUrls": "https://e.gkd.li/e86fb61e-d4ed-4862-b677-86ddf45c9b77"
             },
             {
-              "key": 12,
+              "key": 13,
               "name": "首页",
               "matchRoot": true,
               "activityIds": "com.taobao.tao.welcome.Welcome",
@@ -82018,26 +82086,26 @@
           "fastQuery": true,
           "rules": [
             {
-              "key": 13,
+              "key": 14,
               "activityIds": "com.taobao.browser.BrowserActivity",
               "matches": "@Image[childCount=0][clickable=true][text!=null] < View <2 View < WebView < o0 <2 WebView < [id=\"android:id/content\"]",
               "snapshotUrls": "https://i.gkd.li/i/13521702"
             },
             {
-              "key": 14,
+              "key": 15,
               "activityIds": "com.taobao.themis.container.app.TMSActivity",
               "matches": "@Image[childCount=0][clickable=true][text!=null] <2 View < View < View <9 View < WebView < m0 <2 WebView < RelativeLayout < [vid=\"tms_tab_content_view\"]",
               "exampleUrls": "https://e.gkd.li/45f8b78d-bc6a-4c1a-994d-6b5bce2c96a0",
               "snapshotUrls": "https://i.gkd.li/i/22291107"
             },
             {
-              "key": 15,
+              "key": 16,
               "activityIds": "com.taobao.android.detail.alittdetail.TTDetailActivity",
               "matches": "@FrameLayout[desc=\"关闭\"][clickable=true] <<n [vid=\"ll_dinamicx_container\"]",
               "snapshotUrls": "https://i.gkd.li/i/23289445"
             },
             {
-              "key": 16,
+              "key": 17,
               "name": "商品详情右侧悬浮广告",
               "activityIds": "com.taobao.browser.BrowserActivity",
               "matches": "View[childCount=2] > @Image[text!=\"\"][clickable=true] + View",
@@ -82172,7 +82240,7 @@
           "activityIds": "com.alipay.android.msp.ui.views.MspContainerActivity",
           "rules": [
             {
-              "key": 17,
+              "key": 18,
               "name": "①点击[关闭]或[不感兴趣]",
               "matches": "[text=\"关闭\" || text=\"不感兴趣\"] < @[clickable=true] <3 * < * + * >3 [text$=\"小额免密支付\"]",
               "exampleUrls": "https://m.gkd.li/57941037/2322af2e-52e2-4059-9757-f26940f4b2fc",
@@ -82182,7 +82250,7 @@
               ]
             },
             {
-              "key": 18,
+              "key": 19,
               "name": "②取消勾选",
               "matches": "@[checked=true] < * - [text=\"开通淘宝小额免密支付\"]",
               "exampleUrls": "https://m.gkd.li/57941037/3ae78555-c0a5-4f76-8096-c4d1593ebb77",
@@ -82192,7 +82260,7 @@
               ]
             },
             {
-              "key": 19,
+              "key": 20,
               "fastQuery": true,
               "activityIds": "com.alipay.android.msp.ui.views.MspContainerActivity",
               "matches": "[text=\"关闭\"] < @[clickable=true] <3 * < * + * >3 [text$=\"小额免密支付\"]",
@@ -82200,7 +82268,7 @@
               "snapshotUrls": "https://i.gkd.li/i/13438414"
             },
             {
-              "key": 20,
+              "key": 21,
               "fastQuery": true,
               "activityIds": "com.alipay.android.msp.ui.views.MspContainerActivity",
               "matches": "@[checked=true] < * - [text=\"开通淘宝小额免密支付\"]",
@@ -82283,7 +82351,7 @@
           "actionMaximum": 1,
           "rules": [
             {
-              "key": 21,
+              "key": 22,
               "activityIds": "com.alipay.android.msp.ui.views.MspContainerActivity",
               "matches": [
                 "[text*=\"花呗升级\" || text*=\"花呗服务\" || text$=\"开通花呗\"][visibleToUser=true]",
@@ -82347,7 +82415,7 @@
           "desc": "点击关闭",
           "rules": [
             {
-              "key": 22,
+              "key": 23,
               "fastQuery": true,
               "activityIds": "com.alipay.android.msp.ui.views.MspContainerActivity",
               "matches": "[text=\"关闭\" || text=\"跳过\"] < @[clickable=true] -(1,2) [visibleToUser=true] >(1,2) [text$=\"推荐你\" || text=\"开通指纹支付\"]",
@@ -82360,7 +82428,7 @@
               ]
             },
             {
-              "key": 23,
+              "key": 24,
               "name": "充值类商品界面广告",
               "fastQuery": true,
               "activityIds": "com.taobao.weex.WXActivity",
@@ -82377,7 +82445,7 @@
           "activityIds": "com.taobao.search.uniform.SearchActivity",
           "rules": [
             {
-              "key": 24,
+              "key": 25,
               "name": "①猜你想搜",
               "matches": "[vid=\"hideBtn\"][desc=\"隐藏\"][clickable=true]",
               "snapshotUrls": [
@@ -82387,7 +82455,7 @@
               "exampleUrls": "https://e.gkd.li/cce4690f-ada3-4de8-b7cd-31259ec6ef58"
             },
             {
-              "key": 25,
+              "key": 26,
               "name": "②热榜",
               "matches": "@[desc=\"隐藏榜单\"][clickable=true] <n ViewGroup < [vid=\"dynamic_container\"]",
               "snapshotUrls": [
@@ -82446,7 +82514,7 @@
           "name": "全屏广告-限时福利弹窗",
           "rules": [
             {
-              "key": 26,
+              "key": 27,
               "activityIds": [
                 "com.taobao.tao.welcome.Welcome",
                 "com.taobao.tao.TBMainActivity",
@@ -82464,7 +82532,7 @@
               ]
             },
             {
-              "key": 27,
+              "key": 28,
               "name": "全屏广告-88VIP开通优惠弹窗",
               "activityIds": [
                 "com.taobao.tao.welcome.Welcome",
@@ -82596,7 +82664,7 @@
           "resetMatch": "app",
           "rules": [
             {
-              "key": 28,
+              "key": 29,
               "activityIds": "com.alipay.android.msp.ui.views.MspContainerActivity",
               "matches": "[text=\"花呗服务未升级，将影响后续使用\"] <<n FrameLayout @FrameLayout[clickable=true] [text=\"暂不升级，继续付款\"]",
               "snapshotUrls": [
@@ -82605,7 +82673,7 @@
               ]
             },
             {
-              "key": 29,
+              "key": 30,
               "activityIds": "com.alipay.android.msp.ui.views.MspContainerActivity",
               "matches": "[text=\"根据相关法律法规要求，请尽快完成花呗升级\"] <<n FrameLayout FrameLayout @[text=\"关闭\"]",
               "snapshotUrls": [
@@ -82614,7 +82682,7 @@
               ]
             },
             {
-              "key": 30,
+              "key": 31,
               "activityIds": "com.alipay.android.msp.ui.views.MspContainerActivity",
               "matches": "[id=\"com.taobao.taobao:id/flybird_userinfo\"] + * [text=\"暂不升级，继续付款\"]",
               "snapshotUrls": [

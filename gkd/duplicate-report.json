@@ -31805,7 +31805,7 @@
         "group": "局部广告-横幅广告",
         "rule": "消息页",
         "oldKey": 0,
-        "newKey": 9
+        "newKey": 10
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31813,7 +31813,7 @@
         "group": "局部广告-横幅广告",
         "rule": "商品详情页",
         "oldKey": 1,
-        "newKey": 10
+        "newKey": 11
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31821,7 +31821,7 @@
         "group": "局部广告-横幅广告",
         "rule": "订单页",
         "oldKey": 2,
-        "newKey": 11
+        "newKey": 12
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31829,14 +31829,6 @@
         "group": "局部广告-横幅广告",
         "rule": "首页",
         "oldKey": 3,
-        "newKey": 12
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.taobao.taobao",
-        "group": "局部广告-悬浮广告",
-        "rule": null,
-        "oldKey": 0,
         "newKey": 13
       },
       {
@@ -31844,7 +31836,7 @@
         "scope": "com.taobao.taobao",
         "group": "局部广告-悬浮广告",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 14
       },
       {
@@ -31852,8 +31844,16 @@
         "scope": "com.taobao.taobao",
         "group": "局部广告-悬浮广告",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 1,
         "newKey": 15
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.taobao.taobao",
+        "group": "局部广告-悬浮广告",
+        "rule": null,
+        "oldKey": 2,
+        "newKey": 16
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31861,7 +31861,7 @@
         "group": "局部广告-悬浮广告",
         "rule": "商品详情右侧悬浮广告",
         "oldKey": 3,
-        "newKey": 16
+        "newKey": 17
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31869,7 +31869,7 @@
         "group": "功能类-关闭小额免密支付",
         "rule": "①点击[关闭]或[不感兴趣]",
         "oldKey": 0,
-        "newKey": 17
+        "newKey": 18
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31877,14 +31877,6 @@
         "group": "功能类-关闭小额免密支付",
         "rule": "②取消勾选",
         "oldKey": 1,
-        "newKey": 18
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.taobao.taobao",
-        "group": "功能类-关闭小额免密支付",
-        "rule": null,
-        "oldKey": 2,
         "newKey": 19
       },
       {
@@ -31892,8 +31884,16 @@
         "scope": "com.taobao.taobao",
         "group": "功能类-关闭小额免密支付",
         "rule": null,
-        "oldKey": 3,
+        "oldKey": 2,
         "newKey": 20
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.taobao.taobao",
+        "group": "功能类-关闭小额免密支付",
+        "rule": null,
+        "oldKey": 3,
+        "newKey": 21
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31901,7 +31901,7 @@
         "group": "全屏广告-花呗推荐弹窗",
         "rule": null,
         "oldKey": 2,
-        "newKey": 21
+        "newKey": 22
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31909,7 +31909,7 @@
         "group": "全屏广告-支付后的推荐弹窗",
         "rule": null,
         "oldKey": 0,
-        "newKey": 22
+        "newKey": 23
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31917,7 +31917,7 @@
         "group": "全屏广告-支付后的推荐弹窗",
         "rule": "充值类商品界面广告",
         "oldKey": 1,
-        "newKey": 23
+        "newKey": 24
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31925,7 +31925,7 @@
         "group": "功能类-自动隐藏搜索页[猜你想搜][热榜]",
         "rule": "①猜你想搜",
         "oldKey": 0,
-        "newKey": 24
+        "newKey": 25
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31933,7 +31933,7 @@
         "group": "功能类-自动隐藏搜索页[猜你想搜][热榜]",
         "rule": "②热榜",
         "oldKey": 1,
-        "newKey": 25
+        "newKey": 26
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31941,7 +31941,7 @@
         "group": "全屏广告-限时福利弹窗",
         "rule": null,
         "oldKey": 0,
-        "newKey": 26
+        "newKey": 27
       },
       {
         "type": "duplicateKeyReassigned",
@@ -31949,14 +31949,6 @@
         "group": "全屏广告-限时福利弹窗",
         "rule": "全屏广告-88VIP开通优惠弹窗",
         "oldKey": 1,
-        "newKey": 27
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.taobao.taobao",
-        "group": "全屏广告-花呗升级报送征信",
-        "rule": null,
-        "oldKey": 0,
         "newKey": 28
       },
       {
@@ -31964,7 +31956,7 @@
         "scope": "com.taobao.taobao",
         "group": "全屏广告-花呗升级报送征信",
         "rule": null,
-        "oldKey": 1,
+        "oldKey": 0,
         "newKey": 29
       },
       {
@@ -31972,8 +31964,16 @@
         "scope": "com.taobao.taobao",
         "group": "全屏广告-花呗升级报送征信",
         "rule": null,
-        "oldKey": 2,
+        "oldKey": 1,
         "newKey": 30
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.taobao.taobao",
+        "group": "全屏广告-花呗升级报送征信",
+        "rule": null,
+        "oldKey": 2,
+        "newKey": 31
       },
       {
         "type": "duplicateKeyReassigned",

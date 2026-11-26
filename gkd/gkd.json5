@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026112501,
+  "version": 2026112601,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -28876,6 +28876,7 @@
             },
             {
               "key": 4,
+              "actionCdKey": 3,
               "matches": "@View[width<170 && height<170] <3 FrameLayout[childCount=3] < [vid=\"sdk_view\"]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/34494192",
@@ -28885,14 +28886,12 @@
             {
               "key": 10,
               "name": "点击坐标①",
+              "actionCdKey": 3,
               "position": {
                 "left": "width * 0.875",
                 "top": "width * 0.10"
               },
-              "anyMatches": [
-                "[vid=\"ad_view\"][visibleToUser=true][width>=720][childCount!=0]",
-                "[vid=\"sdk_view\"] >n [vid=\"animation_view\"][visibleToUser=true][width>=720]"
-              ],
+              "matches": "[vid=\"ad_view\" || vid=\"sdk_view\"][visibleToUser=true][width>=720][childCount!=0]",
               "snapshotUrls": "https://i.gkd.li/i/23283060",
               "excludeSnapshotUrls": "https://i.gkd.li/i/29440952"
             },
@@ -28906,10 +28905,7 @@
                 "left": "width * 0.875",
                 "top": "width * 0.135"
               },
-              "anyMatches": [
-                "[vid=\"ad_view\"][visibleToUser=true][width>=720][childCount!=0]",
-                "[vid=\"sdk_view\"] >n [vid=\"animation_view\"][visibleToUser=true][width>=720]"
-              ],
+              "matches": "[vid=\"ad_view\" || vid=\"sdk_view\"][visibleToUser=true][width>=720][childCount!=0]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/13575257",
                 "https://i.gkd.li/i/18423724",
@@ -28927,17 +28923,15 @@
                 "left": "width * 0.875",
                 "top": "width * 0.17"
               },
-              "anyMatches": [
-                "[vid=\"ad_view\"][visibleToUser=true][width>=720][childCount!=0]",
-                "[vid=\"sdk_view\"] >n [vid=\"animation_view\"][visibleToUser=true][width>=720]"
-              ],
+              "matches": "[vid=\"ad_view\" || vid=\"sdk_view\"][visibleToUser=true][width>=720][childCount!=0]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/13601755",
                 "https://i.gkd.li/i/23324118",
                 "https://i.gkd.li/i/23324139",
                 "https://i.gkd.li/i/23652259",
                 "https://i.gkd.li/i/24191638",
-                "https://i.gkd.li/i/24362806"
+                "https://i.gkd.li/i/24362806",
+                "https://i.gkd.li/i/35417943"
               ]
             },
             {
@@ -28950,10 +28944,7 @@
                 "left": "width * 0.875",
                 "top": "width * 0.20"
               },
-              "anyMatches": [
-                "[vid=\"ad_view\"][visibleToUser=true][width>=720][childCount!=0]",
-                "[vid=\"sdk_view\"] >n [vid=\"animation_view\"][visibleToUser=true][width>=720]"
-              ],
+              "matches": "[vid=\"ad_view\" || vid=\"sdk_view\"][visibleToUser=true][width>=720][childCount!=0]",
               "snapshotUrls": "https://i.gkd.li/i/16054268"
             },
             {
@@ -66794,7 +66785,7 @@
         {
           "key": 1,
           "name": "功能类-[上滑]继续看短剧",
-          "desc": "①读秒结束后[上滑] ②未显示[选集]时,每5秒[上滑]1次",
+          "desc": "出现 广告/直播间 时上滑跳过, ①读秒结束后[上滑] ②未显示[选集]时,每5秒[上滑]1次",
           "fastQuery": true,
           "activityIds": [
             "com.dragon.read.component.shortvideo.impl.ShortSeriesActivity",
@@ -74604,6 +74595,39 @@
         },
         {
           "key": 28,
+          "name": "全屏广告-小组件弹窗",
+          "desc": "点击[暂不添加]跳过组件引导",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": ".extlibui.appwidget.business.install.WidgetInstallDialogActivity",
+              "matches": [
+                "[text*=\"小组件\"][visibleToUser=true]",
+                "[vid=\"tv_refuse\"][clickable=true]"
+              ],
+              "snapshotUrls": "https://i.gkd.li/i/35392812",
+              "exampleUrls": "https://e.gkd.li/41feacfb-053c-410f-880f-ac8b8d31d607"
+            }
+          ]
+        },
+        {
+          "key": 29,
+          "name": "全屏广告-发现页弹窗",
+          "desc": "点击×关闭发现页的发布会/直播推广弹窗",
+          "rules": [
+            {
+              "matchRoot": true,
+              "actionMaximum": 1,
+              "resetMatch": "match",
+              "activityIds": ".MainTabActivity",
+              "matches": "@[clickable=true][childCount=0] <1 [childCount=2] <2 * <1 * >2 [desc=\"广告\"]",
+              "snapshotUrls": "https://i.gkd.li/i/35392878",
+              "exampleUrls": "https://e.gkd.li/6156ade7-09c6-48f6-897e-4e701f648b2e"
+            }
+          ]
+        },
+        {
+          "key": 30,
           "name": "全屏广告-兴趣领域推荐",
           "desc": "出现在长久未登录的账户再次登录时",
           "fastQuery": true,
@@ -74613,7 +74637,7 @@
           "enable": false
         },
         {
-          "key": 29,
+          "key": 31,
           "name": "全屏广告-精选博主推荐",
           "desc": "出现在长久未登录的账户再次登录时",
           "fastQuery": true,
@@ -74626,7 +74650,7 @@
           "enable": false
         },
         {
-          "key": 30,
+          "key": 32,
           "name": "局部广告-博文内容区与评论区中间卡片式广告",
           "desc": "点击右上角x",
           "fastQuery": true,
@@ -74660,7 +74684,7 @@
         },
         {
           "enable": false,
-          "key": 31,
+          "key": 33,
           "name": "局部广告-评论区博主内容推荐",
           "desc": "评论区同一博主其他博文推荐",
           "fastQuery": true,
@@ -74691,7 +74715,7 @@
           ]
         },
         {
-          "key": 32,
+          "key": 34,
           "name": "局部广告-首页顶部话题分享窗口",
           "fastQuery": true,
           "activityIds": [
@@ -74705,7 +74729,7 @@
         },
         {
           "enable": false,
-          "key": 33,
+          "key": 35,
           "name": "全屏广告-请求开启通知弹窗",
           "desc": "自动点击暂不开启",
           "fastQuery": true,
@@ -74719,7 +74743,7 @@
         },
         {
           "enable": false,
-          "key": 34,
+          "key": 36,
           "name": "全屏广告-请求开启通知提示信息",
           "desc": "自动点击x按钮",
           "fastQuery": true,
@@ -74733,7 +74757,7 @@
         },
         {
           "enable": false,
-          "key": 35,
+          "key": 37,
           "name": "局部广告-首页顶部签到卡片",
           "desc": "自动点击x按钮",
           "fastQuery": true,
@@ -74746,7 +74770,7 @@
           ]
         },
         {
-          "key": 36,
+          "key": 38,
           "name": "局部广告-悬浮广告",
           "desc": "自动点击x按钮",
           "fastQuery": true,
@@ -74801,7 +74825,7 @@
           "enable": false
         },
         {
-          "key": 37,
+          "key": 39,
           "name": "全屏广告-请求定位权限弹窗",
           "fastQuery": true,
           "rules": [
@@ -74827,7 +74851,7 @@
           "enable": false
         },
         {
-          "key": 38,
+          "key": 40,
           "name": "局部广告-评论区底部-账号推荐关注悬浮窗",
           "desc": "点击【x】",
           "fastQuery": true,
@@ -74837,7 +74861,7 @@
           "enable": false
         },
         {
-          "key": 39,
+          "key": 41,
           "name": "局部广告-评论区底部-转发推荐悬浮窗",
           "desc": "点击【x】",
           "fastQuery": true,
@@ -74847,7 +74871,7 @@
           "enable": false
         },
         {
-          "key": 40,
+          "key": 42,
           "fastQuery": true,
           "name": "分段广告-评论区信息流广告",
           "desc": "点击X-点击不感兴趣",
@@ -74869,7 +74893,7 @@
           "enable": false
         },
         {
-          "key": 41,
+          "key": 43,
           "name": "全屏广告-APP评分弹窗",
           "desc": "点击【x】",
           "fastQuery": true,
@@ -74881,7 +74905,7 @@
           "enable": false
         },
         {
-          "key": 42,
+          "key": 44,
           "name": "局部广告-卡片广告",
           "desc": "点击右上角关闭",
           "fastQuery": true,
@@ -74889,7 +74913,7 @@
           "enable": false
         },
         {
-          "key": 43,
+          "key": 45,
           "name": "未分类-兴趣领域推荐",
           "desc": "出现在长久未登录的账户再次登录时",
           "fastQuery": true,
@@ -74899,7 +74923,7 @@
           "enable": false
         },
         {
-          "key": 44,
+          "key": 46,
           "name": "未分类-精选博主推荐",
           "desc": "出现在长久未登录的账户再次登录时",
           "fastQuery": true,
@@ -74912,7 +74936,7 @@
           "enable": false
         },
         {
-          "key": 45,
+          "key": 47,
           "name": "未分类-博文内容区与评论区中间卡片式广告",
           "desc": "点击右上角x",
           "fastQuery": true,
@@ -74945,7 +74969,7 @@
           "enable": false
         },
         {
-          "key": 46,
+          "key": 48,
           "name": "未分类-评论区博主内容推荐",
           "desc": "评论区同一博主其他博文推荐",
           "fastQuery": true,
@@ -74977,7 +75001,7 @@
           "enable": false
         },
         {
-          "key": 47,
+          "key": 49,
           "name": "通知提示-请求开启通知弹窗",
           "desc": "自动点击暂不开启",
           "matchTime": 10000,
@@ -74989,7 +75013,7 @@
           "enable": false
         },
         {
-          "key": 48,
+          "key": 50,
           "name": "未分类-APP评分弹窗",
           "desc": "点击【x】",
           "fastQuery": true,
@@ -75001,7 +75025,7 @@
           "enable": false
         },
         {
-          "key": 49,
+          "key": 51,
           "name": "功能类-点赞任务奖励",
           "desc": "点击x",
           "actionMaximum": 1,
@@ -83392,10 +83416,11 @@
           "rules": [
             {
               "key": 0,
-              "matches": "@LinearLayout[clickable=true] - [text^=\"互动广告\"][visibleToUser=true]",
+              "matches": "@LinearLayout[clickable=true] -(1,2) [text^=\"互动广告\" || text=\"广告\"][visibleToUser=true]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/13198082",
-                "https://i.gkd.li/i/23557410"
+                "https://i.gkd.li/i/23557410",
+                "https://i.gkd.li/i/35394224"
               ]
             },
             {
@@ -104819,6 +104844,70 @@
               "matches": "@ImageView[childCount=0][text=null][visibleToUser=true] < FrameLayout[childCount=1] <2 FrameLayout[childCount=2] <2 FrameLayout[childCount=2] <2 FrameLayout[childCount=2] - FrameLayout > [text^=\"扭动或点击\"]",
               "exampleUrls": "https://e.gkd.li/ed6e343a-7a53-4d22-84b8-a2da1da5b241",
               "snapshotUrls": "https://i.gkd.li/i/23228410"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "com.xxwolo.cc5",
+      "name": "测测",
+      "groups": [
+        {
+          "key": 0,
+          "name": "权限提示-通知权限",
+          "desc": "点击[×掉/取消]",
+          "activityIds": "com.cece.app.MainActivity",
+          "rules": [
+            {
+              "key": 0,
+              "name": "底部横幅",
+              "matchRoot": true,
+              "actionCd": 3000,
+              "matches": "[desc*=\"开启系统通知\"] > @[clickable=true][desc=null][width<106][height<107] + [desc=\"去开启\"]",
+              "snapshotUrls": "https://i.gkd.li/i/35392398",
+              "exampleUrls": "https://e.gkd.li/94819262-26e5-458b-ba2b-a633924d6456"
+            },
+            {
+              "key": 1,
+              "name": "弹窗",
+              "matchTime": 10000,
+              "actionMaximum": 3,
+              "matches": "@[desc=\"取消\"][clickable=true] + [desc=\"打开通知\"][clickable=true]",
+              "snapshotUrls": "https://i.gkd.li/i/35392498",
+              "exampleUrls": "https://e.gkd.li/26d36064-b217-4a49-993a-83a60d86ea0a"
+            }
+          ]
+        },
+        {
+          "key": 1,
+          "name": "全屏广告-小组件弹窗",
+          "desc": "点击[关闭]",
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": "com.cece.app.MainActivity",
+              "matches": "@[desc=\"关闭\"][clickable=true] <n View[desc^=\"添加小组件\"] < * < * < [id=\"android:id/content\"]",
+              "snapshotUrls": "https://i.gkd.li/i/35392522",
+              "exampleUrls": "https://e.gkd.li/2d688ba5-7c0f-4737-b764-7efc744600e0"
+            }
+          ]
+        },
+        {
+          "key": 2,
+          "name": "局部广告-右下角浮窗",
+          "desc": "点击×掉",
+          "matchRoot": true,
+          "forcedTime": 10000,
+          "actionCd": 3000,
+          "rules": [
+            {
+              "activityIds": "com.cece.app.MainActivity",
+              "matches": "@ImageView[clickable=true][childCount=0][width<80][height<80][visibleToUser=true] < [childCount=2][clickable=true][width<350][height<350][visibleToUser=true]",
+              "snapshotUrls": "https://i.gkd.li/i/35392429"
             }
           ]
         }

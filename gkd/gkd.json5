@@ -1,7 +1,7 @@
 {
   "id": 2186748980,
   "name": "GKD-Merged",
-  "version": 2026112701,
+  "version": 2026112801,
   "author": "吹落日晚风",
   "description": "自动整合 Lin-arm、ganlinte、AIsouler、Adpro；高优先级来源优先，低优先级来源用于补充缺失规则。",
   "checkUpdateUrl": "./gkd.version.json5",
@@ -30559,11 +30559,30 @@
         {
           "key": 21,
           "name": "功能类-自动[展开更多]评论",
-          "desc": "小说段评区/短剧评论区, 点击[展开更多/展开n条回复]",
+          "desc": "小说段评区/评分区; 短剧评论区/剧评区, 点击[展开/展开更多/展开n条回复]",
+          "fastQuery": true,
+          "actionCd": 500,
           "rules": [
             {
-              "fastQuery": true,
-              "actionCd": 500,
+              "key": 1523,
+              "name": "①[展开]点评",
+              "activityIds": [
+                "com.dragon.community.impl.comment.playlet.list.page.CSSPlayletCommentListActivity",
+                "com.dragon.community.impl.list.page.CSSBookCommentListActivity"
+              ],
+              "matches": "[text$=\"后点评\"] < LinearLayout -2 ViewGroup > [text=\"展开\"][clickable=true]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/35494357",
+                "https://i.gkd.li/i/35494382"
+              ],
+              "exampleUrls": [
+                "https://e.gkd.li/5ffee787-dca6-4e91-b908-96bf8f896e47",
+                "https://e.gkd.li/f81b3c2e-5b56-4dab-8eac-ba38396ab972"
+              ]
+            },
+            {
+              "key": 1524,
+              "name": "②[展开]评论/回复",
               "activityIds": [
                 ".reader.ui.ReaderActivity",
                 ".pages.main.MainFragmentActivity",
@@ -30572,12 +30591,13 @@
               ],
               "matches": [
                 "[id=\"android:id/content\"][height>prev.height.plus(100)] >n [id=\"android:id/content\"][height>500]",
-                "@[clickable=true] > [visibleToUser=true][text^=\"展开\"][text$=\"回复\" || text$=\"更多\"]"
+                "(@[clickable=true] > [visibleToUser=true][text^=\"展开\"][text$=\"回复\" || text$=\"更多\"]) || ([clickable=true][text=\"展开\"])"
               ],
               "snapshotUrls": [
                 "https://i.gkd.li/i/35147917",
                 "https://i.gkd.li/i/35147919",
                 "https://i.gkd.li/i/35173217",
+                "https://i.gkd.li/i/35494237",
                 "https://i.gkd.li/i/35203330",
                 "https://i.gkd.li/i/35203316"
               ],
@@ -30587,13 +30607,49 @@
               ],
               "exampleUrls": [
                 "https://e.gkd.li/e0c12712-4b1e-4b75-a9ec-d1a8042156f6",
-                "https://e.gkd.li/0d2d257a-abda-4255-b971-faf06b565cb7"
+                "https://e.gkd.li/0d2d257a-abda-4255-b971-faf06b565cb7",
+                "https://e.gkd.li/4fc71629-5b01-4c60-a356-0b89c3b7e162"
               ]
             }
           ]
         },
         {
           "key": 22,
+          "name": "功能类-自动[展开]简介",
+          "desc": "小说/短剧简介, 点击1次[展开]",
+          "actionMaximum": 1,
+          "resetMatch": "match",
+          "rules": [
+            {
+              "key": 1525,
+              "name": "①[展开]短剧简介",
+              "fastQuery": true,
+              "activityIds": [
+                ".reader.ui.ReaderActivity",
+                ".component.shortvideo.impl.ShortSeriesActivity"
+              ],
+              "matches": "[vid=\"title\"][text$=\"简介\"] + ViewGroup > [text=\"展开\"][clickable=true][visibleToUser=true]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/35494458",
+                "https://i.gkd.li/i/35494462"
+              ],
+              "exampleUrls": [
+                "https://e.gkd.li/20fe96c0-f378-4a0d-8146-7bc089b7c864",
+                "https://e.gkd.li/e4e767e6-5d15-46af-8065-dffdcd42da09"
+              ]
+            },
+            {
+              "key": 1526,
+              "name": "②[展开]小说简介",
+              "activityIds": ".reader.detail.BookDetailActivity",
+              "matches": "TextView[text=\"简介\"] +n View[childCount=2] > TextView[clickable=true][text=\"展开\"][visibleToUser=true]",
+              "snapshotUrls": "https://i.gkd.li/i/35494527",
+              "exampleUrls": "https://e.gkd.li/c88a8d15-fb17-44d3-b350-7d73df73e566"
+            }
+          ]
+        },
+        {
+          "key": 23,
           "name": "局部广告-首页-右侧红包浮窗",
           "fastQuery": true,
           "matchTime": 20000,
@@ -30616,7 +30672,7 @@
           "enable": false
         },
         {
-          "key": 23,
+          "key": 24,
           "name": "评价提示",
           "fastQuery": true,
           "actionMaximum": 1,
@@ -30634,7 +30690,7 @@
           "snapshotUrls": "https://i.gkd.li/i/14395088"
         },
         {
-          "key": 24,
+          "key": 25,
           "name": "全屏广告-周末开红包",
           "desc": "点击 X",
           "fastQuery": true,
@@ -30654,7 +30710,7 @@
           "enable": false
         },
         {
-          "key": 25,
+          "key": 26,
           "name": "全屏广告-书城-广告弹窗",
           "desc": "【X】",
           "fastQuery": true,
@@ -30686,7 +30742,7 @@
           "enable": false
         },
         {
-          "key": 26,
+          "key": 27,
           "name": "通知提示-开启推送提醒",
           "desc": "自动点击【取消】",
           "fastQuery": true,
@@ -30702,7 +30758,7 @@
           "enable": false
         },
         {
-          "key": 27,
+          "key": 28,
           "name": "评价提示-阅读",
           "fastQuery": true,
           "actionMaximum": 1,
@@ -30716,7 +30772,7 @@
           "enable": false
         },
         {
-          "key": 28,
+          "key": 29,
           "name": "局部广告-阅读-卡片广告",
           "desc": "点击X",
           "fastQuery": true,
@@ -30740,7 +30796,7 @@
               ]
             },
             {
-              "key": 1523,
+              "key": 1527,
               "name": "底部卡片广告",
               "anyMatches": [
                 "@ImageView - LinearLayout <n * <n * <n * <n * <n * <n * <n * <n * <n * <n [id=\"com.dragon.read:id/root_view\"]",
@@ -30757,7 +30813,7 @@
               ]
             },
             {
-              "preKeys": 1523,
+              "preKeys": 1527,
               "matches": "TextView[text=\"关闭此广告\"||text=\"关闭此条广告\"]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/17928194",
@@ -30791,7 +30847,7 @@
           "enable": false
         },
         {
-          "key": 29,
+          "key": 30,
           "name": "全屏广告-阅读-视频广告",
           "desc": "点击【关闭】/【反馈-不感兴趣】",
           "fastQuery": true,
@@ -30801,13 +30857,13 @@
           ],
           "rules": [
             {
-              "key": 1524,
+              "key": 1528,
               "name": "点击【关闭】",
               "matches": "@[text=\"关闭\"] - [text=\"反馈\"]",
               "snapshotUrls": "https://i.gkd.li/import/13191156"
             },
             {
-              "key": 1525,
+              "key": 1529,
               "name": "点击【反馈】",
               "matchRoot": true,
               "matches": "[text=\"反馈\"][visibleToUser=true]",
@@ -30828,8 +30884,8 @@
               ]
             },
             {
-              "preKeys": 1525,
-              "key": 1526,
+              "preKeys": 1529,
+              "key": 1530,
               "name": "点击【不感兴趣】",
               "actionDelay": 100,
               "matches": "@TextView[text=\"不感兴趣\"]",
@@ -30849,7 +30905,7 @@
           "enable": false
         },
         {
-          "key": 30,
+          "key": 31,
           "name": "全屏广告-阅读-翻页广告",
           "desc": "自动点击右下方空白处翻页，翻页模式【上下】无法使用",
           "fastQuery": true,
@@ -30895,7 +30951,7 @@
           "enable": false
         },
         {
-          "key": 31,
+          "key": 32,
           "name": "局部广告-阅读-菜单右侧福利浮窗",
           "desc": "点击X",
           "fastQuery": true,
@@ -30917,7 +30973,7 @@
           "enable": false
         },
         {
-          "key": 32,
+          "key": 33,
           "name": "局部广告-阅读页面广告",
           "activityIds": [
             "com.dragon.read.ad.banner.ui",
@@ -30926,7 +30982,7 @@
           ],
           "rules": [
             {
-              "key": 1527,
+              "key": 1531,
               "fastQuery": true,
               "matches": "@ImageView[childCount=0][clickable=true][visibleToUser=true] - LinearLayout >(2,3) [text=\"广告\" || text=\"立享优惠\" || text*=\"查看\"][text.length<5]",
               "snapshotUrls": [
@@ -30936,7 +30992,7 @@
               ]
             },
             {
-              "key": 1528,
+              "key": 1532,
               "fastQuery": true,
               "activityIds": ".reader.ui.ReaderActivity",
               "matches": "[id=\"com.dragon.read:id/close_button\"][visibleToUser=true]",
@@ -30944,14 +31000,14 @@
               "snapshotUrls": "https://i.gkd.li/i/13520314"
             },
             {
-              "key": 1529,
+              "key": 1533,
               "fastQuery": true,
               "matches": "[text=\"关闭此条广告\"]",
               "exampleUrls": "https://m.gkd.li/57941037/cf9d0574-dc89-4f03-ba01-eb9bcc97925f",
               "snapshotUrls": "https://i.gkd.li/i/14540281"
             },
             {
-              "key": 1530,
+              "key": 1534,
               "matches": "HorizontalAndVerticalScrollView > FrameLayout[childCount>=13] >(7,8,9) @FrameLayout[index=2][clickable=true] > ImageView",
               "exampleUrls": [
                 "https://m.gkd.li/57941037/0129e5a7-ead1-4b92-a008-708632e5a927",
@@ -30965,7 +31021,7 @@
               ]
             },
             {
-              "key": 1531,
+              "key": 1535,
               "fastQuery": true,
               "activityIds": ".reader.ui.ReaderActivity",
               "matches": "@[clickable=true] >(1,2) [text=\"继续阅读下一页\"][visibleToUser=true]",
@@ -30976,12 +31032,12 @@
               ]
             },
             {
-              "key": 1532,
+              "key": 1536,
               "matches": "@ImageView - LinearLayout TextView[text=\"广告\"]",
               "snapshotUrls": "https://i.gkd.li/i/12908734"
             },
             {
-              "key": 1533,
+              "key": 1537,
               "matches": "HorizontalAndVerticalScrollView > FrameLayout[childCount=14] > [index=9] >5 ImageView[clickable=true]",
               "exampleUrls": "https://m.gkd.li/57941037/d2f7c62c-be88-4668-b276-68bb53edfaad",
               "snapshotUrls": [
@@ -30994,11 +31050,11 @@
           "enable": false
         },
         {
-          "key": 33,
+          "key": 34,
           "name": "全屏广告-弹窗广告",
           "rules": [
             {
-              "key": 1534,
+              "key": 1538,
               "name": "电商惊喜券",
               "activityIds": "com.dragon.read.pages.main.MainFragmentActivity",
               "fastQuery": true,
@@ -31006,7 +31062,7 @@
               "snapshotUrls": "https://i.gkd.li/i/12910159"
             },
             {
-              "key": 1535,
+              "key": 1539,
               "name": "爆款好物一分购",
               "fastQuery": true,
               "activityIds": "com.dragon.read.pages.main.MainFragmentActivity",
@@ -31014,7 +31070,7 @@
               "snapshotUrls": "https://i.gkd.li/i/12878266"
             },
             {
-              "key": 1536,
+              "key": 1540,
               "name": "抽奖赢好礼",
               "fastQuery": true,
               "activityIds": "com.dragon.read.pages.main.MainFragmentActivity",
@@ -31023,7 +31079,7 @@
               "snapshotUrls": "https://i.gkd.li/i/14292475"
             },
             {
-              "key": 1537,
+              "key": 1541,
               "name": "签到弹窗",
               "fastQuery": true,
               "activityIds": "com.dragon.read.pages.main.MainFragmentActivity",
@@ -31035,7 +31091,7 @@
           "enable": false
         },
         {
-          "key": 34,
+          "key": 35,
           "name": "全屏广告-会员福利弹窗",
           "desc": "点击关闭",
           "rules": [
@@ -31061,12 +31117,12 @@
           "enable": false
         },
         {
-          "key": 35,
+          "key": 36,
           "name": "功能类-阅读页面-关注作者",
           "fastQuery": true,
           "rules": [
             {
-              "key": 1538,
+              "key": 1542,
               "activityIds": "com.dragon.read.reader.ui.ReaderActivity",
               "matches": "@ImageView +2 FrameLayout >3 [text=\"关注\"]",
               "snapshotUrls": "https://i.gkd.li/i/13399505"
@@ -31075,7 +31131,7 @@
           "enable": false
         },
         {
-          "key": 36,
+          "key": 37,
           "name": "通知提示",
           "desc": "自动点击【取消】",
           "activityIds": "com.dragon.read.widget.ConfirmDialogBuilder",
@@ -31084,7 +31140,7 @@
           "enable": false
         },
         {
-          "key": 37,
+          "key": 38,
           "name": "全屏广告-阅读翻页时的全屏广告",
           "desc": "点击右上角【关闭】",
           "fastQuery": true,
@@ -31094,7 +31150,7 @@
           "enable": false
         },
         {
-          "key": 38,
+          "key": 39,
           "name": "功能类-书城-底部继续阅读浮窗",
           "desc": "点击【继续阅读】旁边的x",
           "resetMatch": "app",
@@ -31104,7 +31160,7 @@
           "enable": false
         },
         {
-          "key": 39,
+          "key": 40,
           "name": "功能类-阅读页面广告-点击下一页",
           "activityIds": "com.dragon.read.reader.ui.ReaderActivity",
           "rules": [],
@@ -31112,7 +31168,7 @@
           "enable": false
         },
         {
-          "key": 40,
+          "key": 41,
           "name": "全屏广告-VIP免费领弹窗",
           "desc": "点击x",
           "fastQuery": true,
@@ -48768,8 +48824,24 @@
           ]
         },
         {
-          "enable": false,
           "key": 18,
+          "name": "功能类-自动进入[快速验证]",
+          "desc": "一般查看 购物车/订单 时会弹验证, 点击1次[快速验证]",
+          "rules": [
+            {
+              "fastQuery": true,
+              "actionMaximum": 1,
+              "resetMatch": "match",
+              "activityIds": ".bundle.jdrhsdk.JDRiskHandleActivity",
+              "matches": "[text=\"快速验证\"][clickable=true]",
+              "snapshotUrls": "https://i.gkd.li/i/35494504",
+              "exampleUrls": "https://e.gkd.li/a8907154-923b-4957-918f-2323e2fa767a"
+            }
+          ]
+        },
+        {
+          "enable": false,
+          "key": 19,
           "name": "全屏广告-购物车界面-砸金蛋",
           "activityIds": "com.jingdong.app.mall.MainFrameActivity",
           "rules": [],
@@ -48777,7 +48849,7 @@
         },
         {
           "enable": false,
-          "key": 19,
+          "key": 20,
           "name": "局部广告-我的界面-悬浮广告",
           "activityIds": "com.jingdong.app.mall.MainFrameActivity",
           "rules": [
@@ -48800,7 +48872,7 @@
         },
         {
           "enable": false,
-          "key": 20,
+          "key": 21,
           "name": "局部广告-首页-右侧浮层广告",
           "activityIds": "com.jingdong.app.mall.MainFrameActivity",
           "rules": [],
@@ -48813,7 +48885,7 @@
         },
         {
           "enable": false,
-          "key": 21,
+          "key": 22,
           "name": "全屏广告-通知提示-请求打开通知",
           "activityIds": [
             "com.jd.lib.message.messagecenter.view.activity.MessageCenterMainActivityNew",
@@ -48836,7 +48908,7 @@
           ]
         },
         {
-          "key": 22,
+          "key": 23,
           "name": "全屏广告-广告弹窗",
           "rules": [
             {
@@ -48903,7 +48975,7 @@
         },
         {
           "enable": false,
-          "key": 23,
+          "key": 24,
           "name": "局部广告-首页-底部横幅广告",
           "activityIds": "com.jingdong.app.mall.MainFrameActivity",
           "rules": [],
@@ -48915,7 +48987,7 @@
         },
         {
           "enable": false,
-          "key": 24,
+          "key": 25,
           "name": "全屏广告-首页弹窗-打开通知",
           "desc": "自动点击正下方的【x】",
           "fastQuery": true,
@@ -48929,7 +49001,7 @@
         },
         {
           "enable": false,
-          "key": 25,
+          "key": 26,
           "name": "全屏广告-支付界面-产品推荐",
           "desc": "自动点击右上角【x】",
           "activityIds": "com.jd.lib.settlement.fillorder.activity.NewFillOrderActivity",
@@ -48938,7 +49010,7 @@
         },
         {
           "enable": false,
-          "key": 26,
+          "key": 27,
           "name": "全屏广告-购物车界面-支付成功广告弹窗",
           "desc": "自动点击正下方的【x】",
           "fastQuery": true,
@@ -48951,7 +49023,7 @@
           ]
         },
         {
-          "key": 27,
+          "key": 28,
           "name": "功能类-支付订单后点击[完成]",
           "rules": [
             {
@@ -48965,7 +49037,7 @@
           "enable": false
         },
         {
-          "key": 28,
+          "key": 29,
           "name": "全屏广告-购物车页面支付成功广告弹窗",
           "desc": "自动点击正下方的\"x\"",
           "fastQuery": true,

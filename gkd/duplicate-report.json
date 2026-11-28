@@ -17,7 +17,7 @@
     "enable_disabled_group": 945
   },
   "referenceRepairCounts": {
-    "duplicateKeyReassigned": 2283,
+    "duplicateKeyReassigned": 2287,
     "ambiguousCrossGroupReferenceResolvedToFirst": 19,
     "keptDanglingReference": 7
   },
@@ -5422,9 +5422,9 @@
       "rule": null,
       "ruleA": null,
       "ruleB": null,
-      "key": 1538,
+      "key": 1542,
       "keptRuleKey": 1506,
-      "candidateRuleKey": 1538,
+      "candidateRuleKey": 1542,
       "matches": "@ImageView +2 FrameLayout >3 [text=\"关注\"]",
       "contextDiff": [],
       "behaviorDiff": [],
@@ -24610,10 +24610,42 @@
       {
         "type": "duplicateKeyReassigned",
         "scope": "com.dragon.read",
+        "group": "功能类-自动[展开更多]评论",
+        "rule": "①[展开]点评",
+        "oldKey": 1,
+        "newKey": 1523
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.dragon.read",
+        "group": "功能类-自动[展开更多]评论",
+        "rule": "②[展开]评论/回复",
+        "oldKey": 2,
+        "newKey": 1524
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.dragon.read",
+        "group": "功能类-自动[展开]简介",
+        "rule": "①[展开]短剧简介",
+        "oldKey": 1,
+        "newKey": 1525
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.dragon.read",
+        "group": "功能类-自动[展开]简介",
+        "rule": "②[展开]小说简介",
+        "oldKey": 2,
+        "newKey": 1526
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.dragon.read",
         "group": "局部广告-阅读-卡片广告",
         "rule": "底部卡片广告",
         "oldKey": 1,
-        "newKey": 1523
+        "newKey": 1527
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24621,7 +24653,7 @@
         "group": "全屏广告-阅读-视频广告",
         "rule": "点击【关闭】",
         "oldKey": 1,
-        "newKey": 1524
+        "newKey": 1528
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24629,7 +24661,7 @@
         "group": "全屏广告-阅读-视频广告",
         "rule": "点击【反馈】",
         "oldKey": 2,
-        "newKey": 1525
+        "newKey": 1529
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24637,38 +24669,6 @@
         "group": "全屏广告-阅读-视频广告",
         "rule": "点击【不感兴趣】",
         "oldKey": 3,
-        "newKey": 1526
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.dragon.read",
-        "group": "局部广告-阅读页面广告",
-        "rule": null,
-        "oldKey": 1,
-        "newKey": 1527
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.dragon.read",
-        "group": "局部广告-阅读页面广告",
-        "rule": null,
-        "oldKey": 2,
-        "newKey": 1528
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.dragon.read",
-        "group": "局部广告-阅读页面广告",
-        "rule": null,
-        "oldKey": 3,
-        "newKey": 1529
-      },
-      {
-        "type": "duplicateKeyReassigned",
-        "scope": "com.dragon.read",
-        "group": "局部广告-阅读页面广告",
-        "rule": null,
-        "oldKey": 4,
         "newKey": 1530
       },
       {
@@ -24676,7 +24676,7 @@
         "scope": "com.dragon.read",
         "group": "局部广告-阅读页面广告",
         "rule": null,
-        "oldKey": 5,
+        "oldKey": 1,
         "newKey": 1531
       },
       {
@@ -24684,7 +24684,7 @@
         "scope": "com.dragon.read",
         "group": "局部广告-阅读页面广告",
         "rule": null,
-        "oldKey": 6,
+        "oldKey": 2,
         "newKey": 1532
       },
       {
@@ -24692,8 +24692,40 @@
         "scope": "com.dragon.read",
         "group": "局部广告-阅读页面广告",
         "rule": null,
-        "oldKey": 7,
+        "oldKey": 3,
         "newKey": 1533
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.dragon.read",
+        "group": "局部广告-阅读页面广告",
+        "rule": null,
+        "oldKey": 4,
+        "newKey": 1534
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.dragon.read",
+        "group": "局部广告-阅读页面广告",
+        "rule": null,
+        "oldKey": 5,
+        "newKey": 1535
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.dragon.read",
+        "group": "局部广告-阅读页面广告",
+        "rule": null,
+        "oldKey": 6,
+        "newKey": 1536
+      },
+      {
+        "type": "duplicateKeyReassigned",
+        "scope": "com.dragon.read",
+        "group": "局部广告-阅读页面广告",
+        "rule": null,
+        "oldKey": 7,
+        "newKey": 1537
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24701,7 +24733,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": "电商惊喜券",
         "oldKey": 0,
-        "newKey": 1534
+        "newKey": 1538
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24709,7 +24741,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": "爆款好物一分购",
         "oldKey": 1,
-        "newKey": 1535
+        "newKey": 1539
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24717,7 +24749,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": "抽奖赢好礼",
         "oldKey": 2,
-        "newKey": 1536
+        "newKey": 1540
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24725,7 +24757,7 @@
         "group": "全屏广告-弹窗广告",
         "rule": "签到弹窗",
         "oldKey": 3,
-        "newKey": 1537
+        "newKey": 1541
       },
       {
         "type": "duplicateKeyReassigned",
@@ -24733,7 +24765,7 @@
         "group": "功能类-阅读页面-关注作者",
         "rule": null,
         "oldKey": 0,
-        "newKey": 1538
+        "newKey": 1542
       },
       {
         "type": "duplicateKeyReassigned",
@@ -39822,7 +39854,7 @@
       }
     ]
   },
-  "referenceRepairsTotal": 2309,
+  "referenceRepairsTotal": 2313,
   "disabledGroupAudit": [
     {
       "app": "com.duoduo.cimoc.su",
